@@ -36,10 +36,6 @@ class MuckEngine
         def muck_gem_path(gem_name)
           if gem_name == 'muck-solr'
             'acts_as_solr'
-          elsif ['muck-raker', 'muck-services'].include?(gem_name)
-            gem_name
-          else
-            gem_name.sub('-', '_')
           end
         end
 
