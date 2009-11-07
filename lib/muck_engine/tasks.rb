@@ -114,20 +114,29 @@ class MuckEngine
           env_file = File.join(RAILS_ROOT, 'config', 'environment.rb')
           version = IO.read(File.join(gem_path, 'VERSION')).strip
           environment = IO.read(env_file)
+          
           search = Regexp.new(/\:lib\s*=>\s*['"]#{gem_lib}['"],\s*\:version\s*=>\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
-          if environment.gsub!(search, ":lib => '#{gem_lib}', :version => '>=#{version}'").nil?
+          failure = environment.gsub!(search, ":lib => '#{gem_lib}', :version => '>=#{version}'").nil?
+          
+          if failure
             search = Regexp.new(/config.gem\s*['"]#{gem_name}['"],\s*\:version\s*=>\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
-            if environment.gsub!(search, "config.gem '#{gem_name}', :version => '>=#{version}'").nil?
-              require 'ruby-debug'
-              debugger
-              t = 0
-              search = Regexp.new(/config.gem\s*['"]#{gem_name}['"]/)
-              if environment.gsub!(search, "config.gem '#{gem_name}', :version => '>=#{version}'").nil?
-                puts "Could not update version for #{gem_name}"
-              end
-            end
+            failure = environment.gsub!(search, "config.gem '#{gem_name}', :version => '>=#{version}'").nil?
+          end  
+  
+          if failure
+            search = Regexp.new(/config.gem\s*['"]#{gem_name}['"],\s*\:lib\s*=>\s*['"]#{gem_lib}['"]/)
+            failure = environment.gsub!(search, "config.gem '#{gem_name}', :lib => '#{gem_lib}', :version => '>=#{version}'").nil?
           end
-
+          
+          if failure
+            search = Regexp.new(/config.gem\s*['"]#{gem_name}['"]/)
+            failure = environment.gsub!(search, "config.gem '#{gem_name}', :version => '>=#{version}'").nil?
+          end
+          
+          if failure
+            puts "Could not update version for #{gem_name}"
+          end
+  
           File.open(env_file, 'w') { |f| f.write(environment) }
         end
 
