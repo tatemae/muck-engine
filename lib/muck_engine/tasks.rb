@@ -25,6 +25,16 @@ class MuckEngine
       
       namespace :muck do
         
+        # just returns the names of the gems as specified by muck_gems
+        def muck_gem_names
+          if defined?(muck_gems)
+            muck_gems
+          else
+            puts "Please create a method named 'muck_gems' in the namespace :muck in your rakefile."
+          end
+        end
+        
+        # Returns the folder name for each gem.  Note that muck-solr lives in the acts_as_solr directory
         def muck_gem_paths
           if defined?(muck_gems)
             muck_gems.collect{|name| muck_gem_path(name)}
@@ -41,6 +51,14 @@ class MuckEngine
           end
         end
 
+        def muck_gem_lib(gem_name)
+          if gem_name == 'muck-solr'
+            'acts_as_solr'
+          else
+            gem_name.sub('-', '_')
+          end
+        end
+        
         def muck_unpack(gem_name)
           system("gem unpack #{gem_name} --target=#{muck_gems_path}")
         end
@@ -74,7 +92,7 @@ class MuckEngine
         end
         
         def release_gem(path, gem_name)
-          gem_path = File.join(path, gem_name)
+          gem_path = File.join(path, muck_gem_path(gem_name))
           puts "releasing #{gem_name}"
           inside gem_path do
             if File.exists?('pkg/*')
@@ -87,15 +105,27 @@ class MuckEngine
           write_new_gem_version(path, gem_name)
         end
 
+        # examples of stuff we need to look for:
+        # config.gem "muck-raker", :lib => 'muck_raker', :version => '>=0.3.2'
         def write_new_gem_version(path, gem_name)
-          gem_path = File.join(path, gem_name)
+          puts "Updating version for: #{gem_name}"
+          gem_lib = muck_gem_lib(gem_name)
+          gem_path = File.join(path, muck_gem_path(gem_name))
           env_file = File.join(RAILS_ROOT, 'config', 'environment.rb')
           version = IO.read(File.join(gem_path, 'VERSION')).strip
           environment = IO.read(env_file)
-          search = Regexp.new('\:lib\s+=>\s+\'' + gem_name + '\',\s+\:version\s+=>\s+[\'\"][ <>=~]*\d+\.\d+\.\d+[\'\"]')
-          if environment.gsub!(search, ":lib => '#{gem_name}', :version => '>=#{version}'").nil?
-            search = Regexp.new('config.gem\s+\'' + gem_name + '\',\s+\:version\s+=>\s+[\'\"][ <>=~]*\d+\.\d+\.\d+[\'\"]')
-            environment.gsub!(search, "config.gem '#{gem_name}', :version => '>=#{version}'")
+          search = Regexp.new(/\:lib\s*=>\s*['"]#{gem_lib}['"],\s*\:version\s*=>\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
+          if environment.gsub!(search, ":lib => '#{gem_lib}', :version => '>=#{version}'").nil?
+            search = Regexp.new(/config.gem\s*['"]#{gem_name}['"],\s*\:version\s*=>\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
+            if environment.gsub!(search, "config.gem '#{gem_name}', :version => '>=#{version}'").nil?
+              require 'ruby-debug'
+              debugger
+              t = 0
+              search = Regexp.new(/config.gem\s*['"]#{gem_name}['"]/)
+              if environment.gsub!(search, "config.gem '#{gem_name}', :version => '>=#{version}'").nil?
+                puts "Could not update version for #{gem_name}"
+              end
+            end
           end
 
           File.open(env_file, 'w') { |f| f.write(environment) }
@@ -159,17 +189,17 @@ class MuckEngine
         
         desc "Release and commit muck gems"
         task :release_commit_gems do
-          muck_gem_paths.each do |gem_name|
+          muck_gem_names.each do |gem_name|
             message = "Released new gem"
             release_gem("#{projects_path}", gem_name)
-            git_commit("#{projects_path}/#{gem_name}", message)
-            git_push("#{projects_path}/#{gem_name}")
+            git_commit("#{projects_path}/#{muck_gem_path(gem_name)}", message)
+            git_push("#{projects_path}/#{muck_gem_path(gem_name)}")
           end
         end
 
         desc "Release muck gems"
         task :release_gems do
-          muck_gem_paths.each do |gem_name|
+          muck_gem_names.each do |gem_name|
             release_gem("#{projects_path}", gem_name)
           end
         end
@@ -205,7 +235,7 @@ class MuckEngine
         
         desc "Write muck gem versions into muck"
         task :versions do
-          muck_gem_paths.each do |gem_name|
+          muck_gem_names.each do |gem_name|
             write_new_gem_version("#{projects_path}", gem_name)
           end
         end
