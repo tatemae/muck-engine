@@ -36,6 +36,8 @@ class MuckEngine
         def muck_gem_path(gem_name)
           if gem_name == 'muck-solr'
             'acts_as_solr'
+          else
+            gem_name
           end
         end
 
