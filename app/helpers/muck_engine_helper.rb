@@ -1,3 +1,5 @@
+require 'md5'
+
 module MuckEngineHelper
 
   # Outputs a small bit of javascript that will enable message 
@@ -73,19 +75,52 @@ module MuckEngineHelper
   end
   
   # Render a photo for the given object.  Note that the object will need a 'photo' method
-  # provided by paperclip.
-  # size is commonly one of:
-  # :medium, :thumb, :icon or :tiny but can be any value provided by the photo object
-  # object:         Object to get icon for.
-  # size:           Size to get.
-  # default_image:  A default image should the photo not be found.
-  def icon(object, size = :icon, default_image = '/images/profile_default.jpg')
+  # provided by paperclip. If the object does not provide an image, but does have an 'email' method
+  # this method will attempt to use gravatar.com to find a matching image.  
+  # 
+  # object:           Object to get icon for.
+  # size:             Size to get. size is commonly one of:
+  #                     :medium, :thumb, :icon or :tiny but can be any value provided by the photo object
+  # default_image:    A default image should the photo not be found.
+  # gravatar_size:    Size in pixels for the gravatar.  Can be from 1 to 512.  For reference the sizes from muck-profiles are:
+  #                   medium: 300, thumb: 100, icon: 50, tiny: 24.  The default is set to 50 to match the default 'size' setting which is icon.
+  # rating:           Default gravatar rating - g, pg, r, x.
+  # gravatar_default: If a gravatar is used, but no image is found several defaults are available.  Leaving 
+  #                   this value nil will result in the 'default_image' being used.  Other wise one of the following can be set:
+  #                   identicon, monsterid, wavatar, 404
+  def icon(object, size = :icon, default_image = '/images/profile_default.jpg', use_only_gravatar = false, gravatar_size = 50, rating = 'g', gravatar_default = nil)
     return "" if object.blank?
-    image_url = object.photo.url(size) rescue default_image
-    image_url ||= default_image
+    
+    if object.photo.original_filename && !use_only_gravatar
+      image_url = object.photo.url(size) rescue nil
+    end
+    
+    if image_url.blank? && defined?(object.email)
+      gravatar_default = File.join(root_url, default_image) if gravatar_default.blank?
+      image_url = gravatar(object.email, gravatar_default, gravatar_size, rating)
+    else
+      image_url ||= default_image
+    end
+    
     link_to(image_tag(image_url, :class => size), object, { :title => object.full_name })
   end
   
+  # Gets a gravatar for a given email
+  #
+  # gravatar_default: If a gravatar is used, but no image is found several defaults are available.  Leaving 
+  #                   this value nil will result in the 'default_image' being used.  Other wise one of the following can be set:
+  #                   identicon, monsterid, wavatar, 404
+  # size:             Size in pixels for the gravatar.  Can be from 1 to 512.
+  # rating:           Default gravatar rating - g, pg, r, x.
+  def gravatar(email, gravatar_default, size = 40, rating = 'g')
+    hash = MD5::md5(email)
+    image_url = "http://www.gravatar.com/avatar/#{hash}"
+    image_url << "?d=#{CGI::escape(gravatar_default)}"
+    image_url << "&s=#{size}"
+    image_url << "&r=#{rating}"
+  end
+  
+  # Generates a secure mailto link
   def secure_mail_to(email)
     mail_to email, nil, :encode => 'javascript'
   end

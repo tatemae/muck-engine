@@ -112,7 +112,13 @@ class MuckEngine
           gem_lib = muck_gem_lib(gem_name)
           gem_path = File.join(path, muck_gem_path(gem_name))
           env_file = File.join(RAILS_ROOT, 'config', 'environment.rb')
-          version = IO.read(File.join(gem_path, 'VERSION')).strip
+          version_file = File.join(gem_path, 'VERSION')
+          if !File.exists?(version_file)
+            puts "Could not find version file for #{gem_name}.  You probably don't have the code for this gem.  
+              No big deal since if you don't have the code you probably haven't change it.  Skipping version for this gem."
+            return 
+          end
+          version = IO.read(version_file).strip
           environment = IO.read(env_file)
           
           search = Regexp.new(/\:lib\s*=>\s*['"]#{gem_lib}['"],\s*\:version\s*=>\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
