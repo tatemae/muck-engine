@@ -263,6 +263,12 @@ class MuckEngine
           end
         end
         
+        desc 'Translate app into all languages supported by Google'
+        task :translate_app => :environment do
+          puts 'translating app'
+          system("babelphish -o -y #{RAILS_ROOT}/config/locales/en.yml")
+        end
+        
         desc "write specs into muck gems"
         task :specs do
           muck_write_specs
