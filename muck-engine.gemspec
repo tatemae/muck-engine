@@ -104,6 +104,7 @@ Gem::Specification.new do |s|
      "lib/muck_test_helper.rb",
      "lib/test/muck_factories.rb",
      "lib/test/muck_factories.rb",
+     "lib/test/muck_test_definitions.rb",
      "lib/test/muck_test_methods.rb",
      "lib/test/muck_test_methods.rb",
      "lib/test/shoulda_macros/controller.rb",
