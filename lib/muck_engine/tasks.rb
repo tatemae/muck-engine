@@ -308,6 +308,7 @@ class MuckEngine
         task :sync do
           puts 'syncronizing engines and gems'
           muck_gems.each do |gem_name|
+            puts "syncronizing assets and code from #{gem_name}"
             if gem_name.include?('muck')
               task = "muck:#{gem_name.gsub('muck-', '')}:sync"
             else
