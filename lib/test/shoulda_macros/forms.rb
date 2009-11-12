@@ -1,5 +1,5 @@
-module ShouldaFormMacros
-  def self.should_have_form(opts)
+module MuckFormMacros
+  def should_have_form(opts)
     model = self.name.gsub(/ControllerTest$/, '').singularize.downcase
     model = model[model.rindex('::')+2..model.size] if model.include?('::')
     http_method, hidden_http_method = form_http_method opts[:method]
@@ -17,7 +17,7 @@ module ShouldaFormMacros
     end
   end
 
-  def self.form_http_method(http_method)
+  def form_http_method(http_method)
     http_method = http_method.nil? ? 'post' : http_method.to_s
     if http_method == "post" || http_method == "get"
       return http_method, nil
@@ -27,6 +27,6 @@ module ShouldaFormMacros
   end  
 end
 
-class ActiveSupport::TestCase
-  extend ShouldaFormMacros
-end
+ActiveSupport::TestCase.extend(MuckFormMacros)
+Test::Unit::TestCase.extend(MuckFormMacros)
+ActionController::TestCase.extend(MuckFormMacros)

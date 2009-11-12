@@ -1,4 +1,4 @@
-module ShouldaPaginationMacros
+module MuckPaginationMacros
   # Example:
   #  context "a GET to index logged in as admin" do
   #    setup do
@@ -8,7 +8,7 @@ module ShouldaPaginationMacros
   #    should_paginate_collection :users
   #    should_display_pagination
   #  end
-  def self.should_paginate_collection(collection_name)
+  def should_paginate_collection(collection_name)
     should "paginate #{collection_name}" do
       assert collection = assigns(collection_name), 
         "Controller isn't assigning to @#{collection_name.to_s}."
@@ -17,7 +17,7 @@ module ShouldaPaginationMacros
     end
   end
   
-  def self.should_display_pagination
+  def should_display_pagination
     should "display pagination" do
       assert_select "div.pagination", { :minimum => 1 }, 
         "View isn't displaying pagination. Add <%= will_paginate @collection %>."
@@ -30,7 +30,7 @@ module ShouldaPaginationMacros
   #    should_not_paginate_collection :users
   #    should_not_display_pagination
   #  end
-  def self.should_not_paginate_collection(collection_name)
+  def should_not_paginate_collection(collection_name)
     should "not paginate #{collection_name}" do
       assert collection = assigns(collection_name), 
         "Controller isn't assigning to @#{collection_name.to_s}."
@@ -39,7 +39,7 @@ module ShouldaPaginationMacros
     end
   end
   
-  def self.should_not_display_pagination
+  def should_not_display_pagination
     should "not display pagination" do
       assert_select "div.pagination", { :count => 0 }, 
         "View is displaying pagination. Check your logic."
@@ -47,7 +47,6 @@ module ShouldaPaginationMacros
   end
 end
 
-
-class ActiveSupport::TestCase
-  extend ShouldaPaginationMacros
-end
+ActiveSupport::TestCase.extend(MuckPaginationMacros)
+Test::Unit::TestCase.extend(MuckPaginationMacros)
+ActionController::TestCase.extend(MuckPaginationMacros)

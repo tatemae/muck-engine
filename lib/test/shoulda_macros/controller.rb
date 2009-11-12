@@ -60,4 +60,6 @@ module MuckControllerMacros
   
 end
 
+ActiveSupport::TestCase.extend(MuckControllerMacros)
+Test::Unit::TestCase.extend(MuckControllerMacros)
 ActionController::TestCase.extend(MuckControllerMacros)

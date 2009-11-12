@@ -49,10 +49,10 @@ begin
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "muck-engine"
     gemspec.summary = "The base engine for the muck system."
-    gemspec.email = "justinball@gmail.com"
+    gemspec.email = "justin@tatemae.com"
     gemspec.homepage = "http://github.com/tatemae/muck_engine"
     gemspec.description = "The base engine for the muck system.  Contains common tables, custom for, css and javascript."
-    gemspec.authors = ["Justin Ball"]
+    gemspec.authors = ["Justin Ball", "Joel Duffin"]
     gemspec.rubyforge_project = 'muck-engine'
     gemspec.add_dependency "validation_reflection"
     gemspec.add_dependency "will_paginate"

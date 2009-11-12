@@ -1,6 +1,6 @@
-module ShouldaPluginMacros
+module MuckPluginMacros
 
-  def self.should_act_as_taggable_on_steroids
+  def should_act_as_taggable_on_steroids
     klass = self.name.gsub(/Test$/, '').constantize
 
     should "include ActsAsTaggableOnSteroids methods" do
@@ -13,7 +13,7 @@ module ShouldaPluginMacros
   end
 
 
-  def self.should_act_as_list
+  def should_act_as_list
     klass = self.name.gsub(/Test$/, '').constantize
 
     context "To support acts_as_list" do
@@ -29,6 +29,6 @@ module ShouldaPluginMacros
 
 end
 
-ActiveSupport::TestCase.extend(ShouldaPluginMacros)
-Test::Unit::TestCase.extend(ShouldaPluginMacros)
-ActionController::TestCase.extend(ShouldaPluginMacros)
+ActiveSupport::TestCase.extend(MuckPluginMacros)
+Test::Unit::TestCase.extend(MuckPluginMacros)
+ActionController::TestCase.extend(MuckPluginMacros)

@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.version = "0.2.14"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Justin Ball"]
+  s.authors = ["Justin Ball", "Joel Duffin"]
   s.date = %q{2009-11-12}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
-  s.email = %q{justinball@gmail.com}
+  s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -104,6 +104,7 @@ Gem::Specification.new do |s|
      "lib/muck_test_helper.rb",
      "lib/test/muck_factories.rb",
      "lib/test/muck_factories.rb",
+     "lib/test/muck_test_definitions.rb",
      "lib/test/muck_test_definitions.rb",
      "lib/test/muck_test_methods.rb",
      "lib/test/muck_test_methods.rb",

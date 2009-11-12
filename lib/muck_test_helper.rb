@@ -38,5 +38,6 @@ begin
     end
   end
 rescue NameError => ex
+  puts "Solr not loaded.  Skipping ActsAsSolr mock"
   # solr isn't loaded. Just throw out the error
 end

@@ -23,6 +23,13 @@ module MuckTestMethods
     assert_contains flash.values, val, ", Flash: #{flash.inspect}"
   end
 
+  def ensure_flash_contains(val)
+    flash.values.each do |flv|
+      return true if flv.include?(val)
+    end
+    false
+  end
+  
   # Add more helper methods to be used for testing xml
   def assert_xml_tag(xml, conditions)
     doc = HTML::Document.new(xml)
@@ -34,6 +41,10 @@ module MuckTestMethods
     doc = HTML::Document.new(xml)
     assert !doc.find(conditions), 
       "expected no tag, but found tag matching #{conditions.inspect} in:\n#{xml.inspect}"
+  end
+  
+  def make_parent_params(parent)
+    { :parent_id => parent.id, :parent_type => parent.class.to_s }
   end
   
 end

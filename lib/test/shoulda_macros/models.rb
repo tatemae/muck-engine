@@ -1,6 +1,6 @@
-module ShouldaModelMacros
-
-  def self.should_whitelist(*attributes)
+module MuckModelMacros
+  
+  def should_sanitize(*attributes)
     bad_scripts = [
       %|';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>|,
       %|'';!--"<XSS>=&{()}|,
@@ -16,7 +16,7 @@ module ShouldaModelMacros
       tt	p://6&#9;6.000146.0x7.147/">XSS</A>|,
       %|<script>alert('message');</script>| ]
       
-    klass = model_class
+    klass = self.name.gsub(/Test$/, '').constantize
     attributes.each do |attribute|
       attribute = attribute.to_sym
       should "white list #{attribute}" do
@@ -45,6 +45,7 @@ module ShouldaModelMacros
   end
 end
 
-class ActiveSupport::TestCase
-  extend ShouldaModelMacros
-end
+
+ActiveSupport::TestCase.extend(MuckModelMacros)
+Test::Unit::TestCase.extend(MuckModelMacros)
+ActionController::TestCase.extend(MuckModelMacros)
