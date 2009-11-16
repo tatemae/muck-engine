@@ -171,6 +171,13 @@ module MuckEngineHelper
     { :parent_id => parent.id, :parent_type => parent.class.to_s }
   end
   
+  # Generate hidden input fields that refer to a given object as parent.
+  def make_muck_parent_fields(parent)
+    return if parent.blank?
+    %Q{<input id="parent_id" type="hidden" value="#{parent.id}">
+    <input id="parent_type" type="hidden" value="#{parent.class.to_s}">}
+  end
+  
   # Take a block and renders that block within the context of a partial.
   # from http://snippets.dzone.com/posts/show/2483
   def block_to_partial(partial_name, options = {}, &block)
