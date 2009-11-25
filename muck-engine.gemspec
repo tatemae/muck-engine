@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2009-11-17}
+  s.date = %q{2009-11-25}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -23,6 +23,8 @@ Gem::Specification.new do |s|
      "VERSION",
      "app/controllers/admin/muck/base_controller.rb",
      "app/controllers/admin/muck/base_controller.rb",
+     "app/controllers/muck/helper_controller.rb",
+     "app/controllers/muck/helper_controller.rb",
      "app/helpers/muck_custom_form_builder.rb",
      "app/helpers/muck_custom_form_builder.rb",
      "app/helpers/muck_engine_helper.rb",
@@ -98,6 +100,8 @@ Gem::Specification.new do |s|
      "lib/active_record/muck_model.rb",
      "lib/muck_engine.rb",
      "lib/muck_engine.rb",
+     "lib/muck_engine/initialize_routes.rb",
+     "lib/muck_engine/initialize_routes.rb",
      "lib/muck_engine/tasks.rb",
      "lib/muck_engine/tasks.rb",
      "lib/muck_test_helper.rb",
