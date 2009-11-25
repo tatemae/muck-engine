@@ -121,7 +121,7 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
   # creates a select control with languages.  Default id is 'languages'.  If 'retain' is passed for the class value the value of this
   # control will be written into a cookie with the key 'languages'.
   def language_select(method, options = {}, html_options = {}, additional_language = nil)
-    @languages ||= (additional_country ? [additional_language] : []) + Language.find(:all, :order => 'name asc')
+    @languages ||= (additional_language ? [additional_language] : []) + Language.find(:all, :order => 'name asc')
     self.menu_select(method, I18n.t('muck.engine.choose_language'), @languages, options.merge(:prompt => I18n.t('muck.engine.select_language_prompt'), :wrapper_id => 'languages-container'), html_options.merge(:id => 'languages'))
   end
   
