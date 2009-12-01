@@ -203,6 +203,6 @@ Factory.define :content_permission do |f|
   f.user {|a| a.association(:user)}
 end
 
-Factory.define :invite do |f|
+Factory.define :invitee do |f|
   f.email { Factory.next(:email) }
 end

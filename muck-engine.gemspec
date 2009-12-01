@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.2.16"
+  s.version = "0.2.17"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2009-11-25}
+  s.date = %q{2009-11-30}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -87,6 +87,8 @@ Gem::Specification.new do |s|
      "app/views/shared/_growl_box.html.erb",
      "app/views/shared/_no_result.html.erb",
      "app/views/shared/_no_result.html.erb",
+     "config/muck_engine_routes.rb",
+     "config/muck_engine_routes.rb",
      "db/migrate/20090402234137_create_languages.rb",
      "db/migrate/20090402234137_create_languages.rb",
      "db/migrate/20090426041056_create_countries.rb",
