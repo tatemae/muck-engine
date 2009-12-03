@@ -15,6 +15,16 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
     end
   end
 
+  # Options to pass to render_field_template through the 'options' argument.
+  # pre_html               html content to insert at the beginning of the container
+  # extra_html             html content to insert at the end of the container
+  # tip                    Text for a popup text tip.
+  # tip_title              Title for popup text tip
+  # tip_key                The id of the div that contains the tip text.
+  # tip_position           Position for tip text.  Valid values are 'top', 'right', 'bottom', 'left'.  Default is 'right'
+  # wrapper_id             Alternate id for the container.  Each field is typically wrapper in a div.  This is the id of that div.
+  # hide_required          Do not show 'required' label even though field is required
+  # hide_control_error     Hide errors that show up next to the field
   def render_field_template(name, field, options)
 
     tippable = !options[:tip].nil?
@@ -34,7 +44,8 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
       :hide_control_error => options.delete(:hide_control_error),
       :css_class    => options.delete(:css_class)
     }
-
+    # TODO css_class does not appear to be used. Can just use the standard :class in html options to set the class
+        
     type = options.delete(:type)
     type ||= :tippable if tippable
 
