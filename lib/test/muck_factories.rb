@@ -32,6 +32,10 @@ Factory.sequence :locale do |n|
   "a#{n}"
 end
 
+Factory.sequence :address do |n|
+  "#{n} West #{n} South"
+end
+
 Factory.define :state do |f|
   f.name { Factory.next(:name) }
   f.abbreviation { Factory.next(:abbr) }
