@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.2.19"
+  s.version = "0.2.20"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2009-12-10}
+  s.date = %q{2009-12-12}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -336,6 +336,7 @@ Gem::Specification.new do |s|
      "rails_i18n/vi.yml",
      "rails_i18n/zh-CN.yml",
      "rails_i18n/zh-TW.yml",
+     "rails_i18n/zh.yml",
      "tasks/languages.txt",
      "tasks/rails.rake",
      "test/rails_root/.gitignore",
