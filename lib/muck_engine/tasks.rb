@@ -254,7 +254,17 @@ class MuckEngine
             write_new_gem_version("#{projects_path}", gem_name)
           end
         end
-        
+
+        desc "Test all muck gems"
+        task :test_gems do
+          muck_gem_paths.each do |gem_name|
+            puts "***************************************************************"
+            puts "testing #{gem_name}"
+            puts "***************************************************************"
+            system("cd #{projects_path}/#{gem_name}/ && rake test")
+          end
+        end
+
         desc "Translate all muck gems"
         task :translate_gems do
           muck_gem_paths.each do |gem_name|
