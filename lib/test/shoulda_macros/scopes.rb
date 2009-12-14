@@ -10,14 +10,14 @@
 # named_scope :since, lambda { |time| {:conditions => ["items.created_at > ?", time || DateTime.now] } }
 # named_scope :only_public, :conditions => ["items.is_public = ?", true]
 # named_scope :created_by, lambda { |item_object| {:conditions => ["items.source_id = ? AND items.source_type = ?", item_object.id, item_object.class.to_s] } }
-#
+# named_scope :sorted, :order => "sort ASC"
 module MuckNamedScopeMacros
 
   # Test for 'by_title' named scope which orders by title:
   # named_scope :by_title, :order => "title ASC"
   # requires that the class have a shoulda factory
   def should_scope_by_title
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "'by_title' title scope" do
       setup do
@@ -36,7 +36,7 @@ module MuckNamedScopeMacros
   # named_scope :by_name, :order => "name ASC"
   # requires that the class have a shoulda factory
   def should_scope_by_name
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "'by_name' named scope" do
       setup do
@@ -54,7 +54,7 @@ module MuckNamedScopeMacros
   # For 'latest named scope which orders by updated at:
   #  named_scope :latest, :order => "{klass}.updated_at DESC"
   def should_scope_latest
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "'latest' named scope" do
       setup do
@@ -73,7 +73,7 @@ module MuckNamedScopeMacros
   # named_scope :newest, :order => "created_at DESC"
   # requires that the class have a shoulda factory
   def should_scope_newest
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "'newest' named scope" do
       setup do
@@ -88,11 +88,27 @@ module MuckNamedScopeMacros
     end
   end
   
+  def should_scope_by_newest
+    klass = get_klass
+    factory_name = name_for_factory(klass)
+    context "'by_newest' named scope" do
+      setup do
+        klass.delete_all
+        @first = Factory(factory_name, :created_at => 1.day.ago)
+        @second = Factory(factory_name, :created_at => 1.week.ago)
+      end
+      should "sort by created_at" do
+        assert_equal @first, klass.by_newest[0]
+        assert_equal @second, klass.by_newest[1]
+      end
+    end
+  end
+  
   # Test for 'oldest' named scope which orders by 'created_at ASC'
   # named_scope :oldest, :order => "items.created_at ASC"
   # requires that the class have a shoulda factory
   def should_scope_oldest
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "'oldest' named scope" do
       setup do
@@ -111,7 +127,7 @@ module MuckNamedScopeMacros
   # named_scope :recent, lambda { { :conditions => ['items.created_at > ?', 1.week.ago] } }
   # requires that the class have a shoulda factory
   def should_scope_recent
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "'recent' named scope" do
       setup do
@@ -131,7 +147,7 @@ module MuckNamedScopeMacros
   # Tests 'before' named scope
   # named_scope :before, lambda { |time| {:conditions => ["items.created_at < ?", time || DateTime.now] } }
   def should_scope_before
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "'before' named scope" do
       setup do
@@ -150,7 +166,7 @@ module MuckNamedScopeMacros
   # Tests 'since' named scope
   # named_scope :since, lambda { |time| {:conditions => ["items.created_at > ?", time || DateTime.now] } }
   def should_scope_since
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "'since' named scope" do
       setup do
@@ -170,7 +186,7 @@ module MuckNamedScopeMacros
   # Tests 'is_public' named scope
   # named_scope :only_public, :conditions => ["items.is_public = ?", true]
   def should_scope_only_public
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "public" do
       setup do
@@ -188,7 +204,7 @@ module MuckNamedScopeMacros
   # Tests 'created_by' named scope.
   # named_scope :created_by, lambda { |item_object| {:conditions => ["items.source_id = ? AND items.source_type = ?", item_object.id, item_object.class.to_s] } }  
   def should_scope_created_by
-    klass = self.name.gsub(/Test$/, '').constantize
+    klass = get_klass
     factory_name = name_for_factory(klass)
     context "created_by" do
       setup do
@@ -206,8 +222,30 @@ module MuckNamedScopeMacros
     end
   end
   
+  # Tests 'sorted' named scope
+  # named_scope :sorted, :order => "sort ASC"
+  def should_scope_sorted
+    klass = get_klass
+    factory_name = name_for_factory(klass)
+    context "'sorted' named scope" do
+      setup do
+        klass.delete_all
+        @first = Factory(factory_name, :sort => 1)
+        @second = Factory(factory_name, :sort => 2)
+      end
+      should "sort by 'sort' field" do
+        assert_equal @first, klass.sorted[0]
+        assert_equal @second, klass.sorted[1]
+      end
+    end
+  end
+  
   def name_for_factory(klass)
-    klass.name.downcase.to_sym
+    klass.name.underscore.to_sym
+  end
+  
+  def get_klass
+    self.name.gsub(/Test$/, '').constantize
   end
   
 end
