@@ -27,6 +27,7 @@ require File.join(File.dirname(__FILE__), 'test', 'muck_test_definitions')
 require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'controller')
 require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'forms')
 require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'models')
+require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'scopes')
 require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'pagination')
 require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'plugins')
 
