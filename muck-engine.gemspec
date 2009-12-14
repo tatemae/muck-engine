@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2009-12-12}
+  s.date = %q{2009-12-14}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -73,6 +73,7 @@ Gem::Specification.new do |s|
      "lib/test/shoulda_macros/models.rb",
      "lib/test/shoulda_macros/pagination.rb",
      "lib/test/shoulda_macros/plugins.rb",
+     "lib/test/shoulda_macros/scopes.rb",
      "locales/ar.yml",
      "locales/bg.yml",
      "locales/ca.yml",

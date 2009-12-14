@@ -17,12 +17,13 @@ module MuckNamedScopeMacros
   # named_scope :by_title, :order => "title ASC"
   # requires that the class have a shoulda factory
   def should_scope_by_title
-    klass = model_class
-    context "'by_title' title scope for #{klass.name}" do
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
+    context "'by_title' title scope" do
       setup do
         klass.delete_all
-        @first = Factory(klass.name.to_sym, :title => 'a')
-        @second = Factory(klass.name.to_sym, :title => 'b')
+        @first = Factory(factory_name, :title => 'a')
+        @second = Factory(factory_name, :title => 'b')
       end
       should "sort by name" do
         assert_equal @first, klass.by_title[0]
@@ -35,12 +36,13 @@ module MuckNamedScopeMacros
   # named_scope :by_name, :order => "name ASC"
   # requires that the class have a shoulda factory
   def should_scope_by_name
-    klass = model_class
-    context "'by_name' named scope for #{klass.name}" do
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
+    context "'by_name' named scope" do
       setup do
         klass.delete_all
-        @first = Factory(klass.name.to_sym, :name => 'a')
-        @second = Factory(klass.name.to_sym, :name => 'b')
+        @first = Factory(factory_name, :name => 'a')
+        @second = Factory(factory_name, :name => 'b')
       end
       should "sort by name" do
         assert_equal @first, klass.by_name[0]
@@ -52,16 +54,17 @@ module MuckNamedScopeMacros
   # For 'latest named scope which orders by updated at:
   #  named_scope :latest, :order => "{klass}.updated_at DESC"
   def should_scope_latest
-    klass = model_class
-    context "'newest' named scope for #{klass.name}" do
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
+    context "'latest' named scope" do
       setup do
         klass.delete_all
-        @first = Factory(klass.name.to_sym, :updated_at => 1.day.ago)
-        @second = Factory(klass.name.to_sym, :updated_at => 1.week.ago)
+        @first = Factory(factory_name, :updated_at => 1.day.ago)
+        @second = Factory(factory_name, :updated_at => 1.week.ago)
       end
       should "sort by created_at" do
-        assert_equal @first, klass.newest[0]
-        assert_equal @second, klass.newest[1]
+        assert_equal @first, klass.latest[0]
+        assert_equal @second, klass.latest[1]
       end
     end
   end
@@ -70,12 +73,13 @@ module MuckNamedScopeMacros
   # named_scope :newest, :order => "created_at DESC"
   # requires that the class have a shoulda factory
   def should_scope_newest
-    klass = model_class
-    context "'newest' named scope for #{klass.name}" do
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
+    context "'newest' named scope" do
       setup do
         klass.delete_all
-        @first = Factory(klass.name.to_sym, :created_at => 1.day.ago)
-        @second = Factory(klass.name.to_sym, :created_at => 1.week.ago)
+        @first = Factory(factory_name, :created_at => 1.day.ago)
+        @second = Factory(factory_name, :created_at => 1.week.ago)
       end
       should "sort by created_at" do
         assert_equal @first, klass.newest[0]
@@ -88,12 +92,13 @@ module MuckNamedScopeMacros
   # named_scope :oldest, :order => "items.created_at ASC"
   # requires that the class have a shoulda factory
   def should_scope_oldest
-    klass = model_class
-    context "'oldest' named scope for #{klass.name}" do
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
+    context "'oldest' named scope" do
       setup do
         klass.delete_all
-        @first = Factory(klass.name.to_sym, :created_at => 1.day.ago)
-        @second = Factory(klass.name.to_sym, :created_at => 1.week.ago)
+        @first = Factory(factory_name, :created_at => 1.day.ago)
+        @second = Factory(factory_name, :created_at => 1.week.ago)
       end
       should "sort by created_at" do
         assert_equal @first, klass.oldest[1]
@@ -106,18 +111,19 @@ module MuckNamedScopeMacros
   # named_scope :recent, lambda { { :conditions => ['items.created_at > ?', 1.week.ago] } }
   # requires that the class have a shoulda factory
   def should_scope_recent
-    klass = model_class
-    context "'recent' named scope for #{klass.name}" do
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
+    context "'recent' named scope" do
       setup do
         klass.delete_all
-        @recent = Factory(klass.name.to_sym)
-        @not_recent = Factory(klass.name.to_sym, :created_at => 10.weeks.ago)
+        @recent = Factory(factory_name)
+        @not_recent = Factory(factory_name, :created_at => 10.weeks.ago)
       end
-      should "get recent #{klass.name}s" do
-        assert klass.recent.include?(@recent)
+      should "get recent" do
+        assert klass.recent.include?(@recent), "since didn't include recent #{klass.name}"
       end
-      should "not get recent #{klass.name}s" do
-        assert !klass.recent.include?(@not_recent)
+      should "not get recent" do
+        assert !klass.recent.include?(@not_recent), "since did include recent #{klass.name}"
       end
     end
   end
@@ -125,13 +131,15 @@ module MuckNamedScopeMacros
   # Tests 'before' named scope
   # named_scope :before, lambda { |time| {:conditions => ["items.created_at < ?", time || DateTime.now] } }
   def should_scope_before
-    klass = model_class
-    context "'before' named scope for #{klass.name}" do
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
+    context "'before' named scope" do
       setup do
-        @old = Factory(klass.name.to_sym, :created_at => 6.weeks.ago)
-        @new = Factory(klass.name.to_sym)
+        klass.delete_all
+        @old = Factory(factory_name, :created_at => 6.weeks.ago)
+        @new = Factory(factory_name)
       end
-      should "only find #{klass.name}s older than a given date" do
+      should "only find older than a given date" do
         items = klass.before(1.week.ago)
         assert items.include?(@old), "since didn't find older #{klass.name}"
         assert !items.include?(@new), "since found new #{klass.name}"
@@ -142,18 +150,19 @@ module MuckNamedScopeMacros
   # Tests 'since' named scope
   # named_scope :since, lambda { |time| {:conditions => ["items.created_at > ?", time || DateTime.now] } }
   def should_scope_since
-    klass = model_class
-    context "'since' named scope for #{klass.name}" do
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
+    context "'since' named scope" do
       setup do
         klass.delete_all
-        @old = Factory(klass.name.to_sym, :created_at => 6.weeks.ago)
-        @new = Factory(klass.name.to_sym)
+        @old = Factory(factory_name, :created_at => 6.weeks.ago)
+        @new = Factory(factory_name)
       end
-      should "get newer #{klass.name}s" do
-        assert klass.since.include?(@new), "since didn't find new item"
+      should "get newer" do
+        assert klass.since(1.day.ago).include?(@new), "since didn't find new #{klass.name}"
       end
-      should "not get older #{klass.name}s" do
-        assert !klass.since.include?(@old), "since found older item"
+      should "not get older" do
+        assert !klass.since(1.day.ago).include?(@old), "since found older #{klass.name}"
       end
     end
   end
@@ -161,10 +170,13 @@ module MuckNamedScopeMacros
   # Tests 'is_public' named scope
   # named_scope :only_public, :conditions => ["items.is_public = ?", true]
   def should_scope_only_public
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
     context "public" do
       setup do
-        @private_item = Factory(klass.name.to_sym, :is_public => false)
-        @public_item = Factory(klass.name.to_sym, :is_public => true)
+        klass.delete_all
+        @private_item = Factory(factory_name, :is_public => false)
+        @public_item = Factory(factory_name, :is_public => true)
       end
       should "only find public items" do
         assert klass.only_public.include?(@public_item), "didn't find public item"
@@ -176,12 +188,15 @@ module MuckNamedScopeMacros
   # Tests 'created_by' named scope.
   # named_scope :created_by, lambda { |item_object| {:conditions => ["items.source_id = ? AND items.source_type = ?", item_object.id, item_object.class.to_s] } }  
   def should_scope_created_by
+    klass = self.name.gsub(/Test$/, '').constantize
+    factory_name = name_for_factory(klass)
     context "created_by" do
       setup do
+        klass.delete_all
         @user = Factory(:user)
         @user1 = Factory(:user)
-        @item = Factory(klass.name.to_sym, :user => @user)
-        @item1 = Factory(klass.name.to_sym, :user => @usera)
+        @item = Factory(factory_name, :user => @user)
+        @item1 = Factory(factory_name, :user => @usera)
       end
       should "find items by the source they are associated with" do
         items = klass.created_by(@user)
@@ -189,6 +204,10 @@ module MuckNamedScopeMacros
         assert !items.include?(@itema), "created_by found item not created by user"
       end
     end
+  end
+  
+  def name_for_factory(klass)
+    klass.name.downcase.to_sym
   end
   
 end

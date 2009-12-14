@@ -92,6 +92,11 @@ Factory.define :activity do |f|
   f.created_at DateTime.now
 end
 
+Factory.define :activity_feed do |f|
+  f.activity {|a| a.association(:activity)}
+  f.ownable {|a| a.association(:user)}
+end
+
 Factory.define :comment do |f|
   f.body { Factory.next(:description) }
   f.user {|a| a.association(:user)}
