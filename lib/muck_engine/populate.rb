@@ -322,12 +322,18 @@ module Muck
   
     def self.uk_states
       # The UK
+      # ireland_id = Country.find_by_abbreviation('IE').id
+      # northern_ireland_id = Country.find_by_abbreviation('NIR').id
+      # scotland_id = Country.find_by_abbreviation('SCT').id
+      # england_id = Country.find_by_abbreviation('ENG').id
+      # wales_id = Country.find_by_abbreviation('WAL').id
+      # channel_islands_id = Country.find_by_abbreviation('CHI').id
+      
       ireland_id = Country.find_by_abbreviation('IE').id
-      #northern_ireland_id = Country.find_by_abbreviation('NIR').id
-      scotland_id = Country.find_by_abbreviation('SCT').id
-      england_id = Country.find_by_abbreviation('ENG').id
-      wales_id = Country.find_by_abbreviation('WAL').id
-      #channel_islands_id = Country.find_by_abbreviation('CHI').id
+      scotland_id = Country.find_by_abbreviation('UK').id
+      england_id = Country.find_by_abbreviation('UK').id
+      wales_id = Country.find_by_abbreviation('UK').id
+      
       [
         # Scotland
         #['Aberdeen', 'ABD', scotland_id],

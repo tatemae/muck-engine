@@ -63,6 +63,7 @@ Gem::Specification.new do |s|
      "lib/active_record/muck_model.rb",
      "lib/muck_engine.rb",
      "lib/muck_engine/initialize_routes.rb",
+     "lib/muck_engine/populate.rb",
      "lib/muck_engine/tasks.rb",
      "lib/muck_test_helper.rb",
      "lib/test/muck_factories.rb",

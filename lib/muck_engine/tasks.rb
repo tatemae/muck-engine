@@ -369,7 +369,6 @@ class MuckEngine
           Rake::Task[ "muck:users:create_admin" ].execute
         end
         
-        
         namespace :engine do
           desc "Sync files from muck engine."
           task :sync do
