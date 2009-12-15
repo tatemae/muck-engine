@@ -289,7 +289,7 @@ module MuckNamedScopeMacros
       setup do
         klass.delete_all
         @user = Factory(:user)
-        @item = Factory(factory_name, :parent_id => @user.id)
+        @item = Factory(factory_name, :parent => @user)
         @item1 = Factory(factory_name)
       end
       should "find items by the source they are associated with" do

@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2009-12-14}
+  s.date = %q{2009-12-15}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -296,8 +296,10 @@ Gem::Specification.new do |s|
      "rails_i18n/da.yml",
      "rails_i18n/de-AT.yml",
      "rails_i18n/de.yml",
+     "rails_i18n/dsb.yml",
      "rails_i18n/el.yml",
      "rails_i18n/es-AR.yml",
+     "rails_i18n/es-CO.yml",
      "rails_i18n/es-MX.yml",
      "rails_i18n/es.yml",
      "rails_i18n/et.yml",
@@ -305,14 +307,18 @@ Gem::Specification.new do |s|
      "rails_i18n/fi.yml",
      "rails_i18n/fr-CH.yml",
      "rails_i18n/fr.yml",
+     "rails_i18n/fur.yml",
      "rails_i18n/gl-ES.yml",
      "rails_i18n/he.yml",
+     "rails_i18n/hr.yml",
+     "rails_i18n/hsb.yml",
      "rails_i18n/hu.yml",
      "rails_i18n/id.yml",
      "rails_i18n/is.yml",
      "rails_i18n/it.yml",
      "rails_i18n/ja.yml",
      "rails_i18n/ko.yml",
+     "rails_i18n/lo.yml",
      "rails_i18n/lt.yml",
      "rails_i18n/lv.yml",
      "rails_i18n/mk.yml",
@@ -332,6 +338,7 @@ Gem::Specification.new do |s|
      "rails_i18n/sv-SE.yml",
      "rails_i18n/sw.yml",
      "rails_i18n/th.rb",
+     "rails_i18n/th.yml",
      "rails_i18n/tr.yml",
      "rails_i18n/uk.yml",
      "rails_i18n/vi.yml",
