@@ -280,26 +280,6 @@ module MuckNamedScopeMacros
     end
   end
   
-  # Tests 'by_parent' named scope.
-  # named_scope :by_parent, lambda { |parent_id| { :conditions => ['parent_id = ?', parent_id || 0] } }
-  def should_scope_by_parent
-    klass = get_klass
-    factory_name = name_for_factory(klass)
-    context "by_parent" do
-      setup do
-        klass.delete_all
-        @user = Factory(:user)
-        @item = Factory(factory_name, :parent => @user)
-        @item1 = Factory(factory_name)
-      end
-      should "find items by the source they are associated with" do
-        items = klass.by_parent(@user)
-        assert items.include?(@item), "created_by didn't find item whose parent is user"
-        assert !items.include?(@item1), "created_by found item that should not have user as a parent"
-      end
-    end
-  end
-  
   # Tests 'sorted' named scope
   # named_scope :sorted, :order => "sort ASC"
   def should_scope_sorted
