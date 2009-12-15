@@ -142,6 +142,22 @@ module MuckNamedScopeMacros
     end
   end
   
+  def should_scope_by_oldest
+    klass = get_klass
+    factory_name = name_for_factory(klass)
+    context "'by_oldest' named scope" do
+      setup do
+        klass.delete_all
+        @first = Factory(factory_name, :created_at => 1.day.ago)
+        @second = Factory(factory_name, :created_at => 1.week.ago)
+      end
+      should "sort by created_at" do
+        assert_equal @first, klass.by_oldest[1]
+        assert_equal @second, klass.by_oldest[0]
+      end
+    end
+  end
+  
   # Test for 'recent' named scope which orders by items created recently
   # named_scope :recent, lambda { { :conditions => ['items.created_at > ?', 1.week.ago] } }
   # requires that the class have a shoulda factory
