@@ -32,6 +32,25 @@ module MuckNamedScopeMacros
     end
   end
     
+  # Test for 'by_alpha' named scope which orders by title:
+  # named_scope :by_alpha, :order => "title ASC"
+  # requires that the class have a shoulda factory
+  def should_scope_by_alpha_title
+    klass = get_klass
+    factory_name = name_for_factory(klass)
+    context "'by_alpha' title scope" do
+      setup do
+        klass.delete_all
+        @first = Factory(factory_name, :title => 'a')
+        @second = Factory(factory_name, :title => 'b')
+      end
+      should "sort by name" do
+        assert_equal @first, klass.by_alpha[0]
+        assert_equal @second, klass.by_alpha[1]
+      end
+    end
+  end
+    
   # Test for 'by_name' named scope which orders by name:
   # named_scope :by_name, :order => "name ASC"
   # requires that the class have a shoulda factory
@@ -183,7 +202,7 @@ module MuckNamedScopeMacros
     end
   end
 
-  # Tests 'is_public' named scope
+  # Tests 'only_public' named scope
   # named_scope :only_public, :conditions => ["items.is_public = ?", true]
   def should_scope_only_public
     klass = get_klass
@@ -197,6 +216,24 @@ module MuckNamedScopeMacros
       should "only find public items" do
         assert klass.only_public.include?(@public_item), "didn't find public item"
         assert !klass.only_public.include?(@private_item), "found private item"
+      end
+    end
+  end
+
+  # Tests 'public' named scope
+  # named_scope :public, :conditions => "is_public = true"
+  def should_scope_public
+    klass = get_klass
+    factory_name = name_for_factory(klass)
+    context "public" do
+      setup do
+        klass.delete_all
+        @private_item = Factory(factory_name, :is_public => false)
+        @public_item = Factory(factory_name, :is_public => true)
+      end
+      should "only find public items" do
+        assert klass.public.include?(@public_item), "didn't find public item"
+        assert !klass.public.include?(@private_item), "found private item"
       end
     end
   end
@@ -218,6 +255,47 @@ module MuckNamedScopeMacros
         items = klass.created_by(@user)
         assert items.include?(@item), "created_by didn't find item created by user"
         assert !items.include?(@item1), "created_by found item not created by user"
+      end
+    end
+  end
+  
+  # Tests 'by_creator' named scope.
+  # named_scope :by_creator, lambda { |creator_id| { :conditions => ['creator_id = ?', creator_id || 0] } }
+  def should_scope_by_creator
+    klass = get_klass
+    factory_name = name_for_factory(klass)
+    context "by_creator" do
+      setup do
+        klass.delete_all
+        @user = Factory(:user)
+        @user1 = Factory(:user)
+        @item = Factory(factory_name, :creator => @user)
+        @item1 = Factory(factory_name, :creator => @user1)
+      end
+      should "find items by the source they are associated with" do
+        items = klass.by_creator(@user)
+        assert items.include?(@item), "created_by didn't find item created by user"
+        assert !items.include?(@item1), "created_by found item not created by user"
+      end
+    end
+  end
+  
+  # Tests 'by_parent' named scope.
+  # named_scope :by_parent, lambda { |parent_id| { :conditions => ['parent_id = ?', parent_id || 0] } }
+  def should_scope_by_parent
+    klass = get_klass
+    factory_name = name_for_factory(klass)
+    context "by_parent" do
+      setup do
+        klass.delete_all
+        @user = Factory(:user)
+        @item = Factory(factory_name, :parent_id => @user.id)
+        @item1 = Factory(factory_name)
+      end
+      should "find items by the source they are associated with" do
+        items = klass.by_parent(@user)
+        assert items.include?(@item), "created_by didn't find item whose parent is user"
+        assert !items.include?(@item1), "created_by found item that should not have user as a parent"
       end
     end
   end
