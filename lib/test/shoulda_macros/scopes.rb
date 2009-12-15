@@ -212,12 +212,12 @@ module MuckNamedScopeMacros
         @user = Factory(:user)
         @user1 = Factory(:user)
         @item = Factory(factory_name, :user => @user)
-        @item1 = Factory(factory_name, :user => @usera)
+        @item1 = Factory(factory_name, :user => @user1)
       end
       should "find items by the source they are associated with" do
         items = klass.created_by(@user)
         assert items.include?(@item), "created_by didn't find item created by user"
-        assert !items.include?(@itema), "created_by found item not created by user"
+        assert !items.include?(@item1), "created_by found item not created by user"
       end
     end
   end
