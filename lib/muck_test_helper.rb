@@ -42,3 +42,5 @@ rescue NameError => ex
   puts "Solr not loaded.  Skipping ActsAsSolr mock"
   # solr isn't loaded. Just throw out the error
 end
+
+# load in the default data required to run the app

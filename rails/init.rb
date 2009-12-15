@@ -16,3 +16,4 @@ end
 
 require 'muck_engine'
 require 'muck_engine/initialize_routes'
+require 'muck_engine/populate'

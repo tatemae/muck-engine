@@ -11,6 +11,24 @@
 # named_scope :only_public, :conditions => ["items.is_public = ?", true]
 # named_scope :created_by, lambda { |item_object| {:conditions => ["items.source_id = ? AND items.source_type = ?", item_object.id, item_object.class.to_s] } }
 # named_scope :sorted, :order => "sort ASC"
+
+# The following macros are available:
+# should_scope_by_title
+# should_scope_by_alpha_title
+# should_scope_by_name
+# should_scope_latest
+# should_scope_newest
+# should_scope_by_newest
+# should_scope_oldest
+# should_scope_by_oldest
+# should_scope_recent
+# should_scope_before
+# should_scope_since
+# should_scope_only_public
+# should_scope_public
+# should_scope_created_by
+# should_scope_by_creator
+# should_scope_sorted
 module MuckNamedScopeMacros
 
   # Test for 'by_title' named scope which orders by title:
