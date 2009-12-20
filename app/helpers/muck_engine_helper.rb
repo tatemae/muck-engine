@@ -120,6 +120,40 @@ module MuckEngineHelper
     image_url << "&r=#{rating}"
   end
   
+  # Generates a css style for the given service
+  def service_icon_background(service)
+    if service.is_a?(String)
+      service_name = service 
+    elsif service.responds_to?(:icon)
+      service_name = service.icon
+    else
+      return ''
+    end
+    %Q{style="background: transparent url('#{service_image(service_name, 24)}') no-repeat scroll left top;"}
+  end
+  
+  # Builds a link to an image representing the service specified by name
+  # name: Name of a service.  ie twitter, google, delicious, etc
+  # size: Size of the image to get. Valid values are 16, 24, 48 and 60
+  def service_image(name, size = 24)
+    %Q{/images/service_icons/#{size}/#{name}}
+  end
+  
+  # Renders an icon for the given service
+  # Name is the name of the image file associated with the service
+  # Size can be one of 16, 24, 48 or 60.
+  def service_icon(name, size = 24)
+    %Q{<img src="/images/service_icons/#{size}/#{name}" />}
+  end
+  
+  # Gets url for an image
+  # Name is the name of the image file associated with the service
+  # Size can be one of 16, 24, 48 or 60.
+  def service_image(name, size = 24)
+    %Q{/images/service_icons/#{size}/#{name}}
+  end
+
+  
   # Generates a secure mailto link
   def secure_mail_to(email)
     mail_to email, nil, :encode => 'javascript'
