@@ -1,6 +1,7 @@
 /* general */
 .center{text-align:center;}
 #popup_wrapper{width:auto;}
+.waiting{margin:3px 0;padding-left:20px;background:transparent url('/images/spinner.gif') no-repeat scroll left bottom;}
 
 /* forms */
 input{margin:0 10px 5px 0;padding:4px;font-size:1.3em;}
@@ -27,6 +28,10 @@ form fieldset input[type="text"],form fieldset input[type="password"]{width:500p
 .icon{width:50px;height:50px;}
 .thumb{width:100px;height:100px;}
 .medium{width:300px;height:300px;}
+
+/*icons*/
+ul.icon-list{margin:0;padding:0;list-style:none;}
+ul.icon-list a{display:inline-block;margin:2px 0;padding:2px 0 5px 28px;text-decoration:none;}
 
 /* tips */
 .availability{color:#b61e12;position:absolute;}
@@ -84,25 +89,5 @@ div.jGrowl div.jGrowl-notification h2{text-align:left;font-weight:bold;padding:5
 #errorExplanation p{color:#333;margin-bottom:0;padding:5px;}
 #errorExplanation ul li{list-style:square;}
 
-/* iFrame */
-.framed_content{height:100%;margin-bottom:-1px;width:100%;}
-#content_iframe{display:block;display:block;}
-#toolbar{height:30px;background:#EFF1E5;border-bottom:1px solid #999;}
-#toolbar .section{padding:5px 20px;}
-#toolbar #profile{float:left;}
-#toolbar #search{float:right;}
-#toolbar #search input{font-size:.8em;}
-#toolbar #tools{float:right;}
-#toolbar #tools a{margin-right:5px;padding-left:18px;font-weight:bolder;font-size:1em;color:#54493F;}
-#toolbar #tools a:hover{color:#999;}
-#toolbar #close{float:right;padding-right:5px;}
-#toolbar .section a{text-decoration:none;}
-a#close_frame{-moz-background-clip:border;-moz-background-inline-policy:continuous;-moz-background-origin:padding;background:transparent url('/images/icons/close.png') no-repeat scroll left top;display:block;height:19px;width:19px;}
-a#close_frame:hover{background-position:left bottom;}
-a#close_frame_text{display:none;}
-a#comment{background:transparent url('/images/icons/question.png') no-repeat scroll left top;}
-a#share{background:transparent url('/images/icons/add.png') no-repeat scroll left top;}
-#toolbar #search #search_go{display:none;}
-#toolbar #search #search_box{width:150px;height:21px;background:transparent url('/images/icons/search_box.png') no-repeat scroll left bottom;}
-#toolbar #search #search_box:hover{background:transparent url('/images/icons/search_box.png') no-repeat scroll left top;}
-#toolbar #search #search_box input {-moz-background-clip:border;-moz-background-inline-policy:continuous;-moz-background-origin:padding;background:transparent none repeat scroll 0 0;border:0 none;width:125px;}
+/* support */
+.support-information{font-size:9px;color:#333;}
