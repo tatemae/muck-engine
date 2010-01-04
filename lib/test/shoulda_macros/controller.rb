@@ -1,8 +1,18 @@
 module MuckControllerMacros
 
+  # Ensure a login is required for the given actions
+  # Parameters:
+  #             Pass the following as arguements
+  #             :login_url => '/login'  -- url the user should be redirected to if they aren't logged in.  Defaults to '/login'
+  #             :get => 'index'
+  #             :post => 'create'
+  #
+  # Example:
+  #           should_require_login :login_url => '/signup', :get => 'index'
   def should_require_login(*args)
     args = Hash[*args]
     login_url = args.delete :login_url
+    login_url ||= '/login'
     args.each do |action, verb|
       should "Require login for '#{action}' action" do
         if [:put, :delete].include?(verb) # put and delete require an id even if it is a bogus one
@@ -15,12 +25,30 @@ module MuckControllerMacros
     end
   end
 
-  def should_require_role(role, redirect_url, *actions)
-    actions.each do |action|
+  # Ensure the user is in a given role for the given actions
+  # Parameters:
+  #             role: The role required for the user
+  #
+  #             Pass the following as arguements
+  #             :login_url => '/login'  -- url the user should be redirected to if they aren't logged in.  Defaults to '/login'
+  #             :get => 'index'
+  #             :post => 'create'
+  #
+  # Example:
+  #           should_require_role 'admin', :login_url => '/signup', :get => 'index'
+  def should_require_role(role, *args)
+    args = Hash[*args]
+    redirect_url = args.delete :redirect_url
+    redirect_url ||= '/login'
+    args.each do |action, verb|
       should "require role for '#{action}' action" do
-        get(action)
+        if [:put, :delete].include?(verb) # put and delete require an id even if it is a bogus one
+          send(verb, action, :id => 1)
+        else
+          send(verb, action)
+        end
         ensure_flash(/permission/i)
-        assert_response :redirect
+        assert_redirected_to(redirect_url)
       end
     end
   end
