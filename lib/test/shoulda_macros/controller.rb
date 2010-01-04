@@ -25,7 +25,7 @@ module MuckControllerMacros
     end
   end
 
-  # Ensure the user is in a given role for the given actions
+  # Ensure the user is in a given role for the given actions.  The test user will need to be logged in.
   # Parameters:
   #             role: The role required for the user
   #
@@ -35,7 +35,14 @@ module MuckControllerMacros
   #             :post => 'create'
   #
   # Example:
-  #           should_require_role 'admin', :login_url => '/signup', :get => 'index'
+  #            context "logged in not admin" do
+  #              setup do
+  #                @user = Factory(:user)
+  #                activate_authlogic
+  #                login_as @user
+  #              end
+  #              should_require_role('admin', :redirect_url => '/login', :index => :get)
+  #            end
   def should_require_role(role, *args)
     args = Hash[*args]
     redirect_url = args.delete :redirect_url
