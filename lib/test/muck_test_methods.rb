@@ -1,9 +1,5 @@
 module MuckTestMethods
   
-  def ensure_flash(val)
-    assert_contains flash.values, val, ", Flash: #{flash.inspect}"
-  end
-
   def login_as(user)
     success = UserSession.create(user)
     if !success

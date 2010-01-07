@@ -209,9 +209,27 @@ end
 
 Factory.define :content_permission do |f|
   f.content { |a| a.association(:content) }
-  f.user {|a| a.association(:user)}
+  f.user { |a| a.association(:user) }
 end
 
 Factory.define :invitee do |f|
   f.email { Factory.next(:email) }
+end
+
+Factory.define :group do |f|
+  f.creator {|a| a.association(:user)}
+  f.name { Factory.next(:name) }
+  f.member_count 0
+end
+
+Factory.define :membership_requests do |f|
+  f.group {|a| a.association(:group)}
+  f.user {|a| a.association(:user)}
+end
+
+Factory.define :memberships do |f|
+  f.group {|a| a.association(:group)}
+  f.user {|a| a.association(:user)}
+  f.banned false
+  f.role "member"
 end

@@ -10,3 +10,8 @@ Mime::Type.register "application/rdf+xml", :rdf
 Mime::Type.register "text/xml", :opml
 Mime::Type.register "text/javascript", :pjs
 Mime::Type.register_alias "text/html", :iphone
+
+# Use to determine whether or not ssl should be used
+def muck_routes_protocol
+  @@routes_protocol ||= GlobalConfig.enable_ssl ? (ENV["RAILS_ENV"] =~ /(development|test)/ ? "http" : "https") : 'http'
+end

@@ -1,6 +1,6 @@
 # Named scopes tested by these macros:
 #
-# named_scope :by_title, :order => "name ASC"
+# named_scope :by_title, :order => "title ASC"
 # named_scope :by_name, :order => "name ASC"
 # named_scope :recent, lambda { { :conditions => ['created_at > ?', 1.week.ago] } }
 # named_scope :newest, :order => "created_at DESC"
