@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-01-06}
+  s.date = %q{2010-01-09}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -37,6 +37,8 @@ Gem::Specification.new do |s|
      "app/views/forms/_menu_field.html.erb",
      "app/views/forms/_tips.html.erb",
      "app/views/layouts/admin.html.erb",
+     "app/views/layouts/admin/header.html.erb",
+     "app/views/layouts/admin/header_nav_item.html.erb",
      "app/views/layouts/default.html.erb",
      "app/views/layouts/email_default.text.html.erb",
      "app/views/layouts/email_default.text.plain.erb",
@@ -121,6 +123,8 @@ Gem::Specification.new do |s|
      "locales/zh-TW.yml",
      "locales/zh.yml",
      "muck-engine.gemspec",
+     "public/images/admin/Home.gif",
+     "public/images/admin/source/Home.png",
      "public/images/arrow_down.gif",
      "public/images/arrow_left.gif",
      "public/images/arrow_right.gif",
