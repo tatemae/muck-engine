@@ -6,11 +6,14 @@
 	<body>
 	  <div class="container">
 	    <div id="header">
-        <%= yield :header %>
+        <%= render :partial => 'layouts/admin/header' %>
       </div>
       <div id="content-wrapper">
         <div id="content">
 		      <%= yield :layout %>
+		    </div>
+		    <div id="sidebar">
+		      <%= yield :sidebar %>
 		    </div>
 		  </div>
 		</div>

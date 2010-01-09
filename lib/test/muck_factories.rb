@@ -219,15 +219,16 @@ end
 Factory.define :group do |f|
   f.creator {|a| a.association(:user)}
   f.name { Factory.next(:name) }
+  f.description { Factory.next(:description) }
   f.member_count 0
 end
 
-Factory.define :membership_requests do |f|
+Factory.define :membership_request do |f|
   f.group {|a| a.association(:group)}
   f.user {|a| a.association(:user)}
 end
 
-Factory.define :memberships do |f|
+Factory.define :membership do |f|
   f.group {|a| a.association(:group)}
   f.user {|a| a.association(:user)}
   f.banned false
