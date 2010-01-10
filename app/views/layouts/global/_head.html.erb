@@ -8,7 +8,7 @@
 <%= stylesheet_link_tag 'blueprint/print.css', :media => "print" %>
 <!--[if IE]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->  		
 <% if defined?(admin_layout) -%>
-  <%= stylesheet_link_tag %W{ reset styles blueprint/liquid_screen.css }, :cache => true %>
+  <%= stylesheet_link_tag %W{ reset styles blueprint/liquid_screen.css admin }, :cache => true %>
 <% else -%>
   <%= stylesheet_link_tag %W{ reset styles blueprint/screen.css }, :cache => true %>
 <% end -%>
