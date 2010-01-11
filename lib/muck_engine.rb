@@ -19,21 +19,36 @@ end
 class MuckEngine
   
   def self.muck_admin_nav_items
-    @@muck_admin_nav_items
+    @@muck_admin_nav_items || []
   end
 
   # Add an item to the main admin navigation menu
   # Paramters:
-  # Name:    Name for the link
-  # Path:    Url to link to
-  # image:   Image for the link
-  def self.add_muck_admin_nav_item(name, path, image = '')
+  # name:                 Name for the link
+  # path:                 Url to link to
+  # image:                Image for the link
+  # sub_navigation_path:  Path to the partial to render as a sub navigation
+  def self.add_muck_admin_nav_item(name, path, image = '', sub_navigation_path = nil)
     @@muck_admin_nav_items ||= []
     @@muck_admin_nav_items << OpenStruct.new(:name => name,
                                              :path => path,
-                                             :image => image)
+                                             :image => image,
+                                             :sub_navigation_path => sub_navigation_path)
   end
 
+  def self.muck_dashboard_items
+    @@muck_dashboard_items || []
+  end
+
+  # Add an item to the admin dashboard
+  # path:   Path to the partial
+  # locals: Hash of values to pass as locals to the partial
+  def self.add_muck_dashboard_item(path, locals = {})
+    @@muck_dashboard_items ||= []
+    @@muck_dashboard_items << OpenStruct.new(:path => path,
+                                             :locals => locals)
+  end
+  
 end
 
 # Add a link to admin home

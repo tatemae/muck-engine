@@ -12,4 +12,12 @@ class HelperController < ApplicationController
     end
   end
   
+  def sub_navigation
+    MuckEngine.muck_admin_nav_items.each do |item|
+      if request.uri.include?(item.path)
+        render :partial => item.sub_navigation_path
+      end
+    end
+  end
+  
 end

@@ -1,10 +1,14 @@
-<p id="logo">
-  <a href="/admin" class="site_logo">
-    <img src="/images/" alt="Logo" title="Return to home page" />
-  </a>
-</p>
-<div id="main-navigation">
+<div id="main-navigation" class="navigation">
+  <div id="admin-account">
+    <ul>
+      <li><%=translate('muck.engine.admin_welcome', :user => ) %></li>
+      <li><%=link_to translate('muck.engine.admin_logout'), '/logout' %></li>
+    </ul>
+  </div>
   <ul id="admin-nav">
     <%= render :partial => 'layouts/admin/header_nav_item', :collection => MuckEngine.muck_admin_nav_items %>
   </ul>
+</div>
+<div id="sub-header">
+  <%= sub_navigation %>
 </div>

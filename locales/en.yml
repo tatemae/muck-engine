@@ -7,10 +7,13 @@ en:
       choose_state: Choose State
       select_state_prompt: Please select a state
       choose_language: Choose Language
+      admin_users: Users
       choose_country: Choose Country
       select_country_prompt: Please select a country
       missing_parent_error: Please specify a parent object
+      admin_logout: Logout
       admin_home: Home
+      admin_welcome: Welcome back {{user}}
       select_language_prompt: Please select a language
     general: 
       deactivate: Deactivate

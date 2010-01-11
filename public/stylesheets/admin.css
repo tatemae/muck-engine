@@ -1,6 +1,5 @@
+/* header */
 /* main-navigation */
-#logo{float:left;margin:0;padding:0;display:inline;}
-#logo a{float:left;margin-left:5px;margin-top:20px;display:inline;}
 #main-navigation{float:right;display:inline;}
 #account-navigation {float:right;display:inline;}
 
