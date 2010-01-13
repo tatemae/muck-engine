@@ -148,5 +148,13 @@ Here's an example taken from the muck project:
 
   end
   
+== Development Notes
+es-CO.yml is missing a space on line 91:
+  
+  record_invalid:"Falla de validación: {{errors}}"
+
+should be:  
+  record_invalid: "Falla de validación: {{errors}}"
+
 
 Copyright (c) 2009 Tatemai, released under the MIT license
