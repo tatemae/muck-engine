@@ -13,25 +13,27 @@ en:
       missing_parent_error: Please specify a parent object
       admin_logout: Logout
       admin_home: Home
+      admin_roles: Roles
       admin_welcome: Welcome back {{user}}
+      admin_home_title: Admin Home
       select_language_prompt: Please select a language
     general: 
-      deactivate: Deactivate
       no_text: "No"
-      previous: "&laquo; Previous"
+      deactivate: Deactivate
       help: Help
-      delete: Delete
+      previous: "&laquo; Previous"
       settings_saved: Settings have been saved.
+      delete: Delete
       time_ago: "{{time_in_words}} ago"
-      enabled: Enabled?
-      enable: Disable
       yes_text: "Yes"
+      enable: Disable
+      enabled: Enabled?
       loading: Loading...
       save: Save
-      next: Next &raquo;
-      activate: Activate
       disable: Enable
-      update: Update
+      activate: Activate
+      next: Next &raquo;
       general_info: General info
-      deleting: Deleting...
+      update: Update
       read_more: read more
+      deleting: Deleting...

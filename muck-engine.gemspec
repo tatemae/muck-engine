@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "app/controllers/admin/muck/base_controller.rb",
      "app/controllers/admin/muck/default_controller.rb",
      "app/controllers/muck/helper_controller.rb",
+     "app/helpers/muck_admin_helper.rb",
      "app/helpers/muck_custom_form_builder.rb",
      "app/helpers/muck_engine_helper.rb",
      "app/models/basic_mailer.rb",

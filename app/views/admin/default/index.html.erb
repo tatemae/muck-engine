@@ -1,5 +1,5 @@
 <% MuckEngine.muck_dashboard_items.each do |item| -%>
-  <div class="dashboard-widget">
+  <div class="dashboard-widget span-6">
     <%= render :partial => item.path, :locals => item.locals -%>
   </div>
 <% end -%>

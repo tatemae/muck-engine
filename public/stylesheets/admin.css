@@ -1,13 +1,19 @@
 /* header */
-/* main-navigation */
-#main-navigation{float:right;display:inline;}
-#account-navigation {float:right;display:inline;}
-
-.navigation ul{float:left;margin:4px 0;padding:2px;display:inline;}
-.navigation ul li{float:left;padding:0 4px 0 10px;list-style:none;font-weight:bold;}
+#main-navigation{}
+#account-navigation {}
+.navigation ul{padding:2px;margin:0;}
+.navigation ul li{list-style:none;font-weight:bold;display:inline-block;}
 .navigation ul li a{float:left;text-decoration:none;font-weight:bold;}
 .navigation ul li a:hover{text-decoration:underline;}
-
+#header{height:90px;border-bottom:solid 2px #333;}
+#admin-account{width:100%;float:right;}
+#admin-account ul{float:right;}
+#admin-account ul li{margin:1px;padding:0 4px;float:left;}
+#admin-nav li a{background-repeat:no-repeat;height:20px;margin:0 4px;padding-top:35px;text-align:center;width:40px;}
+#sub-header{width:100%;float:left;}
+/* dashboard widgets */
+.dashboard-widget{padding:5px;}
+.dashboard-widget h2{font-size:12px;border-bottom:solid 1px #555;}
 /* themes */
 #current-theme{clear:both;float:left;width:100%;}
 .theme-block{width:250px;height:300px;float:left;clear:none;margin:10px;}

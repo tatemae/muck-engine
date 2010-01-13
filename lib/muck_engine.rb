@@ -2,6 +2,7 @@
 ActionController::Base.send :include, ActionController::MuckApplication
 ActiveRecord::Base.send :include, ActiveRecord::MuckModel
 ActionController::Base.send :helper, MuckEngineHelper
+ActionController::Base.send :helper, MuckAdminHelper
 
 I18n.load_path += Dir[ File.join(File.dirname(__FILE__), '..', 'locales', '*.{rb,yml}') ]
 I18n.load_path += Dir[ File.join(File.dirname(__FILE__), '..', 'rails_i18n', '*.{rb,yml}') ]
@@ -27,13 +28,11 @@ class MuckEngine
   # name:                 Name for the link
   # path:                 Url to link to
   # image:                Image for the link
-  # sub_navigation_path:  Path to the partial to render as a sub navigation
-  def self.add_muck_admin_nav_item(name, path, image = '', sub_navigation_path = nil)
+  def self.add_muck_admin_nav_item(name, path, image = '')
     @@muck_admin_nav_items ||= []
     @@muck_admin_nav_items << OpenStruct.new(:name => name,
                                              :path => path,
-                                             :image => image,
-                                             :sub_navigation_path => sub_navigation_path)
+                                             :image => image)
   end
 
   def self.muck_dashboard_items

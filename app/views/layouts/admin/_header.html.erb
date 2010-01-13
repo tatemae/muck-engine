@@ -1,14 +1,14 @@
+<div id="admin-account" class="navigation span-24">
+  <ul>
+    <li><%=translate('muck.engine.admin_welcome', :user => current_user.display_name) %></li>
+    <li><%=link_to translate('muck.engine.admin_logout'), '/logout' %></li>
+  </ul>
+</div>
 <div id="main-navigation" class="navigation">
-  <div id="admin-account">
-    <ul>
-      <li><%=translate('muck.engine.admin_welcome', :user => ) %></li>
-      <li><%=link_to translate('muck.engine.admin_logout'), '/logout' %></li>
-    </ul>
-  </div>
   <ul id="admin-nav">
     <%= render :partial => 'layouts/admin/header_nav_item', :collection => MuckEngine.muck_admin_nav_items %>
   </ul>
 </div>
-<div id="sub-header">
+<div id="sub-header" class="span-24">
   <%= sub_navigation %>
 </div>
