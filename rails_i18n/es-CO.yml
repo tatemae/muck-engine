@@ -88,7 +88,7 @@ es-CO:
           other: "{{model}} no pudo guardarse debido a {{count}} errores"
         body: "Revise que los siguientes campos sean válidos:"
       messages:
-        record_invalid: "Falla de validación: {{errors}}"
+        record_invalid:"Falla de validación: {{errors}}"
         inclusion: "no está incluído en la lista"
         exclusion: "está reservado"
         invalid: "es inválido"
