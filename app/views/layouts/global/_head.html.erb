@@ -12,9 +12,9 @@
 <% else -%>
   <%= stylesheet_link_tag %W{ reset styles blueprint/screen.css }, :cache => true %>
 <% end -%>
+<%= google_load_jquery %>
+<%= google_load_jquery_ui %>
 <%= javascript_include_tag %w{
-  jquery/jquery.js
-  jquery/jquery-ui.js
   jquery/jrails.js
   jquery/jquery.jgrowl.js
   jquery/jquery.tips.js
