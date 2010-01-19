@@ -12,6 +12,11 @@ jQuery(document).ready(function() {
 		var tip_text = field.siblings('.tip-text').html();
 		var tip_title = field.siblings('.tip-title').html();
 		var tip_position = field.siblings('.tip-position').html();
+		if(tip_text == null){
+			tip_text = field.parent().siblings('.tip-text').html();
+			tip_title = field.parent().siblings('.tip-title').html();
+			tip_position = field.parent().siblings('.tip-position').html();
+		}
 		if (!tip_position) { tip_position = 'right'; }
 		show_tip(control_id, tip_title, tip_text, tip_position);
 		jQuery("#" + help_id + "-container").addClass("active");
