@@ -6,6 +6,8 @@ class Admin::Muck::DefaultControllerTest < ActionController::TestCase
 
   context "GET to admin index" do
     setup do
+      @user = stub(:display_name => 'test')
+      @controller.stubs(:current_user).returns(@user)
       @controller.stubs(:login_required).returns(true)
       @controller.stubs(:admin_access_required).returns(true)
       get :index

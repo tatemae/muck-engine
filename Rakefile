@@ -57,15 +57,7 @@ begin
     gemspec.add_dependency "validation_reflection"
     gemspec.add_dependency "will_paginate"
     gemspec.add_dependency "git"
-    gemspec.files.include %w( tasks/*
-                          db/migrate/*.rb
-                          app/**/**/**/*
-                          config/*
-                          locales/*
-                          rails/*
-                          test/*
-                          lib/**/*
-                          public/javascripts/* )
+    gemspec.add_development_dependency "shoulda"
   end
   Jeweler::RubyforgeTasks.new do |rubyforge|
     rubyforge.doc_task = "rdoc"

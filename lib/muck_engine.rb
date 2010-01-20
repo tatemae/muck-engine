@@ -1,6 +1,7 @@
 
 ActionController::Base.send :include, ActionController::MuckApplication
 ActiveRecord::Base.send :include, ActiveRecord::MuckModel
+ActionMailer::Base.send :include, ActionMailer::MuckMailer
 ActionController::Base.send :helper, MuckEngineHelper
 ActionController::Base.send :helper, MuckAdminHelper
 
