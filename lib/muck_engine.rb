@@ -48,7 +48,7 @@ class MuckEngine
     @@muck_dashboard_items << OpenStruct.new(:path => path,
                                              :locals => locals)
   end
-  
+
 end
 
 # Add a link to admin home

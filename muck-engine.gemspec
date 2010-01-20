@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.2.26"
+  s.version = "0.2.27"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-01-19}
+  s.date = %q{2010-01-20}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -65,6 +65,7 @@ Gem::Specification.new do |s|
      "db/migrate/20090426041103_create_states.rb",
      "install.rb",
      "lib/action_controller/muck_application.rb",
+     "lib/action_mailer/muck_mailer.rb",
      "lib/active_record/muck_model.rb",
      "lib/muck_engine.rb",
      "lib/muck_engine/initialize_routes.rb",
@@ -710,6 +711,8 @@ Gem::Specification.new do |s|
      "test/rails_root/app/controllers/default_controller.rb",
      "test/rails_root/app/helpers/application_helper.rb",
      "test/rails_root/app/models/.keep",
+     "test/rails_root/app/models/user.rb",
+     "test/rails_root/app/models/user_session.rb",
      "test/rails_root/app/views/admin/default/index.html.erb",
      "test/rails_root/app/views/default/index.html.erb",
      "test/rails_root/app/views/layouts/default.html.erb",
@@ -1308,6 +1311,8 @@ Gem::Specification.new do |s|
      "test/rails_root/app/controllers/application_controller.rb",
      "test/rails_root/app/controllers/default_controller.rb",
      "test/rails_root/app/helpers/application_helper.rb",
+     "test/rails_root/app/models/user.rb",
+     "test/rails_root/app/models/user_session.rb",
      "test/rails_root/config/boot.rb",
      "test/rails_root/config/environment.rb",
      "test/rails_root/config/environments/development.rb",
@@ -1344,15 +1349,18 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<validation_reflection>, [">= 0"])
       s.add_runtime_dependency(%q<will_paginate>, [">= 0"])
       s.add_runtime_dependency(%q<git>, [">= 0"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
     else
       s.add_dependency(%q<validation_reflection>, [">= 0"])
       s.add_dependency(%q<will_paginate>, [">= 0"])
       s.add_dependency(%q<git>, [">= 0"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
     end
   else
     s.add_dependency(%q<validation_reflection>, [">= 0"])
     s.add_dependency(%q<will_paginate>, [">= 0"])
     s.add_dependency(%q<git>, [">= 0"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
   end
 end
 
