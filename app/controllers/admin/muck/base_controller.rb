@@ -15,6 +15,12 @@ class Admin::Muck::BaseController < ApplicationController
       admin?
     end
   
+    # called by Admin::Muck::BaseController to check whether or not the
+    # user should have access to the admin UI
+    def admin_access_required
+      access_denied unless admin?
+    end
+    
     def permission_denied
       respond_to do |format|
         format.html do
