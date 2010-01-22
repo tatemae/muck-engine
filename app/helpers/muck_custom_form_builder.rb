@@ -113,6 +113,14 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
     end
   end
 
+  # creates a select control with us states.  Default id is 'us_states'.  If 'retain' is passed for the class value the value of this
+  # control will be written into a cookie with the key 'us_states'.
+  def us_state_select(method, options = {}, html_options = {}, additional_state = nil)
+    @@country_id ||= Country.find_by_abbreviation('US')
+    @states = (additional_state ? [additional_state] : []) + State.find(:all, :conditions => ["country_id = ?", @@country_id], :order => "name asc")
+    self.menu_select(method, I18n.t('muck.engine.choose_state'), @states, options.merge(:prompt => I18n.t('muck.engine.select_state_prompt'), :wrapper_id => 'us-states-container'), html_options.merge(:id => 'us-states'))
+  end
+  
   # creates a select control with states.  Default id is 'states'.  If 'retain' is passed for the class value the value of this
   # control will be written into a cookie with the key 'states'.
   def state_select(method, options = {}, html_options = {}, additional_state = nil)
