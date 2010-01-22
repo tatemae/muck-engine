@@ -37,21 +37,21 @@ module MuckEngineHelper
   end
   
   def output_flash(options = {})
-    output_errors('', options)
+    output_errors('', options, nil, true)
   end
   
-  def output_errors(title, options = {}, fields = nil)
+  def output_errors(title, options = {}, fields = nil, flash_only = false)
     fields = [fields] unless fields.is_a?(Array)
     flash_html = render(:partial => 'shared/flash_messages')
     flash.clear
-    field_errors = render(:partial => 'shared/field_error', :collection => fields)
     css_class = "class=\"#{options[:class]}\"" unless options[:class].nil?
+    field_errors = render(:partial => 'shared/field_error', :collection => fields)
     
-    if !flash_html.empty? && field_errors.empty?
-      # only flash.  Don't render the 
+    if flash_only || (!flash_html.empty? && field_errors.empty?)
+      # Only flash.  Don't render errors for any fields
       render(:partial => 'shared/flash_error_box', :locals => {:flash_html => flash_html, :css_class => css_class})
     elsif !field_errors.empty?
-      # field errors and/or flash
+      # Field errors and/or flash
       render(:partial => 'shared/error_box', :locals => {:title => title, 
         :flash_html => flash_html, 
         :field_errors => field_errors,

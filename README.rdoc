@@ -89,6 +89,23 @@ easing - http://gsgd.co.uk/sandbox/jquery/easing/
 fancyzoom - http://orderedlist.com/articles/fancyzoom-meet-jquery
 
 
+=== jGrowl
+If you wish to enable jgrowl then add the following lines to application.js and customize each as desired:
+
+  jQuery.jGrowl.defaults.position = 'center';
+
+  jQuery.jGrowl.info = function(msg){
+  	jQuery.jGrowl(msg);
+  }
+
+  jQuery.jGrowl.warn = function(msg){
+  	jQuery.jGrowl(msg);
+  }
+
+  jQuery.jGrowl.error = function(msg){
+  	jQuery.jGrowl(msg, {sticky:true});
+  }
+
 == Rake tasks
 The muck engine comes with an abundance of rake tasks mostly meant for development of muck engines.  If you want to use these tasks
 be sure that you first do a sudo install muck-engine.  Next define the muck gems you are using in a file RAILS_ROOT/lib/tasks/muck.rake.
