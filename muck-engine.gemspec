@@ -40,6 +40,7 @@ Gem::Specification.new do |s|
      "app/views/forms/_menu_field.html.erb",
      "app/views/forms/_tips.html.erb",
      "app/views/layouts/admin.html.erb",
+     "app/views/layouts/admin/_footer.html.erb",
      "app/views/layouts/admin/_header.html.erb",
      "app/views/layouts/admin/_header_nav_item.html.erb",
      "app/views/layouts/default.html.erb",

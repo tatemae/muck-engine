@@ -17,3 +17,4 @@
 /* themes */
 #current-theme{clear:both;float:left;width:100%;}
 .theme-block{width:250px;height:300px;float:left;clear:none;margin:10px;}
+.notify-box{font-size:1.2em;color:#555;position:absolute;top:0;left:10%;width:80%;z-index:10;}
