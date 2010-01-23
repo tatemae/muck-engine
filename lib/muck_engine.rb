@@ -36,6 +36,7 @@ class MuckEngine
                                              :image => image)
   end
 
+
   def self.muck_dashboard_items
     @@muck_dashboard_items || []
   end
@@ -49,6 +50,17 @@ class MuckEngine
                                              :locals => locals)
   end
 
+
+  def self.muck_admin_css
+    @@muck_admin_css || []
+  end
+
+  # Add css for the admin UI
+  def self.add_muck_admin_css(css_file)
+    @@muck_admin_css ||= []
+    @@muck_admin_css << css_file
+  end
+  
 end
 
 # Add a link to admin home
