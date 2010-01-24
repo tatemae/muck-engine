@@ -10,6 +10,7 @@ jQuery(document).ajaxSend(function(event, request, settings) {
   	settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
 });
 
+
 function setup_submit_delete(){
 	jQuery(".submit-delete").click(function() {
 		// if(!confirm("Are you sure?")){
@@ -92,21 +93,10 @@ function setup_country(force_load){
 	}
 }
 
-jQuery.jGrowl.defaults.position = 'center';
-
-jQuery.jGrowl.info = function(msg){
-	jQuery.jGrowl(msg);
-}
-
-jQuery.jGrowl.warn = function(msg){
-	jQuery.jGrowl(msg);	
-}
-
-jQuery.jGrowl.error = function(msg){
-	jQuery.jGrowl(msg, {sticky:true,header:"Please correct the following errors:"});	
-}
-
 jQuery(document).ready(function() {
+	
+	jQuery('a.fancy_pop').fancybox({'hideOnContentClick':false, 'overlayShow':true, 'frameWidth':600, 'frameHeight':500 });
+	
 	jQuery("#global-login").focus(function() {
 		jQuery("#global-login").val("");
 	});

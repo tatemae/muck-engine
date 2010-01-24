@@ -14,6 +14,7 @@ en:
       admin_logout: Logout
       admin_home: Home
       admin_roles: Roles
+      admin_access_codes: Access Codes
       admin_welcome: Welcome back {{user}}
       admin_home_title: Admin Home
       select_language_prompt: Please select a language

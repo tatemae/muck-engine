@@ -1,12 +1,32 @@
-/* main-navigation */
-#main-navigation{float:left;display:inline;}
-#account-navigation {float:right;display:inline;}
-
-.navigation ul{float:left;margin:4px 0;padding:2px;display:inline;}
-.navigation ul li{float:left;padding:0 4px 0 10px;list-style:none;font-weight:bold;}
+/* header */
+#main-navigation{}
+#account-navigation {}
+.navigation ul{padding:2px;margin:0;}
+.navigation ul li{list-style:none;font-weight:bold;display:inline-block;}
 .navigation ul li a{float:left;text-decoration:none;font-weight:bold;}
 .navigation ul li a:hover{text-decoration:underline;}
-
+#header{height:90px;border-bottom:solid 2px #333;}
+#admin-account{width:100%;float:right;}
+#admin-account ul{float:right;}
+#admin-account ul li{margin:1px;padding:0 4px;float:left;}
+#admin-nav li a{background-repeat:no-repeat;height:20px;margin:0 4px;padding-top:35px;text-align:center;width:40px;}
+#sub-header{width:100%;float:left;}
+/* dashboard widgets */
+.dashboard-widget{padding:5px;}
+.dashboard-widget h2{font-size:12px;border-bottom:solid 1px #555;}
 /* themes */
 #current-theme{clear:both;float:left;width:100%;}
 .theme-block{width:250px;height:300px;float:left;clear:none;margin:10px;}
+.notify-box{font-size:1.2em;color:#555;position:absolute;top:0;left:10%;width:80%;z-index:10;}
+
+.adminTable{margin:5px 0 0 0;padding:0 0 40px 0px;width:980px;}
+.adminTable th{color:#1c0202;font-size:1.4em;background:#d5c593;border-bottom:1px solid #c4ad63;padding:5px 5px;}
+.adminTable th a,.adminTable th a:link,.adminTable th a:visited,.adminTable th a:active{color:#1c0202;text-decoration:none;font-weight:bold;}
+.adminTable th a:hover{color:#1c0202;text-decoration:underline;}
+.adminTable th.alt,.publicLook th.alt{background:#d5c593;border-bottom:1px solid #c4ad63;}
+.adminTable th.alt,.publicLook th.alt span{color:#d5c593;}
+.adminTable tr{background-color:#fff;}
+.adminTable table{border:2px solid #c4ad63;}
+.adminTable tr td{font-family:Helvetica,Arial,Verdana,sans-serif;font-size:1.4em;font-weight:bold;color:#4a3f3b;padding:5px;border-bottom:1px solid #d5c593;}
+.adminTable tr td.radio{text-align:center;width:2%;}
+.adminTable tr td{width:18%;}

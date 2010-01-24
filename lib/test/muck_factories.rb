@@ -81,6 +81,14 @@ Factory.define :role do |f|
   f.rolename 'administrator'
 end
 
+Factory.define :access_code do |f|
+  f.code { Factory.next(:name) }
+  f.uses 0
+  f.unlimited false
+  f.expires_at  { DateTime.now + 2.weeks }
+  f.use_limit 1
+end
+
 Factory.define :activity do |f|
   f.item {|a| a.association(:user)}
   f.template ''
