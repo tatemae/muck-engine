@@ -1,3 +1,4 @@
+require 'muck_engine/flash_errors'
 
 ActionController::Base.send :include, ActionController::MuckApplication
 ActionController::Base.send :include, MuckEngine::FlashErrors

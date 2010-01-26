@@ -70,6 +70,7 @@ Gem::Specification.new do |s|
      "lib/action_mailer/muck_mailer.rb",
      "lib/active_record/muck_model.rb",
      "lib/muck_engine.rb",
+     "lib/muck_engine/flash_errors.rb",
      "lib/muck_engine/initialize_routes.rb",
      "lib/muck_engine/populate.rb",
      "lib/muck_engine/tasks.rb",
