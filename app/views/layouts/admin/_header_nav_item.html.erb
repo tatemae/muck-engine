@@ -1,5 +1,3 @@
 <li id="<%=header_nav_item.name.parameterize%>">
-  <a style="background-image: url('<%=header_nav_item.image%>')" href="<%=header_nav_item.path %>">
-    <%= header_nav_item.name %>
-  </a>
+  <a <%= header_nav_item_image(header_nav_item) -%> href="<%=header_nav_item.path %>"><%= header_nav_item.name %></a>
 </li>

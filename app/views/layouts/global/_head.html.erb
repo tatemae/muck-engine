@@ -8,8 +8,8 @@
 <%= stylesheet_link_tag 'blueprint/print.css', :media => "print" %>
 <!--[if IE]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 <%= stylesheet_link_tag %W{ reset styles blueprint/screen.css }, :cache => true %>
-<%= google_load_jquery %>
-<%= google_load_jquery_ui %>
+<%= google_load_jquery(http_protocol) %>
+<%= google_load_jquery_ui(http_protocol) %>
 <%= javascript_include_tag %w{
   jquery/jrails.js
   jquery/jquery.jgrowl.js

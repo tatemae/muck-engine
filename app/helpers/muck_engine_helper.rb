@@ -2,6 +2,13 @@ require 'md5'
 
 module MuckEngineHelper
 
+  # Outputs the appropriate http protocol based on 
+  # the request type.  if https is desired then 
+  # pass true to override default behavior
+  def http_protocol(use_ssl = request.ssl?)
+    (use_ssl ? "https://" : "http://")
+  end
+
   # Outputs a small bit of javascript that will enable message 
   # output to jgrowl or to the given message dom id
   #
@@ -272,6 +279,11 @@ module MuckEngineHelper
   def safe_id(term)
     term = URI.escape(term)
     term = term.gsub('.', '%2E')
+  end
+  
+  def format_date(date)
+    return '' if date.nil?
+    date.to_date.to_s(:long)
   end
   
 end

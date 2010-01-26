@@ -21,7 +21,7 @@ end
 class MuckEngine
   
   def self.muck_admin_nav_items
-    @@muck_admin_nav_items || []
+    @@muck_admin_nav_items ||= []
   end
 
   # Add an item to the main admin navigation menu
@@ -30,38 +30,36 @@ class MuckEngine
   # path:                 Url to link to
   # image:                Image for the link
   def self.add_muck_admin_nav_item(name, path, image = '')
-    @@muck_admin_nav_items ||= []
-    @@muck_admin_nav_items << OpenStruct.new(:name => name,
-                                             :path => path,
-                                             :image => image)
+    muck_admin_nav_items << OpenStruct.new(:name => name,
+                                           :path => path,
+                                           :image => image)
   end
 
 
   def self.muck_dashboard_items
-    @@muck_dashboard_items || []
+    @@muck_dashboard_items ||= []
   end
 
   # Add an item to the admin dashboard
   # path:   Path to the partial
   # locals: Hash of values to pass as locals to the partial
   def self.add_muck_dashboard_item(path, locals = {})
-    @@muck_dashboard_items ||= []
-    @@muck_dashboard_items << OpenStruct.new(:path => path,
-                                             :locals => locals)
+    muck_dashboard_items << OpenStruct.new(:path => path,
+                                           :locals => locals)
   end
 
 
   def self.muck_admin_css
-    @@muck_admin_css || []
+    @@muck_admin_css ||= [] 
   end
 
   # Add css for the admin UI
   def self.add_muck_admin_css(css_file)
-    @@muck_admin_css ||= []
-    @@muck_admin_css << css_file
+    muck_admin_css << css_file
   end
   
 end
 
 # Add a link to admin home
-MuckEngine.add_muck_admin_nav_item(I18n.translate('muck.engine.admin_home'), '/admin', '/images/admin/home.gif')
+#MuckEngine.add_muck_admin_nav_item(I18n.translate('muck.engine.admin_home'), '/admin', '/images/admin/home.gif')
+MuckEngine.add_muck_admin_nav_item(I18n.translate('muck.engine.admin_home'), '/admin')
