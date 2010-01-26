@@ -10,7 +10,6 @@ jQuery(document).ajaxSend(function(event, request, settings) {
   	settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
 });
 
-
 function setup_submit_delete(){
 	jQuery(".submit-delete").click(function() {
 		// if(!confirm("Are you sure?")){
@@ -93,9 +92,26 @@ function setup_country(force_load){
 	}
 }
 
-jQuery(document).ready(function() {
+function apply_ajax_forms() {
+  jQuery('form.ajax').ajaxForm({
+    dataType: 'script',
+    beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+  });
+}
+
+jQuery(document).ready(function() {  
+  jQuery('a.remote-delete').live('click', function() {
+    jQuery.post(this.href, { _method: 'delete' }, null, "script");
+    return false;
+  });
+
+	jQuery(".submit-form").click(function() {
+    jQuery(this).parent('form').submit();
+  });
+
+	apply_ajax_forms();
 	
-	jQuery('a.fancy_pop').fancybox({'hideOnContentClick':false, 'overlayShow':true, 'frameWidth':600, 'frameHeight':500 });
+	jQuery('a.fancy-pop').fancybox({'hideOnContentClick':false, 'overlayShow':true, 'frameWidth':600, 'frameHeight':500 });
 	
 	jQuery("#global-login").focus(function() {
 		jQuery("#global-login").val("");

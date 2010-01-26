@@ -1,10 +1,15 @@
 /* header */
+a {color:#000;}
 #main-navigation{}
 #account-navigation {}
 .navigation ul{padding:2px;margin:0;}
 .navigation ul li{list-style:none;font-weight:bold;display:inline-block;}
 .navigation ul li a{float:left;text-decoration:none;font-weight:bold;}
 .navigation ul li a:hover{text-decoration:underline;}
+ul.inline{padding:0;margin:0;}
+ul.inline li{list-style:none;}
+ul.admin-list li {list-style:none;}
+ul.admin-list li a{font-size:1.2em;}
 #header{border-bottom:solid 2px #333;}
 #admin-account{width:100%;float:right;}
 #admin-account ul{float:right;}
@@ -18,10 +23,12 @@
 /* themes */
 #current-theme{clear:both;float:left;width:100%;}
 .theme-block{width:250px;height:300px;float:left;clear:none;margin:10px;}
-.notify-box{font-size:1.2em;color:#555;position:absolute;top:0;left:10%;width:80%;z-index:10;}
-
+/* errors, message */
+.notify-box{font-size:1.2em;color:#555;width:100%}
+.error,.notice,.success {margin:0;}
+#errorExplanation{margin:0;padding:0;}
+/* tables */
 .adminTable{margin:5px 0 0 0;padding:0 0 40px 0px;width:980px;}
-
 .adminTable th a,.adminTable th a:link,.adminTable th a:visited,.adminTable th a:active{color:#1c0202;text-decoration:none;font-weight:bold;}
 .adminTable th a:hover{color:#1c0202;text-decoration:underline;}
 .adminTable th.alt,.publicLook th.alt{background:#d5c593;border-bottom:1px solid #c4ad63;}

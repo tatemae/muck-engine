@@ -1,9 +1,11 @@
 
 ActionController::Base.send :include, ActionController::MuckApplication
+ActionController::Base.send :include, MuckEngine::FlashErrors
 ActiveRecord::Base.send :include, ActiveRecord::MuckModel
 ActionMailer::Base.send :include, ActionMailer::MuckMailer
 ActionController::Base.send :helper, MuckEngineHelper
 ActionController::Base.send :helper, MuckAdminHelper
+ActionController::Base.send :helper, MuckEngine::FlashErrors
 
 I18n.load_path += Dir[ File.join(File.dirname(__FILE__), '..', 'locales', '*.{rb,yml}') ]
 I18n.load_path += Dir[ File.join(File.dirname(__FILE__), '..', 'rails_i18n', '*.{rb,yml}') ]

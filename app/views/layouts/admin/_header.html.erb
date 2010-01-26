@@ -1,3 +1,7 @@
+<div id="admin-messages" class="span-24">
+  <%= yield :messages -%>
+  <%= output_flash(:class => 'notify-box') %>
+</div>
 <div id="admin-account" class="navigation span-24">
   <ul>
     <li><%=translate('muck.engine.admin_welcome', :user => current_user.display_name) %></li>
