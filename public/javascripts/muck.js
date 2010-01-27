@@ -99,7 +99,8 @@ function apply_ajax_forms() {
   });
 }
 
-jQuery(document).ready(function() {  
+jQuery(document).ready(function() {
+	
   jQuery('a.remote-delete').live('click', function() {
     jQuery.post(this.href, { _method: 'delete' }, null, "script");
     return false;
@@ -113,6 +114,16 @@ jQuery(document).ready(function() {
 	
 	jQuery('a.fancy-pop').fancybox({'hideOnContentClick':false, 'overlayShow':true, 'frameWidth':600, 'frameHeight':500 });
 	
+	jQuery('a.dialog-pop').live('click', function() {
+    var d = jQuery('<div class="dialog"></div>').appendTo("body");
+    d.dialog({ modal: true, autoOpen: false, width: 'auto', title: jQuery(this).attr('title') });
+    d.load(jQuery(this).attr('href'), '', function(){
+      d.dialog("open");
+      apply_ajax_forms();
+    });
+    return false;
+  });
+
 	jQuery("#global-login").focus(function() {
 		jQuery("#global-login").val("");
 	});
