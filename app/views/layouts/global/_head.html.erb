@@ -7,7 +7,8 @@
 <meta name="MSSmartTagsPreventParsing" content="true" />
 <%= stylesheet_link_tag 'blueprint/print.css', :media => "print" %>
 <!--[if IE]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
-<%= stylesheet_link_tag %W{ reset styles blueprint/screen.css }, :cache => true %>
+<%= google_load_jquery_ui_css(http_protocol) %>
+<%= stylesheet_link_tag %W{ reset styles blueprint/screen.css default }, :cache => true %>
 <%= google_load_jquery(http_protocol) %>
 <%= google_load_jquery_ui(http_protocol) %>
 <%= javascript_include_tag %w{
@@ -15,6 +16,8 @@
   jquery/jquery.form.js
   jquery/jquery.jgrowl.js
   jquery/jquery.tips.js
+  jquery/jquery.easing.js
+  jquery/jquery.fancybox.js
   muck.js
   application.js }, :cache => 'all_js_cached' %>
 <%= javascript_tag %[const AUTH_TOKEN = #{form_authenticity_token.inspect};] if protect_against_forgery? %>
