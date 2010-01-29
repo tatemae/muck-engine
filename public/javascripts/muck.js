@@ -1,8 +1,6 @@
 //jQuery.noConflict();
 jQuery(document).ajaxSend(function(event, request, settings) {
-  request.setRequestHeader("Accept", "text/javascript");
-  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
+  add_headers(request);
   if (settings.type.toUpperCase() == 'GET' || typeof(AUTH_TOKEN) == "undefined") return; // for details see: http://www.justinball.com/2009/07/08/jquery-ajax-get-in-firefox-post-in-internet-explorer/
   // settings.data is a serialized string like "foo=bar&baz=boink" (or null)
   settings.data = settings.data || "";
@@ -95,14 +93,20 @@ function setup_country(force_load){
 function apply_ajax_forms() {
   jQuery('form.ajax').ajaxForm({
     dataType: 'script',
-    beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+    beforeSend: add_headers
   });
+	jQuery('form.ajax').append('<input type="hidden" name="format" value="js" />');
+}
+
+function add_headers(xhr){
+	xhr.setRequestHeader("Accept", "text/javascript");
+	xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 }
 
 jQuery(document).ready(function() {
 	
-  jQuery('a.remote-delete').live('click', function() {
-    jQuery.post(this.href, { _method: 'delete' }, null, "script");
+  jQuery('a.ajax-delete').live('click', function() {
+    jQuery.post(this.href, { _method: 'delete', format: 'js' }, null, "script");
     return false;
   });
 
