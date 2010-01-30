@@ -110,6 +110,11 @@ jQuery(document).ready(function() {
     return false;
   });
 
+  jQuery('a.ajax-update').live('click', function() {
+    jQuery.post(this.href, { _method: 'put', format: 'js' }, null, "script");
+    return false;
+  });
+
 	jQuery(".submit-form").click(function() {
     jQuery(this).parent('form').submit();
   });
