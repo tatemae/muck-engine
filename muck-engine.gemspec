@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
      "app/models/language.rb",
      "app/models/state.rb",
      "app/views/admin/default/index.html.erb",
+     "app/views/admin/shared/output_admin_messages.js.erb",
      "app/views/forms/_base_field.html.erb",
      "app/views/forms/_color_picker_field.html.erb",
      "app/views/forms/_default.html.erb",

@@ -35,7 +35,7 @@ class Admin::Muck::BaseController < ApplicationController
       @title = title
       @options = options
       @flash_only = flash_only
-      render :template => 'admin/shared/output_errors', :layout => false
+      render :template => 'admin/shared/output_admin_messages', :layout => false
     end
     
 end
