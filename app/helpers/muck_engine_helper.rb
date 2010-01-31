@@ -138,11 +138,11 @@ module MuckEngineHelper
   
   # Used inside of format.js to return a message to the client.
   # If jGrowl is enabled the message will show up as a growl instead of a popup
-  def page_alert(page, message, title = '')
+  def page_alert(message, title = '')
     if GlobalConfig.growl_enabled
-      page << "jQuery.jGrowl.error('" + message + "', {header:'" + title + "'});"
+      "jQuery.jGrowl.error('" + message + "', {header:'" + title + "'});"
     else
-      page.alert(message)
+      "alert(#{message});"
     end
   end
   
