@@ -23,6 +23,13 @@ module MuckEngineHelper
     end
   end
   
+  # Outputs scripts that manipulate the country and state select controls
+  def country_scripts
+    return if @@country_scripts_included
+    @@country_scripts_included = true
+    render :partial => 'scripts/country_scripts'
+  end
+  
   def custom_form_for(record_or_name_or_array, *args, &proc) 
     options = args.detect { |argument| argument.is_a?(Hash) } 
     if options.nil? 

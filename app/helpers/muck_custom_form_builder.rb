@@ -113,6 +113,7 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
     end
   end
 
+  # Call '<%= country_scripts %>' to render javascript that will change the state control based on the current country 
   # creates a select control with us states.  Default id is 'us_states'.  If 'retain' is passed for the class value the value of this
   # control will be written into a cookie with the key 'us_states'.
   def us_state_select(method, options = {}, html_options = {}, additional_state = nil)
