@@ -41,10 +41,5 @@ class Admin::Muck::BaseController < ApplicationController
     def output_admin_messages
     
     end
-    
-    # Generates a string that will hide admin messages.
-    def hide_errors
-      "jQuery('#admin-messages').hide();"
-    end
-    
+
 end

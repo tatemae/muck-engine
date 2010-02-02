@@ -10,4 +10,9 @@ module MuckAdminHelper
     end
   end
   
+  # Generates a string that will hide admin messages.
+  def hide_errors
+    "jQuery('#admin-messages').hide();"
+  end
+  
 end
