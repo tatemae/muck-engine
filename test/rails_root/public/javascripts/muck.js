@@ -22,9 +22,16 @@ function add_headers(xhr){
 }
 
 jQuery(document).ready(function() {
-	
+
   jQuery('a.ajax-delete').live('click', function() {
-    jQuery.post(this.href, { _method: 'delete', format: 'js' }, null, "script");
+    var title = jQuery(this).attr('title');
+    var do_delete = true;
+    if(title.length > 0){
+      do_delete = confirm(title);
+    }
+    if (do_delete){
+      jQuery.post(this.href, { _method: 'delete', format: 'js' }, null, "script");
+    }
     return false;
   });
 
@@ -33,15 +40,15 @@ jQuery(document).ready(function() {
     return false;
   });
 
-	jQuery(".submit-form").click(function() {
+  jQuery(".submit-form").click(function() {
     jQuery(this).parent('form').submit();
   });
 
-	apply_ajax_forms();
-	
-	jQuery('a.fancy-pop').fancybox({'hideOnContentClick':false, 'overlayShow':true, 'frameWidth':600, 'frameHeight':500 });
-	
-	jQuery('a.dialog-pop').live('click', function() {
+  apply_ajax_forms();
+
+  jQuery('a.fancy-pop').fancybox({'hideOnContentClick':false, 'overlayShow':true, 'frameWidth':600, 'frameHeight':500 });
+
+  jQuery('a.dialog-pop').live('click', function() {
     var d = jQuery('<div class="dialog"></div>').appendTo("body");
     d.dialog({ modal: true, autoOpen: false, width: 'auto', title: jQuery(this).attr('title') });
     d.load(jQuery(this).attr('href'), '', function(){

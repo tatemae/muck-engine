@@ -26,7 +26,7 @@ ul.admin-list li a{font-size:1.2em;}
 /* errors, message */
 .notify-box{font-size:1.2em;color:#555;width:100%}
 .error,.notice,.success {margin:0;}
-#errorExplanation{margin:0;padding:.8em;width:97%;border:2px solid #ddd;background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
+#errorExplanation #field-errors{margin:0;padding:0.4em 1.5em;width:96%;border:2px solid #ddd;background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
 #admin-messages{display:none;}
 
 /* tables */
