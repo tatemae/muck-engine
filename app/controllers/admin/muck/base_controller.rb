@@ -29,13 +29,4 @@ class Admin::Muck::BaseController < ApplicationController
       end
     end
 
-    # Output a page update that will display messages in the flash
-    def output_admin_messages(fields = nil, title = '', options = { :class => 'notify-box' }, flash_only = false)
-      @fields = fields
-      @title = title
-      @options = options
-      @flash_only = flash_only
-      render :partial => 'admin/shared/output_admin_messages'
-    end
-
 end
