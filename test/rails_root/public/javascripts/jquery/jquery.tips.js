@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-	jQuery(".tip-field").focus(function() {
+	jQuery(".tip-field").live('focus', function() {
 		jQuery(".active").removeClass("active");
 		var tip_key = jQuery('#' + this.id).siblings('.tip-key');
 		var control_id = this.id;
@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 		jQuery("#" + help_id + "-container").addClass("active");
 	});
 
-	jQuery(".tip-field").blur(function() {
+	jQuery(".tip-field").live('blur', function() {
 		jQuery('#' + this.id + '-tip').hide(1);
 	});
 });

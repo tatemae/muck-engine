@@ -45,16 +45,22 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
       :css_class    => options.delete(:css_class)
     }
     # TODO css_class does not appear to be used. Can just use the standard :class in html options to set the class
-        
+    
+    is_checkbox = false
+    is_checkbox = true if %w(check_box).include?(name)
+    
     type = options.delete(:type)
     type ||= :tippable if tippable
 
-    if !options[:label_class].nil?
-      label_options = { :class => options.delete(:label_class) }
+    label_class = ''
+    label_class << "checkbox-label" if is_checkbox
+    label_class << " #{options.delete(:label_class)}" if !options[:label_class].nil?
+    if label_class.blank?
+      label_options = {}
     else
-      label_options = { }
+      label_options = { :class => label_class }
     end
-
+  
     if local_options[:hide_required]
       required = false
       label_text = options[:label]
@@ -64,9 +70,6 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
       label_text = label_text + required_mark(field) if required
     end
     label_name = options.delete(:label)
-
-    is_checkbox = false
-    is_checkbox = true if %w(check_box).include?(name)
 
     options[:class] ||= ''
     options[:class] << add_space_to_css(options) + 'tip-field' if tippable

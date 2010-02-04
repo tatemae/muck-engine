@@ -1,5 +1,6 @@
 /* header */
 a {color:#000;}
+fieldset {border:none;}
 #main-navigation{}
 #account-navigation {}
 .navigation ul{padding:2px;margin:0;}
@@ -28,7 +29,8 @@ ul.admin-list li a{font-size:1.2em;}
 .error,.notice,.success {margin:0;}
 #errorExplanation #field-errors{margin:0;padding:0.4em 1.5em;width:96%;border:2px solid #ddd;background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
 #admin-messages{display:none;}
-
+/* ui elements */
+#ui-datepicker-div{z-index:2005;}
 /* tables */
 .adminTable{margin:5px 0 0 0;padding:0 0 40px 0px;width:980px;}
 .adminTable a{color:#000;text-decoration:none;font-weight:bold;}

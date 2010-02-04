@@ -37,7 +37,7 @@ ul.icon-list a{display:inline-block;margin:2px 0;padding:2px 0 5px 28px;text-dec
 .availability{color:#b61e12;position:absolute;}
 .hidden-tips{display:none;}
 .required-tip{color:#555555;font-size:1.2em;margin:0pt;font-weight:bolder;height:0px;}
-.tip{position:absolute;z-index:100;border:2px solid #CCCCCC;background-color:#fff;width:400px;}
+.tip{position:absolute;z-index:2000;border:2px solid #CCCCCC;background-color:#fff;width:400px;}
 #tip-title{font-size:1.1em;background-color:#CCCCCC;text-align:left;padding:2px 0px 5px 8px;font-weight:bold;}
 #tip-main{padding:10px;color:#333333;}
 #tip-main p,#tip-main ul{font-size:1.3em;}
