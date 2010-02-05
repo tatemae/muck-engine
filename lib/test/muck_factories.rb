@@ -89,6 +89,10 @@ Factory.define :access_code do |f|
   f.use_limit 1
 end
 
+Factory.define :access_code_request do |f|
+  f.email { Factory.next(:email) }
+end
+
 Factory.define :activity do |f|
   f.item {|a| a.association(:user)}
   f.template ''
