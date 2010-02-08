@@ -34,7 +34,7 @@ require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'plugins')
 begin
   # turn off solr for tests
   class ActsAsSolr::Post
-    def self.execute(request)
+    def self.execute(request, core = nil)
       true
     end
   end
