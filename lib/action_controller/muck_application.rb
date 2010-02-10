@@ -20,6 +20,11 @@ module ActionController
         request.env["HTTP_USER_AGENT"] && request.env["HTTP_USER_AGENT"][/(Mobile\/.+Safari)/]
       end
       
+      # Output a simple javascript message
+      def page_alert(message)
+        render :template => 'shared/page_alert'
+      end
+      
       # **********************************************
       # Locale methods
       # I18n methods from:
