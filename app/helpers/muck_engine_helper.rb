@@ -25,7 +25,7 @@ module MuckEngineHelper
   
   # Outputs scripts that manipulate the country and state select controls
   def country_scripts
-    return if @@country_scripts_included
+    return if defined?(@@country_scripts_included)
     @@country_scripts_included = true
     render :partial => 'scripts/country_scripts'
   end
@@ -231,6 +231,7 @@ module MuckEngineHelper
   end
 
   def truncate_on_word(text, length = 270, end_string = ' ...')
+    return if text.blank?
     if text.length > length
       stop_index = text.rindex(' ', length)
       stop_index = length - 10 if stop_index < length-10
