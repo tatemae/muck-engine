@@ -78,7 +78,7 @@ Factory.define :permission do |f|
 end
 
 Factory.define :role do |f|
-  f.rolename 'administrator'
+  f.rolename { Factory.next(:name) }
 end
 
 Factory.define :access_code do |f|
