@@ -2,6 +2,13 @@
 ru: 
   muck: 
     engine: 
+      admin_access_codes: "Коды доступа"
+      admin_home: Дом
+      admin_home_title: "Главная страница управления"
+      admin_logout: Выйти
+      admin_roles: Роли
+      admin_users: Пользователь
+      admin_welcome: "Добро пожаловать {{user}}"
       choose_country: "Выберите страну"
       choose_language: "Выбор языка"
       choose_state: "Выберите государство"

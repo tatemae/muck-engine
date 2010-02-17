@@ -2,6 +2,13 @@
 ca: 
   muck: 
     engine: 
+      admin_access_codes: "Codis d&#39;Accés"
+      admin_home: Inici
+      admin_home_title: "Administrador d&#39;Inici"
+      admin_logout: "Tancar sessió"
+      admin_roles: Rols
+      admin_users: Usuaris
+      admin_welcome: "Benvingut de nou {{user}}"
       choose_country: "Selecciona país"
       choose_language: "Choose Language"
       choose_state: "Esculli Estat"
@@ -10,7 +17,7 @@ ca:
       select_language_prompt: "Si us plau, seleccioneu un idioma"
       select_state_prompt: "Si us plau, seleccioneu un estat"
     forms: 
-      please_enter_a_value: "Si us plau, introduïu un valor per {{label}}"
+      please_enter_a_value: "Introduïu un valor per {{label}}"
     general: 
       activate: Activar
       deactivate: Desactivar

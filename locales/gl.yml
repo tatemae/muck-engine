@@ -2,6 +2,13 @@
 gl: 
   muck: 
     engine: 
+      admin_access_codes: "Códigos de acceso"
+      admin_home: Inicio
+      admin_home_title: "Admin Home"
+      admin_logout: Saír
+      admin_roles: Funcións
+      admin_users: Usuarios
+      admin_welcome: "Welcome back {{user}}"
       choose_country: "Seleccionar País"
       choose_language: "Escolla o idioma"
       choose_state: "Escolla Estado"

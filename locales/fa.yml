@@ -2,6 +2,13 @@
 fa: 
   muck: 
     engine: 
+      admin_access_codes: "دسترسی به کدهای"
+      admin_home: "صفحه اصلی"
+      admin_home_title: "مدیریت خانه"
+      admin_logout: خروج
+      admin_roles: نقش
+      admin_users: اعضا
+      admin_welcome: "خوش آمدید {{user}}"
       choose_country: "انتخاب کشور"
       choose_language: "انتخاب زبان"
       choose_state: "استان را انتخاب کنید"

@@ -2,6 +2,13 @@
 ja: 
   muck: 
     engine: 
+      admin_access_codes: アクセスコード
+      admin_home: 家
+      admin_home_title: 管理ホーム
+      admin_logout: ログアウト
+      admin_roles: ロール
+      admin_users: ユーザー
+      admin_welcome: "戻る{{user}}へようこそ！"
       choose_country: 国を選択
       choose_language: 言語を選択
       choose_state: 都道府県を選んで

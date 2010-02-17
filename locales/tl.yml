@@ -2,6 +2,13 @@
 tl: 
   muck: 
     engine: 
+      admin_access_codes: "Access Code"
+      admin_home: Bagay
+      admin_home_title: "Admin Home"
+      admin_logout: Logout
+      admin_roles: Roles
+      admin_users: "Ang mga gumagamit"
+      admin_welcome: "Maligayang pagdating sa likod {{user}}"
       choose_country: "Pumili ng Bansa"
       choose_language: "Pumili ng Wika"
       choose_state: "Pumili ng Estado"

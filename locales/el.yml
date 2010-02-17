@@ -2,6 +2,13 @@
 el: 
   muck: 
     engine: 
+      admin_access_codes: Κωδικοί
+      admin_home: Σπίτι
+      admin_home_title: "Admin Αρχική"
+      admin_logout: Αποσύνδεση
+      admin_roles: Ρόλοι
+      admin_users: Χρήστες
+      admin_welcome: "Welcome back {{user}}"
       choose_country: "Επιλέξτε Χώρα"
       choose_language: "Επιλέξτε Γλώσσα"
       choose_state: "Επιλέξτε μέλος"

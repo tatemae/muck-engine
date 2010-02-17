@@ -2,6 +2,13 @@
 ar: 
   muck: 
     engine: 
+      admin_access_codes: "رموز الوصول"
+      admin_home: منزل
+      admin_home_title: "مشرف الصفحة الرئيسية"
+      admin_logout: خروج
+      admin_roles: الأدوار
+      admin_users: شاهد
+      admin_welcome: "أرحب بك مرة أخرى {{user}}"
       choose_country: "اختيار البلد"
       choose_language: "اختيار اللغة"
       choose_state: "اختيار الدولة"

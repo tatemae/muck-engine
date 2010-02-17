@@ -2,6 +2,13 @@
 sk: 
   muck: 
     engine: 
+      admin_access_codes: "Prístupové kódy"
+      admin_home: Domov
+      admin_home_title: "Hlavný admin"
+      admin_logout: Odhlásenie
+      admin_roles: Úloha
+      admin_users: Užívatelia
+      admin_welcome: "Vitajte späť {{user}}"
       choose_country: "Vyberte krajinu"
       choose_language: "Vybrať jazyk"
       choose_state: "Vyberte si štát"

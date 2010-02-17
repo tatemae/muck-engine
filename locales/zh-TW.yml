@@ -2,6 +2,13 @@
 zh-TW: 
   muck: 
     engine: 
+      admin_access_codes: 接入碼
+      admin_home: 家
+      admin_home_title: 管理主頁
+      admin_logout: 註銷
+      admin_roles: 角色
+      admin_users: 用戶
+      admin_welcome: "歡迎回來 {{user}}"
       choose_country: 選擇國家
       choose_language: 選擇語言
       choose_state: 選擇國家
@@ -10,12 +17,12 @@ zh-TW:
       select_language_prompt: 請選擇一種語言
       select_state_prompt: 請選擇一個國家
     forms: 
-      please_enter_a_value: "請輸入一個值為{{label}}"
+      please_enter_a_value: "請輸入一個值為 {{label}}"
     general: 
       activate: 激活
       deactivate: 停用
       delete: 刪除
-      deleting: 刪除...
+      deleting: "刪除 ..."
       disable: 使能夠
       enable: 喪失能力
       enabled: 啟用？

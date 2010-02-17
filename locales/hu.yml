@@ -2,6 +2,13 @@
 hu: 
   muck: 
     engine: 
+      admin_access_codes: "Hozzáférési kódok"
+      admin_home: Otthon
+      admin_home_title: "Admin Home"
+      admin_logout: Kijelentkezési
+      admin_roles: Szerepeket
+      admin_users: Álláskeresők
+      admin_welcome: "Welcome back {{user}}"
       choose_country: "Válasszon országot"
       choose_language: "Válasszon nyelvet"
       choose_state: "Válassza ki az állami"

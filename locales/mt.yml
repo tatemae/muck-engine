@@ -2,6 +2,13 @@
 mt: 
   muck: 
     engine: 
+      admin_access_codes: "Aċċess Codes"
+      admin_home: Dar
+      admin_home_title: "Admin Home"
+      admin_logout: Logout
+      admin_roles: Rwoli
+      admin_users: Users
+      admin_welcome: "Welcome back {{user}}"
       choose_country: "Agħżel Pajjiż"
       choose_language: "Agħżel Lingwa"
       choose_state: "Agħżel l-Istat"

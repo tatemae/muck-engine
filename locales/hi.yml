@@ -2,6 +2,13 @@
 hi: 
   muck: 
     engine: 
+      admin_access_codes: "एक्सेस कोड"
+      admin_home: घर
+      admin_home_title: "व्यवस्थापक होम"
+      admin_logout: लॉगआउट
+      admin_roles: भूमिका
+      admin_users: Users
+      admin_welcome: "वापस स्वागत है {{user}}"
       choose_country: "देश चुनें"
       choose_language: "भाषा चुनें"
       choose_state: "राज्य चुनें"

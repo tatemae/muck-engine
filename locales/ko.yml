@@ -2,6 +2,13 @@
 ko: 
   muck: 
     engine: 
+      admin_access_codes: "액세스 코드"
+      admin_home: 집
+      admin_home_title: "관리자 홈"
+      admin_logout: 로그아웃
+      admin_roles: 역할
+      admin_users: 사용자
+      admin_welcome: "{{user}} 돌아 오신 것을 환영합니다"
       choose_country: "국가를 선택하십시오"
       choose_language: "언어 선택"
       choose_state: "국가를 선택하십시오"

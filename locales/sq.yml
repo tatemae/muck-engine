@@ -2,6 +2,13 @@
 sq: 
   muck: 
     engine: 
+      admin_access_codes: "Qasja Codes"
+      admin_home: Shtëpia
+      admin_home_title: "Admin Home"
+      admin_logout: Logout
+      admin_roles: Rolet
+      admin_users: Users
+      admin_welcome: "Welcome back {{user}}"
       choose_country: "Choose Country"
       choose_language: "Zgjidhni gjuhën"
       choose_state: "Zgjidhni Shtetit"

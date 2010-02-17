@@ -2,6 +2,13 @@
 sl: 
   muck: 
     engine: 
+      admin_access_codes: "Access Codes"
+      admin_home: Domov
+      admin_home_title: "Admin Home"
+      admin_logout: Odjava
+      admin_roles: Vloge
+      admin_users: Uporabniki
+      admin_welcome: "Welcome back {{user}}"
       choose_country: "Choose Country"
       choose_language: "Choose Language"
       choose_state: "Izberite države"

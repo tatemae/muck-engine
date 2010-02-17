@@ -2,9 +2,16 @@
 sr: 
   muck: 
     engine: 
+      admin_access_codes: "Приступне а̨ифре"
+      admin_home: "Почетна страница"
+      admin_home_title: "Админ Почетна"
+      admin_logout: Одјава
+      admin_roles: Улоге
+      admin_users: Корисници
+      admin_welcome: "Добродошли назад {{user}}"
       choose_country: "Изаберите земљу"
       choose_language: "Одаберите језик"
-      choose_state: "Цхоосе државе"
+      choose_state: "Изаберите државе"
       missing_parent_error: "Наведите предмет родитеља"
       select_country_prompt: "Молимо Вас да одаберете земљу"
       select_language_prompt: "Молимо изаберите језик"

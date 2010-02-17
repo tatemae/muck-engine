@@ -2,6 +2,13 @@
 uk: 
   muck: 
     engine: 
+      admin_access_codes: "Коди доступу"
+      admin_home: Будинок
+      admin_home_title: "Головна сторінка управління"
+      admin_logout: Вийти
+      admin_roles: Ролі
+      admin_users: Користувач
+      admin_welcome: "Ласкаво просимо {{user}}"
       choose_country: "Виберіть країну"
       choose_language: "Вибір мови"
       choose_state: "Виберіть держава"

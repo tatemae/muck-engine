@@ -2,6 +2,13 @@
 bg: 
   muck: 
     engine: 
+      admin_access_codes: "Кодове за достъп"
+      admin_home: Дом
+      admin_home_title: "Админ Начало"
+      admin_logout: Изход
+      admin_roles: Роли
+      admin_users: Потребители
+      admin_welcome: "Добре дошли отново {{user}}"
       choose_country: "Изберете Държава"
       choose_language: "Изберете език"
       choose_state: "Изберете държава"

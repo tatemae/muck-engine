@@ -2,6 +2,13 @@
 id: 
   muck: 
     engine: 
+      admin_access_codes: "Kode Akses"
+      admin_home: Rumah
+      admin_home_title: "Admin Home"
+      admin_logout: Logout
+      admin_roles: Peran
+      admin_users: Users
+      admin_welcome: "Selamat datang kembali {{user}}"
       choose_country: "Pilih Negara"
       choose_language: "Pilih Bahasa"
       choose_state: "Pilih Negara"

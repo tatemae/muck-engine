@@ -2,6 +2,13 @@
 lt: 
   muck: 
     engine: 
+      admin_access_codes: "Kreipties kodai"
+      admin_home: Namai
+      admin_home_title: "Administratorius Pradžia"
+      admin_logout: Atsijungti
+      admin_roles: Vaidmenys
+      admin_users: Vartotojai
+      admin_welcome: "Sveiki sugrįžę {{user}}"
       choose_country: "Pasirinkite šalį"
       choose_language: "Pasirinkite kalbą"
       choose_state: "Pasirinkite valstybės"

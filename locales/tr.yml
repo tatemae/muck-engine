@@ -2,6 +2,13 @@
 tr: 
   muck: 
     engine: 
+      admin_access_codes: "Giriş Kodları"
+      admin_home: Ev
+      admin_home_title: "Admin Ana Sayfa"
+      admin_logout: Logout
+      admin_roles: Roller
+      admin_users: Kullanıcılar
+      admin_welcome: "Geri {{user}} Hoşgeldiniz"
       choose_country: "Ülke seçin"
       choose_language: "Dil Seç"
       choose_state: State

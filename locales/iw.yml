@@ -2,6 +2,13 @@
 iw: 
   muck: 
     engine: 
+      admin_access_codes: "קודי גישה"
+      admin_home: בית
+      admin_home_title: "מנהלה הבית"
+      admin_logout: התנתקות
+      admin_roles: תפקידים
+      admin_users: משתמשים
+      admin_welcome: "ברוך שובך {{user}}"
       choose_country: "בחר מדינה"
       choose_language: "בחר שפה"
       choose_state: "בחר מדינה"

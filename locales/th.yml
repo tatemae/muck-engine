@@ -2,32 +2,39 @@
 th: 
   muck: 
     engine: 
-      choose_country: เลือกประเทศ
-      choose_language: เลือกภาษา
-      choose_state: เลือกรัฐ
-      missing_parent_error: กรุณาระบุวัตถุผู้ปกครอง
-      select_country_prompt: กรุณาเลือกประเทศ
-      select_language_prompt: โปรดเลือกภาษา
-      select_state_prompt: กรุณาเลือกรัฐ
+      admin_access_codes: "รหัส Access"
+      admin_home: บ้าน
+      admin_home_title: "Home Admin"
+      admin_logout: "ออก จาก ระบบ"
+      admin_roles: บทบาท
+      admin_users: "ผู้ ใช้ งาน"
+      admin_welcome: "ยินดี ต้อนรับ กลับ {{user}}"
+      choose_country: "เลือก ประเทศ"
+      choose_language: "เลือก ภาษา"
+      choose_state: "เลือก รัฐ"
+      missing_parent_error: "กรุณา ระบุ วัตถุ ผู้ ปกครอง"
+      select_country_prompt: "กรุณา เลือก ประเทศ"
+      select_language_prompt: "โปรด เลือก ภาษา"
+      select_state_prompt: "กรุณา เลือก รัฐ"
     forms: 
-      please_enter_a_value: "โปรดป้อนค่าสำหรับ {{label}}"
+      please_enter_a_value: "โปรด ป้อน ค่า สำหรับ {{label}}"
     general: 
-      activate: เปิดใช้งาน
+      activate: "เปิด ใช้ งาน"
       deactivate: ยกเลิก
       delete: ลบ
       deleting: "ลบ ..."
-      disable: ทำให้สามารถ
-      enable: ไม่สามารถ
-      enabled: เปิดใช้งาน?
-      general_info: ข้อมูลทั่วไป
+      disable: "ทำให้ สามารถ"
+      enable: "ไม่ สามารถ"
+      enabled: "เปิด ใช้ งาน?"
+      general_info: "ข้อมูล ทั่วไป"
       help: ช่วยเหลือ
       loading: "โหลด ..."
-      next: "ถัดไป »"
+      next: "ถัด ไป »"
       no_text: ไม่ใช่
-      previous: «ก่อนหน้า
-      read_more: อ่านข้อมูลเพิ่มเติม
+      previous: "«ก่อน หน้า"
+      read_more: "อ่าน ข้อมูล เพิ่มเติม"
       save: บันทึก
-      settings_saved: การตั้งค่าได้ถูกบันทึก.
+      settings_saved: "การ ตั้ง ค่า ได้ ถูก บันทึก."
       time_ago: "แล้ว {{time_in_words}}"
       update: อัพเดต
       yes_text: ใช่

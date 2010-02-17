@@ -2,6 +2,13 @@
 et: 
   muck: 
     engine: 
+      admin_access_codes: Pääsukoodid
+      admin_home: Kodu
+      admin_home_title: "Admin Home"
+      admin_logout: Välju
+      admin_roles: Rollid
+      admin_users: Kasutajad
+      admin_welcome: "Tere tulemast tagasi {{user}}"
       choose_country: "Vali riik"
       choose_language: "Vali Keel"
       choose_state: "Vali riik"

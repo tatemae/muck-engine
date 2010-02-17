@@ -2,6 +2,13 @@
 da: 
   muck: 
     engine: 
+      admin_access_codes: Adgangskoder
+      admin_home: Hjem
+      admin_home_title: "Admin Hjem"
+      admin_logout: Logout
+      admin_roles: Roller
+      admin_users: Brugere
+      admin_welcome: "Velkommen tilbage {{user}}"
       choose_country: "Vælg land"
       choose_language: "Choose Language"
       choose_state: "Vælg stat"

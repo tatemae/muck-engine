@@ -2,6 +2,13 @@
 lv: 
   muck: 
     engine: 
+      admin_access_codes: "Piekļuves kodi"
+      admin_home: Mājas
+      admin_home_title: "Admin mājas lapa"
+      admin_logout: Logout
+      admin_roles: Lomas
+      admin_users: Lietotāji
+      admin_welcome: "Welcome back {{user}}"
       choose_country: "Izvēlies valsti"
       choose_language: "Choose Language"
       choose_state: "Izvēlieties valsti"

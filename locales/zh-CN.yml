@@ -2,6 +2,13 @@
 zh-CN: 
   muck: 
     engine: 
+      admin_access_codes: 接入码
+      admin_home: 家
+      admin_home_title: 管理主页
+      admin_logout: 注销
+      admin_roles: 角色
+      admin_users: 用户
+      admin_welcome: "欢迎回来{{user}}"
       choose_country: 选择国家
       choose_language: 选择语言
       choose_state: 选择国家

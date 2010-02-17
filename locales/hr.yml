@@ -2,6 +2,13 @@
 hr: 
   muck: 
     engine: 
+      admin_access_codes: "Pristup Codes"
+      admin_home: "Početna stranica"
+      admin_home_title: "Admin Home"
+      admin_logout: Logout
+      admin_roles: Uloge
+      admin_users: Korisnici
+      admin_welcome: "Welcome back {{user}}"
       choose_country: "Choose Country"
       choose_language: "Izaberite jezik"
       choose_state: "Izaberite State"

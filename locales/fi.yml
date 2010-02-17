@@ -2,6 +2,13 @@
 fi: 
   muck: 
     engine: 
+      admin_access_codes: Tunnusluvut
+      admin_home: Koti
+      admin_home_title: "Järjestelmänvalvonnan Etusivu"
+      admin_logout: Uloskirjautumista
+      admin_roles: Roolit
+      admin_users: Käyttäjät
+      admin_welcome: "Tervetuloa takaisin {{user}}"
       choose_country: "Valitse maa"
       choose_language: "Valitse kieli"
       choose_state: "Valitse valtion"

@@ -2,6 +2,13 @@
 pt-PT: 
   muck: 
     engine: 
+      admin_access_codes: "Códigos de Acesso"
+      admin_home: Início
+      admin_home_title: "Admin Home"
+      admin_logout: Sair
+      admin_roles: Funções
+      admin_users: Usuários
+      admin_welcome: "Welcome back {{user}}"
       choose_country: "Escolher País"
       choose_language: "Escolha o idioma"
       choose_state: "Escolha Estado"

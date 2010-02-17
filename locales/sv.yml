@@ -2,6 +2,13 @@
 sv: 
   muck: 
     engine: 
+      admin_access_codes: Koder
+      admin_home: Hem
+      admin_home_title: "Admin Hem"
+      admin_logout: Logout
+      admin_roles: Roller
+      admin_users: Användare
+      admin_welcome: "Välkommen tillbaka {{user}}"
       choose_country: "Välj land"
       choose_language: "Välj språk"
       choose_state: "Välja statligt"

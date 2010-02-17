@@ -2,6 +2,13 @@
 ro: 
   muck: 
     engine: 
+      admin_access_codes: "Codurile de acces"
+      admin_home: Acasă
+      admin_home_title: "Admin Home"
+      admin_logout: Deconectare
+      admin_roles: Rolurile
+      admin_users: Users
+      admin_welcome: "Bine ai revenit {{user}}"
       choose_country: "Alegeti Tara"
       choose_language: "Alege Limba"
       choose_state: "Alege de stat"
