@@ -15,7 +15,7 @@ module MuckControllerMacros
     login_url ||= '/login'
     args.each do |action, verb|
       should "Require login for '#{action}' action" do
-        if [:put, :delete].include?(verb) # put and delete require an id even if it is a bogus one
+        if [:put, :delete].include?(verb) || [:edit].include?(action)  # edit, put and delete require an id even if it is a bogus one
           send(verb, action, :id => 1)
         else
           send(verb, action)

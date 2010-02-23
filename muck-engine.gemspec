@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-02-17}
+  s.date = %q{2010-02-22}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -139,8 +139,13 @@ Gem::Specification.new do |s|
      "public/images/arrow_left.gif",
      "public/images/arrow_right.gif",
      "public/images/arrow_up.gif",
+     "public/images/fancybox/blank.gif",
+     "public/images/fancybox/fancy_close.png",
      "public/images/fancybox/fancy_closebox.png",
      "public/images/fancybox/fancy_left.png",
+     "public/images/fancybox/fancy_loading.png",
+     "public/images/fancybox/fancy_nav_left.png",
+     "public/images/fancybox/fancy_nav_right.png",
      "public/images/fancybox/fancy_progress.png",
      "public/images/fancybox/fancy_right.png",
      "public/images/fancybox/fancy_shadow_e.png",
@@ -153,6 +158,7 @@ Gem::Specification.new do |s|
      "public/images/fancybox/fancy_shadow_w.png",
      "public/images/fancybox/fancy_title_left.png",
      "public/images/fancybox/fancy_title_main.png",
+     "public/images/fancybox/fancy_title_over.png",
      "public/images/fancybox/fancy_title_right.png",
      "public/images/icons/accept.png",
      "public/images/icons/add.png",
@@ -539,6 +545,7 @@ Gem::Specification.new do |s|
      "public/javascripts/jquery/jquery.jgrowl.js",
      "public/javascripts/jquery/jquery.js",
      "public/javascripts/jquery/jquery.metadata.min.js",
+     "public/javascripts/jquery/jquery.mousewheel.js",
      "public/javascripts/jquery/jquery.queryString.js",
      "public/javascripts/jquery/jquery.swapimage.js",
      "public/javascripts/jquery/jquery.swapimage.min.js",
