@@ -737,7 +737,7 @@ module Muck
         ['中文', 'Chinese', false, 'zh-CN', true],
         ['中文', 'Chinese Traditional', false, 'zh-TW', true],
         ['isiZulu', 'Zulu', false, 'zu', false]
-      ].each {|l| Language.create(:name => l[0], :english_name => l[1], :is_default => l[2], :locale => l[3], :supported => l[4]) }
+      ].each {|l| Language.create(:name => l[0], :english_name => l[1], :is_default => l[2], :locale => l[3], :supported => l[4]) unless Language.find_by_locale(s[3])  }
     end
   
   end
