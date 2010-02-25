@@ -145,6 +145,48 @@ class MuckEngine
 
           File.open(env_file, 'w') { |f| f.write(environment) }
         end
+        
+        
+        # examples of stuff we need to look for:
+        # config.gem "muck-raker", :lib => 'muck_raker', :version => '>=0.3.2'
+        def write_new_gem_version_in_bundle(path, gem_name)
+          puts "Updating version for: #{gem_name}"
+          gem_lib = muck_gem_lib(gem_name)
+          gem_path = File.join(path, muck_gem_path(gem_name))
+          gem_file = File.join(RAILS_ROOT, 'Gemfile')
+          version_file = File.join(gem_path, 'VERSION')
+          if !File.exists?(version_file)
+            puts "Could not find version file for #{gem_name}.  You probably don't have the code for this gem.  
+              No big deal since if you don't have the code you probably haven't change it.  Skipping version for this gem."
+            return 
+          end
+          version = IO.read(version_file).strip
+          environment = IO.read(gem_file)
+        
+          search = Regexp.new(/\:require_as\s*=>\s*['"]#{gem_lib}['"],\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
+          failure = environment.gsub!(search, "'>=#{version}', :require_as => '#{gem_lib}'").nil?
+        
+          if failure
+            search = Regexp.new(/gem\s*['"]#{gem_name}['"],\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
+            failure = environment.gsub!(search, "gem '#{gem_name}', '>=#{version}'").nil?
+          end  
+
+          if failure
+            search = Regexp.new(/gem\s*['"]#{gem_name}['"],\s*\:require_as\s*=>\s*['"]#{gem_lib}['"]/)
+            failure = environment.gsub!(search, "gem '#{gem_name}', '>=#{version}', :require_as => '#{gem_lib}'").nil?
+          end
+        
+          if failure
+            search = Regexp.new(/gem\s*['"]#{gem_name}['"]/)
+            failure = environment.gsub!(search, "gem '#{gem_name}', '>=#{version}'").nil?
+          end
+        
+          if failure
+            puts "Could not update version for #{gem_name}"
+          end
+
+          File.open(gem_file, 'w') { |f| f.write(environment) }
+        end
 
         def git_commit(path, message)
           puts "Commiting #{BLUE}#{File.basename(path)}#{INVERT}"
@@ -299,8 +341,7 @@ class MuckEngine
           end
           
         end
-        
-        
+                
         desc "Write muck gem versions into muck"
         task :versions do
           muck_gem_names.each do |gem_name|
@@ -308,6 +349,13 @@ class MuckEngine
           end
         end
 
+        desc "Write muck gem versions into application's gem file"
+        task :bundle do
+          muck_gem_names.each do |gem_name|
+            write_new_gem_version_in_bundle("#{projects_path}", gem_name)
+          end
+        end
+        
         desc 'Translate app into all languages supported by Google'
         task :translate_app => :environment do
           puts 'translating app'
