@@ -29,7 +29,7 @@ class Language < ActiveRecord::Base
   def self.cache_locale_ids
     if !@@locale_ids
       languages = Language.find(:all, :select => 'id, locale', :conditions => ['languages.supported = ?', true])
-      @@locale_ids = Hash[*languages.collect {|v|[v.locale.to_sym, v.id]}.flatten]
+      @@locale_ids = Hash[*languages.collect {|v|[v.locale[0..1].to_sym, v.id]}.flatten]
     end
   end
   
