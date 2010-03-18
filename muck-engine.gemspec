@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.4.13"
+  s.version = "0.4.14"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-03-11}
+  s.date = %q{2010-03-18}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -56,10 +56,15 @@ Gem::Specification.new do |s|
      "app/views/scripts/_parse_uri.html.erb",
      "app/views/scripts/_time_scripts.html.erb",
      "app/views/shared/_delete.html.erb",
+     "app/views/shared/_delete.iphone.erb",
      "app/views/shared/_error_box.html.erb",
+     "app/views/shared/_error_box.iphone.erb",
      "app/views/shared/_field_error.html.erb",
+     "app/views/shared/_field_error.iphone.erb",
      "app/views/shared/_flash_error_box.html.erb",
+     "app/views/shared/_flash_error_box.iphone.erb",
      "app/views/shared/_flash_messages.html.erb",
+     "app/views/shared/_flash_messages.iphone.erb",
      "app/views/shared/_growl.html.erb",
      "app/views/shared/_growl_box.html.erb",
      "app/views/shared/_no_result.html.erb",
