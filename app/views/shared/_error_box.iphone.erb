@@ -1,9 +1,0 @@
-<div <%=css_class%> id="errorExplanation">
-  <% if !title.blank? -%>
-    <h2><%= title %></h2>
-  <% end -%>
-  <%= flash_html %>
-  <%= field_errors %>
-  <%= extra_html %>
-</div>
-<%= render(:partial => 'shared/growl') -%>
