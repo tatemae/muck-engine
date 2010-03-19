@@ -30,6 +30,12 @@ class MuckEngine
       end
     end
     
+    # Output a message container that is hidden by default.  This can be used to create html where an 
+    # ajax call can drop messages.  Just do something like jQuery('#message_id).html('some message');
+    def output_message_container(message_id = 'message_id')
+      render :partial => 'shared/message_container', :locals => { :message_id => message_id }
+    end
+    
     # Output a page update that will display messages in the flash
     def output_admin_messages(fields = nil, title = '', options = { :class => 'notify-box' }, flash_only = false)
       @fields = fields
