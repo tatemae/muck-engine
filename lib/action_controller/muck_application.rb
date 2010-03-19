@@ -114,15 +114,6 @@ module ActionController
         BasicMailer.deliver_mail(:subject => subject, :body => body.join("\n"))
       end
       
-      
-      def get_redirect_to
-        if params[:redirect_to]
-          redirect_to params[:redirect_to]
-        else
-          yield
-        end
-      end
-
       # render methods
       def render_as_html
         last_template_format = @template.template_format
