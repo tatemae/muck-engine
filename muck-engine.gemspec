@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.4.14"
+  s.version = "0.4.15"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-03-19}
+  s.date = %q{2010-03-20}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -33,20 +33,13 @@ Gem::Specification.new do |s|
      "app/models/state.rb",
      "app/views/admin/default/index.html.erb",
      "app/views/admin/shared/_output_admin_messages.js.erb",
-     "app/views/forms/_base_field.html.erb",
-     "app/views/forms/_base_field.iphone.erb",
-     "app/views/forms/_color_picker_field.html.erb",
-     "app/views/forms/_color_picker_field.iphone.erb",
-     "app/views/forms/_default.html.erb",
-     "app/views/forms/_default.iphone.erb",
-     "app/views/forms/_field.html.erb",
-     "app/views/forms/_field.iphone.erb",
-     "app/views/forms/_field_with_tips.html.erb",
-     "app/views/forms/_field_with_tips.iphone.erb",
-     "app/views/forms/_menu_field.html.erb",
-     "app/views/forms/_menu_field.iphone.erb",
-     "app/views/forms/_tips.html.erb",
-     "app/views/forms/_tips.iphone.erb",
+     "app/views/forms/_base_field.erb",
+     "app/views/forms/_color_picker_field.erb",
+     "app/views/forms/_default.erb",
+     "app/views/forms/_field.erb",
+     "app/views/forms/_field_with_tips.erb",
+     "app/views/forms/_menu_field.erb",
+     "app/views/forms/_tips.erb",
      "app/views/layouts/admin.html.erb",
      "app/views/layouts/admin/_footer.html.erb",
      "app/views/layouts/admin/_head.html.erb",
@@ -62,23 +55,15 @@ Gem::Specification.new do |s|
      "app/views/scripts/_country_scripts.html.erb",
      "app/views/scripts/_parse_uri.html.erb",
      "app/views/scripts/_time_scripts.html.erb",
-     "app/views/shared/_delete.html.erb",
-     "app/views/shared/_delete.iphone.erb",
-     "app/views/shared/_error_box.html.erb",
-     "app/views/shared/_error_box.iphone.erb",
-     "app/views/shared/_field_error.html.erb",
-     "app/views/shared/_field_error.iphone.erb",
-     "app/views/shared/_flash_error_box.html.erb",
-     "app/views/shared/_flash_error_box.iphone.erb",
-     "app/views/shared/_flash_messages.html.erb",
-     "app/views/shared/_flash_messages.iphone.erb",
-     "app/views/shared/_growl.html.erb",
-     "app/views/shared/_growl.iphone.erb",
-     "app/views/shared/_growl_box.html.erb",
-     "app/views/shared/_growl_box.iphone.erb",
-     "app/views/shared/_message_container.html.erb",
-     "app/views/shared/_message_container.iphone.erb",
-     "app/views/shared/_no_result.html.erb",
+     "app/views/shared/_delete.erb",
+     "app/views/shared/_error_box.erb",
+     "app/views/shared/_field_error.erb",
+     "app/views/shared/_flash_error_box.erb",
+     "app/views/shared/_flash_messages.erb",
+     "app/views/shared/_growl.erb",
+     "app/views/shared/_growl_box.erb",
+     "app/views/shared/_message_container.erb",
+     "app/views/shared/_no_result.erb",
      "app/views/shared/page_alert.js.erb",
      "config/muck_engine_routes.rb",
      "db/migrate/20090402234137_create_languages.rb",
