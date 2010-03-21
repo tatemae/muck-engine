@@ -10,4 +10,6 @@
 
 class State < ActiveRecord::Base
   belongs_to :country
+  named_scope :by_name, :order => "name ASC"
+  
 end

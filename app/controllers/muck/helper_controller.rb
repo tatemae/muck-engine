@@ -1,4 +1,4 @@
-class HelperController < ApplicationController
+class Muck::HelperController < ApplicationController
 
   def load_states_for_country
     country_id = params[:id]
@@ -8,7 +8,7 @@ class HelperController < ApplicationController
     # set cookies so we can remember the last value the user selected
     cookies[:prefered_country_id] = country_id
     respond_to do |format| 
-      format.js { render :json => {:states => @states, :label => label, :prompt => prompt}.as_json }
+      format.json { render :json => {:states => @states, :label => label, :prompt => prompt}.as_json }
     end
   end
   

@@ -19,7 +19,7 @@ function setup_country(force_load){
 	}
 
 	if(force_load || state_id == '' || state_id == null || state_id == -1) {
-		jQuery.getJSON("/helper/load_states_for_country/" + country_id + ".js", function(data){
+		jQuery.getJSON("/load_states_for_country/" + country_id + ".json", function(data){
 			var options = '';
 			jQuery("#counties-container").hide();
 			jQuery('#states-container label').html(data.label);
