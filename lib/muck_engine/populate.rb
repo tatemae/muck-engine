@@ -86,7 +86,6 @@ module Muck
         ['FO', 'Faroe Islands'],
         ['FR', 'France'],
         ['GA', 'Gabon'],
-        ['GB', 'United Kingdom'],
         ['GD', 'Grenada'],
         ['GE', 'Georgia'],
         ['GF', 'French Guiana'],
@@ -337,7 +336,6 @@ module Muck
       # england_id = Country.find_by_abbreviation('ENG').id
       # wales_id = Country.find_by_abbreviation('WAL').id
       # channel_islands_id = Country.find_by_abbreviation('CHI').id
-      
       ireland_id = Country.find_by_abbreviation('IE').id
       scotland_id = Country.find_by_abbreviation('UK').id
       england_id = Country.find_by_abbreviation('UK').id
