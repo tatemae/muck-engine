@@ -80,8 +80,8 @@ jQuery(document).ready(function() {
 
   jQuery(document).ready(function() {
     jQuery('.waiting').hide();
-    jQuery(".wait-button").click(function() {
-      jQuery('.waiting').show();
+    jQuery(".wait-button").live('click', function() {
+      jQuery(this).siblings('.waiting').show();
       jQuery(this).hide();
     });
   });
