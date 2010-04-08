@@ -108,11 +108,14 @@ function add_to_list(items_string, new_item){
 // Given a comma delimited list remove an item from the string
 function remove_from_list(items_string, remove_item){
   var items_string = split_list(items_string);
+  var cleaned = [];
   for(i=0;i<items_string.length;i++){
     cleaned_item = items_string[i].split(" ").join("");
-    if(cleaned_item.length > 0){ cleaned.push(cleaned_item); }
-    if(cleaned_item == new_item){ add = false; }
+    if(cleaned_item.length > 0 && cleaned_item != remove_item){
+      cleaned.push(cleaned_item);
+    }
   }
+  return cleaned.join(', ');
 }
 
 // Split a string on commas
