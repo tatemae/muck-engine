@@ -1,3 +1,4 @@
+// compress with http://closure-compiler.appspot.com/home
 //jQuery.noConflict();
 jQuery(document).ajaxSend(function(event, request, settings) {
   add_headers(request);
@@ -92,11 +93,11 @@ jQuery(document).ready(function() {
 // in text boxes such as a list of emails or tags.
 // Given a comma delimited string add a new item if it isn't in the string
 function add_to_list(items_string, new_item){
-	var items_string = split_list(items_string);
+	var items = split_list(items_string);
   var add = true;
   var cleaned = [];
-  for(i=0;i<items_string.length;i++){
-    cleaned_item = items_string[i].split(" ").join("");
+  for(i=0;i<items.length;i++){
+    cleaned_item = items[i].split(" ").join("");
     if(cleaned_item.length > 0){ cleaned.push(cleaned_item); }
     if(cleaned_item == new_item){ add = false; }
   }
@@ -116,7 +117,7 @@ function remove_from_list(items_string, remove_item){
 
 // Split a string on commas
 function split_list(items_string){
-	if(items_string.length > 0){
+	if(undefined != items_string && items_string.length > 0){
     var items_string = items_string.split(',');
   } else {
     var items_string = [];

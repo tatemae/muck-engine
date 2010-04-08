@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.4.18"
+  s.version = "0.4.19"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
@@ -556,6 +556,7 @@ Gem::Specification.new do |s|
      "public/javascripts/jquery/jquery.tips.js",
      "public/javascripts/jquery/jrails.js",
      "public/javascripts/muck-countries.js",
+     "public/javascripts/muck-src.js",
      "public/javascripts/muck.js",
      "public/javascripts/muck_time/en.js",
      "public/javascripts/tree.js",
