@@ -4,6 +4,7 @@ en:
     forms: 
       please_enter_a_value: Please enter a value for {{label}}
     engine: 
+      required_text_mark: (required)
       choose_state: Choose State
       select_state_prompt: Please select a state
       choose_language: Choose Language
@@ -12,29 +13,29 @@ en:
       select_country_prompt: Please select a country
       missing_parent_error: Please specify a parent object
       admin_logout: Logout
-      admin_home: Home
       admin_roles: Roles
       admin_access_codes: Access Codes
+      admin_home: Home
       admin_welcome: Welcome back {{user}}
       admin_home_title: Admin Home
       select_language_prompt: Please select a language
     general: 
-      no_text: "No"
       deactivate: Deactivate
-      help: Help
+      no_text: "No"
       previous: "&laquo; Previous"
-      settings_saved: Settings have been saved.
+      help: Help
       delete: Delete
+      settings_saved: Settings have been saved.
       time_ago: "{{time_in_words}} ago"
-      yes_text: "Yes"
-      enable: Disable
       enabled: Enabled?
+      enable: Disable
+      yes_text: "Yes"
       loading: Loading...
       save: Save
-      disable: Enable
-      activate: Activate
       next: Next &raquo;
-      general_info: General info
+      activate: Activate
+      disable: Enable
       update: Update
-      read_more: read more
+      general_info: General info
       deleting: Deleting...
+      read_more: read more

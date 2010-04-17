@@ -2,8 +2,10 @@
 <% if is_checkbox -%>
 	<%= field_element %>
 	<%= label_element %>
+	<%= after_label_html %>
 <% else -%>
 	<%= label_element %>
+	<%= after_label_html %>
 	<%= field_element %>
 <% end -%>
 <% if required -%><div id="<%= field_name %>_required" class="required-tip" style="display:none;"><em><%= I18n.t('muck.forms.please_enter_a_value', :label => label_name) %></em></div><% end -%>

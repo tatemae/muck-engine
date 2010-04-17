@@ -125,7 +125,7 @@ function split_list(items_string){
   }
   var cleaned = [];
   for(i=0;i<items.length;i++){
-    var cleaned_item = items[i].split(" ").join("");
+    var cleaned_item = jQuery.trim(items[i]);
     if(cleaned_item.length > 0){ 
       cleaned.push(cleaned_item); 
     }

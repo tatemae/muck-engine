@@ -23,8 +23,14 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
   # tip_key                The id of the div that contains the tip text.
   # tip_position           Position for tip text.  Valid values are 'top', 'right', 'bottom', 'left'.  Default is 'right'
   # wrapper_id             Alternate id for the container.  Each field is typically wrapper in a div.  This is the id of that div.
+  # wrapper_class          Css class for the container. All containers have the class form-row. This value will be in addition to that class.
+  # label_class            Css class for the label
+  # hide_label             Prevents a label from being output
   # hide_required          Do not show 'required' label even though field is required
   # hide_control_error     Hide errors that show up next to the field
+  # required_text_mark     By default '(required)' is used to show required fields. Override this by setting required_text_mark to something else - ie '*'
+  #                        Alternatively override 'muck.engine.required_text_mark' in your app's en.yml or the appropriate localization file. You can also
+  #                        specify a value in global_config.yml with required_text_mark: *
   def render_field_template(name, field, options)
 
     tippable = !options[:tip].nil?
@@ -33,21 +39,25 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
     field_id = options[:field_id]
     
     local_options = {
-      :extra_html   => options.delete(:extra_html),
-      :tip          => options.delete(:tip),
-      :tip_title    => options.delete(:tip_title),
-      :tip_key      => options.delete(:tip_key),
-      :tip_position => options.delete(:tip_position) || 'right',
-      :wrapper_id   => options.delete(:wrapper_id),
-      :pre_html     => options.delete(:pre_html),
-      :hide_required => options.delete(:hide_required),
+      :pre_html         => options.delete(:pre_html),
+      :after_label_html => options.delete(:after_label_html),
+      :extra_html       => options.delete(:extra_html),
+      :tip              => options.delete(:tip),
+      :tip_title        => options.delete(:tip_title),
+      :tip_key          => options.delete(:tip_key),
+      :tip_position     => options.delete(:tip_position) || 'right',
+      :wrapper_id       => options.delete(:wrapper_id),
+      :wrapper_class    => options.delete(:wrapper_class),
+      :hide_required    => options.delete(:hide_required),
       :hide_control_error => options.delete(:hide_control_error),
-      :css_class    => options.delete(:css_class)
+      :css_class        => options.delete(:css_class)
     }
     # TODO css_class does not appear to be used. Can just use the standard :class in html options to set the class
     
     is_checkbox = false
     is_checkbox = true if %w(check_box).include?(name)
+    
+    required_text_mark = options.delete(:required_text_mark)
     
     type = options.delete(:type)
     type ||= :tippable if tippable
@@ -67,7 +77,7 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
     else
       required = required_field?(field)
       label_text = (options[:label] || field.to_s.camelize)
-      label_text = label_text + required_mark(field) if required
+      label_text = label_text + required_mark(field, required_text_mark) if required
     end
     label_name = options.delete(:label)
 
@@ -79,11 +89,17 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
       options[:label_class] = 'desc'
     end
 
+    if options.delete(:hide_label)
+      label_element = ''
+    else
+      label_element = label(field, label_text, label_options)
+    end
+    
     locals = {
       :field_element  => yield,
       :field_name     => field_id || field_name(field),
       :label_name     => options.delete(:required_label) || label_name || '',
-      :label_element  => label(field, label_text, label_options),
+      :label_element  => label_element,
       :is_checkbox    => is_checkbox,
       :required       => required
     }.merge(local_options)
@@ -197,8 +213,9 @@ class MuckCustomFormBuilder < ActionView::Helpers::FormBuilder
     "#{@object_name.to_s}_#{field.to_s}"
   end
 
-  def required_mark(field)
-    required_field?(field) ? " <em id=\"#{field_name(field)}-label-required\">(required)</em>" : ''
+  def required_mark(field, required_text_mark = nil)
+    required_text_mark ||= GlobalConfig.required_text_mark || I18n.translate('muck.engine.required_text_mark')
+    required_field?(field) ? " <em id=\"#{field_name(field)}-label-required\">#{required_text_mark}</em>" : ''
   end
 
   def required_field?(field)
