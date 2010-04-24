@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-04-16}
+  s.date = %q{2010-04-24}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
      "app/models/language.rb",
      "app/models/state.rb",
      "app/views/admin/default/index.html.erb",
-     "app/views/admin/shared/_output_admin_messages.js.erb",
      "app/views/forms/_base_field.erb",
      "app/views/forms/_color_picker_field.erb",
      "app/views/forms/_default.erb",
