@@ -14,7 +14,7 @@ module MuckEngineHelper
   #
   # message_dom_id: The dom id of the element that will hold messages.
   #                 This element can have display:none by default.
-  def jquery_message(message_dom_id)
+  def jquery_json_message(message_dom_id)
     if GlobalConfig.growl_enabled
       "jQuery('##{message_dom_id}').html(json.message);"
       "jQuery('##{message_dom_id}').show();"

@@ -63,6 +63,7 @@ Gem::Specification.new do |s|
      "app/views/shared/_growl_box.erb",
      "app/views/shared/_message_container.erb",
      "app/views/shared/_no_result.erb",
+     "app/views/shared/_output_ajax_messages.erb",
      "app/views/shared/page_alert.js.erb",
      "config/muck_engine_routes.rb",
      "db/migrate/20090402234137_create_languages.rb",

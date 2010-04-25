@@ -1,2 +1,16 @@
-jQuery('#<%=dom_id%>').html('<%= escape_javascript(output_errors(title, options, fields, flash_only))%>');
-jQuery('#<%=dom_id%>').show();
+<% 
+html = output_errors(title, options, fields, flash_only)
+return if html.blank?
+html = escape_javascript(html)
+if decode_html
+  html = "decodeHtml('#{html}')"
+else
+  html = "'#{html}'"
+end
+-%>
+<% if growl -%>
+  jQuery.jGrowl.info(<%=html%>);
+<% else -%>
+  jQuery('#<%=dom_id%>').html(<%=html%>);
+  jQuery('#<%=dom_id%>').show();
+<% end -%>
