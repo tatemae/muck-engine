@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-04-30}
+  s.date = %q{2010-05-03}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -553,6 +553,7 @@ Gem::Specification.new do |s|
      "public/javascripts/jquery/jquery.queryString.js",
      "public/javascripts/jquery/jquery.swapimage.js",
      "public/javascripts/jquery/jquery.swapimage.min.js",
+     "public/javascripts/jquery/jquery.timers.js",
      "public/javascripts/jquery/jquery.tips.js",
      "public/javascripts/jquery/jrails.js",
      "public/javascripts/muck-countries.js",
