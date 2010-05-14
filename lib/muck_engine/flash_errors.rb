@@ -40,7 +40,7 @@ class MuckEngine
     
     # Output a page update that will display messages in the flash
     def output_admin_messages(fields = nil, title = '', options = { :class => 'notify-box' }, flash_only = false)
-      output_errors_ajax('admin-messages', fields, title, options, flash_only)
+      output_errors_ajax('admin-messages', title, options, fields, flash_only)
     end
     
     # Output a message that can be show for an ajax request.
