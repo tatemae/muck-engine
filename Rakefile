@@ -57,6 +57,7 @@ begin
     gemspec.add_dependency "validation_reflection"
     gemspec.add_dependency "will_paginate"
     gemspec.add_dependency "git"
+    gemspec.add_dependency "overlord"
     gemspec.add_development_dependency "shoulda"
   end
   Jeweler::RubyforgeTasks.new do |rubyforge|

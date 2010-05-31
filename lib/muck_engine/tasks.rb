@@ -2,6 +2,8 @@ require 'rake'
 require 'rake/tasklib'
 require 'fileutils'
 require 'jcode'
+require 'rubygems'
+
 begin
   require 'git'
 rescue LoadError
@@ -163,22 +165,22 @@ class MuckEngine
           version = IO.read(version_file).strip
           environment = IO.read(gem_file)
         
-          search = Regexp.new(/\:require_as\s*=>\s*['"]#{gem_lib}['"],\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
-          failure = environment.gsub!(search, "'>=#{version}', :require_as => '#{gem_lib}'").nil?
+          search = Regexp.new(/\:require\s*=>\s*['"]#{gem_lib}['"],\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
+          failure = environment.gsub!(search, "'#{version}', :require => '#{gem_lib}'").nil?
         
           if failure
             search = Regexp.new(/gem\s*['"]#{gem_name}['"],\s*['"][ <>=~]*\d+\.\d+\.\d+['"]/)
-            failure = environment.gsub!(search, "gem '#{gem_name}', '>=#{version}'").nil?
+            failure = environment.gsub!(search, "gem '#{gem_name}', '#{version}'").nil?
           end  
 
           if failure
-            search = Regexp.new(/gem\s*['"]#{gem_name}['"],\s*\:require_as\s*=>\s*['"]#{gem_lib}['"]/)
-            failure = environment.gsub!(search, "gem '#{gem_name}', '>=#{version}', :require_as => '#{gem_lib}'").nil?
+            search = Regexp.new(/gem\s*['"]#{gem_name}['"],\s*\:require\s*=>\s*['"]#{gem_lib}['"]/)
+            failure = environment.gsub!(search, "gem '#{gem_name}', '#{version}', :require => '#{gem_lib}'").nil?
           end
         
           if failure
             search = Regexp.new(/gem\s*['"]#{gem_name}['"]/)
-            failure = environment.gsub!(search, "gem '#{gem_name}', '>=#{version}'").nil?
+            failure = environment.gsub!(search, "gem '#{gem_name}', '#{version}'").nil?
           end
         
           if failure
@@ -188,6 +190,44 @@ class MuckEngine
           File.open(gem_file, 'w') { |f| f.write(environment) }
         end
 
+        # Rewrite the Gemfile with the latest gem versions installed on the local machine.
+        def update_gem_file
+          gemfile = File.join(RAILS_ROOT, 'Gemfile')
+          contents = IO.read(gemfile)
+          gems = contents.scan(/gem\s*['"]([-_\d\w]+)['"],\s*(['"][~><>=\d\.]+['"])?\s*(\:require\s*=>\s*['"]\w+['"])?/)
+          gems.each do |g|
+            success = false
+            search = "gem #{g[0]}"
+            search << ", #{g[1]}" if g[1] # add on version if it was present
+            search << ", #{g[2]}" if g[2] # add on require if it was present
+            new_version = get_gem_version(g[0])
+            if new_version
+              replace = "gem #{g[0]}, '#{new_version}'"
+              replace << ", #{g[2]}" if g[2] # add on require if it was present
+              success = !contents.gsub!(search, replace)
+            end
+            if !success
+              puts "Failed to update version for #{g[0]}"
+            end
+          end
+          File.open(gemfile, 'w') { |f| f.write(contents) }
+        end
+        
+        # Get the latest gem version
+        def get_gem_version(gem_name)
+          @si ||= Gem::SourceIndex.from_installed_gems
+          gems = @si.find_name(gem_name)
+          newest_gem = gems[0]
+          if newest_gem
+            gems.each do |gem|
+              newest_gem = gem if gem.version > newest_gem.version
+            end
+            newest_gem.version.version
+          else
+            #puts "Failed to find #{gem_name} in index"
+          end
+        end
+        
         def git_commit(path, message)
           puts "Commiting #{BLUE}#{File.basename(path)}#{INVERT}"
           repo = Git.open("#{path}")
@@ -349,11 +389,16 @@ class MuckEngine
           end
         end
 
-        desc "Write muck gem versions into application's gem file"
-        task :bundle do
+        desc "Write muck gem versions into application's 'Gemfile'"
+        task :vers do
           muck_gem_names.each do |gem_name|
             write_new_gem_version_in_bundle("#{projects_path}", gem_name)
           end
+        end
+        
+        desc "Write gem versions (for all gems) into application's 'Gemfile'. Be sure to test with the updated gems and check the new versions."
+        task :vers_all => :environment do
+          update_gem_file
         end
         
         desc 'Translate app into all languages supported by Google'

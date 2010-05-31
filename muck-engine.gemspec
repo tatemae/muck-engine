@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-05-14}
+  s.date = %q{2010-05-31}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -1290,7 +1290,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{muck-engine}
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{The base engine for the muck system.}
   s.test_files = [
     "test/rails_root/app/controllers/admin/default_controller.rb",
@@ -1308,6 +1308,7 @@ Gem::Specification.new do |s|
      "test/rails_root/config/initializers/mime_types.rb",
      "test/rails_root/config/initializers/requires.rb",
      "test/rails_root/config/initializers/session_store.rb",
+     "test/rails_root/config/preinitializer.rb",
      "test/rails_root/config/routes.rb",
      "test/rails_root/db/migrate/20090320174818_create_muck_permissions_and_roles.rb",
      "test/rails_root/db/migrate/20090402234137_create_languages.rb",
@@ -1320,9 +1321,13 @@ Gem::Specification.new do |s|
      "test/rails_root/script/create_project.rb",
      "test/rails_root/test/functional/admin/default_controller_test.rb",
      "test/rails_root/test/functional/default_controller_test.rb",
+     "test/rails_root/test/functional/helper_controller_test.rb",
      "test/rails_root/test/test_helper.rb",
      "test/rails_root/test/unit/basic_mailer_test.rb",
+     "test/rails_root/test/unit/country_test.rb",
+     "test/rails_root/test/unit/language_test.rb",
      "test/rails_root/test/unit/muck_engine_helper_test.rb",
+     "test/rails_root/test/unit/state_test.rb",
      "test/rails_root/vendor/plugins/ssl_requirement/lib/ssl_requirement.rb",
      "test/rails_root/vendor/plugins/ssl_requirement/test/ssl_requirement_test.rb"
   ]
@@ -1331,21 +1336,24 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<validation_reflection>, [">= 0"])
       s.add_runtime_dependency(%q<will_paginate>, [">= 0"])
       s.add_runtime_dependency(%q<git>, [">= 0"])
+      s.add_runtime_dependency(%q<overlord>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
     else
       s.add_dependency(%q<validation_reflection>, [">= 0"])
       s.add_dependency(%q<will_paginate>, [">= 0"])
       s.add_dependency(%q<git>, [">= 0"])
+      s.add_dependency(%q<overlord>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
     end
   else
     s.add_dependency(%q<validation_reflection>, [">= 0"])
     s.add_dependency(%q<will_paginate>, [">= 0"])
     s.add_dependency(%q<git>, [">= 0"])
+    s.add_dependency(%q<overlord>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
   end
 end

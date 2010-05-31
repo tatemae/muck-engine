@@ -55,6 +55,15 @@ Factory.define :language do |f|
   f.muck_raker_supported true
 end
 
+# This is used for tests within muck-engine. The language
+# model is modified by migrations in other gems to include 'muck_raker_supported'
+Factory.define :unmodified_language, :class => Language do |f|
+  f.name { Factory.next(:name) }
+  f.english_name { Factory.next(:name) }
+  f.locale { Factory.next(:locale) }
+  f.supported true
+end
+
 Factory.define :user do |f|
   f.login { Factory.next(:login) }
   f.email { Factory.next(:email) }

@@ -11,26 +11,5 @@
 #
 
 class Language < ActiveRecord::Base
-
-  @@locale_ids = nil
-
-  def self.locale_id
-    cache_locale_ids
-    @@locale_ids[I18n.locale]
-  end
-
-  def self.supported_locale? locale
-    cache_locale_ids
-    @@locale_ids[locale.to_sym] != nil
-  end
-
-  private
-
-  def self.cache_locale_ids
-    if !@@locale_ids
-      languages = Language.find(:all, :select => 'id, locale', :conditions => ['languages.supported = ?', true])
-      @@locale_ids = Hash[*languages.collect {|v|[v.locale[0..1].to_sym, v.id]}.flatten]
-    end
-  end
-  
+  acts_as_muck_language
 end

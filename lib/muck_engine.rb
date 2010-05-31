@@ -3,6 +3,9 @@ require 'muck_engine/flash_errors'
 ActionController::Base.send :include, ActionController::MuckApplication
 ActionController::Base.send :include, MuckEngine::FlashErrors
 ActiveRecord::Base.send :include, ActiveRecord::MuckModel
+ActiveRecord::Base.class_eval { include ActiveRecord::Acts::MuckLanguage }
+ActiveRecord::Base.class_eval { include ActiveRecord::Acts::MuckCountry }
+ActiveRecord::Base.class_eval { include ActiveRecord::Acts::MuckState }
 ActionMailer::Base.send :include, ActionMailer::MuckMailer
 ActionController::Base.send :helper, MuckEngineHelper
 ActionController::Base.send :helper, MuckAdminHelper

@@ -9,7 +9,5 @@
 #
 
 class State < ActiveRecord::Base
-  belongs_to :country
-  named_scope :by_name, :order => "name ASC"
-  
+  acts_as_muck_state
 end
