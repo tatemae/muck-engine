@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.4.26"
+  s.version = "0.4.27"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
@@ -72,6 +72,9 @@ Gem::Specification.new do |s|
      "install.rb",
      "lib/action_controller/muck_application.rb",
      "lib/action_mailer/muck_mailer.rb",
+     "lib/active_record/acts/muck_country.rb",
+     "lib/active_record/acts/muck_language.rb",
+     "lib/active_record/acts/muck_state.rb",
      "lib/active_record/muck_model.rb",
      "lib/muck_engine.rb",
      "lib/muck_engine/flash_errors.rb",
@@ -667,6 +670,7 @@ Gem::Specification.new do |s|
      "tasks/rails.rake",
      "test/rails_root/.gitignore",
      "test/rails_root/.rake_tasks",
+     "test/rails_root/Gemfile",
      "test/rails_root/Rakefile",
      "test/rails_root/app/controllers/admin/default_controller.rb",
      "test/rails_root/app/controllers/application_controller.rb",
@@ -690,6 +694,7 @@ Gem::Specification.new do |s|
      "test/rails_root/config/initializers/mime_types.rb",
      "test/rails_root/config/initializers/requires.rb",
      "test/rails_root/config/initializers/session_store.rb",
+     "test/rails_root/config/preinitializer.rb",
      "test/rails_root/config/routes.rb",
      "test/rails_root/db/.keep",
      "test/rails_root/db/migrate/20090320174818_create_muck_permissions_and_roles.rb",
@@ -1274,13 +1279,17 @@ Gem::Specification.new do |s|
      "test/rails_root/test/functional/.keep",
      "test/rails_root/test/functional/admin/default_controller_test.rb",
      "test/rails_root/test/functional/default_controller_test.rb",
+     "test/rails_root/test/functional/helper_controller_test.rb",
      "test/rails_root/test/integration/.keep",
      "test/rails_root/test/mocks/development/.keep",
      "test/rails_root/test/mocks/test/.keep",
      "test/rails_root/test/test_helper.rb",
      "test/rails_root/test/unit/.keep",
      "test/rails_root/test/unit/basic_mailer_test.rb",
+     "test/rails_root/test/unit/country_test.rb",
+     "test/rails_root/test/unit/language_test.rb",
      "test/rails_root/test/unit/muck_engine_helper_test.rb",
+     "test/rails_root/test/unit/state_test.rb",
      "test/rails_root/vendor/plugins/ssl_requirement/README",
      "test/rails_root/vendor/plugins/ssl_requirement/lib/ssl_requirement.rb",
      "test/rails_root/vendor/plugins/ssl_requirement/test/ssl_requirement_test.rb",
