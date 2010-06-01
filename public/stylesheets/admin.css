@@ -31,6 +31,8 @@ ul.admin-list li a{font-size:1.2em;}
 #admin-messages{display:none;}
 /* ui elements */
 #ui-datepicker-div{z-index:2005;}
+/* jquery-ui theme overrides */
+.ui-widget {font-size:.8em;}
 /* tables */
 .adminTable{margin:5px 0 0 0;padding:0 0 40px 0px;width:980px;}
 .adminTable a{color:#000;text-decoration:none;font-weight:bold;}
