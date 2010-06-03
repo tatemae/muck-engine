@@ -52,3 +52,11 @@ button.fg-button { width:auto; overflow:visible; } /* removes extra button width
 .fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
 .fg-button-icon-solo { display:block; width:8px; text-indent: -9999px; }	 /* solo icon buttons must have block properties for the text-indent to work */	
 .fg-button.ui-state-loading .ui-icon { background: url(spinner_bar.gif) no-repeat 0 0;
+/*tabs*/
+.tabs{font-size:1.2em;border-bottom:solid 2px #000;position:relative;}
+.tabs ul{list-style-type:none;}
+.tabs ul li{float:left;display:inline;margin-right:20px;}
+.tabs ul li a{color:#000;text-decoration:none;}
+.tabs ul li a:hover{color:#333;}
+.tabs ul li a.active{background-position:0 bottom;color:#fff;}
+.tabs ul li a.active span{background-position:right bottom;}
