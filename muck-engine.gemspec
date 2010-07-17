@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.4.29"
+  s.version = "0.4.30"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-07-13}
+  s.date = %q{2010-07-17}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -544,9 +544,6 @@ Gem::Specification.new do |s|
      "public/javascripts/jquery/colorpicker.js",
      "public/javascripts/jquery/fg.menu.js",
      "public/javascripts/jquery/jquery-ui.js",
-     "public/javascripts/jquery/jquery.autocomplete.js.readme",
-     "public/javascripts/jquery/jquery.autocomplete.min.js",
-     "public/javascripts/jquery/jquery.autocomplete.pack.js",
      "public/javascripts/jquery/jquery.easing.js",
      "public/javascripts/jquery/jquery.fancybox.js",
      "public/javascripts/jquery/jquery.form.js",
@@ -616,7 +613,6 @@ Gem::Specification.new do |s|
      "public/stylesheets/flick/images/ui-icons_ffffff_256x240.png",
      "public/stylesheets/flick/jquery-ui-1.8.1.custom.css",
      "public/stylesheets/jquery/cupertino/jquery-ui-1.7.2.custom.css",
-     "public/stylesheets/jquery/jquery.autocomplete.css",
      "public/stylesheets/jquery/jquery.fancybox.css",
      "public/stylesheets/jquery/redmond/jquery-ui-1.7.2.custom.css",
      "public/stylesheets/jquery/smoothness/jquery-ui-1.7.2.custom.css",
