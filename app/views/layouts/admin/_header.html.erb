@@ -4,7 +4,7 @@
 </div>
 <div id="admin-account" class="navigation span-24">
   <ul>
-    <li><%=translate('muck.engine.admin_welcome', :user => current_user.display_name) %></li>
+    <li><%= link_to current_user.login, user_path(current_user) %>&nbsp;&nbsp;|</li>
     <li><%=link_to translate('muck.engine.admin_logout'), '/logout' %></li>
   </ul>
 </div>
