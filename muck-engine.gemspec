@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-08-18}
+  s.date = %q{2010-09-03}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -612,11 +612,7 @@ Gem::Specification.new do |s|
      "public/stylesheets/flick/images/ui-icons_ff0084_256x240.png",
      "public/stylesheets/flick/images/ui-icons_ffffff_256x240.png",
      "public/stylesheets/flick/jquery-ui-1.8.1.custom.css",
-     "public/stylesheets/jquery/cupertino/jquery-ui-1.7.2.custom.css",
      "public/stylesheets/jquery/jquery.fancybox.css",
-     "public/stylesheets/jquery/redmond/jquery-ui-1.7.2.custom.css",
-     "public/stylesheets/jquery/smoothness/jquery-ui-1.7.2.custom.css",
-     "public/stylesheets/jquery/ui-lightness/jquery-ui-1.7.2.custom.css",
      "public/stylesheets/reset.css",
      "public/stylesheets/styles.css",
      "rails/init.rb",
