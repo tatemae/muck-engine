@@ -10,7 +10,7 @@
 </div>
 <div id="main-navigation" class="navigation">
   <ul id="admin-nav">
-    <%= render :partial => 'layouts/admin/header_nav_item', :collection => MuckEngine.muck_admin_nav_items %>
+    <%= render :partial => 'layouts/admin/header_nav_item', :collection => MuckEngine.MuckEngine.configuration.muck_admin_nav_items %>
   </ul>
 </div>
 <div id="sub-header" class="span-24">

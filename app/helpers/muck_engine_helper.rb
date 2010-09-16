@@ -30,26 +30,16 @@ module MuckEngineHelper
     render :partial => 'scripts/country_scripts'
   end
   
-  def custom_form_for(record_or_name_or_array, *args, &proc) 
+  def muck_form_for(record_or_name_or_array, *args, &proc) 
     options = args.detect { |argument| argument.is_a?(Hash) } 
     if options.nil? 
-      options = {:builder => MuckCustomFormBuilder} 
+      options = {:builder => MuckEngine::FormBuilder} 
       args << options 
     end 
-    options[:builder] = MuckCustomFormBuilder unless options.nil? 
+    options[:builder] = MuckEngine::FormBuilder unless options.nil? 
     form_for(record_or_name_or_array, *args, &proc) 
   end
-  
-  def custom_remote_form_for(record_or_name_or_array, *args, &proc) 
-    options = args.detect { |argument| argument.is_a?(Hash) } 
-    if options.nil? 
-      options = {:builder => MuckCustomFormBuilder} 
-      args << options 
-    end 
-    options[:builder] = MuckCustomFormBuilder unless options.nil? 
-    remote_form_for(record_or_name_or_array, *args, &proc) 
-  end
-  
+    
   # generates javascript that will hide a link or button
   # when click and then show a different dom object
   def show_hide_on_click(id_to_show, id_to_hide)

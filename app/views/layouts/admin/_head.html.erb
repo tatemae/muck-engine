@@ -4,7 +4,7 @@
 <%= stylesheet_link_tag 'blueprint/print.css', :media => "print" %>
 <!--[if IE]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 <%= stylesheet_link_tag %W{ reset styles blueprint/liquid_screen jquery/jquery.autocomplete jquery/jquery.fancybox fgmenu/fg.menu.css admin }, :cache => 'admin_styles' %>
-<%= stylesheet_link_tag MuckEngine.muck_admin_css -%>
+<%= stylesheet_link_tag MuckEngine.configuration.muck_admin_css -%>
 <%= google_load_jquery(http_protocol) %>
 <%= google_load_jquery_ui(http_protocol) %>
 <%= javascript_include_tag %w{

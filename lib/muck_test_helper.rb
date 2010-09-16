@@ -44,4 +44,4 @@ rescue NameError => ex
 end
 
 # load in the default data required to run the app
-Muck::Populate.all
+Muck::MuckEngine::Populate.all

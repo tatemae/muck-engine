@@ -11,5 +11,5 @@
 #
 
 class Language < ActiveRecord::Base
-  acts_as_muck_language
+  include MuckEngine::Models::Language
 end

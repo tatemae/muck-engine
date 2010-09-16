@@ -1,4 +1,4 @@
-class MuckEngine
+module MuckEngine
   module FlashErrors
     
     # Output only flash errors

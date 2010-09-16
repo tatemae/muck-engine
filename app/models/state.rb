@@ -9,5 +9,5 @@
 #
 
 class State < ActiveRecord::Base
-  acts_as_muck_state
+  include MuckEngine::Models::State
 end

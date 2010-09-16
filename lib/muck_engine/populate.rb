@@ -1,4 +1,4 @@
-module Muck
+module MuckEngine
   module Populate
     def self.all
       $KCODE = 'UTF8'
