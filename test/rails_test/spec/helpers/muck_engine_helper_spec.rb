@@ -40,11 +40,12 @@ class MuckEngineHelperTest < ActiveSupport::TestCase
   describe "locale_link" do
     it "should prepend the locale to a domain without a subdomain" do
       helper.request.stub(:host).and_return('folksemantic.com')
-      helper.locale_link('Espanol','es').should = '<a href="http://es.folksemantic.com/">Espanol</a>'
+      helper.locale_link('Espanol','es').should == '<a href="http://es.folksemantic.com">Espanol</a>'
     end
     it "should use www as the subdomain when switching to english" do
       helper.request.host = 'es.folksemantic.com'
-      helper.locale_link('English','en').should == '<a href="http://www.folksemantic.com/">English</a>'
+      Language.should_receive(:supported_locale?).with('es').and_return(true)
+      helper.locale_link('English','en').should == '<a href="http://www.folksemantic.com">English</a>'
     end
     it "should leave the path alone when prepending a locale subdomain" do
       helper.request.host = 'folksemantic.com'
@@ -57,7 +58,8 @@ class MuckEngineHelperTest < ActiveSupport::TestCase
     end
     it "should replace locale subdomains with the specified locale" do
       helper.request.host = 'fr.folksemantic.com'
-      helper.locale_link('Espanol','es').should == '<a href="http://es.folksemantic.com/">Espanol</a>'
+      Language.should_receive(:supported_locale?).with('fr').and_return(true)
+      helper.locale_link('Espanol','es').should == '<a href="http://es.folksemantic.com">Espanol</a>'
     end
     it "should specify the locale in the query string when the domain is localhost" do
       helper.request.host = 'localhost'
