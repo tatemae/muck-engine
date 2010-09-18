@@ -64,7 +64,6 @@ begin
     gemspec.add_development_dependency "capybara", ">= 0.3.9"
     gemspec.add_development_dependency "shoulda"
     gemspec.add_development_dependency "factory_girl"
-    gemspec.add_development_dependency "mocha"
     gemspec.add_development_dependency "redgreen"
     gemspec.add_development_dependency "cucumber"
     gemspec.add_development_dependency "rcov"

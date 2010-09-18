@@ -17,8 +17,8 @@ describe Admin::Muck::DefaultController do
       before(:each) do
         get :index
       end
-      it {should respond_with :success}
-      it {should render_template :index}
+      it { should respond_with :success }
+      it { should render_template :index }
     end
 
   end
@@ -27,7 +27,7 @@ describe Admin::Muck::DefaultController do
     before(:each) do
       get :index
     end
-    it {should respond_with :redirect}
+    it { should respond_with :redirect }
   end
 
 end

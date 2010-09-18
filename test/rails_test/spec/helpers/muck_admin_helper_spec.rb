@@ -1,42 +1,19 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe MuckEngineHelper do
+describe MuckAdminHelper do
   
-  describe "http_protocol" do
-    
-    describe "secure request" do
-      before(:all) do
-        helper.request.stub!(:ssl?).and_return(true)
-      end
-      it "returns https when ssl is true" do
-        helper.http_protocol(true).should == 'https://'
-      end
-      it "returns https when request is ssl" do
-        helper.http_protocol.should == 'https://'
-      end
+  describe "header_nav_item_image" do
+    it "will output a background style with an image" do
+      header_nav_item = mock(:header_nav_item)
+      header_nav_item.stub!(:image).and_return('something.gif')
+      helper.header_nav_item_image(header_nav_item).should include("background-image:url('something.gif');")
     end
-    
-    describe "normal request" do
-      before(:all) do
-        helper.request.stub!(:ssl?).and_return(false)
-      end
-      it "returns http when ssl is false" do
-        helper.http_protocol(false).should == 'http://'
-      end
-      it "returns http when request is not ssl" do
-        helper.http_protocol.should == 'http://'
-      end
+  end
+  
+  describe "hide_admin_messages" do
+    it "will hide admin messages" do
+      helper.hide_admin_messages.should include(".hide();")
     end
-    
   end
   
 end
-
-
-# 
-# raw_post = mock('raw_post')
-# raw_post.should_receive(:to_s).and_return('this string')
-# request.stub!(:raw_post).and_return(:raw_pos
-
-# request.env['HTTP_USER_AGENT'] = 'mozilla blah blah' 
-# get :new

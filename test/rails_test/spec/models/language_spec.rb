@@ -7,7 +7,7 @@ describe Language do
       @language = Factory(:unmodified_language, :locale => 'zz', :supported => true)
     end
     it "should find the language id for the current locale" do
-      I18n.expects(:locale).returns(:zz)
+      I18n.should_receive(:locale).and_return(:zz)
       Language.locale_id(true).should == @language.id
     end
   end

@@ -1,4 +1,3 @@
-require 'rails/test_help'
 require 'authlogic/test_case'
 
 require File.join(File.dirname(__FILE__), 'test', 'muck_factories')
@@ -25,31 +24,26 @@ rescue NameError => ex
   # solr isn't loaded. Just throw out the error
 end
 
-class ActiveSupport::TestCase
-  
-  include Authlogic::TestCase
-  setup :activate_authlogic
+RSpec.configure do |config|
+  config.include(Authlogic::TestCase)
+end
+
     
-  self.use_transactional_fixtures = true
-  self.use_instantiated_fixtures  = false
-  
-  def ensure_flash(val)
-    assert_contains flash.values, val, ", Flash: #{flash.inspect}"
+def ensure_flash(val)
+  assert_contains flash.values, val, ", Flash: #{flash.inspect}"
+end
+
+def login_as(user)
+  success = UserSession.create(user)
+  if !success
+    errors = user.errors.full_messages.to_sentence
+    message = 'User has not been activated' if !user.active?
+    raise "could not login as #{user.to_param}.  Please make sure the user is valid. #{message} #{errors}"
   end
-  
-  def login_as(user)
-    success = UserSession.create(user)
-    if !success
-      errors = user.errors.full_messages.to_sentence
-      message = 'User has not been activated' if !user.active?
-      raise "could not login as #{user.to_param}.  Please make sure the user is valid. #{message} #{errors}"
-    end
-    UserSession.find
-  end
-  
-  def assure_logout
-    user_session = UserSession.find
-    user_session.destroy if user_session
-  end
-  
+  UserSession.find
+end
+
+def assure_logout
+  user_session = UserSession.find
+  user_session.destroy if user_session
 end

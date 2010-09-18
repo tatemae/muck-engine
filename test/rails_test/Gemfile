@@ -26,9 +26,8 @@ end
 group :test do
   gem "autotest"
   gem "capybara", ">= 0.3.9"
-  gem "shoulda"
+  gem "shoulda", :path => "~/projects/other_apps/shoulda"
   gem "factory_girl"
-  gem "mocha"
   gem "redgreen"
   gem "cucumber"
   gem "rcov"

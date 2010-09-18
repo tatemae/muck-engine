@@ -14,12 +14,12 @@ module MuckEngineHelper
   #
   # message_dom_id: The dom id of the element that will hold messages.
   #                 This element can have display:none by default.
-  def jquery_json_message(message_dom_id)
+  def jquery_json_message(message_dom_id = nil)
     if MuckEngine.configuration.growl_enabled
-      "jQuery('##{message_dom_id}').html(json.message);"
-      "jQuery('##{message_dom_id}').show();"
-    else
       "jQuery.jGrowl.info(json.message);"
+    else
+      "jQuery('##{message_dom_id}').html(json.message);" +
+      "jQuery('##{message_dom_id}').show();"
     end
   end
   
@@ -136,32 +136,24 @@ module MuckEngineHelper
     end
   end
   
-  # Override link_to_remote so that instead of '#' the proper url is rendered
-  # This makes the link usable even if javascript is disabled
-  # See: http://www.intridea.com/2007/11/21/link_to_remote-unobtrusively
-  def link_to_remote(name, options = {}, html_options = {})  
-    html_options.merge!({:href => url_for(options[:url])}) unless options[:url].blank?
-    super(name, options, html_options)  
-  end
-  
   def locale_link(name, locale)
     parts = request.host.split('.')
     first_subdomain = parts.first
-    request_uri = request.fullpath
+    fullpath = request.fullpath
     if first_subdomain == 'www' or Language.supported_locale?(first_subdomain)
-      link_to name, request.protocol + (locale == I18n.default_locale.to_s ? 'www' : locale) + '.' + parts[1..-1].join('.') + request.port_string + request_uri
+      link_to name, request.protocol + (locale == I18n.default_locale.to_s ? 'www' : locale) + '.' + parts[1..-1].join('.') + request.port_string + fullpath
     elsif /^localhost/.match( request.host ) or /^(\d{1,3}\.){3}\d{1,3}$/.match( request.host )
-      if request_uri.include?('?')
-        if request_uri.include?('locale')
-          link_to name, request.protocol + request.host_with_port + request_uri.sub(/locale=.*/, 'locale=' + locale)
+      if fullpath.include?('?')
+        if fullpath.include?('locale')
+          link_to name, request.protocol + request.host_with_port + fullpath.sub(/locale=.*/, 'locale=' + locale)
         else
-          link_to name, request.protocol + request.host_with_port + request_uri + '&locale=' + locale
+          link_to name, request.protocol + request.host_with_port + fullpath + '&locale=' + locale
         end
       else
-        link_to name, request.protocol + request.host_with_port + request_uri + '?locale=' + locale
+        link_to name, request.protocol + request.host_with_port + fullpath + '?locale=' + locale
       end  
     else
-      link_to name, request.protocol + (locale == I18n.default_locale.to_s ? 'www' : locale) + '.' + request.host_with_port + request_uri
+      link_to name, request.protocol + (locale == I18n.default_locale.to_s ? 'www' : locale) + '.' + request.host_with_port + fullpath
     end
   end
 
