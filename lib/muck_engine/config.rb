@@ -1,3 +1,5 @@
+require 'ostruct'
+
 module MuckEngine
   
   def self.configuration
@@ -22,7 +24,11 @@ module MuckEngine
     attr_accessor :customer_service_number  # Phone number if you have one (optional)
     attr_accessor :mail_charset             # Email charset.  No need to change this unless you have a good reason to change the encoding.
     attr_accessor :enable_ssl               # Enable ssl if you have an ssl certificate installed.  This will provide security between the client and server.
-
+    
+    # Application configuration
+    attr_accessor :local_jquery             # If true jquery will be loaded from the local directory. If false then it will be loaded from Google's CDN
+    attr_accessor :growl_enabled            # If true then notifications and errors will popup in an overlay div similar to 'growl' on the mac. This uses jGrowl which must be included in your layout
+    
     # Email server configuration
     attr_accessor :email_server_address     # Email server address.  'smtp.sendgrid.net' works for sendgrid - https://sendgrid.com/user/signup
     attr_accessor :email_user_name          # Email server username
@@ -35,6 +41,7 @@ module MuckEngine
     attr_accessor :google_tracking_set_domain # Base domain provided to Google Analytics. Useful if you are using subdomains but want all traffic 
                                               # recorded into one account.
 
+  
     def muck_admin_nav_items
       @@muck_admin_nav_items ||= []
     end
@@ -90,8 +97,12 @@ module MuckEngine
       self.email_password = 'password'
       self.base_domain = 'example.com'
       self.enable_ssl = false
+      self.growl_enabled = false
+      self.local_jquery = false
+      
       self.google_tracking_code = ""
       self.google_tracking_set_domain = "example.com"
+      
     end
     
   end

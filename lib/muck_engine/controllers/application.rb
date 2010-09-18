@@ -107,7 +107,7 @@ module MuckEngine
       def send_form_email(params, subject)
         body = []
         params.each_pair { |k,v| body << "#{k}: #{v}"  }
-        BasicMailer.deliver_mail(:subject => subject, :body => body.join("\n"))
+        BasicMailer.mail(:subject => subject, :body => body.join("\n")).deliver
       end
       
       # render methods

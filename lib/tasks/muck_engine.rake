@@ -14,18 +14,14 @@ namespace :muck do
   def muck_gem_names
     muck_gems = []
     Rails.application.railties.all.each do |railtie|
-      muck_gems << railtie.muck_name if railtie.defined?(muck_name)
+      muck_gems << railtie.muck_name if railtie.respond_to?(:muck_name)
     end    
     muck_gems
   end
 
   # Returns the folder name for each gem.  Note that muck-solr lives in the acts_as_solr directory
   def muck_gem_paths
-    if defined?(muck_gems)
-      muck_gems.collect{|name| muck_gem_path(name)}
-    else
-      puts "Please create a method named 'muck_gems' in the namespace :muck in your rakefile."
-    end
+      muck_gem_names.collect{|name| muck_gem_path(name)}
   end
 
   def muck_gem_path(gem_name)
@@ -51,7 +47,7 @@ namespace :muck do
   def muck_write_specs
     Dir.glob("#{muck_gems_path}/*").each do |dir|
       if File.directory?(dir)
-        muck_gem = muck_gems.detect{|muck_gem| dir.include?(muck_gem)}
+        muck_gem = muck_gem_names.detect{|muck_gem| dir.include?(muck_gem)}
         if muck_gem
           inside dir do
             system("gem specification #{muck_gem} > .specification")
@@ -269,51 +265,51 @@ namespace :muck do
   
   namespace :gems do
     
-    desc "Release and commit muck gems"
-    task :release_commit do
-      muck_gem_names.each do |gem_name|
-        message = "Released new gem"
-        release_gem("#{projects_path}", gem_name)
-        git_commit("#{projects_path}/#{muck_gem_path(gem_name)}", message)
-        git_push("#{projects_path}/#{muck_gem_path(gem_name)}")
-      end
-    end
+    # desc "Release and commit muck gems"
+    # task :release_commit do
+    #   muck_gem_names.each do |gem_name|
+    #     message = "Released new gem"
+    #     release_gem("#{projects_path}", gem_name)
+    #     git_commit("#{projects_path}/#{muck_gem_path(gem_name)}", message)
+    #     git_push("#{projects_path}/#{muck_gem_path(gem_name)}")
+    #   end
+    # end
 
-    desc "Release muck gems"
-    task :release do
-      muck_gem_names.each do |gem_name|
-        release_gem("#{projects_path}", gem_name)
-      end
-    end
-
-    desc "commit gems after a release"
-    task :commit do
-      message = "Released new gem"
-      muck_gem_paths.each do |gem_name|
-        git_commit("#{projects_path}/#{gem_name}", message)
-      end
-    end
-
-    desc "Pull code for all the gems (use with caution)"
-    task :pull do
-      muck_gem_paths.each do |gem_name|
-        git_pull("#{projects_path}/#{gem_name}")
-      end
-    end
-
-    desc "Push code for all the gems (use with caution)"
-    task :push do
-      muck_gem_paths.each do |gem_name|
-        git_push("#{projects_path}/#{gem_name}")
-      end
-    end
-
-    desc "Gets status for all the muck gems"
-    task :status do
-      muck_gem_paths.each do |gem_name|
-        git_status("#{projects_path}/#{gem_name}")
-      end
-    end
+    # desc "Release muck gems"
+    # task :release do
+    #   muck_gem_names.each do |gem_name|
+    #     release_gem("#{projects_path}", gem_name)
+    #   end
+    # end
+    # 
+    # desc "commit gems after a release"
+    # task :commit do
+    #   message = "Released new gem"
+    #   muck_gem_paths.each do |gem_name|
+    #     git_commit("#{projects_path}/#{gem_name}", message)
+    #   end
+    # end
+    # 
+    # desc "Pull code for all the gems (use with caution)"
+    # task :pull do
+    #   muck_gem_paths.each do |gem_name|
+    #     git_pull("#{projects_path}/#{gem_name}")
+    #   end
+    # end
+    # 
+    # desc "Push code for all the gems (use with caution)"
+    # task :push do
+    #   muck_gem_paths.each do |gem_name|
+    #     git_push("#{projects_path}/#{gem_name}")
+    #   end
+    # end
+    # 
+    # desc "Gets status for all the muck gems"
+    # task :status do
+    #   muck_gem_paths.each do |gem_name|
+    #     git_status("#{projects_path}/#{gem_name}")
+    #   end
+    # end
   
     desc "Test all muck gems"
     task :test do
@@ -325,55 +321,30 @@ namespace :muck do
       end
     end
 
-    desc "Translate all muck gems"
-    task :translate do
-      muck_gem_paths.each do |gem_name|
-        puts "translating #{gem_name}"
-        system("babelphish -o -y #{projects_path}/#{gem_name}/locales/en.yml")
-      end
-    end
-
-    desc "Unpacks all muck gems into vendor/gems using versions installed on the local machine."
-    task :unpack do
-      ensure_muck_gems_path
-      muck_gems.each do |gem_name|
-        muck_unpack(gem_name)
-      end
-      muck_write_specs
-    end
-    
-    desc "Install and unpacks all muck gems into vendor/gems."
-    task :unpack_install => :install do
-      ensure_muck_gems_path
-      muck_gems.each do |gem_name|
-        muck_unpack(gem_name)
-      end
-      muck_write_specs
-    end
-
-    desc "Install all the gems specified in muck_gems"
-    task :install do
-      muck_gems.each do |gem_name|
-        system("sudo gem install #{gem_name}")
-      end
-    end
-    
-    desc "write specs into muck gems"
-    task :specs do
-      muck_write_specs
-    end
+    # desc "Translate all muck gems"
+    # task :translate do
+    #   muck_gem_paths.each do |gem_name|
+    #     puts "translating #{gem_name}"
+    #     system("babelphish -o -y #{projects_path}/#{gem_name}/locales/en.yml")
+    #   end
+    # end
+    #   
+    # desc "write specs into muck gems"
+    # task :specs do
+    #   muck_write_specs
+    # end
     
   end
           
-  desc "Write muck gem versions into muck"
-  task :versions do
-    muck_gem_names.each do |gem_name|
-      write_new_gem_version("#{projects_path}", gem_name)
-    end
-  end
+  # desc "Write muck gem versions into muck"
+  # task :versions do
+  #   muck_gem_names.each do |gem_name|
+  #     write_new_gem_version("#{projects_path}", gem_name)
+  #   end
+  # end
 
   desc "Write muck gem versions into application's 'Gemfile'"
-  task :vers do
+  task :versions do
     muck_gem_names.each do |gem_name|
       write_new_gem_version_in_bundle("#{projects_path}", gem_name)
     end
@@ -390,16 +361,16 @@ namespace :muck do
     system("babelphish -o -y #{RAILS_ROOT}/config/locales/en.yml")
   end
 
-  desc "Completely reset and repopulate the database and annotate models. THIS WILL DELETE ALL YOUR DATA"
-  task :reset do
-    Rake::Task[ "muck:sync" ].execute
-    Rake::Task[ "muck:reset_db" ].execute
-  end
+  # desc "Completely reset and repopulate the database and annotate models. THIS WILL DELETE ALL YOUR DATA"
+  # task :reset do
+  #   Rake::Task[ "muck:sync" ].execute
+  #   Rake::Task[ "muck:reset_db" ].execute
+  # end
   
   desc "Sync resources from all muck related gems."
   task :sync do
     puts 'syncronizing engines and gems'
-    muck_gems.each do |gem_name|
+    muck_gem_names.each do |gem_name|
       puts "syncronizing assets and code from #{gem_name}"
       if gem_name.include?('muck')
         task = "muck:sync:#{gem_name.gsub('muck-', '')}"

@@ -15,7 +15,7 @@ module MuckEngineHelper
   # message_dom_id: The dom id of the element that will hold messages.
   #                 This element can have display:none by default.
   def jquery_json_message(message_dom_id)
-    if GlobalConfig.growl_enabled
+    if MuckEngine.configuration.growl_enabled
       "jQuery('##{message_dom_id}').html(json.message);"
       "jQuery('##{message_dom_id}').show();"
     else
@@ -129,7 +129,7 @@ module MuckEngineHelper
   # Used inside of format.js to return a message to the client.
   # If jGrowl is enabled the message will show up as a growl instead of a popup
   def page_alert(message, title = '')
-    if GlobalConfig.growl_enabled
+    if MuckEngine.configuration.growl_enabled
       "jQuery.jGrowl.error('" + message + "', {header:'" + title + "'});"
     else
       "alert(#{message});"
@@ -147,7 +147,7 @@ module MuckEngineHelper
   def locale_link(name, locale)
     parts = request.host.split('.')
     first_subdomain = parts.first
-    request_uri = request.request_uri
+    request_uri = request.fullpath
     if first_subdomain == 'www' or Language.supported_locale?(first_subdomain)
       link_to name, request.protocol + (locale == I18n.default_locale.to_s ? 'www' : locale) + '.' + parts[1..-1].join('.') + request.port_string + request_uri
     elsif /^localhost/.match( request.host ) or /^(\d{1,3}\.){3}\d{1,3}$/.match( request.host )

@@ -9,6 +9,9 @@ MuckEngine.configure do |config|
   config.admin_email = 'admin@example.com'      # Admin email for your application
   config.customer_service_number = '1-800-'     # Phone number if you have one (optional)
   
+  # Application settings
+  config.growl_enabled = false                  # If true then notifications and errors will popup in an overlay div similar to 'growl' on the mac. This uses jGrowl which must be included in your layout
+  
   # Email charset.  No need to change this unless you have a good reason to change the encoding.
   config.mail_charset = 'utf-8'
 

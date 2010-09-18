@@ -13,3 +13,11 @@ test:
   password:
   host: localhost
   encoding: utf8
+
+cucumber:
+  adapter: mysql
+  database: muck_engine_cucumber
+  username: root
+  password:
+  host: localhost
+  encoding: utf8

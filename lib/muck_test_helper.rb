@@ -1,35 +1,17 @@
-require 'test_help'
-gem 'factory_girl'
-gem 'mocha'
-gem 'shoulda'
-# gem 'rspec', :lib => 'spec'
-# gem 'rspec-rails', :lib => 'spec/rails'
-gem 'treetop'
-gem 'term-ansicolor'
-gem 'cucumber', :version => '>=0.1.13', :lib => 'cucumber'
-gem 'polyglot', :version => '>=0.2.4'
-gem "rcov", :version => '>=0.8.1.2.0'
-gem "webrat", :version => '>=0.4.4'
+require 'rails/test_help'
+require 'authlogic/test_case'
 
-# only required if you want to use selenium for testing
-#gem 'selenium-client', :lib => 'selenium/client'
-#gem 'bmabey-database_cleaner', :lib => 'database_cleaner', :source => 'http://gems.github.com'
-
-require 'shoulda'
-require 'factory_girl'
-require 'mocha'
-require 'ruby-debug'
-
-require 'redgreen' rescue LoadError
 require File.join(File.dirname(__FILE__), 'test', 'muck_factories')
 require File.join(File.dirname(__FILE__), 'test', 'muck_test_methods')
 require File.join(File.dirname(__FILE__), 'test', 'muck_test_definitions')
-require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'controller')
-require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'forms')
-require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'models')
-require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'scopes')
-require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'pagination')
-require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'plugins')
+
+require 'muck_engine/rspec2'
+# require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'controller.rb')
+# require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'forms.rb')
+# require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'models.rb')
+# require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'pagination.rb')
+# require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'plugins.rb')
+# require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'scopes.rb')
 
 begin
   # turn off solr for tests
@@ -43,5 +25,31 @@ rescue NameError => ex
   # solr isn't loaded. Just throw out the error
 end
 
-# load in the default data required to run the app
-Muck::MuckEngine::Populate.all
+class ActiveSupport::TestCase
+  
+  include Authlogic::TestCase
+  setup :activate_authlogic
+    
+  self.use_transactional_fixtures = true
+  self.use_instantiated_fixtures  = false
+  
+  def ensure_flash(val)
+    assert_contains flash.values, val, ", Flash: #{flash.inspect}"
+  end
+  
+  def login_as(user)
+    success = UserSession.create(user)
+    if !success
+      errors = user.errors.full_messages.to_sentence
+      message = 'User has not been activated' if !user.active?
+      raise "could not login as #{user.to_param}.  Please make sure the user is valid. #{message} #{errors}"
+    end
+    UserSession.find
+  end
+  
+  def assure_logout
+    user_session = UserSession.find
+    user_session.destroy if user_session
+  end
+  
+end

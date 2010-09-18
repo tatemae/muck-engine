@@ -7,7 +7,7 @@ module MuckEngine
     def muck_name
       'muck-engine'
     end
-
+    
     initializer 'muck_engine.mime_types' do |app|
       Mime::Type.register "application/rdf+xml", :rdf
       Mime::Type.register "text/xml", :opml
@@ -26,15 +26,13 @@ module MuckEngine
       ActiveSupport.on_load(:action_view) do
         include MuckEngineHelper
         include MuckAdminHelper
+        include MuckEngine::FlashErrors
       end
     end
     
     initializer 'muck_engine.models' do |app|
       ActiveSupport.on_load(:active_record) do
         include MuckEngine::General
-        # include MuckEngine::Models::Language
-        # include MuckEngine::Models::Country
-        # include MuckEngine::Models::State
       end
     end
     
@@ -46,6 +44,7 @@ module MuckEngine
    
     initializer 'muck_engine.i18n' do |app|
       ActiveSupport.on_load(:i18n) do
+        I18n.load_path += Dir[ File.join(File.dirname(__FILE__), '..', '..', 'config', 'locales', '*.{rb,yml}') ]
         I18n.load_path += Dir[ File.join(File.dirname(__FILE__), '..', '..', 'rails_i18n', '*.{rb,yml}') ]
       end
     end

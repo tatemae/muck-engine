@@ -10,8 +10,8 @@ require 'muck_engine/mailers/general'
 require 'muck_engine/controllers/application'
 require 'muck_engine/engine'
 
-
 # Use to determine whether or not ssl should be used
 def muck_routes_protocol
+  #@@routes_protocol ||= 'http' if local_request?
   @@routes_protocol ||= MuckEngine.configuration.enable_ssl ? (ENV["RAILS_ENV"] =~ /(development|test)/ ? "http" : "https") : 'http'
 end

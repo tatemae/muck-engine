@@ -4,9 +4,9 @@
 </script>
 <script type="text/javascript">
   try {
-    var pageTracker = _gat._getTracker("<%= GlobalConfig.google_tracking_code %>");
-    <% if GlobalConfig.google_tracking_set_domain -%>
-    pageTracker._setDomainName("<%= GlobalConfig.google_tracking_set_domain %>");
+    var pageTracker = _gat._getTracker("<%= MuckEngine.configuration.google_tracking_code %>");
+    <% if MuckEngine.configuration.google_tracking_set_domain -%>
+    pageTracker._setDomainName("<%= MuckEngine.configuration.google_tracking_set_domain %>");
     <% end -%>
     pageTracker._trackPageview();
   } catch(err) {}</script>

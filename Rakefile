@@ -6,10 +6,10 @@ desc 'Default: run unit tests.'
 task :default => :test
 
 desc 'Test the muck_users gem.'
-Rake::TestTask.new(:test) do |t|
+Rake::TestTask.new(:spec) do |t|
   t.libs << 'lib'
-  t.libs << 'test/rails_root/test'
-  t.pattern = 'test/rails_root/test/**/*_test.rb'
+  t.libs << 'test/rails_root/spec'
+  t.pattern = 'test/rails_root/spec/**/*_spec.rb'
   t.verbose = true
 end
 
@@ -56,9 +56,24 @@ begin
     gemspec.rubyforge_project = 'muck-engine'
     gemspec.add_dependency "validation_reflection"
     gemspec.add_dependency "will_paginate"
-    gemspec.add_dependency "git"
     gemspec.add_dependency "overlord"
     gemspec.add_development_dependency "shoulda"
+    gemspec.add_development_dependency "rspec-rails", ">=2.0.0.beta.22"
+    gemspec.add_development_dependency "cucumber-rails"
+    gemspec.add_development_dependency "autotest"
+    gemspec.add_development_dependency "capybara", ">= 0.3.9"
+    gemspec.add_development_dependency "shoulda"
+    gemspec.add_development_dependency "factory_girl"
+    gemspec.add_development_dependency "mocha"
+    gemspec.add_development_dependency "redgreen"
+    gemspec.add_development_dependency "cucumber"
+    gemspec.add_development_dependency "rcov"
+    gemspec.add_development_dependency "rspec", ">=2.0.0.beta.22"
+    gemspec.add_development_dependency "database_cleaner"
+    gemspec.add_development_dependency "spork"
+    gemspec.add_development_dependency "launchy"
+    gemspec.add_development_dependency "muck-users"
+    gemspec.add_development_dependency "git"
   end
   Jeweler::RubyforgeTasks.new do |rubyforge|
     rubyforge.doc_task = "rdoc"

@@ -1,34 +1,39 @@
 source "http://rubygems.org"
 
-gem "rails", "3.0.0"
-gem "capybara", ">= 0.3.9"
-gem 'mysql'
+gem "rails", "3.0.0" #, :path => "~/projects/other_apps/rails"
+gem "mysql"
 
-# gem 'authlogic'
+# gem "authlogic"
 # TODO this is temporary until the official authlogic gem is updated for rails 3
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 
-gem 'disguise'
+gem "disguise"
 gem "bcrypt-ruby", :require => "bcrypt"
-gem 'overlord'
+gem "overlord"
 
-gem 'muck-engine', :require => 'muck_engine', :path => '../../'
-gem 'muck-users', :require => 'muck_users', :path => "~/projects/muck-users"
+gem "muck-engine", :require => "muck_engine", :path => "../../"
+gem "muck-users", :require => "muck_users", :path => "~/projects/muck-users"
 
-if RUBY_VERSION < '1.9'
+if RUBY_VERSION < "1.9"
   gem "ruby-debug"
 end
 
+group :test, :development do
+  gem "rspec-rails", ">=2.0.0.beta.22"
+  gem "cucumber-rails"
+end
+
 group :test do
-  gem 'shoulda'
-  gem 'factory_girl'
-  gem 'mocha'
-  gem 'redgreen'
-  gem 'cucumber'
-  gem 'webrat'
-  gem 'rspec'
-  gem 'rspec-rails'
-  # only required if you want to use selenium for testing
-  # gem 'selenium-client', :require_as => 'selenium/client'
-  # gem 'database_cleaner'
+  gem "autotest"
+  gem "capybara", ">= 0.3.9"
+  gem "shoulda"
+  gem "factory_girl"
+  gem "mocha"
+  gem "redgreen"
+  gem "cucumber"
+  gem "rcov"
+  gem "rspec", ">=2.0.0.beta.22"
+  gem "database_cleaner"
+  gem "spork"
+  gem "launchy"
 end

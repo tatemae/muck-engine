@@ -215,7 +215,7 @@ module MuckEngine
     end
 
     def required_mark(field, required_text_mark = nil)
-      required_text_mark ||= GlobalConfig.required_text_mark || I18n.translate('muck.engine.required_text_mark')
+      required_text_mark ||= MuckEngine.configuration.required_text_mark || I18n.translate('muck.engine.required_text_mark')
       required_field?(field) ? " <em id=\"#{field_name(field)}-label-required\">#{required_text_mark}</em>" : ''
     end
 
