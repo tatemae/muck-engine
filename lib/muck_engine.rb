@@ -8,6 +8,7 @@ require 'muck_engine/models/state'
 require 'muck_engine/models/general'
 require 'muck_engine/mailers/general'
 require 'muck_engine/controllers/application'
+require 'muck_engine/controllers/ssl_requirement'
 require 'muck_engine/engine'
 
 # Use to determine whether or not ssl should be used

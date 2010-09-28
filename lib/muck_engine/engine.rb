@@ -18,6 +18,7 @@ module MuckEngine
     initializer 'muck_engine.controllers' do |app|
       ActiveSupport.on_load(:action_controller) do
         include MuckEngine::Application
+        include MuckEngine::SslRequirement
         include MuckEngine::FlashErrors
       end
     end
