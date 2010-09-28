@@ -80,10 +80,6 @@ module MuckEngine
     end
       
     def initialize
-      # Add a link to admin home
-      #MuckEngine.add_muck_admin_nav_item(I18n.translate('muck.engine.admin_home'), '/admin', '/images/admin/home.gif')
-      self.add_muck_admin_nav_item(I18n.translate('muck.engine.admin_home'), '/admin')
-      
       self.application_url = 'localhost:3000' 
       self.application_name = 'My App'
       self.from_email = 'support@example.com'
