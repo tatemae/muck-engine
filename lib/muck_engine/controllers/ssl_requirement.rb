@@ -1,3 +1,4 @@
+# Code adapted from http://github.com/rails/ssl_requirement 
 module MuckEngine
   module SslRequirement
     
