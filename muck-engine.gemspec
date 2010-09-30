@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-09-16}
+  s.date = %q{2010-09-30}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -26,10 +26,7 @@ Gem::Specification.new do |s|
      "app/controllers/muck/helper_controller.rb",
      "app/helpers/muck_admin_helper.rb",
      "app/helpers/muck_engine_helper.rb",
-     "app/models/basic_mailer.rb",
-     "app/models/country.rb",
-     "app/models/language.rb",
-     "app/models/state.rb",
+     "app/mailers/basic_mailer.rb",
      "app/views/admin/default/index.html.erb",
      "app/views/forms/_base_field.erb",
      "app/views/forms/_color_picker_field.erb",
@@ -44,8 +41,8 @@ Gem::Specification.new do |s|
      "app/views/layouts/admin/_header.html.erb",
      "app/views/layouts/admin/_header_nav_item.html.erb",
      "app/views/layouts/default.html.erb",
-     "app/views/layouts/email_default.text.html.erb",
-     "app/views/layouts/email_default.text.plain.erb",
+     "app/views/layouts/email_default.html.erb",
+     "app/views/layouts/email_default.text.erb",
      "app/views/layouts/frame.html.erb",
      "app/views/layouts/global/_google_analytics.html.erb",
      "app/views/layouts/global/_head.html.erb",
@@ -116,6 +113,7 @@ Gem::Specification.new do |s|
      "lib/muck_engine.rb",
      "lib/muck_engine/config.rb",
      "lib/muck_engine/controllers/application.rb",
+     "lib/muck_engine/controllers/ssl_requirement.rb",
      "lib/muck_engine/engine.rb",
      "lib/muck_engine/flash_errors.rb",
      "lib/muck_engine/form_builder.rb",
@@ -125,6 +123,18 @@ Gem::Specification.new do |s|
      "lib/muck_engine/models/language.rb",
      "lib/muck_engine/models/state.rb",
      "lib/muck_engine/populate.rb",
+     "lib/muck_engine/rspec2.rb",
+     "lib/muck_engine/test/controllers/matchers.rb",
+     "lib/muck_engine/test/controllers/matchers/login_matcher.rb",
+     "lib/muck_engine/test/controllers/matchers/role_matcher.rb",
+     "lib/muck_engine/test/models/helpers.rb",
+     "lib/muck_engine/test/models/matchers.rb",
+     "lib/muck_engine/test/models/matchers/scope_creator_matchers.rb",
+     "lib/muck_engine/test/models/matchers/scope_is_public_matchers.rb",
+     "lib/muck_engine/test/models/matchers/scope_matcher_base.rb",
+     "lib/muck_engine/test/models/matchers/scope_ordinal_matchers.rb",
+     "lib/muck_engine/test/models/matchers/scope_sorting_matchers.rb",
+     "lib/muck_engine/test/models/matchers/scope_time_matchers.rb",
      "lib/muck_test_helper.rb",
      "lib/tasks/languages.txt",
      "lib/tasks/muck_engine.rake",
@@ -693,6 +703,7 @@ Gem::Specification.new do |s|
      "rails_i18n/zh.yml",
      "test/rails_test/.gitignore",
      "test/rails_test/.rake_tasks",
+     "test/rails_test/.rspec",
      "test/rails_test/Gemfile",
      "test/rails_test/Gemfile.lock",
      "test/rails_test/Rakefile",
@@ -701,14 +712,19 @@ Gem::Specification.new do |s|
      "test/rails_test/app/controllers/default_controller.rb",
      "test/rails_test/app/helpers/application_helper.rb",
      "test/rails_test/app/models/.keep",
+     "test/rails_test/app/models/country.rb",
+     "test/rails_test/app/models/language.rb",
+     "test/rails_test/app/models/state.rb",
      "test/rails_test/app/models/user.rb",
      "test/rails_test/app/models/user_session.rb",
      "test/rails_test/app/views/admin/default/index.html.erb",
      "test/rails_test/app/views/default/index.html.erb",
      "test/rails_test/app/views/layouts/default.html.erb",
+     "test/rails_test/autotest/discover.rb",
      "test/rails_test/config.ru",
      "test/rails_test/config/application.rb",
      "test/rails_test/config/boot.rb",
+     "test/rails_test/config/cucumber.yml",
      "test/rails_test/config/database.yml",
      "test/rails_test/config/environment.rb",
      "test/rails_test/config/environments/development.rb",
@@ -723,12 +739,19 @@ Gem::Specification.new do |s|
      "test/rails_test/config/routes.rb",
      "test/rails_test/db/.keep",
      "test/rails_test/db/migrate/20090320174818_create_muck_permissions_and_roles.rb",
+     "test/rails_test/db/migrate/20090327231918_create_users.rb",
      "test/rails_test/db/migrate/20090402234137_create_languages.rb",
      "test/rails_test/db/migrate/20090426041056_create_countries.rb",
      "test/rails_test/db/migrate/20090426041103_create_states.rb",
-     "test/rails_test/db/migrate/20090602041838_create_users.rb",
-     "test/rails_test/features/step_definitions/webrat_steps.rb",
+     "test/rails_test/db/migrate/20090530170040_create_themes.rb",
+     "test/rails_test/db/migrate/20090606153236_create_domain_themes.rb",
+     "test/rails_test/db/migrate/20100123035450_create_access_codes.rb",
+     "test/rails_test/db/migrate/20100123233654_create_access_code_requests.rb",
+     "test/rails_test/features/step_definitions/web_steps.rb",
+     "test/rails_test/features/support/custom_env.rb",
      "test/rails_test/features/support/env.rb",
+     "test/rails_test/features/support/paths.rb",
+     "test/rails_test/lib/tasks/cucumber.rake",
      "test/rails_test/public/.htaccess",
      "test/rails_test/public/404.html",
      "test/rails_test/public/422.html",
@@ -736,12 +759,15 @@ Gem::Specification.new do |s|
      "test/rails_test/public/dispatch.rb",
      "test/rails_test/public/favicon.ico",
      "test/rails_test/public/images/admin/Home.gif",
+     "test/rails_test/public/images/admin/roles.gif",
      "test/rails_test/public/images/admin/source/Home.png",
+     "test/rails_test/public/images/admin/source/roles.png",
+     "test/rails_test/public/images/admin/source/user.png",
+     "test/rails_test/public/images/admin/user.gif",
      "test/rails_test/public/images/arrow_down.gif",
      "test/rails_test/public/images/arrow_left.gif",
      "test/rails_test/public/images/arrow_right.gif",
      "test/rails_test/public/images/arrow_up.gif",
-     "test/rails_test/public/images/blue/preview.gif",
      "test/rails_test/public/images/fancybox/blank.gif",
      "test/rails_test/public/images/fancybox/fancy_close.png",
      "test/rails_test/public/images/fancybox/fancy_closebox.png",
@@ -766,6 +792,8 @@ Gem::Specification.new do |s|
      "test/rails_test/public/images/fancybox/fancybox-x.png",
      "test/rails_test/public/images/fancybox/fancybox-y.png",
      "test/rails_test/public/images/fancybox/fancybox.png",
+     "test/rails_test/public/images/icon_no.gif",
+     "test/rails_test/public/images/icon_success.gif",
      "test/rails_test/public/images/icons/accept.png",
      "test/rails_test/public/images/icons/add.png",
      "test/rails_test/public/images/icons/blue_guy.png",
@@ -792,8 +820,6 @@ Gem::Specification.new do |s|
      "test/rails_test/public/images/loading.gif",
      "test/rails_test/public/images/nothing.png",
      "test/rails_test/public/images/profile_default.jpg",
-     "test/rails_test/public/images/rails.png",
-     "test/rails_test/public/images/red/preview.gif",
      "test/rails_test/public/images/service_icons/16/amazon.png",
      "test/rails_test/public/images/service_icons/16/ask.png",
      "test/rails_test/public/images/service_icons/16/bibsonomy.png",
@@ -1143,16 +1169,11 @@ Gem::Specification.new do |s|
      "test/rails_test/public/images/spinner.gif",
      "test/rails_test/public/images/sprites.png",
      "test/rails_test/public/javascripts/application.js",
-     "test/rails_test/public/javascripts/builder.js",
-     "test/rails_test/public/javascripts/controls.js",
-     "test/rails_test/public/javascripts/dragdrop.js",
-     "test/rails_test/public/javascripts/effects.js",
      "test/rails_test/public/javascripts/fancyzoom.min.js",
      "test/rails_test/public/javascripts/jquery/colorpicker.js",
+     "test/rails_test/public/javascripts/jquery/fg.menu.js",
+     "test/rails_test/public/javascripts/jquery/jquery-ui-1.8.4.custom.min.js",
      "test/rails_test/public/javascripts/jquery/jquery-ui.js",
-     "test/rails_test/public/javascripts/jquery/jquery.autocomplete.js.readme",
-     "test/rails_test/public/javascripts/jquery/jquery.autocomplete.min.js",
-     "test/rails_test/public/javascripts/jquery/jquery.autocomplete.pack.js",
      "test/rails_test/public/javascripts/jquery/jquery.easing.js",
      "test/rails_test/public/javascripts/jquery/jquery.fancybox.js",
      "test/rails_test/public/javascripts/jquery/jquery.form.js",
@@ -1163,21 +1184,20 @@ Gem::Specification.new do |s|
      "test/rails_test/public/javascripts/jquery/jquery.queryString.js",
      "test/rails_test/public/javascripts/jquery/jquery.swapimage.js",
      "test/rails_test/public/javascripts/jquery/jquery.swapimage.min.js",
+     "test/rails_test/public/javascripts/jquery/jquery.timers.js",
      "test/rails_test/public/javascripts/jquery/jquery.tips.js",
      "test/rails_test/public/javascripts/jquery/jrails.js",
      "test/rails_test/public/javascripts/muck-countries.js",
      "test/rails_test/public/javascripts/muck-src.js",
+     "test/rails_test/public/javascripts/muck-users.js",
      "test/rails_test/public/javascripts/muck.js",
-     "test/rails_test/public/javascripts/muck_activities.js",
+     "test/rails_test/public/javascripts/muck_admin.js",
      "test/rails_test/public/javascripts/muck_time/en.js",
-     "test/rails_test/public/javascripts/prototype.js",
-     "test/rails_test/public/javascripts/scriptaculous.js",
-     "test/rails_test/public/javascripts/slider.js",
-     "test/rails_test/public/javascripts/sound.js",
      "test/rails_test/public/javascripts/tree.js",
      "test/rails_test/public/robots.txt",
      "test/rails_test/public/stylesheets/.keep",
      "test/rails_test/public/stylesheets/admin.css",
+     "test/rails_test/public/stylesheets/application.css",
      "test/rails_test/public/stylesheets/blueprint/ie.css",
      "test/rails_test/public/stylesheets/blueprint/liquid_screen.css",
      "test/rails_test/public/stylesheets/blueprint/plugins/buttons/icons/cross.png",
@@ -1211,6 +1231,21 @@ Gem::Specification.new do |s|
      "test/rails_test/public/stylesheets/blueprint/src/print.css",
      "test/rails_test/public/stylesheets/blueprint/src/reset.css",
      "test/rails_test/public/stylesheets/blueprint/src/typography.css",
+     "test/rails_test/public/stylesheets/fgmenu/fg.menu.css",
+     "test/rails_test/public/stylesheets/flick/images/ui-bg_flat_0_aaaaaa_40x100.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-bg_flat_0_eeeeee_40x100.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-bg_flat_55_ffffff_40x100.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-bg_flat_75_ffffff_40x100.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-bg_glass_65_ffffff_1x400.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-bg_highlight-soft_25_0073ea_1x100.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-bg_highlight-soft_50_dddddd_1x100.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-icons_0073ea_256x240.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-icons_454545_256x240.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-icons_666666_256x240.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-icons_ff0084_256x240.png",
+     "test/rails_test/public/stylesheets/flick/images/ui-icons_ffffff_256x240.png",
+     "test/rails_test/public/stylesheets/flick/jquery-ui-1.8.1.custom.css",
      "test/rails_test/public/stylesheets/jquery/cupertino/images/ui-bg_diagonals-small_0_aaaaaa_40x40.png",
      "test/rails_test/public/stylesheets/jquery/cupertino/images/ui-bg_diagonals-thick_15_444444_40x40.png",
      "test/rails_test/public/stylesheets/jquery/cupertino/images/ui-bg_glass_100_f0f0f0_1x400.png",
@@ -1279,26 +1314,23 @@ Gem::Specification.new do |s|
      "test/rails_test/public/stylesheets/jquery/ui-lightness/images/ui-icons_ffffff_256x240.png",
      "test/rails_test/public/stylesheets/jquery/ui-lightness/jquery-ui-1.7.1.custom.css",
      "test/rails_test/public/stylesheets/jquery/ui-lightness/jquery-ui-1.7.2.custom.css",
+     "test/rails_test/public/stylesheets/jquery/ui-lightness/jquery-ui-1.8.4.custom.css",
      "test/rails_test/public/stylesheets/reset.css",
      "test/rails_test/public/stylesheets/styles.css",
      "test/rails_test/public/stylesheets/themes/blue/styles.css",
      "test/rails_test/public/stylesheets/themes/red/styles.css",
+     "test/rails_test/script/cucumber",
      "test/rails_test/script/rails",
-     "test/rails_test/test/functional/.keep",
-     "test/rails_test/test/functional/admin/default_controller_test.rb",
-     "test/rails_test/test/functional/default_controller_test.rb",
-     "test/rails_test/test/functional/helper_controller_test.rb",
-     "test/rails_test/test/integration/.keep",
-     "test/rails_test/test/test_helper.rb",
-     "test/rails_test/test/unit/.keep",
-     "test/rails_test/test/unit/basic_mailer_test.rb",
-     "test/rails_test/test/unit/country_test.rb",
-     "test/rails_test/test/unit/language_test.rb",
-     "test/rails_test/test/unit/muck_engine_helper_test.rb",
-     "test/rails_test/test/unit/state_test.rb",
-     "test/rails_test/vendor/plugins/ssl_requirement/README",
-     "test/rails_test/vendor/plugins/ssl_requirement/lib/ssl_requirement.rb",
-     "test/rails_test/vendor/plugins/ssl_requirement/test/ssl_requirement_test.rb"
+     "test/rails_test/spec/controllers/admin/default_controller_spec.rb",
+     "test/rails_test/spec/controllers/default_controller_spec.rb",
+     "test/rails_test/spec/controllers/helper_controller_spec.rb",
+     "test/rails_test/spec/helpers/muck_admin_helper_spec.rb",
+     "test/rails_test/spec/helpers/muck_engine_helper_spec.rb",
+     "test/rails_test/spec/mailers/basic_mailer_spec.rb",
+     "test/rails_test/spec/models/country_spec.rb",
+     "test/rails_test/spec/models/language_spec.rb",
+     "test/rails_test/spec/models/state_spec.rb",
+     "test/rails_test/spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/tatemae/muck_engine}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -1311,8 +1343,12 @@ Gem::Specification.new do |s|
      "test/rails_test/app/controllers/application_controller.rb",
      "test/rails_test/app/controllers/default_controller.rb",
      "test/rails_test/app/helpers/application_helper.rb",
+     "test/rails_test/app/models/country.rb",
+     "test/rails_test/app/models/language.rb",
+     "test/rails_test/app/models/state.rb",
      "test/rails_test/app/models/user.rb",
      "test/rails_test/app/models/user_session.rb",
+     "test/rails_test/autotest/discover.rb",
      "test/rails_test/config/application.rb",
      "test/rails_test/config/boot.rb",
      "test/rails_test/config/environment.rb",
@@ -1327,24 +1363,29 @@ Gem::Specification.new do |s|
      "test/rails_test/config/initializers/session_store.rb",
      "test/rails_test/config/routes.rb",
      "test/rails_test/db/migrate/20090320174818_create_muck_permissions_and_roles.rb",
+     "test/rails_test/db/migrate/20090327231918_create_users.rb",
      "test/rails_test/db/migrate/20090402234137_create_languages.rb",
      "test/rails_test/db/migrate/20090426041056_create_countries.rb",
      "test/rails_test/db/migrate/20090426041103_create_states.rb",
-     "test/rails_test/db/migrate/20090602041838_create_users.rb",
-     "test/rails_test/features/step_definitions/webrat_steps.rb",
+     "test/rails_test/db/migrate/20090530170040_create_themes.rb",
+     "test/rails_test/db/migrate/20090606153236_create_domain_themes.rb",
+     "test/rails_test/db/migrate/20100123035450_create_access_codes.rb",
+     "test/rails_test/db/migrate/20100123233654_create_access_code_requests.rb",
+     "test/rails_test/features/step_definitions/web_steps.rb",
+     "test/rails_test/features/support/custom_env.rb",
      "test/rails_test/features/support/env.rb",
+     "test/rails_test/features/support/paths.rb",
      "test/rails_test/public/dispatch.rb",
-     "test/rails_test/test/functional/admin/default_controller_test.rb",
-     "test/rails_test/test/functional/default_controller_test.rb",
-     "test/rails_test/test/functional/helper_controller_test.rb",
-     "test/rails_test/test/test_helper.rb",
-     "test/rails_test/test/unit/basic_mailer_test.rb",
-     "test/rails_test/test/unit/country_test.rb",
-     "test/rails_test/test/unit/language_test.rb",
-     "test/rails_test/test/unit/muck_engine_helper_test.rb",
-     "test/rails_test/test/unit/state_test.rb",
-     "test/rails_test/vendor/plugins/ssl_requirement/lib/ssl_requirement.rb",
-     "test/rails_test/vendor/plugins/ssl_requirement/test/ssl_requirement_test.rb"
+     "test/rails_test/spec/controllers/admin/default_controller_spec.rb",
+     "test/rails_test/spec/controllers/default_controller_spec.rb",
+     "test/rails_test/spec/controllers/helper_controller_spec.rb",
+     "test/rails_test/spec/helpers/muck_admin_helper_spec.rb",
+     "test/rails_test/spec/helpers/muck_engine_helper_spec.rb",
+     "test/rails_test/spec/mailers/basic_mailer_spec.rb",
+     "test/rails_test/spec/models/country_spec.rb",
+     "test/rails_test/spec/models/language_spec.rb",
+     "test/rails_test/spec/models/state_spec.rb",
+     "test/rails_test/spec/spec_helper.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -1352,24 +1393,63 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<validation_reflection>, [">= 0"])
+      s.add_runtime_dependency(%q<validation_reflection>, [">= 1.0.0.rc.1"])
       s.add_runtime_dependency(%q<will_paginate>, [">= 0"])
-      s.add_runtime_dependency(%q<git>, [">= 0"])
       s.add_runtime_dependency(%q<overlord>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<rspec-rails>, [">= 2.0.0.beta.22"])
+      s.add_development_dependency(%q<cucumber-rails>, [">= 0"])
+      s.add_development_dependency(%q<autotest>, [">= 0"])
+      s.add_development_dependency(%q<capybara>, [">= 0.3.9"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<factory_girl>, [">= 0"])
+      s.add_development_dependency(%q<cucumber>, [">= 0"])
+      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, [">= 2.0.0.beta.22"])
+      s.add_development_dependency(%q<database_cleaner>, [">= 0"])
+      s.add_development_dependency(%q<spork>, [">= 0"])
+      s.add_development_dependency(%q<launchy>, [">= 0"])
+      s.add_development_dependency(%q<muck-users>, [">= 0"])
+      s.add_development_dependency(%q<git>, [">= 0"])
     else
-      s.add_dependency(%q<validation_reflection>, [">= 0"])
+      s.add_dependency(%q<validation_reflection>, [">= 1.0.0.rc.1"])
       s.add_dependency(%q<will_paginate>, [">= 0"])
-      s.add_dependency(%q<git>, [">= 0"])
       s.add_dependency(%q<overlord>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<rspec-rails>, [">= 2.0.0.beta.22"])
+      s.add_dependency(%q<cucumber-rails>, [">= 0"])
+      s.add_dependency(%q<autotest>, [">= 0"])
+      s.add_dependency(%q<capybara>, [">= 0.3.9"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<factory_girl>, [">= 0"])
+      s.add_dependency(%q<cucumber>, [">= 0"])
+      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 2.0.0.beta.22"])
+      s.add_dependency(%q<database_cleaner>, [">= 0"])
+      s.add_dependency(%q<spork>, [">= 0"])
+      s.add_dependency(%q<launchy>, [">= 0"])
+      s.add_dependency(%q<muck-users>, [">= 0"])
+      s.add_dependency(%q<git>, [">= 0"])
     end
   else
-    s.add_dependency(%q<validation_reflection>, [">= 0"])
+    s.add_dependency(%q<validation_reflection>, [">= 1.0.0.rc.1"])
     s.add_dependency(%q<will_paginate>, [">= 0"])
-    s.add_dependency(%q<git>, [">= 0"])
     s.add_dependency(%q<overlord>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<rspec-rails>, [">= 2.0.0.beta.22"])
+    s.add_dependency(%q<cucumber-rails>, [">= 0"])
+    s.add_dependency(%q<autotest>, [">= 0"])
+    s.add_dependency(%q<capybara>, [">= 0.3.9"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<factory_girl>, [">= 0"])
+    s.add_dependency(%q<cucumber>, [">= 0"])
+    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 2.0.0.beta.22"])
+    s.add_dependency(%q<database_cleaner>, [">= 0"])
+    s.add_dependency(%q<spork>, [">= 0"])
+    s.add_dependency(%q<launchy>, [">= 0"])
+    s.add_dependency(%q<muck-users>, [">= 0"])
+    s.add_dependency(%q<git>, [">= 0"])
   end
 end
 

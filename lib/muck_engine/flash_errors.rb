@@ -53,8 +53,7 @@ module MuckEngine
     # decode_html: Occasionally the html sent to the client is encoded and the result is visible html. Set this value to true if this happens.
     # growl:      Can be used to make this a growl message even if growl_enabled is false. Note that if growl_enabled is enabled setting this
     #             value will have no effect.
-    def output_errors_ajax(dom_id, title = '', options = { :class => 'notify-box' }, fields = nil, flash_only = false, decode_html = false, growl = false)
-      growl false #||= MuckEngine.configuration.growl_enabled
+    def output_errors_ajax(dom_id, title = '', options = { :class => 'notify-box' }, fields = nil, flash_only = false, decode_html = false, growl = MuckEngine.configuration.growl_enabled)
       render :partial => 'shared/output_ajax_messages', :locals => {:fields => fields,
                                                                     :title => title,
                                                                     :options => options,

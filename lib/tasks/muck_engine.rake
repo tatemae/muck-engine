@@ -1,7 +1,6 @@
 require 'fileutils'
 require 'jcode'
 require 'rubygems'
-require 'git'
 
 GREEN = "\033[0;32m"
 RED = "\033[0;31m"
