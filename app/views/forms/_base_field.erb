@@ -1,13 +1,13 @@
-<%= pre_html %>
+<%= (pre_html || '').html_safe %>
 <% if is_checkbox -%>
 	<%= field_element %>
 	<%= label_element %>
-	<%= after_label_html %>
+	<%= (after_label_html || '').html_safe %>
 <% else -%>
 	<%= label_element %>
-	<%= after_label_html %>
+	<%= (after_label_html  || '').html_safe %>
 	<%= field_element %>
 <% end -%>
 <% if required -%><div id="<%= field_name %>_required" class="required-tip" style="display:none;"><em><%= I18n.t('muck.forms.please_enter_a_value', :label => label_name) %></em></div><% end -%>
 <% if !hide_control_error && defined? error -%><div class="form_error_message"><%= error %></div><% end -%>
-<%= extra_html %>
+<%= (extra_html || '').html_safe %>

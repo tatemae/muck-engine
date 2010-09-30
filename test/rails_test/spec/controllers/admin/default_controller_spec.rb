@@ -1,7 +1,9 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
 describe Admin::Muck::DefaultController do
-
+  
+  render_views
+  
   describe "logged in as admin" do
 
     before(:each) do

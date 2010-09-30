@@ -2,6 +2,8 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe DefaultController do
 
+  render_views
+  
   it "should detect the iphone" do
     controller.should be_an_instance_of(DefaultController)
   end

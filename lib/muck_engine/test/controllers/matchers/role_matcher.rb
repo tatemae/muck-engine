@@ -33,7 +33,7 @@ module MuckEngine # :nodoc:
         end
         
         def failure_message
-          "Expected a #{@method} to #{@action} to require role #{@role}"
+          "Expected a '#{@action}' to '#{@action}' to require role '#{@role}'"
         end
 
         def description

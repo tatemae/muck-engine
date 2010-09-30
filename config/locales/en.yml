@@ -2,7 +2,7 @@
 en: 
   muck: 
     forms: 
-      please_enter_a_value: Please enter a value for {{label}}
+      please_enter_a_value: Please enter a value for %{label}
     engine: 
       required_text_mark: (required)
       choose_state: Choose State
@@ -16,7 +16,7 @@ en:
       admin_roles: Roles
       admin_access_codes: Access Codes
       admin_home: Home
-      admin_welcome: Welcome back {{user}}
+      admin_welcome: Welcome back %{user}
       admin_home_title: Admin Home
       select_language_prompt: Please select a language
     general: 
@@ -26,7 +26,7 @@ en:
       help: Help
       delete: Delete
       settings_saved: Settings have been saved.
-      time_ago: "{{time_in_words}} ago"
+      time_ago: "%{time_in_words} ago"
       enabled: Enabled?
       enable: Disable
       yes_text: "Yes"

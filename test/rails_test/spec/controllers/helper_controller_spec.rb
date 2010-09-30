@@ -2,6 +2,8 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Muck::HelperController do
 
+  render_views
+  
   describe "load_states_for_country" do
     before(:all) do
       @country = Factory(:country)

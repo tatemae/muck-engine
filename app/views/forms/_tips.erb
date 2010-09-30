@@ -1,6 +1,6 @@
-<div class="tip-text" style="display:none;"><%= tip %></div>
-<div class="tip-title" style="display:none;"><%= tip_title || label_name %></div>
-<div class="tip-position" style="display:none;"><%= tip_position %></div>
+<div class="tip-text" style="display:none;"><%= (tip || '').html_safe %></div>
+<div class="tip-title" style="display:none;"><%= (tip_title || label_name || '').html_safe %></div>
+<div class="tip-position" style="display:none;"><%= (tip_position || '').html_safe %></div>
 <% if tip_key -%>
   <div class="tip-key" style="display:none;"><%= tip_key %></div>
   <div class="tip-id" style="display:none;"><%= field_name %></div>

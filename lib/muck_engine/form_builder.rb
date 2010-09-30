@@ -40,11 +40,11 @@ module MuckEngine
       field_id = options[:field_id]
     
       local_options = {
-        :pre_html         => options.delete(:pre_html).html_safe,
-        :after_label_html => options.delete(:after_label_html).html_safe,
-        :extra_html       => options.delete(:extra_html).html_safe,
-        :tip              => options.delete(:tip).html_safe,
-        :tip_title        => options.delete(:tip_title).html_safe,
+        :pre_html         => options.delete(:pre_html),
+        :after_label_html => options.delete(:after_label_html),
+        :extra_html       => options.delete(:extra_html),
+        :tip              => options.delete(:tip),
+        :tip_title        => options.delete(:tip_title),
         :tip_key          => options.delete(:tip_key),
         :tip_position     => options.delete(:tip_position) || 'right',
         :wrapper_id       => options.delete(:wrapper_id),

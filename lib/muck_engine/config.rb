@@ -41,7 +41,7 @@ module MuckEngine
     attr_accessor :google_tracking_set_domain # Base domain provided to Google Analytics. Useful if you are using subdomains but want all traffic 
                                               # recorded into one account.
 
-  
+    attr_accessor :required_text_mark       # Value to show to indicate a field is required. Default is '*'
     def muck_admin_nav_items
       @@muck_admin_nav_items ||= []
     end
@@ -95,6 +95,7 @@ module MuckEngine
       self.enable_ssl = false
       self.growl_enabled = false
       self.local_jquery = false
+      self.required_text_mark = '*'
       
       self.google_tracking_code = ""
       self.google_tracking_set_domain = "example.com"
