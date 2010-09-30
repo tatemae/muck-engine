@@ -29,7 +29,6 @@ group :test do
   # this is also temporary until shoulda works with Rails 3. Local version includes this fix: http://github.com/dchelimsky/shoulda/commit/586b2d90e277c11f951180a203cc92292ff01026
   gem "shoulda", :path => "~/projects/other_apps/shoulda"
   gem "factory_girl"
-  gem "redgreen"
   gem "cucumber"
   gem "rcov"
   gem "rspec", ">=2.0.0.beta.22"

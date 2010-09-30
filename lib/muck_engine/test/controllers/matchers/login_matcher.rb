@@ -9,17 +9,18 @@ module MuckEngine # :nodoc:
       #     login_url   - Optional url the user should be redirected to if they aren't logged in.  Defaults to '/login'
       #
       # Example:
-      #           should_require_login 'index', :get, '/signup'
-      def require_login(action, verb, login_url = 'login')
-        RequireLoginMatcher.new(action, verb, login_url)
+      #           it { should require_login 'index', :get, '/signup' }
+      def require_login(action, verb, login_url = '/login')
+        RequireLoginMatcher.new(action, verb, login_url, self)
       end
       
       class RequireLoginMatcher
         
-        def initalize(action, verb, context, login_url)
+        def initialize(action, verb, login_url, context)
           @action = action
           @verb = verb
           @login_url = login_url
+          @context = context
         end
         
         def matches?(controller)
@@ -28,7 +29,7 @@ module MuckEngine # :nodoc:
         end
         
         def failure_message
-          "Expected a #{@method} to #{@action} to require login"
+          "Expected a #{@action} to #{@action} to require login"
         end
 
         def description
@@ -38,13 +39,8 @@ module MuckEngine # :nodoc:
         private
         
           def requires_login?
-            if [:put, :delete].include?(@verb) || [:edit, :show].include?(@action)  # edit, show, put and delete require an id even if it is a bogus one
-              result = @controller.send(@verb, @action, :id => 1)
-            else
-              result = @controller.send(@verb, @action)
-            end
-            debugger
-            assert_redirected_to(login_url)
+            response = @context.send(@verb, @action, :id => 1)
+            @context.send(:assert_redirected_to, @login_url)
             true
           end
       end

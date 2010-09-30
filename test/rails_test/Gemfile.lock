@@ -136,7 +136,6 @@ GEM
       thor (~> 0.14.0)
     rake (0.8.7)
     rcov (0.9.9)
-    redgreen (1.2.2)
     rspec (2.0.0.beta.22)
       rspec-core (= 2.0.0.beta.22)
       rspec-expectations (= 2.0.0.beta.22)
@@ -191,7 +190,6 @@ DEPENDENCIES
   overlord
   rails (= 3.0.0)
   rcov
-  redgreen
   rspec (>= 2.0.0.beta.22)
   rspec-rails (>= 2.0.0.beta.22)
   ruby-debug

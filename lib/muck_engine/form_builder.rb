@@ -198,7 +198,7 @@ module MuckEngine
 
     def error_message(field, options)
       if has_errors_on?(field)
-        errors = object.errors.on(field)
+        errors = object.errors[field]
         errors.is_a?(Array) ? errors.to_sentence : errors
       else
         ''
@@ -206,7 +206,7 @@ module MuckEngine
     end
 
     def has_errors_on?(field)
-      !(object.nil? || object.errors.on(field).blank?)
+      !(object.nil? || object.errors[field].blank?)
     end
 
     def field_name(field)

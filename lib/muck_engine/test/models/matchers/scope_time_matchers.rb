@@ -34,7 +34,7 @@ module MuckEngine # :nodoc:
           @subject.class.delete_all
           old_item = Factory(factory_name, @field => 1.month.ago)
           new_item = Factory(factory_name, @field => 1.day.ago)
-          items = klass.send(@scope, 1.week.ago)          
+          items = @subject.class.send(@scope, 1.week.ago)          
           if @scope == :newer_than
             items.include?(new_item) && !items.include?(old_item)
           elsif @scope == :older_than

@@ -4,7 +4,7 @@ describe BasicMailer do
 
   describe "deliver emails" do
 
-    before(:all) do
+    before(:each) do
       ActionMailer::Base.delivery_method = :test
       ActionMailer::Base.perform_deliveries = true
       ActionMailer::Base.deliveries = []

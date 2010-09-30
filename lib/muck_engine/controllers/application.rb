@@ -5,6 +5,12 @@ module MuckEngine
     
     protected
       
+      # called by Admin::Muck::BaseController to check whether or not the
+      # user should have access to the admin UI
+      def admin_access?
+        access_denied unless admin?
+      end
+      
       # Detect the iphone.  Just call this method in a before filter:
       #    before_filter :adjust_format_for_iphone
       def adjust_format_for_iphone
