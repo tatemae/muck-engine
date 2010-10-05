@@ -2,7 +2,7 @@ module MuckEngine # :nodoc:
   module Models # :nodoc:
     module Matchers
       
-      class ScopeMatcherBase # :nodoc:
+      class MuckMatcherBase # :nodoc:
 
         private
           

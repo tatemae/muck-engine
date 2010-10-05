@@ -22,7 +22,7 @@ module MuckEngine # :nodoc:
         TimeMatcher.new(:older_than)
       end
             
-      class TimeMatcher < ScopeMatcherBase # :nodoc:
+      class TimeMatcher < MuckMatcherBase # :nodoc:
 
         def initialize(scope, field = :created_at)
           @scope = scope

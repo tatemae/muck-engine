@@ -51,7 +51,7 @@ module MuckEngine # :nodoc:
         SortingMatcher.new(:by_oldest, :created_at)
       end
 
-      class SortingMatcher < ScopeMatcherBase # :nodoc:
+      class SortingMatcher < MuckMatcherBase # :nodoc:
 
         def initialize(scope, field)
           @scope = scope

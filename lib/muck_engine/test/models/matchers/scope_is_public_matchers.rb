@@ -12,7 +12,7 @@ module MuckEngine # :nodoc:
         IsPublicMatcher.new(:is_public)
       end
             
-      class IsPublicMatcher < ScopeMatcherBase # :nodoc:
+      class IsPublicMatcher < MuckMatcherBase # :nodoc:
 
         def initialize(scope, field = :is_public)
           @scope = scope

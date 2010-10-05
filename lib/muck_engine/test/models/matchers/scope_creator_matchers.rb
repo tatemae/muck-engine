@@ -32,7 +32,7 @@ module MuckEngine # :nodoc:
         CreatedByMatcher.new(:by_creator, :creator)
       end
       
-      class CreatedByMatcher < ScopeMatcherBase # :nodoc:
+      class CreatedByMatcher < MuckMatcherBase # :nodoc:
         
         def initialize(scope, field)
           @scope = scope

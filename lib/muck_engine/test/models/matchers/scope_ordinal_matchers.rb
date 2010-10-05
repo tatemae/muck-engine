@@ -13,7 +13,7 @@ module MuckEngine # :nodoc:
       end
 
 
-      class OrdinalMatcher < ScopeMatcherBase # :nodoc:
+      class OrdinalMatcher < MuckMatcherBase # :nodoc:
 
         def initialize(scope, field)
           @scope = scope
