@@ -82,7 +82,7 @@ module MuckEngineHelper
       image_url = object.photo.url(size) rescue nil
     end
 
-    if image_url.blank? && object.email.present?
+    if image_url.blank? && object.respond_to?(:email) && object.email.present?
       gravatar_default = File.join(root_url, default_image) if gravatar_default.blank?
       image_url = gravatar(object.email, gravatar_default, gravatar_size, rating)
     else
