@@ -1,5 +1,8 @@
 require 'authlogic/test_case'
 
+require 'rails/test_help'
+include ActionDispatch::TestProcess
+
 require File.join(File.dirname(__FILE__), 'test', 'muck_factories')
 require File.join(File.dirname(__FILE__), 'test', 'muck_test_methods')
 require File.join(File.dirname(__FILE__), 'test', 'muck_test_definitions')

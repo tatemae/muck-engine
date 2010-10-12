@@ -22,7 +22,6 @@ PATH
       bcrypt-ruby
       friendly_id
       muck-engine
-      searchlogic
 
 PATH
   remote: /Users/jbasdf/projects/other_apps/shoulda
@@ -152,8 +151,6 @@ GEM
     ruby-debug-base (0.10.3)
       linecache (>= 0.3)
     rubyzip (0.9.4)
-    searchlogic (2.4.26)
-      activerecord (>= 2.0.0)
     selenium-webdriver (0.0.28)
       ffi (>= 0.6.1)
       json_pure
@@ -165,7 +162,7 @@ GEM
       polyglot (>= 0.3.1)
     trollop (1.16.2)
     tzinfo (0.3.23)
-    validation_reflection (1.0.0.rc.1)
+    validation_reflection (1.0.0)
     will_paginate (2.3.15)
 
 PLATFORMS

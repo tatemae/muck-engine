@@ -1,3 +1,5 @@
+require 'validation_reflection'
+
 require 'muck_engine/flash_errors'
 require 'muck_engine/form_builder'
 require 'muck_engine/config'

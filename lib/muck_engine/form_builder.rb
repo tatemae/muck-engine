@@ -1,3 +1,5 @@
+require 'validation_reflection'
+
 module MuckEngine
   class FormBuilder < ActionView::Helpers::FormBuilder
 

@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-class MuckEngineHelperTest < ActiveSupport::TestCase
+describe MuckEngineHelper do
 
   describe "http_protocol" do
     describe "secure request" do
@@ -36,6 +36,26 @@ class MuckEngineHelperTest < ActiveSupport::TestCase
       helper.jquery_json_message.should include("jGrowl")
     end
   end
+  
+  # describe "country_scripts" do
+  #   it "should render country scripts" do
+  #     helper.country_scripts.should include('muck-countries')
+  #   end
+  #   it "shouldn't render country scripts" do
+  #     @@country_scripts_included = true
+  #     helper.country_scripts.should be_empty
+  #   end
+  # end
+  # 
+  # describe "muck_form_for" do
+  # end
+  # 
+  # describe "show_hide_on_click" do
+  #   it "should render show/hide jquery script" do
+  #     helper.show_hide_on_click('id_to_show', 'id_to_hide').should include("jQuery('id_to_show')")
+  #     helper.show_hide_on_click('id_to_show', 'id_to_hide').should include("jQuery('id_to_hide')")
+  #   end
+  # end
   
   describe "locale_link" do
     it "should prepend the locale to a domain without a subdomain" do

@@ -75,6 +75,18 @@ Factory.define :user do |f|
   f.activated_at DateTime.now
 end
 
+Factory.define :profile do |f|
+  f.user {|a| a.association(:user)}
+  f.photo fixture_file_upload('../../public/images/profile_default.jpg', 'image/jpg')
+  f.location 'Jackson Hole, WY'
+  f.about 'A great person'
+  f.city 'Jackson Hole'
+  f.state {|a| a.association(:state)}
+  f.country {|a| a.association(:country)}
+#  f.language {|a| a.association(:language)}
+  f.policy 'a great policy'
+end
+
 Factory.define :content_page do |f|
   f.creator {|a| a.association(:user)}
   f.title { Factory.next(:name) }
