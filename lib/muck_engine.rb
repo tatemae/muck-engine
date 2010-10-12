@@ -1,4 +1,5 @@
-require 'validation_reflection'
+require 'will_paginate'
+require "validation_reflection"
 
 require 'muck_engine/flash_errors'
 require 'muck_engine/form_builder'
