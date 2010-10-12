@@ -1,6 +1,7 @@
+#include MuckEngine::Models::MuckCountry
 module MuckEngine
   module Models
-    module Country
+    module MuckCountry
       extend ActiveSupport::Concern
     
       included do

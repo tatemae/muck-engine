@@ -1,6 +1,7 @@
+# include MuckEngine::Models::MuckState
 module MuckEngine
   module Models
-    module State
+    module MuckState
       extend ActiveSupport::Concern
 
       included do

@@ -15,7 +15,7 @@ module MuckEngine # :nodoc:
         
         def matches?(subject)
           @subject = subject
-          @subject.instance_methods.include?("#{@nested_model}_attributes=")
+          @subject.methods.include?("#{@nested_model}_attributes=")
         end
         
         def failure_message

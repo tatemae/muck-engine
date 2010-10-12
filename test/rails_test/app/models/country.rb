@@ -9,5 +9,5 @@
 #
 
 class Country < ActiveRecord::Base
-  include MuckEngine::Models::Country  
+  include MuckEngine::Models::MuckCountry  
 end

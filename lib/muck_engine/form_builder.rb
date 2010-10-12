@@ -93,7 +93,7 @@ module MuckEngine
       if options.delete(:hide_label)
         label_element = ''
       else
-        label_element = label(field, label_text, label_options)
+        label_element = label(field, label_text.html_safe, label_options)
       end
     
       locals = {

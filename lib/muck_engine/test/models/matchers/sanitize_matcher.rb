@@ -7,7 +7,7 @@ module MuckEngine # :nodoc:
         SanitizeMatcher.new(attribute)
       end
       
-      class SanitizeMatcher
+      class SanitizeMatcher < MuckMatcherBase # :nodoc:
         
         def initialize(attribute)
           @attribute = attribute
@@ -19,7 +19,7 @@ module MuckEngine # :nodoc:
         end
         
         def failure_message
-          "#{factory_name} does correctly sanitize the attribute #{@attribute}"
+          "#{factory_name} does not correctly sanitize the attribute #{@attribute}"
         end
         
         def description
@@ -46,7 +46,7 @@ module MuckEngine # :nodoc:
             bad_scripts.each do |bad_value|
               @subject.send("#{@attribute}=", bad_value)
               @subject.save
-              clean_value = @subject.send("#{attribute}")
+              clean_value = @subject.send(@attribute)
               return false if clean_value.include?(bad_value)
             end
             true            

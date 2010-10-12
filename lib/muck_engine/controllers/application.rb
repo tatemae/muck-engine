@@ -115,16 +115,7 @@ module MuckEngine
         params.each_pair { |k,v| body << "#{k}: #{v}"  }
         BasicMailer.mail(:subject => subject, :body => body.join("\n")).deliver
       end
-      
-      # render methods
-      def render_as_html
-        last_template_format = @template.template_format
-        @template.template_format = :html
-        result = yield
-        @template.template_format = last_template_format
-        result
-      end
-      
+            
       # **********************************************
       # Parent methods
       

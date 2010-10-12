@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-09-30}
+  s.date = %q{2010-10-05}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -129,9 +129,11 @@ Gem::Specification.new do |s|
      "lib/muck_engine/test/controllers/matchers/role_matcher.rb",
      "lib/muck_engine/test/models/helpers.rb",
      "lib/muck_engine/test/models/matchers.rb",
+     "lib/muck_engine/test/models/matchers/muck_matcher_base.rb",
+     "lib/muck_engine/test/models/matchers/nested_attribute_matcher.rb",
+     "lib/muck_engine/test/models/matchers/sanitize_matcher.rb",
      "lib/muck_engine/test/models/matchers/scope_creator_matchers.rb",
      "lib/muck_engine/test/models/matchers/scope_is_public_matchers.rb",
-     "lib/muck_engine/test/models/matchers/scope_matcher_base.rb",
      "lib/muck_engine/test/models/matchers/scope_ordinal_matchers.rb",
      "lib/muck_engine/test/models/matchers/scope_sorting_matchers.rb",
      "lib/muck_engine/test/models/matchers/scope_time_matchers.rb",
@@ -1319,8 +1321,6 @@ Gem::Specification.new do |s|
      "test/rails_test/public/stylesheets/styles.css",
      "test/rails_test/public/stylesheets/themes/blue/styles.css",
      "test/rails_test/public/stylesheets/themes/red/styles.css",
-     "test/rails_test/script/cucumber",
-     "test/rails_test/script/rails",
      "test/rails_test/spec/controllers/admin/default_controller_spec.rb",
      "test/rails_test/spec/controllers/default_controller_spec.rb",
      "test/rails_test/spec/controllers/helper_controller_spec.rb",

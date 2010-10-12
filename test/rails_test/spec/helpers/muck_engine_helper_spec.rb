@@ -24,7 +24,7 @@ class MuckEngineHelperTest < ActiveSupport::TestCase
   end
   
   describe "jquery_json_message" do
-    it "shouldn't render growl" do
+    it "should n't render growl" do
       MuckEngine.configuration.growl_enabled = false
       message_dom_id = "user_12"
       helper.jquery_json_message(message_dom_id).should include(message_dom_id)

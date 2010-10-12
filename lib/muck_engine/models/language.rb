@@ -1,6 +1,7 @@
+# include MuckEngine::Models::MuckLanguage
 module MuckEngine
   module Models
-    module Language
+    module MuckLanguage
       extend ActiveSupport::Concern
     
       module ClassMethods        

@@ -27,18 +27,3 @@ end
 RSpec.configure do |config|
   config.include(Authlogic::TestCase)
 end
-
-def login_as(user)
-  success = UserSession.create(user)
-  if !success
-    errors = user.errors.full_messages.to_sentence
-    message = 'User has not been activated' if !user.active?
-    raise "could not login as #{user.to_param}.  Please make sure the user is valid. #{message} #{errors}"
-  end
-  UserSession.find
-end
-
-def assure_logout
-  user_session = UserSession.find
-  user_session.destroy if user_session
-end

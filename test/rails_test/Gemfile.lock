@@ -9,10 +9,9 @@ GIT
 PATH
   remote: /Users/jbasdf/projects/muck-engine
   specs:
-    muck-engine (3.0.0)
-      git
+    muck-engine (3.0.1)
       overlord
-      validation_reflection
+      validation_reflection (>= 1.0.0.rc.1)
       will_paginate
 
 PATH
@@ -97,7 +96,6 @@ GEM
       babosa (~> 0.2.0)
     gherkin (2.1.5)
       trollop (~> 1.16.2)
-    git (1.2.5)
     httparty (0.6.1)
       crack (= 0.1.8)
     i18n (0.4.1)
@@ -167,7 +165,7 @@ GEM
       polyglot (>= 0.3.1)
     trollop (1.16.2)
     tzinfo (0.3.23)
-    validation_reflection (0.3.8)
+    validation_reflection (1.0.0.rc.1)
     will_paginate (2.3.15)
 
 PLATFORMS
