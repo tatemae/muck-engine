@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.4.31"
+  s.version = "0.4.33"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-09-03}
+  s.date = %q{2010-10-12}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -543,6 +543,7 @@ Gem::Specification.new do |s|
      "public/javascripts/fancyzoom.min.js",
      "public/javascripts/jquery/colorpicker.js",
      "public/javascripts/jquery/fg.menu.js",
+     "public/javascripts/jquery/jquery-ui-1.8.4.custom.min.js",
      "public/javascripts/jquery/jquery-ui.js",
      "public/javascripts/jquery/jquery.easing.js",
      "public/javascripts/jquery/jquery.fancybox.js",
@@ -613,6 +614,21 @@ Gem::Specification.new do |s|
      "public/stylesheets/flick/images/ui-icons_ffffff_256x240.png",
      "public/stylesheets/flick/jquery-ui-1.8.1.custom.css",
      "public/stylesheets/jquery/jquery.fancybox.css",
+     "public/stylesheets/jquery/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-bg_flat_10_000000_40x100.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-icons_222222_256x240.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-icons_228ef1_256x240.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-icons_ef8c08_256x240.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-icons_ffd27a_256x240.png",
+     "public/stylesheets/jquery/ui-lightness/images/ui-icons_ffffff_256x240.png",
+     "public/stylesheets/jquery/ui-lightness/jquery-ui-1.8.4.custom.css",
      "public/stylesheets/reset.css",
      "public/stylesheets/styles.css",
      "rails/init.rb",
@@ -1347,7 +1363,8 @@ Gem::Specification.new do |s|
      "test/rails_root/test/unit/muck_engine_helper_test.rb",
      "test/rails_root/test/unit/state_test.rb",
      "test/rails_root/vendor/plugins/ssl_requirement/lib/ssl_requirement.rb",
-     "test/rails_root/vendor/plugins/ssl_requirement/test/ssl_requirement_test.rb"
+     "test/rails_root/vendor/plugins/ssl_requirement/test/ssl_requirement_test.rb",
+     "test/rails_test/db/schema.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -1355,23 +1372,23 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<validation_reflection>, ["0.3.8"])
+      s.add_runtime_dependency(%q<validation_reflection>, ["= 0.3.8"])
       s.add_runtime_dependency(%q<will_paginate>, [">= 0"])
       s.add_runtime_dependency(%q<git>, [">= 0"])
-      s.add_runtime_dependency(%q<overlord>, [">= 0"])
+      s.add_runtime_dependency(%q<overlord>, ["= 0.1.22"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
     else
-      s.add_dependency(%q<validation_reflection>, ["0.3.8"])
+      s.add_dependency(%q<validation_reflection>, ["= 0.3.8"])
       s.add_dependency(%q<will_paginate>, [">= 0"])
       s.add_dependency(%q<git>, [">= 0"])
-      s.add_dependency(%q<overlord>, [">= 0"])
+      s.add_dependency(%q<overlord>, ["= 0.1.22"])
       s.add_dependency(%q<shoulda>, [">= 0"])
     end
   else
-    s.add_dependency(%q<validation_reflection>, ["0.3.8"])
+    s.add_dependency(%q<validation_reflection>, ["= 0.3.8"])
     s.add_dependency(%q<will_paginate>, [">= 0"])
     s.add_dependency(%q<git>, [">= 0"])
-    s.add_dependency(%q<overlord>, [">= 0"])
+    s.add_dependency(%q<overlord>, ["= 0.1.22"])
     s.add_dependency(%q<shoulda>, [">= 0"])
   end
 end

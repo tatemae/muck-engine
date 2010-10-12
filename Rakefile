@@ -54,10 +54,10 @@ begin
     gemspec.description = "The base engine for the muck system.  Contains common tables, custom for, css and javascript."
     gemspec.authors = ["Justin Ball", "Joel Duffin"]
     gemspec.rubyforge_project = 'muck-engine'
-    gemspec.add_dependency "validation_reflection"
+    gemspec.add_dependency "validation_reflection", "0.3.8"
     gemspec.add_dependency "will_paginate"
     gemspec.add_dependency "git"
-    gemspec.add_dependency "overlord"
+    gemspec.add_dependency "overlord", "0.1.22"
     gemspec.add_development_dependency "shoulda"
   end
   Jeweler::RubyforgeTasks.new do |rubyforge|
