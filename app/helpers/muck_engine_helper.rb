@@ -175,7 +175,7 @@ module MuckEngineHelper
   # from http://snippets.dzone.com/posts/show/2483
   def block_to_partial(partial_name, options = {}, &block)
     options.merge!(:body => capture(&block))
-    concat(render(:partial => partial_name, :locals => options))
+    render(:partial => partial_name, :locals => options)
   end
     
   # Take a block and renders that block within the context of a partial.
@@ -184,7 +184,7 @@ module MuckEngineHelper
   # from http://snippets.dzone.com/posts/show/2483
   def raw_block_to_partial(partial_name, options = {}, &block)
     options.merge!(:block => block)
-    concat(render(:partial => partial_name, :locals => options))
+    render(:partial => partial_name, :locals => options)
   end
   
   # Summarize html content by removing html
