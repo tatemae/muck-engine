@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-10-05}
+  s.date = %q{2010-10-12}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -1321,6 +1321,8 @@ Gem::Specification.new do |s|
      "test/rails_test/public/stylesheets/styles.css",
      "test/rails_test/public/stylesheets/themes/blue/styles.css",
      "test/rails_test/public/stylesheets/themes/red/styles.css",
+     "test/rails_test/script/cucumber",
+     "test/rails_test/script/rails",
      "test/rails_test/spec/controllers/admin/default_controller_spec.rb",
      "test/rails_test/spec/controllers/default_controller_spec.rb",
      "test/rails_test/spec/controllers/helper_controller_spec.rb",
@@ -1330,7 +1332,8 @@ Gem::Specification.new do |s|
      "test/rails_test/spec/models/country_spec.rb",
      "test/rails_test/spec/models/language_spec.rb",
      "test/rails_test/spec/models/state_spec.rb",
-     "test/rails_test/spec/spec_helper.rb"
+     "test/rails_test/spec/spec_helper.rb",
+     "test/rails_test/test/fixtures/rails.png"
   ]
   s.homepage = %q{http://github.com/tatemae/muck_engine}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -1393,8 +1396,8 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<validation_reflection>, [">= 1.0.0.rc.1"])
-      s.add_runtime_dependency(%q<will_paginate>, [">= 0"])
+      s.add_runtime_dependency(%q<validation_reflection>, [">= 0"])
+      s.add_runtime_dependency(%q<will_paginate>, ["~> 3.0.beta"])
       s.add_runtime_dependency(%q<overlord>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<rspec-rails>, [">= 2.0.0.beta.22"])
@@ -1412,8 +1415,8 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<muck-users>, [">= 0"])
       s.add_development_dependency(%q<git>, [">= 0"])
     else
-      s.add_dependency(%q<validation_reflection>, [">= 1.0.0.rc.1"])
-      s.add_dependency(%q<will_paginate>, [">= 0"])
+      s.add_dependency(%q<validation_reflection>, [">= 0"])
+      s.add_dependency(%q<will_paginate>, ["~> 3.0.beta"])
       s.add_dependency(%q<overlord>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<rspec-rails>, [">= 2.0.0.beta.22"])
@@ -1432,8 +1435,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<git>, [">= 0"])
     end
   else
-    s.add_dependency(%q<validation_reflection>, [">= 1.0.0.rc.1"])
-    s.add_dependency(%q<will_paginate>, [">= 0"])
+    s.add_dependency(%q<validation_reflection>, [">= 0"])
+    s.add_dependency(%q<will_paginate>, ["~> 3.0.beta"])
     s.add_dependency(%q<overlord>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<rspec-rails>, [">= 2.0.0.beta.22"])

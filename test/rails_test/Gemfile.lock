@@ -11,8 +11,8 @@ PATH
   specs:
     muck-engine (3.0.1)
       overlord
-      validation_reflection (>= 1.0.0.rc.1)
-      will_paginate
+      validation_reflection
+      will_paginate (~> 3.0.beta)
 
 PATH
   remote: /Users/jbasdf/projects/muck-users
@@ -163,7 +163,7 @@ GEM
     trollop (1.16.2)
     tzinfo (0.3.23)
     validation_reflection (1.0.0)
-    will_paginate (2.3.15)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
