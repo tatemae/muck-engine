@@ -1,3 +1,5 @@
+# require 'muck-engine/populate'
+
 module MuckEngine
   module Populate
     def self.all

@@ -1,12 +1,12 @@
-require 'muck_engine/test/models/helpers'
-require 'muck_engine/test/models/matchers/muck_matcher_base'
-require 'muck_engine/test/models/matchers/scope_creator_matchers'
-require 'muck_engine/test/models/matchers/scope_is_public_matchers'
-require 'muck_engine/test/models/matchers/scope_ordinal_matchers'
-require 'muck_engine/test/models/matchers/scope_sorting_matchers'
-require 'muck_engine/test/models/matchers/scope_time_matchers'
-require 'muck_engine/test/models/matchers/nested_attribute_matcher'
-require 'muck_engine/test/models/matchers/sanitize_matcher'
+require 'muck-engine/test/models/helpers'
+require 'muck-engine/test/models/matchers/muck_matcher_base'
+require 'muck-engine/test/models/matchers/scope_creator_matchers'
+require 'muck-engine/test/models/matchers/scope_is_public_matchers'
+require 'muck-engine/test/models/matchers/scope_ordinal_matchers'
+require 'muck-engine/test/models/matchers/scope_sorting_matchers'
+require 'muck-engine/test/models/matchers/scope_time_matchers'
+require 'muck-engine/test/models/matchers/nested_attribute_matcher'
+require 'muck-engine/test/models/matchers/sanitize_matcher'
 
 module MuckEngine # :nodoc:
   module Models # :nodoc:

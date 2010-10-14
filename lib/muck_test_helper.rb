@@ -7,7 +7,7 @@ require File.join(File.dirname(__FILE__), 'test', 'muck_factories')
 require File.join(File.dirname(__FILE__), 'test', 'muck_test_methods')
 require File.join(File.dirname(__FILE__), 'test', 'muck_test_definitions')
 
-require 'muck_engine/rspec2'
+require 'muck-engine/rspec2'
 # require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'controller.rb')
 # require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'forms.rb')
 # require File.join(File.dirname(__FILE__), 'test', 'shoulda_macros', 'models.rb')

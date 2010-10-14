@@ -29,7 +29,7 @@ rescue LoadError
   end
 end
 
-desc 'Generate documentation for the muck_engine plugin.'
+desc 'Generate documentation for the muck-engine plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'MuckEngine'
@@ -40,7 +40,7 @@ end
 
 desc 'Translate this gem'
 task :translate do
-  file = File.join(File.dirname(__FILE__), 'locales', 'en.yml')
+  file = File.join(File.dirname(__FILE__), 'config', 'locales', 'en.yml')
   system("babelphish -o -y #{file}")
 end
 

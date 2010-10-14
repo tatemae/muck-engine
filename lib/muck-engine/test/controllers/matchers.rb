@@ -1,5 +1,5 @@
-require 'muck_engine/test/controllers/matchers/login_matcher'
-require 'muck_engine/test/controllers/matchers/role_matcher'
+require 'muck-engine/test/controllers/matchers/login_matcher'
+require 'muck-engine/test/controllers/matchers/role_matcher'
 
 module MuckEngine # :nodoc:
   module Controllers # :nodoc:
