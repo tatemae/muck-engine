@@ -189,8 +189,8 @@ DEPENDENCIES
   overlord
   rails (= 3.0.0)
   rcov
-  rspec (>= 2.0.0.beta.22)
-  rspec-rails (>= 2.0.0.beta.22)
+  rspec (>= 2.0.0)
+  rspec-rails (>= 2.0.0)
   ruby-debug
   shoulda!
   spork
