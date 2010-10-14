@@ -11,8 +11,8 @@ gem "disguise"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "overlord"
 
-gem "muck-engine", :require => "muck-engine", :path => "../../"
-gem "muck-users", :require => "muck_users", :path => "~/projects/muck-users"
+gem "muck-engine", :path => "../../"
+gem "muck-users", :path => "~/projects/muck-users"
 
 if RUBY_VERSION < "1.9"
   gem "ruby-debug"

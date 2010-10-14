@@ -1,11 +1,15 @@
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
+require 'spec/rake/spectask'
 
-desc 'Default: run unit tests.'
-task :default => :test
+desc 'Default: run specs.'
+task :default => :spec
+Spec::Rake::SpecTask.new('spec') do |t|
+  t.spec_files = FileList['test/rails_test/spec/**/*_spec.rb']
+end
 
-desc 'Test the muck_users gem.'
+desc 'Test the muck-users gem.'
 Rake::TestTask.new(:spec) do |t|
   t.libs << 'lib'
   t.libs << 'test/rails_root/spec'

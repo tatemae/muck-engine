@@ -61,17 +61,21 @@ module MuckEngine # :nodoc:
         def matches?(subject)
           @subject = subject
           @subject.class.delete_all
-          @first = Factory(factory_name, @field => 'a')
-          @second = Factory(factory_name, @field => 'b')
-          @first == @subject.class.send(@scope)[0] && @second == @subject.class.send(@scope)[1]
+          @first = Factory(factory_name, @field => 'a', :created_at => 1.day.ago, :updated_at => 1.day.ago)
+          @second = Factory(factory_name, @field => 'b', :created_at => 1.hour.ago, :updated_at => 1.hour.ago)
+          if @scope == :by_newest || @scope == :by_latest
+            @first == @subject.class.send(@scope)[1] && @second == @subject.class.send(@scope)[0]
+          else
+            @first == @subject.class.send(@scope)[0] && @second == @subject.class.send(@scope)[1]
+          end
         end
         
         def failure_message
-          "Expected #{factory_name} to scope by #{@scope} on #{@field}"
+          "Expected #{factory_name} to scope #{@scope} on #{@field}"
         end
         
         def description
-          "sort by title"
+          "sorting"
         end
           
       end

@@ -88,7 +88,7 @@ namespace :muck do
   end
 
   # examples of stuff we need to look for:
-  # config.gem "muck-raker", :lib => 'muck_raker', :version => '>=0.3.2'
+  # config.gem "muck-raker", :version => '>=0.3.2'
   def write_new_gem_version(path, gem_name)
     puts "Updating version for: #{gem_name}"
     gem_lib = muck_gem_lib(gem_name)
@@ -130,7 +130,7 @@ namespace :muck do
   
   
   # examples of stuff we need to look for:
-  # config.gem "muck-raker", :lib => 'muck_raker', :version => '>=0.3.2'
+  # config.gem "muck-raker", :version => '>=0.3.2'
   def write_new_gem_version_in_bundle(path, gem_name)
     puts "Updating version for: #{gem_name}"
     gem_lib = muck_gem_lib(gem_name)
