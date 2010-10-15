@@ -4,6 +4,7 @@ require 'overlord'
 
 require 'muck-engine/config'
 require 'muck-engine/flash_errors'
+require 'muck-engine/json'
 require 'muck-engine/form_builder'
 require 'muck-engine/models/country'
 require 'muck-engine/models/language'
