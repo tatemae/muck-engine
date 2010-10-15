@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "3.0.1"
+  s.version = "3.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
@@ -117,6 +117,7 @@ Gem::Specification.new do |s|
      "lib/muck-engine/engine.rb",
      "lib/muck-engine/flash_errors.rb",
      "lib/muck-engine/form_builder.rb",
+     "lib/muck-engine/json.rb",
      "lib/muck-engine/mailers/general.rb",
      "lib/muck-engine/models/country.rb",
      "lib/muck-engine/models/general.rb",
@@ -1335,7 +1336,7 @@ Gem::Specification.new do |s|
      "test/rails_test/spec/spec_helper.rb",
      "test/rails_test/test/fixtures/rails.png"
   ]
-  s.homepage = %q{http://github.com/tatemae/muck_engine}
+  s.homepage = %q{http://github.com/tatemae/muck-engine}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{muck-engine}
@@ -1400,7 +1401,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<will_paginate>, ["~> 3.0.beta"])
       s.add_runtime_dependency(%q<overlord>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<rspec-rails>, [">= 2.0.0.beta.22"])
+      s.add_development_dependency(%q<rspec-rails>, [">= 2.0.0"])
       s.add_development_dependency(%q<cucumber-rails>, [">= 0"])
       s.add_development_dependency(%q<autotest>, [">= 0"])
       s.add_development_dependency(%q<capybara>, [">= 0.3.9"])
@@ -1408,7 +1409,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<factory_girl>, [">= 0"])
       s.add_development_dependency(%q<cucumber>, [">= 0"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, [">= 2.0.0.beta.22"])
+      s.add_development_dependency(%q<rspec>, [">= 2.0.0"])
       s.add_development_dependency(%q<database_cleaner>, [">= 0"])
       s.add_development_dependency(%q<spork>, [">= 0"])
       s.add_development_dependency(%q<launchy>, [">= 0"])
@@ -1419,7 +1420,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<will_paginate>, ["~> 3.0.beta"])
       s.add_dependency(%q<overlord>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<rspec-rails>, [">= 2.0.0.beta.22"])
+      s.add_dependency(%q<rspec-rails>, [">= 2.0.0"])
       s.add_dependency(%q<cucumber-rails>, [">= 0"])
       s.add_dependency(%q<autotest>, [">= 0"])
       s.add_dependency(%q<capybara>, [">= 0.3.9"])
@@ -1427,7 +1428,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<factory_girl>, [">= 0"])
       s.add_dependency(%q<cucumber>, [">= 0"])
       s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<rspec>, [">= 2.0.0.beta.22"])
+      s.add_dependency(%q<rspec>, [">= 2.0.0"])
       s.add_dependency(%q<database_cleaner>, [">= 0"])
       s.add_dependency(%q<spork>, [">= 0"])
       s.add_dependency(%q<launchy>, [">= 0"])
@@ -1439,7 +1440,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<will_paginate>, ["~> 3.0.beta"])
     s.add_dependency(%q<overlord>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<rspec-rails>, [">= 2.0.0.beta.22"])
+    s.add_dependency(%q<rspec-rails>, [">= 2.0.0"])
     s.add_dependency(%q<cucumber-rails>, [">= 0"])
     s.add_dependency(%q<autotest>, [">= 0"])
     s.add_dependency(%q<capybara>, [">= 0.3.9"])
@@ -1447,7 +1448,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<factory_girl>, [">= 0"])
     s.add_dependency(%q<cucumber>, [">= 0"])
     s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<rspec>, [">= 2.0.0.beta.22"])
+    s.add_dependency(%q<rspec>, [">= 2.0.0"])
     s.add_dependency(%q<database_cleaner>, [">= 0"])
     s.add_dependency(%q<spork>, [">= 0"])
     s.add_dependency(%q<launchy>, [">= 0"])
