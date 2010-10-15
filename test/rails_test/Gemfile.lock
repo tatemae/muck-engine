@@ -9,7 +9,7 @@ GIT
 PATH
   remote: /Users/jbasdf/projects/muck-engine
   specs:
-    muck-engine (3.0.1)
+    muck-engine (3.0.2)
       overlord
       validation_reflection
       will_paginate (~> 3.0.beta)
@@ -17,7 +17,7 @@ PATH
 PATH
   remote: /Users/jbasdf/projects/muck-users
   specs:
-    muck-users (3.0.0)
+    muck-users (3.0.2)
       authlogic
       bcrypt-ruby
       friendly_id
