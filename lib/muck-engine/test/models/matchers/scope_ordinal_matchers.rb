@@ -9,9 +9,13 @@ module MuckEngine # :nodoc:
       # Examples:
       #   it { should scope_sorted }
       def scope_sorted
-        OrdinalMatcher.new(:scope, :sort)
+        OrdinalMatcher.new(:sorted, :sort)
       end
 
+      #   it { should scope_sorted_id }
+      def scope_sorted_id
+        OrdinalMatcher.new(:sorted_id, :sort)
+      end
 
       class OrdinalMatcher < MuckMatcherBase # :nodoc:
 

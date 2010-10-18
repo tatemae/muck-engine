@@ -22,6 +22,7 @@ module MuckEngine # :nodoc:
     #   scope :is_public, where(["is_public = ?", true])
     #   scope :created_by, lambda { |creator| where("creator_id = ? AND creator_type = ?", creator.id, creator.class.to_s) } }
     #   scope :sorted, order("sort ASC")
+    #   scope :sorted_id, order("id ASC")
     #
     # These matchers will test common scopes used in active record models:
     #
@@ -40,6 +41,8 @@ module MuckEngine # :nodoc:
     #     it { should scope_created_by }
     
     #     it { should sanitize :title }
+    #     it { should scope_sorted }
+    #     it { should scope_sorted_id }
     #   end
     #
     module Matchers

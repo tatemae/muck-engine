@@ -14,7 +14,7 @@
 # scope :sorted, order("sort ASC")
 
 # The following macros are available:
-# should_scope_by_title
+# it { should scope_by_title }
 # should_scope_by_alpha_title
 # should_scope_by_name
 # should_scope_latest
@@ -35,7 +35,7 @@ module MuckNamedScopeMacros
   # Test for 'by_title' named scope which orders by title:
   # scope :by_title, :order => "title ASC"
   # requires that the class have a shoulda factory
-  def should_scope_by_title
+  def it { should scope_by_title }
     klass = get_klass
     factory_name = name_for_factory(klass)
     context "'by_title' title scope" do

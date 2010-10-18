@@ -25,7 +25,7 @@ module MuckEngine
         return ENV['SSL'] == 'on' ? true : false if defined? ENV['SSL']
         return false if local_request?
         return false if RAILS_ENV == 'test'
-        ((self.class.read_inheritable_attribute(:ssl_required_actions) || []).include?(action_name.to_sym)) && (RAILS_ENV == 'production' || RAILS_ENV == 'staging')
+        ((self.class.read_inheritable_attribute(:ssl_required_actions) || []).include?(action_name.to_sym)) && (::Rails.env == 'production' || ::Rails.env == 'staging')
       end
       
 
