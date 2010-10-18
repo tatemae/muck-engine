@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "3.0.2"
+  s.version = "3.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-10-14}
+  s.date = %q{2010-10-18}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -110,6 +110,7 @@ Gem::Specification.new do |s|
      "db/migrate/20090402234137_create_languages.rb",
      "db/migrate/20090426041056_create_countries.rb",
      "db/migrate/20090426041103_create_states.rb",
+     "lib/languages.txt",
      "lib/muck-engine.rb",
      "lib/muck-engine/config.rb",
      "lib/muck-engine/controllers/application.rb",
@@ -139,7 +140,6 @@ Gem::Specification.new do |s|
      "lib/muck-engine/test/models/matchers/scope_sorting_matchers.rb",
      "lib/muck-engine/test/models/matchers/scope_time_matchers.rb",
      "lib/muck_test_helper.rb",
-     "lib/tasks/languages.txt",
      "lib/tasks/muck_engine.rake",
      "lib/test/muck_factories.rb",
      "lib/test/muck_test_definitions.rb",
