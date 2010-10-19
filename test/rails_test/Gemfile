@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "rails", "3.0.0" #, :path => "~/projects/other_apps/rails"
+gem "rails", "3.0.1" #, :path => "~/projects/other_apps/rails"
 gem "mysql"
 
 # gem "authlogic"
