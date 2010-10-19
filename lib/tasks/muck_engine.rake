@@ -401,7 +401,7 @@ namespace :muck do
   namespace :db do
     desc "populate database with language, state and country data"
     task :populate => :environment do
-      Muck::MuckEngine::Populate.all
+      MuckEngine::Populate.all
       puts 'Finished adding languages, countries and states'
     end
     
