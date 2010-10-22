@@ -77,7 +77,7 @@ end
 
 Factory.define :profile do |f|
   f.user {|a| a.association(:user)}
-  f.photo fixture_file_upload('../../public/images/profile_default.jpg', 'image/jpg')
+  f.photo fixture_file_upload("#{::Rails.root}/public/images/profile_default.jpg", 'image/jpg')
   f.location 'Jackson Hole, WY'
   f.about 'A great person'
   f.city 'Jackson Hole'
