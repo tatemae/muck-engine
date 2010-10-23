@@ -1,4 +1,4 @@
-<% if !field_error.nil? && field_error.errors.length > 0 -%>
+<% if !field_error.nil? && field_error.errors.any? -%>
 <ul id="field-errors">
   <% field_error.errors.full_messages.each do |msg| -%>
     <%= content_tag(:li, msg) %>
