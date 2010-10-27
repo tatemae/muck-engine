@@ -214,12 +214,11 @@ module MuckEngineHelper
 
   def truncate_on_word(text, length = 270, end_string = ' ...')
     return if text.blank?
-    if text.length > length
-      stop_index = text.rindex(' ', length)
-      stop_index = length - 10 if stop_index < length-10
-      text[0,stop_index] + (text.length > 260 ? end_string : '')
+    if text.length > length + end_string.length
+      stop_index = text.rindex(' ', length - end_string.length)
+      text[0,stop_index] + end_string
     else
-      text
+      text + end_string
     end
   end
   
