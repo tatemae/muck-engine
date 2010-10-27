@@ -213,7 +213,7 @@ module MuckEngineHelper
   end
 
   def truncate_on_word(text, length = 270, end_string = ' ...')
-    return if text.blank?
+    return '' if text.blank?
     if text.length > length + end_string.length
       stop_index = text.rindex(' ', length - end_string.length)
       text[0,stop_index] + end_string
@@ -223,6 +223,7 @@ module MuckEngineHelper
   end
   
   def truncate_words(text, length = 40, end_string = ' ...')
+    return '' if text.blank?
     words = text.split()
     words[0..(length-1)].join(' ') + (words.length > length ? end_string : '')
   end

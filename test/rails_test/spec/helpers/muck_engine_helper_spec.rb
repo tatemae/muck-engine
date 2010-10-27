@@ -57,6 +57,28 @@ describe MuckEngineHelper do
   #   end
   # end
   
+  describe "truncate_words" do
+    it "should build a string 157 chars long" do
+      text = "Kimball was born to Solomon Farnham Kimball and Anna Spaulding in Sheldon, Franklin County, Vermont. Kimball's forefathers arrived in America from England and started"
+      helper.truncate_words(text, 5, ' ...').length.should == "Kimball was born to Solomon ...".length
+    end
+    it "should not crash if string is nil" do
+      text = nil
+      helper.truncate_words(text, 5, ' ...').length.should == 0
+    end
+  end
+
+  describe "truncate_on_word" do
+    it "should build a string 157 chars long" do
+      text = "Kimball was born to Solomon Farnham Kimball and Anna Spaulding in Sheldon, Franklin County, Vermont. Kimball's forefathers arrived in America from England and started"
+      helper.truncate_on_word(text, 160, ' ...').length.should == 158
+    end
+    it "should not crash if string is nil" do
+      text = nil
+      helper.truncate_on_word(text, 160, ' ...').length.should == 0
+    end
+  end
+  
   describe "locale_link" do
     it "should prepend the locale to a domain without a subdomain" do
       helper.request.stub(:host).and_return('folksemantic.com')
