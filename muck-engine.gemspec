@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "0.4.33"
+  s.version = "0.4.34"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-10-12}
+  s.date = %q{2010-10-28}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -1374,22 +1374,22 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<validation_reflection>, ["= 0.3.8"])
       s.add_runtime_dependency(%q<will_paginate>, [">= 0"])
-      s.add_runtime_dependency(%q<git>, [">= 0"])
       s.add_runtime_dependency(%q<overlord>, ["= 0.1.22"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<git>, [">= 0"])
     else
       s.add_dependency(%q<validation_reflection>, ["= 0.3.8"])
       s.add_dependency(%q<will_paginate>, [">= 0"])
-      s.add_dependency(%q<git>, [">= 0"])
       s.add_dependency(%q<overlord>, ["= 0.1.22"])
       s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<git>, [">= 0"])
     end
   else
     s.add_dependency(%q<validation_reflection>, ["= 0.3.8"])
     s.add_dependency(%q<will_paginate>, [">= 0"])
-    s.add_dependency(%q<git>, [">= 0"])
     s.add_dependency(%q<overlord>, ["= 0.1.22"])
     s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<git>, [">= 0"])
   end
 end
 
