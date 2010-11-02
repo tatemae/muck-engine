@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "3.0.7"
+  s.version = "3.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2010-11-01}
+  s.date = %q{2010-11-02}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -628,7 +628,7 @@ Gem::Specification.new do |s|
      "public/stylesheets/flick/images/ui-icons_ff0084_256x240.png",
      "public/stylesheets/flick/images/ui-icons_ffffff_256x240.png",
      "public/stylesheets/flick/jquery-ui-1.8.1.custom.css",
-     "public/stylesheets/jquery.autocomplete.css",
+     "public/stylesheets/jquery/jquery.autocomplete.css",
      "public/stylesheets/jquery/jquery.fancybox.css",
      "public/stylesheets/jquery/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png",
      "public/stylesheets/jquery/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png",
