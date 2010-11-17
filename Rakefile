@@ -6,24 +6,23 @@ require 'rspec/core/rake_task'
 desc 'Default: run specs.'
 task :default => :spec
 RSpec::Core::RakeTask.new(:spec) do |t|
-  t.rspec_opts = ["--color", "-c", "-f progress", "-r test/rails_test/spec/spec_helper.rb"]
-  t.pattern = 'test/rails_test/spec/**/*_spec.rb'  
+  t.rspec_opts = ["--color", "-c", "-f progress", "-r test/spec/spec_helper.rb"]
+  t.pattern = 'test/spec/**/*_spec.rb'  
 end
 
 desc 'Test the muck-users gem.'
 Rake::TestTask.new(:spec) do |t|
   t.libs << 'lib'
-  t.libs << 'test/rails_root/spec'
-  t.pattern = 'test/rails_root/spec/**/*_spec.rb'
+  t.libs << 'test/spec'
+  t.pattern = 'test/spec/**/*_spec.rb'
   t.verbose = true
 end
 
 begin
   require 'rcov/rcovtask'
   Rcov::RcovTask.new do |t|
-    #t.libs << 'lib'
-    t.libs << 'test/rails_root/lib'
-    t.pattern = 'test/rails_root/test/**/*_test.rb'
+    t.libs << 'test/lib'
+    t.pattern = 'test/test/**/*_spec.rb'
     t.verbose = true
     t.output_dir = 'coverage'
     t.rcov_opts << '--exclude "gems/*"'
@@ -63,7 +62,7 @@ begin
     gemspec.add_dependency "will_paginate", '~> 3.0.beta'
     gemspec.add_dependency "overlord"
     gemspec.add_development_dependency "shoulda"
-    gemspec.add_development_dependency "rspec-rails", ">=2.0.0"
+    gemspec.add_development_dependency "rspec-rails", ">=2.1.0"
     gemspec.add_development_dependency "cucumber-rails"
     gemspec.add_development_dependency "autotest"
     gemspec.add_development_dependency "capybara", ">= 0.3.9"
@@ -71,12 +70,13 @@ begin
     gemspec.add_development_dependency "factory_girl"
     gemspec.add_development_dependency "cucumber"
     gemspec.add_development_dependency "rcov"
-    gemspec.add_development_dependency "rspec", ">=2.0.0"
+    gemspec.add_development_dependency "rspec", ">=2.1.0"
     gemspec.add_development_dependency "database_cleaner"
     gemspec.add_development_dependency "spork"
     gemspec.add_development_dependency "launchy"
     gemspec.add_development_dependency "muck-users"
     gemspec.add_development_dependency "git"
+    gemspec.test_files.exclude 'test/**' # exclude test directory
   end
   Jeweler::RubyforgeTasks.new do |rubyforge|
     rubyforge.doc_task = "rdoc"

@@ -1,0 +1,1126 @@
+  [1m[36mSQL (66.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('somebody1@example.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`login`) = LOWER('inquire1')) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`persistence_token` = BINARY '63b8106022389cfa41661ea88545708bd4a0e291ce076435d33c6ba1012699244944b21de37dde6ef2600cc0506ee6f2721d236476cae0199da97087b1ff961e') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`single_access_token` = BINARY 'l0uXvcEJ7KqBCcB9Lv6D') LIMIT 1
+  [1m[36mSQL (2.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`access_code_id`, `activated_at`, `created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `disabled_at`, `email`, `failed_login_count`, `first_name`, `identity_url`, `last_login_at`, `last_login_ip`, `last_name`, `last_request_at`, `login`, `login_count`, `password_salt`, `perishable_token`, `persistence_token`, `single_access_token`, `terms_of_service`, `time_zone`, `updated_at`, `url_key`) VALUES (NULL, '2010-11-17 20:15:01', '2010-11-17 20:15:03', 'd386be34ca33f9e1f6ce5a2aae6e8959f209ce0aa5b135bf3c319606cffe8ca0d2ea8e55f43246b54abb0e21ce52ef49a85452a242b76102bc0886deed5109a7', '2010-11-17 20:15:03', '0.0.0.0', NULL, 'somebody1@example.com', 0, 'test', NULL, NULL, NULL, 'guy', '2010-11-17 20:15:03', 'inquire1', 1, '1WE4OFFjf5h6TXg52UUe', 'bY-_eeTxDQiV1LsqSJEN', '63b8106022389cfa41661ea88545708bd4a0e291ce076435d33c6ba1012699244944b21de37dde6ef2600cc0506ee6f2721d236476cae0199da97087b1ff961e', 'l0uXvcEJ7KqBCcB9Lv6D', 1, 'UTC', '2010-11-17 20:15:03', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRole Load (1.1ms)[0m  [1mSELECT `roles`.`id` FROM `roles` WHERE (`roles`.`rolename` = BINARY 'administrator') LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  describe `roles`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `roles` (`created_at`, `rolename`, `updated_at`) VALUES ('2010-11-17 20:15:03', 'administrator', '2010-11-17 20:15:03')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.7ms)[0m  describe `permissions`
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `permissions` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2010-11-17 20:15:03', 1, '2010-11-17 20:15:03', 1)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `current_login_at` = '2010-11-17 20:15:03', `last_login_at` = '2010-11-17 20:15:03', `last_login_ip` = '0.0.0.0', `last_request_at` = '2010-11-17 20:15:03', `login_count` = 2, `perishable_token` = 'KaHGKNm3LrbGDVZ7rXs_', `updated_at` = '2010-11-17 20:15:03' WHERE (`users`.`id` = 1)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_request_at` = '2010-11-17 20:15:03', `perishable_token` = 'w4fIX1g-yTYeUQJhILMD', `updated_at` = '2010-11-17 20:15:03' WHERE (`users`.`id` = 1)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Processing by Admin::Muck::DefaultController#index as HTML
+  [1m[35mTheme Load (13.4ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2010-11-17 20:15:03', `perishable_token` = 'T-J52Chsig-0aGaJm2xn', `updated_at` = '2010-11-17 20:15:03' WHERE (`users`.`id` = 1)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE ((`permissions`.user_id = 1))[0m
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_head.html.erb (8.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_messages.erb (0.8ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_field_error.erb (0.5ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_growl.erb (0.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_error_box.erb (3.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header_nav_item.html.erb (446.2ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header.html.erb (501.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_footer.html.erb (0.5ms)
+Rendered admin/default/index.html.erb within layouts/admin (553.8ms)
+Completed 200 OK in 822ms (Views: 792.3ms | ActiveRecord: 95.1ms)
+  [1m[35mSQL (1.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('somebody2@example.com')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`login`) = LOWER('inquire2')) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`persistence_token` = BINARY '75e4958aef1d70962ae86b466953e76b0cce94557f5fcc8eb9034777c90338fbefa9b871883a9f6fdf4c527f782af12a9226110a073edd722d5806c02f2a2d83') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`single_access_token` = BINARY 'CHFc2TgCPm9GWkUhZF3U') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`access_code_id`, `activated_at`, `created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `disabled_at`, `email`, `failed_login_count`, `first_name`, `identity_url`, `last_login_at`, `last_login_ip`, `last_name`, `last_request_at`, `login`, `login_count`, `password_salt`, `perishable_token`, `persistence_token`, `single_access_token`, `terms_of_service`, `time_zone`, `updated_at`, `url_key`) VALUES (NULL, '2010-11-17 20:15:01', '2010-11-17 20:15:04', '28d4196c541d98e25983eb28bd0bdef54e9473d5ea54c9fb05fecb58c0d55675224e10e143831e2e8d4465c595a86f9b6bddd6786d4b69fd725f55e62826e2ad', '2010-11-17 20:15:04', '0.0.0.0', NULL, 'somebody2@example.com', 0, 'test', NULL, NULL, NULL, 'guy', '2010-11-17 20:15:04', 'inquire2', 1, 'GbnSDmAffzIGpa_YTfGy', 'c7VP40sA_r_1PVp2EIyX', '75e4958aef1d70962ae86b466953e76b0cce94557f5fcc8eb9034777c90338fbefa9b871883a9f6fdf4c527f782af12a9226110a073edd722d5806c02f2a2d83', 'CHFc2TgCPm9GWkUhZF3U', 1, 'UTC', '2010-11-17 20:15:04', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.`id` FROM `roles` WHERE (`roles`.`rolename` = BINARY 'administrator') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `roles` (`created_at`, `rolename`, `updated_at`) VALUES ('2010-11-17 20:15:04', 'administrator', '2010-11-17 20:15:04')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `permissions` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2010-11-17 20:15:04', 2, '2010-11-17 20:15:04', 2)[0m
+  [1m[35mSQL (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_login_at` = '2010-11-17 20:15:04', `last_login_at` = '2010-11-17 20:15:04', `last_login_ip` = '0.0.0.0', `last_request_at` = '2010-11-17 20:15:04', `login_count` = 2, `perishable_token` = '4FxYz-vGIBh1iI_4C273', `updated_at` = '2010-11-17 20:15:04' WHERE (`users`.`id` = 2)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_request_at` = '2010-11-17 20:15:04', `perishable_token` = 'jr3qLuTTYDvaAEBnMJ4L', `updated_at` = '2010-11-17 20:15:04' WHERE (`users`.`id` = 2)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Processing by Admin::Muck::DefaultController#index as HTML
+  [1m[35mTheme Load (0.2ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2010-11-17 20:15:04', `perishable_token` = 'C4ImAybuZeRHgr7gBnLv', `updated_at` = '2010-11-17 20:15:04' WHERE (`users`.`id` = 2)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE ((`permissions`.user_id = 2))[0m
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_head.html.erb (5.6ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_messages.erb (0.2ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_field_error.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_growl.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_error_box.erb (0.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header_nav_item.html.erb (1.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header.html.erb (3.7ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 11.2ms | ActiveRecord: 6.6ms)
+  [1m[35mSQL (1.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by Admin::Muck::DefaultController#index as HTML
+  [1m[35mTheme Load (0.2ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.2ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr1', 'a_name1', 1000)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.2ms)[0m  [1mdescribe `states`[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr2', 21, 'a_name2')
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('CA', 'a_name3', 1000)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('US', 'a_name4', 1000)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr3', 'a_name5', 1000)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by Muck::HelperController#load_states_for_country as JSON
+  Parameters: {"id"=>"21"}
+  [1m[35mTheme Load (0.3ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mState Load (19.3ms)[0m  [1mSELECT id, name FROM `states` WHERE (country_id = '21') ORDER BY name[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1[0m
+Completed 200 OK in 37ms (Views: 11.9ms | ActiveRecord: 33.7ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by Muck::HelperController#load_states_for_country as JSON
+  Parameters: {"id"=>"21"}
+  [1m[35mTheme Load (0.3ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mState Load (0.4ms)[0m  [1mSELECT id, name FROM `states` WHERE (country_id = '21') ORDER BY name[0m
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 1.0ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLanguage Load (15.0ms)[0m  SELECT id, locale FROM `languages` WHERE (languages.supported = 1)
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+
+Sent mail to to@example.com (25ms)
+Date: Wed, 17 Nov 2010 13:15:04 -0700
+From: from@example.com
+To: to@example.com
+Message-ID: <4ce437c8a5a1c_acd6800e69a8158f0@justinball.dev.mail>
+Subject: test message
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+test body
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr4', 'a_name6', 1000)[0m
+  [1m[35mSQL (1.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries`
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr5', 'a', 1000)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr6', 'b', 1000)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` ORDER BY name ASC[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` ORDER BY name ASC
+  [1m[36mSQL (2.0ms)[0m  [1mROLLBACK[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries`
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 17)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 18)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 19)
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 20)[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 21)
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 22)[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 23)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 24)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 25)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('US', 'a_name7', 1000)[0m
+  [1m[35mSQL (0.9ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr7', 'a_name8', 1000)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'US') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'US') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries`
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 28)
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 29)[0m
+  [1m[35mSQL (1.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('ENG', 'a_name9', 1000)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('IE', 'a_name10', 1000)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('WAL', 'a_name11', 1000)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('SCT', 'a_name12', 1000)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr8', 'a_name13', 1000)
+  [1m[36mSQL (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.4ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 30)[0m
+  [1m[35mSQL (0.9ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 31)
+  [1m[36mSQL (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 32)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 33)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 34)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('CA', 'a_name14', 1000)
+  [1m[36mSQL (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr9', 'a_name15', 1000)[0m
+  [1m[35mSQL (0.9ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 35)[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 36)
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('US', 'a_name16', 1000)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('ENG', 'a_name17', 1000)
+  [1m[36mSQL (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('CA', 'a_name18', 1000)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.4ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.0ms)[0m  [1mdescribe `languages`[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `languages` (`english_name`, `is_default`, `locale`, `name`, `supported`) VALUES ('a_name20', 0, 'zz', 'a_name19', 1)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mLanguage Load (0.3ms)[0m  [1mSELECT id, locale FROM `languages` WHERE (languages.supported = 1)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `languages` (`english_name`, `is_default`, `locale`, `name`, `supported`) VALUES ('a_name22', 0, 'zz', 'a_name21', 1)
+  [1m[36mSQL (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT id, locale FROM `languages` WHERE (languages.supported = 1)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mLanguage Load (0.1ms)[0m  SELECT id, locale FROM `languages` WHERE (languages.supported = 1)
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr11', 'a_name24', 1000)[0m
+  [1m[35mSQL (1.1ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr10', 40, 'a_name23')
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `states`[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr13', 'a_name25', 1000)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr12', 41, 'a')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr15', 'a_name26', 1000)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr14', 42, 'b')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states` ORDER BY name ASC
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` ORDER BY name ASC[0m
+  [1m[35mSQL (1.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Load (40.0ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('somebody1@example.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`login`) = LOWER('inquire1')) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`persistence_token` = BINARY 'fded482daa1657147066453dd896954931d199d7d01af54f18008daf490941c462d3a7212962c94243312442bcd7edd9cc11327e91538370132f70df6baa7c82') LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`single_access_token` = BINARY '3Wld4ZoC96k_J97GaCmQ') LIMIT 1
+  [1m[36mSQL (2.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (33.4ms)[0m  INSERT INTO `users` (`access_code_id`, `activated_at`, `created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `disabled_at`, `email`, `failed_login_count`, `first_name`, `identity_url`, `last_login_at`, `last_login_ip`, `last_name`, `last_request_at`, `login`, `login_count`, `password_salt`, `perishable_token`, `persistence_token`, `single_access_token`, `terms_of_service`, `time_zone`, `updated_at`, `url_key`) VALUES (NULL, '2010-11-17 20:15:16', '2010-11-17 20:15:17', '1c6857d184f3f522e237b61bdfca015a791789fd754fc7df561b9862405f030a7d6ba492a92cbb1311a649801cf107b84bcb415024913181119aa0406a6495d1', '2010-11-17 20:15:17', '0.0.0.0', NULL, 'somebody1@example.com', 0, 'test', NULL, NULL, NULL, 'guy', '2010-11-17 20:15:17', 'inquire1', 1, 'jG7deFv4o9pq8xOaTU1n', 'U2G6NtXOcUvYKh9yqKDP', 'fded482daa1657147066453dd896954931d199d7d01af54f18008daf490941c462d3a7212962c94243312442bcd7edd9cc11327e91538370132f70df6baa7c82', '3Wld4ZoC96k_J97GaCmQ', 1, 'UTC', '2010-11-17 20:15:17', NULL)
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT `roles`.`id` FROM `roles` WHERE (`roles`.`rolename` = BINARY 'administrator') LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  describe `roles`
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `roles` (`created_at`, `rolename`, `updated_at`) VALUES ('2010-11-17 20:15:17', 'administrator', '2010-11-17 20:15:17')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.3ms)[0m  describe `permissions`
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `permissions` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2010-11-17 20:15:17', 3, '2010-11-17 20:15:17', 3)[0m
+  [1m[35mSQL (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_login_at` = '2010-11-17 20:15:17', `last_login_at` = '2010-11-17 20:15:17', `last_login_ip` = '0.0.0.0', `last_request_at` = '2010-11-17 20:15:17', `login_count` = 2, `perishable_token` = 'FVn5aQpt9DplPMNEBfX-', `updated_at` = '2010-11-17 20:15:17' WHERE (`users`.`id` = 3)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_request_at` = '2010-11-17 20:15:17', `perishable_token` = '8Aj2m08Y--zq59rM7hhu', `updated_at` = '2010-11-17 20:15:17' WHERE (`users`.`id` = 3)
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Processing by Admin::Muck::DefaultController#index as HTML
+  [1m[35mTheme Load (0.3ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2010-11-17 20:15:17', `perishable_token` = 'TU2wa0RvMNgmAdSpvhGJ', `updated_at` = '2010-11-17 20:15:17' WHERE (`users`.`id` = 3)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE ((`permissions`.user_id = 3))[0m
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_head.html.erb (7.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_messages.erb (0.6ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_field_error.erb (0.6ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_growl.erb (0.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_error_box.erb (3.3ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header_nav_item.html.erb (285.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header.html.erb (302.2ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_footer.html.erb (0.5ms)
+Rendered admin/default/index.html.erb within layouts/admin (319.3ms)
+Completed 200 OK in 341ms (Views: 328.5ms | ActiveRecord: 90.2ms)
+  [1m[35mSQL (13.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('somebody2@example.com')) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`login`) = LOWER('inquire2')) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`persistence_token` = BINARY 'ef8c9925f5831d28f094da0daa0a8274f9daf8122d8e43fe6faaea9c6995534f991d7e6f2f436f5b8c127da3e9cfd0bd730d01460b31bb23735fbce0838eb161') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`single_access_token` = BINARY 'B_AoNye0h0x2pdReiJcB') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`access_code_id`, `activated_at`, `created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `disabled_at`, `email`, `failed_login_count`, `first_name`, `identity_url`, `last_login_at`, `last_login_ip`, `last_name`, `last_request_at`, `login`, `login_count`, `password_salt`, `perishable_token`, `persistence_token`, `single_access_token`, `terms_of_service`, `time_zone`, `updated_at`, `url_key`) VALUES (NULL, '2010-11-17 20:15:16', '2010-11-17 20:15:17', '08fc278b93b16163d8d19c4e002a9a361a0785b04fde668854d59a75071c2b05152927b917fcf3e58faf68abb3cb36c4f6a9a1dde6d281ba0dbefb53522f1d0d', '2010-11-17 20:15:17', '0.0.0.0', NULL, 'somebody2@example.com', 0, 'test', NULL, NULL, NULL, 'guy', '2010-11-17 20:15:17', 'inquire2', 1, 'L71i6EupABTknrfEfQh8', 'hyk1vbPrtlvtDk3whZaT', 'ef8c9925f5831d28f094da0daa0a8274f9daf8122d8e43fe6faaea9c6995534f991d7e6f2f436f5b8c127da3e9cfd0bd730d01460b31bb23735fbce0838eb161', 'B_AoNye0h0x2pdReiJcB', 1, 'UTC', '2010-11-17 20:15:17', NULL)
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.`id` FROM `roles` WHERE (`roles`.`rolename` = BINARY 'administrator') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `roles` (`created_at`, `rolename`, `updated_at`) VALUES ('2010-11-17 20:15:17', 'administrator', '2010-11-17 20:15:17')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `permissions` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2010-11-17 20:15:17', 4, '2010-11-17 20:15:17', 4)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_login_at` = '2010-11-17 20:15:17', `last_login_at` = '2010-11-17 20:15:17', `last_login_ip` = '0.0.0.0', `last_request_at` = '2010-11-17 20:15:17', `login_count` = 2, `perishable_token` = '77yUWfgKmD99eaxRNZdq', `updated_at` = '2010-11-17 20:15:17' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_request_at` = '2010-11-17 20:15:17', `perishable_token` = 'tJXBph2Lmm9PTNziRnE2', `updated_at` = '2010-11-17 20:15:17' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Processing by Admin::Muck::DefaultController#index as HTML
+  [1m[35mTheme Load (0.2ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2010-11-17 20:15:17', `perishable_token` = 'HE3PbLPYr4Bvml44ZwiZ', `updated_at` = '2010-11-17 20:15:17' WHERE (`users`.`id` = 4)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE ((`permissions`.user_id = 4))[0m
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_head.html.erb (5.6ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_messages.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_field_error.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_growl.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_error_box.erb (0.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header_nav_item.html.erb (1.0ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header.html.erb (3.3ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 10.7ms | ActiveRecord: 18.6ms)
+  [1m[35mSQL (9.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by Admin::Muck::DefaultController#index as HTML
+  [1m[35mTheme Load (0.3ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.1ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr1', 'a_name1', 1000)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.9ms)[0m  [1mdescribe `states`[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr2', 43, 'a_name2')
+  [1m[36mSQL (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('CA', 'a_name3', 1000)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('US', 'a_name4', 1000)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr3', 'a_name5', 1000)[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by Muck::HelperController#load_states_for_country as JSON
+  Parameters: {"id"=>"43"}
+  [1m[35mTheme Load (0.3ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mState Load (0.3ms)[0m  [1mSELECT id, name FROM `states` WHERE (country_id = '43') ORDER BY name[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1[0m
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 23.8ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by Muck::HelperController#load_states_for_country as JSON
+  Parameters: {"id"=>"43"}
+  [1m[35mTheme Load (0.3ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mState Load (0.3ms)[0m  [1mSELECT id, name FROM `states` WHERE (country_id = '43') ORDER BY name[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLanguage Load (0.3ms)[0m  SELECT id, locale FROM `languages` WHERE (languages.supported = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+
+Sent mail to to@example.com (15ms)
+Date: Wed, 17 Nov 2010 13:15:18 -0700
+From: from@example.com
+To: to@example.com
+Message-ID: <4ce437d68e2fa_acdd800e69a872cf@justinball.dev.mail>
+Subject: test message
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+test body
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr4', 'a_name6', 1000)[0m
+  [1m[35mSQL (1.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `countries`
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr5', 'a', 1000)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr6', 'b', 1000)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` ORDER BY name ASC[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` ORDER BY name ASC
+  [1m[36mSQL (1.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries`
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 37)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 38)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 39)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 40)[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 43)
+  [1m[36mSQL (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 44)[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 45)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 46)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 47)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('US', 'a_name7', 1000)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr7', 'a_name8', 1000)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'US') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'US') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 50)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 51)[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('ENG', 'a_name9', 1000)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('IE', 'a_name10', 1000)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('WAL', 'a_name11', 1000)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('SCT', 'a_name12', 1000)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr8', 'a_name13', 1000)
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 52)[0m
+  [1m[35mSQL (1.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 53)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 54)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 55)
+  [1m[36mSQL (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 56)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('CA', 'a_name14', 1000)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr9', 'a_name15', 1000)[0m
+  [1m[35mSQL (0.9ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 57)[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 58)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('US', 'a_name16', 1000)[0m
+  [1m[35mSQL (1.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('ENG', 'a_name17', 1000)
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('CA', 'a_name18', 1000)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `languages`[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `languages` (`english_name`, `is_default`, `locale`, `name`, `supported`) VALUES ('a_name20', 0, 'zz', 'a_name19', 1)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mLanguage Load (0.3ms)[0m  [1mSELECT id, locale FROM `languages` WHERE (languages.supported = 1)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `languages` (`english_name`, `is_default`, `locale`, `name`, `supported`) VALUES ('a_name22', 0, 'zz', 'a_name21', 1)
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT id, locale FROM `languages` WHERE (languages.supported = 1)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLanguage Load (0.2ms)[0m  SELECT id, locale FROM `languages` WHERE (languages.supported = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr11', 'a_name24', 1000)[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr10', 62, 'a_name23')
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `states`[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr13', 'a_name25', 1000)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr12', 63, 'a')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr15', 'a_name26', 1000)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr14', 64, 'b')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mState Load (0.3ms)[0m  SELECT `states`.* FROM `states` ORDER BY name ASC
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` ORDER BY name ASC[0m
+  [1m[35mSQL (1.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('somebody3@example.com')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`login`) = LOWER('inquire3')) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`persistence_token` = BINARY '5f233f046a5b59d10f6faee45ac18b5da8c668fa0b772e7c9648e17c6d2233135ddbedaca04dd55314f7216ba79fa9b193be55b5542d86f366535e44457e1591') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`single_access_token` = BINARY 'UItFMtkFDmjDIgseiLD4') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`access_code_id`, `activated_at`, `created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `disabled_at`, `email`, `failed_login_count`, `first_name`, `identity_url`, `last_login_at`, `last_login_ip`, `last_name`, `last_request_at`, `login`, `login_count`, `password_salt`, `perishable_token`, `persistence_token`, `single_access_token`, `terms_of_service`, `time_zone`, `updated_at`, `url_key`) VALUES (NULL, '2010-11-17 20:15:16', '2010-11-17 20:15:18', 'edfe6957ca0283f81fd09874abf36388394d6a8ca16286d494a4bdf3a37fbcda775df756c0a92d88828b470665de797c9acda55464d07a2a92dd144097d93e17', '2010-11-17 20:15:18', '0.0.0.0', NULL, 'somebody3@example.com', 0, 'test', NULL, NULL, NULL, 'guy', '2010-11-17 20:15:18', 'inquire3', 1, 'UQMNKlU0D1ewWasbHP-c', 'LTvBf0LRSUA_X3Ewt9VF', '5f233f046a5b59d10f6faee45ac18b5da8c668fa0b772e7c9648e17c6d2233135ddbedaca04dd55314f7216ba79fa9b193be55b5542d86f366535e44457e1591', 'UItFMtkFDmjDIgseiLD4', 1, 'UTC', '2010-11-17 20:15:18', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.`id` FROM `roles` WHERE (`roles`.`rolename` = BINARY 'administrator') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `roles` (`created_at`, `rolename`, `updated_at`) VALUES ('2010-11-17 20:15:18', 'administrator', '2010-11-17 20:15:18')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `permissions` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2010-11-17 20:15:18', 5, '2010-11-17 20:15:18', 5)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `users` SET `current_login_at` = '2010-11-17 20:15:18', `last_login_at` = '2010-11-17 20:15:18', `last_login_ip` = '0.0.0.0', `last_request_at` = '2010-11-17 20:15:18', `login_count` = 2, `perishable_token` = 'hp00dYtNPVg0HzZyWswH', `updated_at` = '2010-11-17 20:15:18' WHERE (`users`.`id` = 5)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 5) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_request_at` = '2010-11-17 20:15:18', `perishable_token` = '3kaCLRK3RRiP2kDcCsfc', `updated_at` = '2010-11-17 20:15:18' WHERE (`users`.`id` = 5)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Processing by Admin::Muck::DefaultController#index as HTML
+  [1m[35mTheme Load (0.2ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2010-11-17 20:15:18', `perishable_token` = 'Q_zDhX-6OyN4ea9SKkxH', `updated_at` = '2010-11-17 20:15:18' WHERE (`users`.`id` = 5)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE ((`permissions`.user_id = 5))[0m
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_head.html.erb (5.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_messages.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_field_error.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_growl.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_error_box.erb (0.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header_nav_item.html.erb (1.0ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header.html.erb (3.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 9.8ms | ActiveRecord: 69.5ms)
+  [1m[35mSQL (1.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('somebody4@example.com')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`login`) = LOWER('inquire4')) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`persistence_token` = BINARY '6ad078936aa97d39b490ff3391ef1f9fb07331087a1e033c048251c9cb370a27aa9b71a6f7f37b804be0d35fc676f1fa6ef134f4be3e481c7d61964c31185974') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`single_access_token` = BINARY 'TCsSSGZAA5nPkyfYfoxW') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`access_code_id`, `activated_at`, `created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `disabled_at`, `email`, `failed_login_count`, `first_name`, `identity_url`, `last_login_at`, `last_login_ip`, `last_name`, `last_request_at`, `login`, `login_count`, `password_salt`, `perishable_token`, `persistence_token`, `single_access_token`, `terms_of_service`, `time_zone`, `updated_at`, `url_key`) VALUES (NULL, '2010-11-17 20:15:16', '2010-11-17 20:15:18', '5ed903f2616b1b858d69a453580b0c87d4a212edcf3bb79ad0627604a7d628d6a7452496c50ba6fe927caec6944b64963c3560ae9b42803c1340e6e67754a9d2', '2010-11-17 20:15:18', '0.0.0.0', NULL, 'somebody4@example.com', 0, 'test', NULL, NULL, NULL, 'guy', '2010-11-17 20:15:18', 'inquire4', 1, 'PE1gSjOEFmyKQehr4onO', '0Z9WKHO50B_SxLHaabYd', '6ad078936aa97d39b490ff3391ef1f9fb07331087a1e033c048251c9cb370a27aa9b71a6f7f37b804be0d35fc676f1fa6ef134f4be3e481c7d61964c31185974', 'TCsSSGZAA5nPkyfYfoxW', 1, 'UTC', '2010-11-17 20:15:18', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.`id` FROM `roles` WHERE (`roles`.`rolename` = BINARY 'administrator') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `roles` (`created_at`, `rolename`, `updated_at`) VALUES ('2010-11-17 20:15:18', 'administrator', '2010-11-17 20:15:18')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `permissions` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2010-11-17 20:15:18', 6, '2010-11-17 20:15:18', 6)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `current_login_at` = '2010-11-17 20:15:18', `last_login_at` = '2010-11-17 20:15:18', `last_login_ip` = '0.0.0.0', `last_request_at` = '2010-11-17 20:15:18', `login_count` = 2, `perishable_token` = '6Kj5lCCrF5bPJWH9lNmy', `updated_at` = '2010-11-17 20:15:18' WHERE (`users`.`id` = 6)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_request_at` = '2010-11-17 20:15:18', `perishable_token` = '1pq00dWaEUV75UvKF8xH', `updated_at` = '2010-11-17 20:15:18' WHERE (`users`.`id` = 6)
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Processing by Admin::Muck::DefaultController#index as HTML
+  [1m[35mTheme Load (0.2ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2010-11-17 20:15:18', `perishable_token` = 'VpR8dWyvfDG23uuMiUQ9', `updated_at` = '2010-11-17 20:15:18' WHERE (`users`.`id` = 6)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE ((`permissions`.user_id = 6))[0m
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_head.html.erb (5.4ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_messages.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_field_error.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_growl.erb (0.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/shared/_flash_error_box.erb (0.5ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header_nav_item.html.erb (1.1ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_header.html.erb (3.8ms)
+Rendered /Users/jbasdf/projects/muck-engine/app/views/layouts/admin/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 11.3ms | ActiveRecord: 6.8ms)
+  [1m[35mSQL (2.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by Admin::Muck::DefaultController#index as HTML
+  [1m[35mTheme Load (0.3ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr16', 'a_name27', 1000)[0m
+  [1m[35mSQL (1.1ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr17', 65, 'a_name28')
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('CA', 'a_name29', 1000)[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('US', 'a_name30', 1000)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr18', 'a_name31', 1000)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by Muck::HelperController#load_states_for_country as JSON
+  Parameters: {"id"=>"65"}
+  [1m[35mTheme Load (0.3ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mState Load (0.3ms)[0m  [1mSELECT id, name FROM `states` WHERE (country_id = '65') ORDER BY name[0m
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 9.8ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by Muck::HelperController#load_states_for_country as JSON
+  Parameters: {"id"=>"65"}
+  [1m[35mTheme Load (0.3ms)[0m  SELECT `themes`.* FROM `themes` LIMIT 1
+  [1m[36mState Load (0.4ms)[0m  [1mSELECT id, name FROM `states` WHERE (country_id = '65') ORDER BY name[0m
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+Sent mail to to@example.com (7ms)
+Date: Wed, 17 Nov 2010 13:15:19 -0700
+From: from@example.com
+To: to@example.com
+Message-ID: <4ce437d74dcfb_acdd800e69a8731f@justinball.dev.mail>
+Subject: test message
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+test body
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr19', 'a_name32', 1000)
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `countries`[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr20', 'a', 1000)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr21', 'b', 1000)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` ORDER BY name ASC
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` ORDER BY name ASC[0m
+  [1m[35mSQL (1.1ms)[0m  ROLLBACK
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 59)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 60)
+  [1m[36mSQL (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 61)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 62)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 65)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 66)
+  [1m[36mSQL (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 67)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 68)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 69)[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('US', 'a_name33', 1000)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr22', 'a_name34', 1000)[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'US') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'US') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 72)[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 73)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('ENG', 'a_name35', 1000)[0m
+  [1m[35mSQL (0.9ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('IE', 'a_name36', 1000)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('WAL', 'a_name37', 1000)[0m
+  [1m[35mSQL (1.3ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('SCT', 'a_name38', 1000)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (175.4ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr23', 'a_name39', 1000)[0m
+  [1m[35mSQL (0.9ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 74)
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 75)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 76)
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 77)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 78)
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('CA', 'a_name40', 1000)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr24', 'a_name41', 1000)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `countries` WHERE (`countries`.`id` = 79)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `countries` WHERE (`countries`.`id` = 80)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('US', 'a_name42', 1000)
+  [1m[36mSQL (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('ENG', 'a_name43', 1000)[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('CA', 'a_name44', 1000)
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.4ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.4ms)[0m  SELECT `countries`.* FROM `countries` WHERE (abbreviation in ('ENG','IE','WAL','SCT'))
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`abbreviation` = 'CA') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `languages` (`english_name`, `is_default`, `locale`, `name`, `supported`) VALUES ('a_name46', 0, 'zz', 'a_name45', 1)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mLanguage Load (0.3ms)[0m  [1mSELECT id, locale FROM `languages` WHERE (languages.supported = 1)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `languages` (`english_name`, `is_default`, `locale`, `name`, `supported`) VALUES ('a_name48', 0, 'zz', 'a_name47', 1)
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT id, locale FROM `languages` WHERE (languages.supported = 1)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLanguage Load (0.3ms)[0m  SELECT id, locale FROM `languages` WHERE (languages.supported = 1)
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr26', 'a_name50', 1000)[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr25', 84, 'a_name49')
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM `states`[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr28', 'a_name51', 1000)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr27', 85, 'a')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `countries` (`abbreviation`, `name`, `sort`) VALUES ('abbr30', 'a_name52', 1000)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `states` (`abbreviation`, `country_id`, `name`) VALUES ('abbr29', 86, 'b')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mState Load (0.3ms)[0m  SELECT `states`.* FROM `states` ORDER BY name ASC
+  [1m[36mState Load (0.1ms)[0m  [1mSELECT `states`.* FROM `states` ORDER BY name ASC[0m
+  [1m[35mSQL (1.1ms)[0m  ROLLBACK
