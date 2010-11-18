@@ -50,33 +50,34 @@ end
 
 begin
   require 'jeweler'
-  Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "muck-engine"
-    gemspec.summary = "The base engine for the muck system."
-    gemspec.email = "justin@tatemae.com"
-    gemspec.homepage = "http://github.com/tatemae/muck-engine"
-    gemspec.description = "The base engine for the muck system.  Contains common tables, custom for, css and javascript."
-    gemspec.authors = ["Justin Ball", "Joel Duffin"]
-    gemspec.rubyforge_project = 'muck-engine'
-    gemspec.add_dependency "validation_reflection"
-    gemspec.add_dependency "will_paginate", '~> 3.0.beta'
-    gemspec.add_dependency "overlord"
-    gemspec.add_development_dependency "shoulda"
-    gemspec.add_development_dependency "rspec-rails", ">=2.1.0"
-    gemspec.add_development_dependency "cucumber-rails"
-    gemspec.add_development_dependency "autotest"
-    gemspec.add_development_dependency "capybara", ">= 0.3.9"
-    gemspec.add_development_dependency "shoulda"
-    gemspec.add_development_dependency "factory_girl"
-    gemspec.add_development_dependency "cucumber"
-    gemspec.add_development_dependency "rcov"
-    gemspec.add_development_dependency "rspec", ">=2.1.0"
-    gemspec.add_development_dependency "database_cleaner"
-    gemspec.add_development_dependency "spork"
-    gemspec.add_development_dependency "launchy"
-    gemspec.add_development_dependency "muck-users"
-    gemspec.add_development_dependency "git"
-    gemspec.test_files.exclude 'test/**' # exclude test directory
+  Jeweler::Tasks.new do |gem|
+    gem.name = "muck-engine"
+    gem.summary = "The base engine for the muck system."
+    gem.email = "justin@tatemae.com"
+    gem.homepage = "http://github.com/tatemae/muck-engine"
+    gem.description = "The base engine for the muck system.  Contains common tables, custom for, css and javascript."
+    gem.authors = ["Justin Ball", "Joel Duffin"]
+    gem.add_dependency "validation_reflection"
+    gem.add_dependency "will_paginate", '~> 3.0.beta'
+    gem.add_dependency "overlord"
+    gem.add_development_dependency "shoulda"
+    gem.add_development_dependency "rspec-rails", ">=2.1.0"
+    gem.add_development_dependency "cucumber-rails"
+    gem.add_development_dependency "autotest"
+    gem.add_development_dependency "capybara", ">= 0.3.9"
+    gem.add_development_dependency "shoulda"
+    gem.add_development_dependency "factory_girl"
+    gem.add_development_dependency "cucumber"
+    gem.add_development_dependency "rcov"
+    gem.add_development_dependency "rspec", ">=2.1.0"
+    gem.add_development_dependency "database_cleaner"
+    gem.add_development_dependency "spork"
+    gem.add_development_dependency "launchy"
+    gem.add_development_dependency "muck-users"
+    gem.add_development_dependency "git"
+    gem.files.exclude "public/images/service_icons/source/*"
+    gem.files.exclude 'test/**'
+    gem.test_files.exclude 'test/**' # exclude test directory
   end
   Jeweler::RubyforgeTasks.new do |rubyforge|
     rubyforge.doc_task = "rdoc"

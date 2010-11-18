@@ -27,3 +27,4 @@ rdoc
 pkg
 pkg/*
 log/*
+test/log/*
