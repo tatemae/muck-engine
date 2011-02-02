@@ -72,18 +72,18 @@ http://www.ajaxbestiary.com/Labs/SilkSprite/
 
 == Javascript
 
-The muck engine uses jRails and thus jQuery for javascript:
-http://ennerchi.com/projects/jrails
+The muck engine uses jQuery for javascript. Grab the latest version:
+http://jquery.com/
 
 === Other Javascript libraries.
-Muck engine installs the following javascript libraries:
-jGrowl - http://www.stanlemon.net/projects/jgrowl.html
+Muck engine also needs the following javascript libraries:
 fancybox - http://fancy.klade.lv/home
 easing - http://gsgd.co.uk/sandbox/jquery/easing/
 fancyzoom - http://orderedlist.com/articles/fancyzoom-meet-jquery
 
 
 === jGrowl
+jGrowl - http://www.stanlemon.net/projects/jgrowl.html
 If you wish to enable jgrowl then add the following lines to application.js and customize each as desired:
 
   jQuery.jGrowl.defaults.position = 'center';
@@ -110,4 +110,4 @@ should be:
   record_invalid: "Falla de validación: {{errors}}"
 
 
-Copyright (c) 2009-2010 Tatemai, released under the MIT license
+Copyright (c) 2009-2011 Tatemai, released under the MIT license

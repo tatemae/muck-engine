@@ -108,7 +108,7 @@ module MuckEngineHelper
   end
   
   # Builds a link to an image representing the service specified by name
-  # name: Name of a service.  ie twitter, google, delicious, etc
+  # name: Name of a service image.  ie twitter.png, google.png, delicious.png, etc
   # size: Size of the image to get. Valid values are 16, 24, 48 and 60
   def service_image(name, size = 24)
     %Q{/images/service_icons/#{size}/#{name}}
@@ -117,8 +117,9 @@ module MuckEngineHelper
   # Renders an icon for the given service
   # Name is the name of the image file associated with the service
   # Size can be one of 16, 24, 48 or 60.
-  def service_icon(name, size = 24)
-    %Q{<img src="/images/service_icons/#{size}/#{name}" />}
+  def service_icon(name, size = 24, alt = nil)
+    alt ||= name
+    %Q{<img src="#{service_image(name, size)}" alt="#{alt}" />}
   end
   
   # Generates a secure mailto link
