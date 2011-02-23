@@ -2,39 +2,41 @@
 sv: 
   muck: 
     engine: 
+      admin_access_code_requests: "Växelprefix Begäran"
       admin_access_codes: Koder
       admin_home: Hem
       admin_home_title: "Admin Hem"
-      admin_logout: Logout
+      admin_logout: "Logga ut"
       admin_roles: Roller
       admin_users: Användare
-      admin_welcome: "Välkommen tillbaka {{user}}"
+      admin_welcome: "Välkommen tillbaka %{user}"
       choose_country: "Välj land"
       choose_language: "Välj språk"
-      choose_state: "Välja statligt"
-      missing_parent_error: "Ange ett överordnat objekt"
+      choose_state: "Välj stat"
+      missing_parent_error: "Vänligen ange ett överordnat objekt"
+      required_text_mark: (Obligatorisk)
       select_country_prompt: "Välj ett land"
       select_language_prompt: "Välj språk"
       select_state_prompt: "Välj en stat"
     forms: 
-      please_enter_a_value: "Ange ett värde för {{label}}"
+      please_enter_a_value: "Ange ett värde för %{label}"
     general: 
       activate: Aktivera
       deactivate: Avaktivera
-      delete: "Ta bort"
-      deleting: "Radera ..."
-      disable: Möjliggöra
+      delete: Radera
+      deleting: "Ta bort ..."
+      disable: Aktivera
       enable: Inaktivera
       enabled: Aktiverat?
-      general_info: Allmänt
+      general_info: "Allmän info"
       help: Hjälp
       loading: "Laddar ..."
       next: "Nästa »"
-      no_text: Nej
+      no_text: Nr
       previous: «Föregående
-      read_more: Mer
+      read_more: "Läs mer"
       save: Spara
-      settings_saved: "Inställningar har sparats."
-      time_ago: "{{time_in_words}} Sedan"
+      settings_saved: "Har sparats."
+      time_ago: "%{time_in_words} Sedan"
       update: Uppdatera
       yes_text: Ja

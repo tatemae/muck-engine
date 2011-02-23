@@ -2,39 +2,41 @@
 zh-CN: 
   muck: 
     engine: 
-      admin_access_codes: 接入码
-      admin_home: 家
+      admin_access_code_requests: 访问代码请求
+      admin_access_codes: 访问代码
+      admin_home: 首页
       admin_home_title: 管理主页
       admin_logout: 注销
       admin_roles: 角色
       admin_users: 用户
-      admin_welcome: "欢迎回来{{user}}"
+      admin_welcome: "欢迎回来%{user}"
       choose_country: 选择国家
       choose_language: 选择语言
       choose_state: 选择国家
       missing_parent_error: 请指定一个父对象
+      required_text_mark: （必需）
       select_country_prompt: 请选择一个国家
       select_language_prompt: 请选择一种语言
       select_state_prompt: 请选择一个国家
     forms: 
-      please_enter_a_value: "请输入一个{{label}}值"
+      please_enter_a_value: "请输入%{label}价值"
     general: 
       activate: 激活
       deactivate: 停用
       delete: 删除
       deleting: 删除...
-      disable: 使能够
-      enable: 丧失能力
+      disable: 启用
+      enable: 禁用
       enabled: 启用？
       general_info: 一般资料
       help: 帮助
       loading: 载入中...
-      next: 下一页»
-      no_text: 否
+      next: 下一步»
+      no_text: 无
       previous: «上一页
-      read_more: 更多
+      read_more: 阅读更多
       save: 保存
       settings_saved: 设置已保存。
-      time_ago: "{{time_in_words}}前"
+      time_ago: "%{time_in_words}前"
       update: 更新
-      yes_text: 是
+      yes_text: 是的

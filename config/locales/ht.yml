@@ -1,0 +1,42 @@
+--- 
+ht: 
+  muck: 
+    engine: 
+      admin_access_code_requests: "Kòd aksè Demann"
+      admin_access_codes: "Aksè Kòd"
+      admin_home: Lakay
+      admin_home_title: "Admin Kay"
+      admin_logout: Dekonekte
+      admin_roles: Wòl
+      admin_users: Itilizatè
+      admin_welcome: "Byenveni %{user}"
+      choose_country: "Chwazi Country"
+      choose_language: "Chwazi lang"
+      choose_state: "Chwazi Eta"
+      missing_parent_error: "Tanpri presize yon objè paran"
+      required_text_mark: (Obligatwa)
+      select_country_prompt: "Tanpri chwazi yon peyi"
+      select_language_prompt: "Tanpri chwazi yon lang"
+      select_state_prompt: "Tanpri chwazi yon eta"
+    forms: 
+      please_enter_a_value: "Tanpri antre yon valè pou %{label}"
+    general: 
+      activate: Aktive
+      deactivate: Disoud
+      delete: Delete
+      deleting: "Efase ..."
+      disable: Pèmèt
+      enable: Enfim
+      enabled: Pèmèt?
+      general_info: "Jeneral info"
+      help: Ede
+      loading: "Loading ..."
+      next: "Next »"
+      no_text: "Pa gen"
+      previous: «Previous
+      read_more: "li plis"
+      save: Sove
+      settings_saved: "Anviwònman yo te sove."
+      time_ago: "%{time_in_words} Sa pibliye depi"
+      update: Mizajou
+      yes_text: Wi

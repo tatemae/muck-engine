@@ -2,39 +2,41 @@
 sr: 
   muck: 
     engine: 
-      admin_access_codes: "Приступне а̨ифре"
-      admin_home: "Почетна страница"
-      admin_home_title: "Админ Почетна"
-      admin_logout: Одјава
+      admin_access_code_requests: "Приступ Код Захтеви"
+      admin_access_codes: "Приступних кодова који су"
+      admin_home: Почетак
+      admin_home_title: "Админ Почетак"
+      admin_logout: Логоут
       admin_roles: Улоге
       admin_users: Корисници
-      admin_welcome: "Добродошли назад {{user}}"
+      admin_welcome: "Добродошли назад %{user}"
       choose_country: "Изаберите земљу"
-      choose_language: "Одаберите језик"
+      choose_language: "Одаберите Језик"
       choose_state: "Изаберите државе"
-      missing_parent_error: "Наведите предмет родитеља"
-      select_country_prompt: "Молимо Вас да одаберете земљу"
+      missing_parent_error: "Наведите објекат родитеља"
+      required_text_mark: (Обавезно)
+      select_country_prompt: "Молимо изаберите државу"
       select_language_prompt: "Молимо изаберите језик"
-      select_state_prompt: "Молимо изаберите државу"
+      select_state_prompt: "Изаберите државу"
     forms: 
-      please_enter_a_value: "Молимо Вас да унесете вредност за {{label}}"
+      please_enter_a_value: "Молимо Вас да унесете вредност за %{label}"
     general: 
-      activate: Активирај
-      deactivate: Деактивирати
-      delete: Избрисати
+      activate: Активирати
+      deactivate: Деактивирај
+      delete: Избриши
       deleting: "Брисање ..."
-      disable: Омогућити
-      enable: Онемогућити
-      enabled: Омогућен?
+      disable: Омогући
+      enable: Онемогући
+      enabled: Омогућено?
       general_info: "Опште информације"
       help: Помоћ
       loading: "Учитавање ..."
-      next: "Некст »"
-      no_text: Не
+      next: "Следећа »"
+      no_text: Нема
       previous: «Претходна
-      read_more: "прочитај више"
-      save: Сачувати
+      read_more: "Прочитајте више"
+      save: Сачувај
       settings_saved: "Подешавања су сачувана."
-      time_ago: "{{time_in_words}} Пре"
-      update: Ажурирати
+      time_ago: "%{time_in_words} Пре"
+      update: Ажурирање
       yes_text: Да

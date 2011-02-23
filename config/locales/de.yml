@@ -2,28 +2,30 @@
 de: 
   muck: 
     engine: 
+      admin_access_code_requests: "Access Code Anträge"
       admin_access_codes: Zugangscodes
-      admin_home: Heim
-      admin_home_title: "Admin Home"
-      admin_logout: Logout
+      admin_home: Startseite
+      admin_home_title: "Admin Startseite"
+      admin_logout: Abmelden
       admin_roles: Rollen
       admin_users: Benutzer
-      admin_welcome: "Willkommen zurück {{user}}"
-      choose_country: "Land wählen"
-      choose_language: "Choose Language"
+      admin_welcome: "Willkommen zurück %{user}"
+      choose_country: "Wählen Sie Ihr Land"
+      choose_language: Sprachauswahl
       choose_state: "Wählen Sie Staat"
-      missing_parent_error: "Bitte geben Sie eine übergeordnete Objekt"
+      missing_parent_error: "Bitte geben Sie ein übergeordnetes Objekt"
+      required_text_mark: (Erforderlich)
       select_country_prompt: "Bitte wählen Sie ein Land"
       select_language_prompt: "Bitte wählen Sie eine Sprache"
-      select_state_prompt: "Bitte wählen Sie einen Staat"
+      select_state_prompt: "Bitte wählen Sie ein Bundesland"
     forms: 
-      please_enter_a_value: "Bitte geben Sie einen Wert für {{label}}"
+      please_enter_a_value: "Bitte geben Sie einen Wert für %{label}"
     general: 
       activate: Aktivieren
       deactivate: Deaktivieren
       delete: Löschen
       deleting: "Löschen ..."
-      disable: Aktivieren
+      disable: Enable
       enable: Deaktivieren
       enabled: Aktiviert?
       general_info: "Allgemeine Infos"
@@ -32,9 +34,9 @@ de:
       next: "Weiter »"
       no_text: Nein
       previous: «Zurück
-      read_more: "Lesen Sie mehr"
-      save: Sichern
-      settings_saved: "Die Einstellungen wurden gespeichert."
-      time_ago: "{{time_in_words}} Vor"
-      update: Aktualisieren
+      read_more: "mehr lesen"
+      save: Speichern
+      settings_saved: "Einstellungen wurden gespeichert."
+      time_ago: "%{time_in_words} Vor"
+      update: Update
       yes_text: Ja

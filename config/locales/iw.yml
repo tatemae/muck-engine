@@ -2,39 +2,41 @@
 iw: 
   muck: 
     engine: 
+      admin_access_code_requests: "הגישה בקשות קוד"
       admin_access_codes: "קודי גישה"
-      admin_home: בית
-      admin_home_title: "מנהלה הבית"
+      admin_home: "דף הבית"
+      admin_home_title: "מנהל בית"
       admin_logout: התנתקות
       admin_roles: תפקידים
       admin_users: משתמשים
-      admin_welcome: "ברוך שובך {{user}}"
+      admin_welcome: "ברוך שובך %{user}"
       choose_country: "בחר מדינה"
       choose_language: "בחר שפה"
-      choose_state: "בחר מדינה"
-      missing_parent_error: "אנא ציין אובייקט ההורה"
-      select_country_prompt: "אנא בחר ארץ"
-      select_language_prompt: "אנא בחר שפה"
-      select_state_prompt: "אנא בחר מדינה"
+      choose_state: "בחר המדינה"
+      missing_parent_error: "נא לציין אובייקט האב"
+      required_text_mark: (חובה)
+      select_country_prompt: "בחר ארץ"
+      select_language_prompt: "נא לבחור שפה"
+      select_state_prompt: "אנא בחר המדינה"
     forms: 
-      please_enter_a_value: "אנא הזן ערך עבור {{label}}"
+      please_enter_a_value: "נא להזין ערך עבור %{label}"
     general: 
-      activate: הפעל
-      deactivate: השבת
-      delete: למחוק
+      activate: להפעיל
+      deactivate: "לבטל פעילות"
+      delete: מחק
       deleting: "מחיקת ..."
       disable: לאפשר
-      enable: להשבית
+      enable: השבת
       enabled: Enabled?
       general_info: "מידע כללי"
       help: עזרה
       loading: "טוען ..."
       next: "הבא »"
       no_text: לא
-      previous: «קודם
-      read_more: "קרא עוד"
-      save: לשמור
+      previous: «הקודם
+      read_more: "לפרטים נוספים"
+      save: שמור
       settings_saved: "הגדרות נשמרו."
-      time_ago: "לפני {{time_in_words}}"
+      time_ago: "%{time_in_words} לפני"
       update: עדכון
       yes_text: כן

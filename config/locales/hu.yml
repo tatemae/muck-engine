@@ -2,39 +2,41 @@
 hu: 
   muck: 
     engine: 
+      admin_access_code_requests: "Hozzáférési kód kéri"
       admin_access_codes: "Hozzáférési kódok"
-      admin_home: Otthon
-      admin_home_title: "Admin Home"
-      admin_logout: Kijelentkezési
-      admin_roles: Szerepeket
-      admin_users: Álláskeresők
-      admin_welcome: "Welcome back {{user}}"
+      admin_home: Főoldal
+      admin_home_title: "Admin Kezdőlap"
+      admin_logout: Kilépés
+      admin_roles: Szerepek
+      admin_users: Felhasználók
+      admin_welcome: "Welcome back %{user}"
       choose_country: "Válasszon országot"
       choose_language: "Válasszon nyelvet"
       choose_state: "Válassza ki az állami"
       missing_parent_error: "Kérjük, adja meg a szülő objektum"
-      select_country_prompt: "Kérjük, válasszon országot"
+      required_text_mark: (Szükséges)
+      select_country_prompt: "Kérjük válasszon országot"
       select_language_prompt: "Kérjük, válasszon egy nyelvet"
       select_state_prompt: "Kérjük, válasszon egy állam"
     forms: 
-      please_enter_a_value: "Adjon meg egy értéket {{label}}"
+      please_enter_a_value: "Kérem adjon meg egy értéket a %{label}"
     general: 
-      activate: Aktiváljuk
-      deactivate: Inaktivál
-      delete: Töröl
-      deleting: "Törlés ..."
-      disable: Bekapcsol
-      enable: Kikapcsol
-      enabled: Enabled?
+      activate: Aktiválása
+      deactivate: Deaktiválása
+      delete: Törlés
+      deleting: "Törlése ..."
+      disable: Engedélyezése
+      enable: Letiltása
+      enabled: Engedélyezve?
       general_info: "Általános információk"
       help: Segítség
-      loading: "Loading ..."
-      next: "Következő »"
+      loading: "Betöltése ..."
+      next: "Tovább »"
       no_text: Nem
       previous: «Előző
-      read_more: "olvas több"
-      save: Ment
-      settings_saved: "Beállítások mentése megtörtént."
-      time_ago: "{{time_in_words}} Ezelőtt"
+      read_more: tovább
+      save: Mentés
+      settings_saved: "Beállítások volna menteni."
+      time_ago: "%{time_in_words} Ezelőtt"
       update: Frissítés
       yes_text: Igen

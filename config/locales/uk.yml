@@ -2,39 +2,41 @@
 uk: 
   muck: 
     engine: 
+      admin_access_code_requests: "Просить код доступу"
       admin_access_codes: "Коди доступу"
-      admin_home: Будинок
-      admin_home_title: "Головна сторінка управління"
+      admin_home: Головна
+      admin_home_title: "Адміністратор Головна"
       admin_logout: Вийти
       admin_roles: Ролі
-      admin_users: Користувач
-      admin_welcome: "Ласкаво просимо {{user}}"
+      admin_users: Користувачі
+      admin_welcome: "Ласкаво просимо %{user}"
       choose_country: "Виберіть країну"
       choose_language: "Вибір мови"
       choose_state: "Виберіть держава"
-      missing_parent_error: "Прохання вказати батьківський об&#39;єкт"
+      missing_parent_error: "Будь ласка, вкажіть батьківський об&#39;єкт"
+      required_text_mark: "(Обов&#39;язково)"
       select_country_prompt: "Будь ласка, виберіть країну"
       select_language_prompt: "Будь ласка, виберіть мову"
       select_state_prompt: "Будь ласка, виберіть стан"
     forms: 
-      please_enter_a_value: "Будь ласка, введіть значення для {{label}}"
+      please_enter_a_value: "Будь ласка, введіть значення для %{label}"
     general: 
-      activate: Включити
-      deactivate: Деактивувати
+      activate: Активувати
+      deactivate: Дезактивувати
       delete: Видалити
-      deleting: "Видалення ..."
-      disable: Дозволяти
-      enable: Вимикати
+      deleting: "Вилучення ..."
+      disable: Включити
+      enable: Відключити
       enabled: Включено?
       general_info: "Загальна інформація"
-      help: Допомога
+      help: Довідка
       loading: "Завантаження ..."
       next: "Наступна »"
       no_text: Ні
       previous: «Попередня
       read_more: "читати далі"
       save: Зберегти
-      settings_saved: "Настройки були збережені."
-      time_ago: "{{time_in_words}} Назад"
+      settings_saved: "Налаштування збережено."
+      time_ago: "%{time_in_words} Назад"
       update: Оновлення
       yes_text: Так

@@ -2,39 +2,41 @@
 vi: 
   muck: 
     engine: 
+      admin_access_code_requests: "Yêu cầu truy cập Mã số"
       admin_access_codes: "Mã truy cập"
-      admin_home: "Gia đình"
+      admin_home: "Trang chủ"
       admin_home_title: "Admin Trang chủ"
       admin_logout: Thoát
       admin_roles: "Vai trò"
       admin_users: "Người dùng"
-      admin_welcome: "Chào mừng bạn trở {{user}}"
-      choose_country: "Chọn Quốc gia"
+      admin_welcome: "Chào mừng trở lại %{user}"
+      choose_country: "Chọn quốc gia"
       choose_language: "Chọn ngôn ngữ"
       choose_state: "Chọn nhà nước"
-      missing_parent_error: "Hãy chỉ định một đối tượng phụ huynh"
-      select_country_prompt: "Hãy lựa chọn một quốc gia"
-      select_language_prompt: "Hãy lựa chọn một ngôn ngữ"
+      missing_parent_error: "Hãy xác định một đối tượng cha mẹ"
+      required_text_mark: "(Yêu cầu)"
+      select_country_prompt: "Xin vui lòng chọn quốc gia"
+      select_language_prompt: "Hãy chọn một ngôn ngữ"
       select_state_prompt: "Hãy chọn một nhà nước"
     forms: 
-      please_enter_a_value: "Xin vui lòng nhập một giá trị cho {{label}}"
+      please_enter_a_value: "Xin vui lòng nhập một giá trị cho %{label}"
     general: 
       activate: "Kích hoạt"
       deactivate: Tắt
-      delete: Xoá
+      delete: Xóa
       deleting: "Xoá ..."
-      disable: "Làm cho có thể"
-      enable: "Không thể"
-      enabled: Bật?
+      disable: "Kích hoạt tính năng"
+      enable: "Vô hiệu hoá"
+      enabled: "Kích hoạt?"
       general_info: "Thông tin chung"
-      help: "Giúp đỡ"
+      help: "Trợ giúp"
       loading: "Loading ..."
       next: "Tiếp theo »"
-      no_text: Không
+      no_text: "Không có"
       previous: «Trước
       read_more: "chi tiết"
       save: Lưu
       settings_saved: "Cài đặt đã được lưu."
-      time_ago: "{{time_in_words}} Trước"
-      update: "Cập nhật"
+      time_ago: "%{time_in_words} Trước"
+      update: Thông
       yes_text: Có

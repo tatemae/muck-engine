@@ -2,39 +2,41 @@
 el: 
   muck: 
     engine: 
-      admin_access_codes: Κωδικοί
-      admin_home: Σπίτι
-      admin_home_title: "Admin Αρχική"
+      admin_access_code_requests: "Πρόσβαση Αιτήσεις κώδικα"
+      admin_access_codes: "Κωδικοί πρόσβασης"
+      admin_home: "Αρχική Σελίδα"
+      admin_home_title: "Admin Αρχική Σελίδα"
       admin_logout: Αποσύνδεση
       admin_roles: Ρόλοι
       admin_users: Χρήστες
-      admin_welcome: "Welcome back {{user}}"
+      admin_welcome: "Καλώς ήρθατε και πάλι %{user}"
       choose_country: "Επιλέξτε Χώρα"
-      choose_language: "Επιλέξτε Γλώσσα"
-      choose_state: "Επιλέξτε μέλος"
-      missing_parent_error: "Να αναφερθεί ένα αντικείμενο μητρική"
-      select_country_prompt: "Παρακαλώ επιλέξτε μια χώρα"
-      select_language_prompt: "Παρακαλώ επιλέξτε μια γλώσσα"
-      select_state_prompt: "Παρακαλώ επιλέξτε ένα κράτος"
+      choose_language: "Επιλογή Γλώσσας"
+      choose_state: "Επιλέξτε μέλους"
+      missing_parent_error: "Παρακαλείστε να προσδιορίσετε ένα αντικείμενο μητρική"
+      required_text_mark: (Απαιτείται)
+      select_country_prompt: "Επιλέξτε μια χώρα"
+      select_language_prompt: "Επιλέξτε μια γλώσσα"
+      select_state_prompt: "Παρακαλώ επιλέξτε μια κατάσταση"
     forms: 
-      please_enter_a_value: "Παρακαλώ εισάγετε μια τιμή για {{label}}"
+      please_enter_a_value: "Παρακαλώ εισάγετε μια τιμή για %{label}"
     general: 
       activate: Ενεργοποίηση
       deactivate: Απενεργοποίηση
-      delete: Διαγράφω
+      delete: Διαγραφή
       deleting: "Διαγραφή ..."
-      disable: Ενεργοποιώ
-      enable: Απενεργοποιώ
+      disable: Ενεργοποίηση
+      enable: Απενεργοποίηση
       enabled: Ενεργοποιήθηκε;
       general_info: "Γενικές πληροφορίες"
       help: Βοήθεια
-      loading: "Loading ..."
+      loading: "Φόρτωση ..."
       next: "Επόμενη »"
       no_text: Δεν
-      previous: «Προηγούμενο
+      previous: «Προηγούμενη
       read_more: "διαβάστε περισσότερα"
-      save: Αποθηκεύω
+      save: Αποθήκευση
       settings_saved: "Ρυθμίσεις έχουν σωθεί."
-      time_ago: "{{time_in_words}} Πριν"
+      time_ago: "%{time_in_words} Πριν"
       update: Ενημέρωση
       yes_text: Ναι

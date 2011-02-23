@@ -2,39 +2,41 @@
 mt: 
   muck: 
     engine: 
-      admin_access_codes: "Aċċess Codes"
-      admin_home: Dar
+      admin_access_code_requests: "Kodiċi Talbiet Aċċess"
+      admin_access_codes: "Aċċess Kodiċijiet"
+      admin_home: Home
       admin_home_title: "Admin Home"
       admin_logout: Logout
       admin_roles: Rwoli
-      admin_users: Users
-      admin_welcome: "Welcome back {{user}}"
+      admin_users: Utenti
+      admin_welcome: "Merħba lura %{user}"
       choose_country: "Agħżel Pajjiż"
       choose_language: "Agħżel Lingwa"
       choose_state: "Agħżel l-Istat"
-      missing_parent_error: "Jekk jogħġbok speċifika l-oġġett prinċipali"
+      missing_parent_error: "Jekk jogħġbok speċifika oġġett prinċipali"
+      required_text_mark: (Meħtieġ)
       select_country_prompt: "Jekk jogħġbok agħżel pajjiż"
-      select_language_prompt: "Jekk jogħġbok tagħżel lingwa"
+      select_language_prompt: "Jekk jogħġbok agħżel lingwa"
       select_state_prompt: "Jekk jogħġbok agħżel stat"
     forms: 
-      please_enter_a_value: "Jekk joghgbok ikteb valur għal {{label}}"
+      please_enter_a_value: "Jekk jogħġbok daħħal valur għal %{label}"
     general: 
       activate: Activate
       deactivate: Diżattivazzjoni
       delete: Ħassar
       deleting: "Tħassir ..."
-      disable: Awtorizza
-      enable: Invalida
-      enabled: Iffaċilitati?
-      general_info: "Info Ġenerali"
+      disable: Jippermettu
+      enable: Itfi
+      enabled: Ppermettiet?
+      general_info: "info Ġenerali"
       help: Għajnuna
       loading: "Loading ..."
-      next: "Next »"
-      no_text: Le
-      previous: «Previous
+      next: "Li jmiss »"
+      no_text: Nru
+      previous: «Preċedenti
       read_more: "aqra aktar"
       save: Save
       settings_saved: "Settings ġew salvati."
-      time_ago: "{{time_in_words}} Ago"
+      time_ago: "%{time_in_words} Ilu"
       update: Aġġornament
       yes_text: Iva

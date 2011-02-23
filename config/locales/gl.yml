@@ -2,22 +2,24 @@
 gl: 
   muck: 
     engine: 
+      admin_access_code_requests: "Código de solicitudes de acceso"
       admin_access_codes: "Códigos de acceso"
       admin_home: Inicio
       admin_home_title: "Admin Home"
-      admin_logout: Saír
+      admin_logout: Logout
       admin_roles: Funcións
       admin_users: Usuarios
-      admin_welcome: "Welcome back {{user}}"
-      choose_country: "Seleccionar País"
+      admin_welcome: "Benvido de volta %{user}"
+      choose_country: "Escolla o País"
       choose_language: "Escolla o idioma"
-      choose_state: "Escolla Estado"
-      missing_parent_error: "Por favor, especifica un obxecto pai"
-      select_country_prompt: "Por favor, seleccione un país"
+      choose_state: "Escolla o Estado"
+      missing_parent_error: "Por favor, especifique un obxecto pai"
+      required_text_mark: (Requerido)
+      select_country_prompt: "Seleccione un país"
       select_language_prompt: "Por favor, seleccione un idioma"
       select_state_prompt: "Por favor, seleccione un estado"
     forms: 
-      please_enter_a_value: "Por favor, indique un valor para {{label}}"
+      please_enter_a_value: "Introduza un valor para %{label}"
     general: 
       activate: Activar
       deactivate: Desactivar
@@ -26,15 +28,15 @@ gl:
       disable: Activar
       enable: Desactivar
       enabled: Activado?
-      general_info: "General info"
+      general_info: "Información xeral"
       help: Axuda
       loading: "Cargando ..."
-      next: "Next »"
+      next: "Seguinte »"
       no_text: Non
       previous: «Anterior
       read_more: "ler máis"
       save: Gardar
-      settings_saved: "As opcións foron gardadas."
-      time_ago: "{{time_in_words}} Atrás"
-      update: Actualizar
+      settings_saved: "A configuración se gardaron."
+      time_ago: "%{time_in_words} Atrás"
+      update: Update
       yes_text: Si

@@ -2,39 +2,41 @@
 ro: 
   muck: 
     engine: 
-      admin_access_codes: "Codurile de acces"
-      admin_home: Acasă
+      admin_access_code_requests: "Codul de acces Cereri"
+      admin_access_codes: "Coduri de acces"
+      admin_home: Home
       admin_home_title: "Admin Home"
       admin_logout: Deconectare
-      admin_roles: Rolurile
-      admin_users: Users
-      admin_welcome: "Bine ai revenit {{user}}"
-      choose_country: "Alegeti Tara"
-      choose_language: "Alege Limba"
+      admin_roles: Roluri
+      admin_users: Utilizatori
+      admin_welcome: "Bine ai revenit %{user}"
+      choose_country: "Alege Ţară"
+      choose_language: "Alegeţi limba"
       choose_state: "Alege de stat"
       missing_parent_error: "Vă rugăm să specificaţi un obiect părinte"
+      required_text_mark: (Necesar)
       select_country_prompt: "Vă rugăm să selectaţi o ţară"
       select_language_prompt: "Vă rugăm să selectaţi o limbă"
-      select_state_prompt: "Vă rugăm să selectaţi un stat"
+      select_state_prompt: "Vă rugăm să selectaţi o stare"
     forms: 
-      please_enter_a_value: "Vă rugăm să introduceţi o valoare pentru {{label}}"
+      please_enter_a_value: "Vă rugăm să introduceţi o valoare pentru %{label}"
     general: 
-      activate: Activaţi
-      deactivate: Dezactivează
+      activate: Activa
+      deactivate: Dezactivare
       delete: Şterge
       deleting: "Ştergerea ..."
-      disable: Îngădui
-      enable: Dezactiva
+      disable: Permite
+      enable: Dezactivaţi
       enabled: Activat?
-      general_info: "General info"
-      help: Ajuta
+      general_info: "Informaţii generale"
+      help: Ajutor
       loading: "Se incarca ..."
       next: "Next »"
       no_text: Nu
       previous: «Înapoi
       read_more: "citeste mai mult"
-      save: Economisi
-      settings_saved: "Setările au fost salvate."
-      time_ago: "{{time_in_words}} În urmă"
-      update: Actualiza
+      save: Salva
+      settings_saved: "Setări au fost salvate."
+      time_ago: "%{time_in_words} În urmă"
+      update: Update
       yes_text: Da

@@ -2,39 +2,41 @@
 th: 
   muck: 
     engine: 
-      admin_access_codes: "รหัส Access"
-      admin_home: บ้าน
-      admin_home_title: "Home Admin"
-      admin_logout: "ออก จาก ระบบ"
+      admin_access_code_requests: "Access ขอรหัส"
+      admin_access_codes: รหัสการเข้าใช้
+      admin_home: หน้าแรก
+      admin_home_title: หน้าแรกผู้ดูแลระบบ
+      admin_logout: ออกจากระบบ
       admin_roles: บทบาท
-      admin_users: "ผู้ ใช้ งาน"
-      admin_welcome: "ยินดี ต้อนรับ กลับ {{user}}"
-      choose_country: "เลือก ประเทศ"
-      choose_language: "เลือก ภาษา"
-      choose_state: "เลือก รัฐ"
-      missing_parent_error: "กรุณา ระบุ วัตถุ ผู้ ปกครอง"
-      select_country_prompt: "กรุณา เลือก ประเทศ"
-      select_language_prompt: "โปรด เลือก ภาษา"
-      select_state_prompt: "กรุณา เลือก รัฐ"
+      admin_users: ผู้ใช้งาน
+      admin_welcome: "ยินดีต้อนรับกลับ %{user}"
+      choose_country: เลือกประเทศ
+      choose_language: เลือกภาษา
+      choose_state: เลือกรัฐ
+      missing_parent_error: กรุณาระบุวัตถุผู้ปกครอง
+      required_text_mark: (จำเป็น)
+      select_country_prompt: โปรดเลือกประเทศ
+      select_language_prompt: โปรดเลือกภาษา
+      select_state_prompt: กรุณาเลือกรัฐ
     forms: 
-      please_enter_a_value: "โปรด ป้อน ค่า สำหรับ {{label}}"
+      please_enter_a_value: "กรุณาป้อนค่าสำหรับ %{label}"
     general: 
-      activate: "เปิด ใช้ งาน"
-      deactivate: ยกเลิก
+      activate: กระตุ้น
+      deactivate: เลิกใช้งาน
       delete: ลบ
       deleting: "ลบ ..."
-      disable: "ทำให้ สามารถ"
-      enable: "ไม่ สามารถ"
-      enabled: "เปิด ใช้ งาน?"
-      general_info: "ข้อมูล ทั่วไป"
-      help: ช่วยเหลือ
-      loading: "โหลด ..."
-      next: "ถัด ไป »"
-      no_text: ไม่ใช่
-      previous: "«ก่อน หน้า"
-      read_more: "อ่าน ข้อมูล เพิ่มเติม"
+      disable: เปิดใช้งาน
+      enable: ปิดการใช้งาน
+      enabled: เปิดใช้งาน?
+      general_info: ข้อมูลทั่วไป
+      help: ความช่วยเหลือ
+      loading: "Loading ..."
+      next: "ถัดไป »"
+      no_text: ไม่มี
+      previous: "« ก่อนหน้า"
+      read_more: อ่านรายละเอียดเพิ่มเติม
       save: บันทึก
-      settings_saved: "การ ตั้ง ค่า ได้ ถูก บันทึก."
-      time_ago: "แล้ว {{time_in_words}}"
-      update: อัพเดต
+      settings_saved: การตั้งค่าได้รับการบันทึก
+      time_ago: "%{time_in_words} ที่ผ่านมา"
+      update: Update
       yes_text: ใช่

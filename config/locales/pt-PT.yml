@@ -2,39 +2,41 @@
 pt-PT: 
   muck: 
     engine: 
+      admin_access_code_requests: "Código de pedidos de acesso"
       admin_access_codes: "Códigos de Acesso"
       admin_home: Início
       admin_home_title: "Admin Home"
-      admin_logout: Sair
+      admin_logout: Logout
       admin_roles: Funções
       admin_users: Usuários
-      admin_welcome: "Welcome back {{user}}"
-      choose_country: "Escolher País"
+      admin_welcome: "Bem-vindo de volta %{user}"
+      choose_country: "Escolha o País"
       choose_language: "Escolha o idioma"
-      choose_state: "Escolha Estado"
-      missing_parent_error: "Por favor especificar um objeto pai"
-      select_country_prompt: "Por favor selecione um país"
+      choose_state: "Escolha o Estado"
+      missing_parent_error: "Por favor, especifique um objeto pai"
+      required_text_mark: (Obrigatório)
+      select_country_prompt: "Selecione um país"
       select_language_prompt: "Por favor, selecione um idioma"
       select_state_prompt: "Por favor, selecione um estado"
     forms: 
-      please_enter_a_value: "Por favor, indique um valor para {{label}}"
+      please_enter_a_value: "Por favor insira um valor para %{label}"
     general: 
       activate: Ativar
       deactivate: Desativar
       delete: Excluir
       deleting: "Excluindo ..."
       disable: Habilitar
-      enable: Desabilitar
+      enable: Desativar
       enabled: Ativado?
-      general_info: "General info"
+      general_info: "Informações gerais"
       help: Ajuda
       loading: "Carregando ..."
-      next: "Next »"
+      next: "Seguinte »"
       no_text: Não
       previous: «Anterior
       read_more: "leia mais"
-      save: Salvar
+      save: Guardar
       settings_saved: "As configurações foram salvas."
-      time_ago: "{{time_in_words}} Atrás"
-      update: Atualizar
+      time_ago: "%{time_in_words} Atrás"
+      update: Update
       yes_text: Sim

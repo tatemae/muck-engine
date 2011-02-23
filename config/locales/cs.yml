@@ -2,39 +2,41 @@
 cs: 
   muck: 
     engine: 
+      admin_access_code_requests: "Přístupový kód Žádosti"
       admin_access_codes: "Přístupové kódy"
       admin_home: Domů
       admin_home_title: "Hlavní admin"
-      admin_logout: Odhlášení
+      admin_logout: Odhlásit
       admin_roles: Role
       admin_users: Uživatelé
-      admin_welcome: "Vítejte zpět {{user}}"
-      choose_country: "Vyberte zemi"
-      choose_language: "Vybrat jazyk"
+      admin_welcome: "Vítejte zpět %{user}"
+      choose_country: "Vyberte si zemi"
+      choose_language: "Vyberte jazyk"
       choose_state: "Vyberte si stát"
-      missing_parent_error: "Prosím, zadejte nadřazeného objektu"
-      select_country_prompt: "Prosím vyberte zemi"
-      select_language_prompt: "Prosím, vyberte jazyk"
-      select_state_prompt: "Prosím, vyberte stav"
+      missing_parent_error: "Uveďte prosím nadřazený objekt"
+      required_text_mark: (Povinné)
+      select_country_prompt: "Prosím, vyberte zemi"
+      select_language_prompt: "Zvolte jazyk"
+      select_state_prompt: "Prosím, vyberte stát"
     forms: 
-      please_enter_a_value: "Prosím, zadejte hodnotu pro {{label}}"
+      please_enter_a_value: "Prosím, zadejte hodnotu pro %{label}"
     general: 
       activate: Aktivovat
       deactivate: Deaktivovat
       delete: Odstranit
       deleting: "Mazání ..."
-      disable: Umožnit
-      enable: Znemožnit
+      disable: Umožňují
+      enable: Zakázat
       enabled: Povoleno?
       general_info: "Obecné info"
       help: Nápověda
-      loading: "Loading ..."
+      loading: "Načítání ..."
       next: "Další »"
       no_text: Ne
       previous: «Předchozí
       read_more: více
       save: Uložit
       settings_saved: "Nastavení bylo uloženo."
-      time_ago: "{{time_in_words}} Ago"
-      update: Aktualizovat
+      time_ago: "%{time_in_words} Před"
+      update: Aktualizace
       yes_text: Ano

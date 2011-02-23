@@ -2,30 +2,32 @@
 hi: 
   muck: 
     engine: 
+      admin_access_code_requests: "एक्सेस कोड अनुरोध"
       admin_access_codes: "एक्सेस कोड"
       admin_home: घर
       admin_home_title: "व्यवस्थापक होम"
       admin_logout: लॉगआउट
-      admin_roles: भूमिका
-      admin_users: Users
-      admin_welcome: "वापस स्वागत है {{user}}"
+      admin_roles: भूमिकाओं
+      admin_users: उपयोगकर्ताओं
+      admin_welcome: "वापस स्वागत है %{user}"
       choose_country: "देश चुनें"
       choose_language: "भाषा चुनें"
       choose_state: "राज्य चुनें"
-      missing_parent_error: "कृपया एक मूल उद्देश्य को निर्दिष्ट"
-      select_country_prompt: "कृपया कोई देश चुनें"
-      select_language_prompt: "कृपया एक भाषा चुनें"
-      select_state_prompt: "कृपया एक राज्य चुनें"
+      missing_parent_error: "एक माता पिता वस्तु निर्दिष्ट करें"
+      required_text_mark: "() की आवश्यकता"
+      select_country_prompt: "कोई देश चुनें"
+      select_language_prompt: "एक भाषा का चयन करें"
+      select_state_prompt: "एक राज्य चुनें"
     forms: 
-      please_enter_a_value: "कृपया {{label}} के लिए मान दर्ज करें"
+      please_enter_a_value: "%{label} के लिए कोई मान दर्ज करें"
     general: 
-      activate: सक्रिय
+      activate: "सक्रिय करें"
       deactivate: निष्क्रिय
-      delete: मिटाना
-      deleting: "हटाने ..."
+      delete: हटाएँ
+      deleting: "हटा रहा है ..."
       disable: सक्षम
-      enable: असमर्थ
-      enabled: सक्रिय?
+      enable: "निष्क्रिय करें"
+      enabled: सक्षम?
       general_info: "सामान्य जानकारी"
       help: मदद
       loading: "लोड हो रहा है ..."
@@ -33,8 +35,8 @@ hi:
       no_text: नहीं
       previous: «पिछला
       read_more: "और अधिक पढ़ें"
-      save: बचाना
-      settings_saved: "रूपरेखाएँ सहेज ली गई हैं."
-      time_ago: "पहले {{time_in_words}}"
-      update: "अद्यतन करना"
-      yes_text: हाँ
+      save: सहेजें
+      settings_saved: "सेटिंग्स सहेज दी गई है."
+      time_ago: "पहले %{time_in_words}"
+      update: अद्यतन
+      yes_text: हां

@@ -2,39 +2,41 @@
 es: 
   muck: 
     engine: 
+      admin_access_code_requests: "Las solicitudes de acceso Código"
       admin_access_codes: "Códigos de Acceso"
       admin_home: Inicio
       admin_home_title: "Administrador de Inicio"
-      admin_logout: "Cerrar sesión"
-      admin_roles: Roles
-      admin_users: Usuarios
-      admin_welcome: "Bienvenido de nuevo {{user}}"
+      admin_logout: Desconectarse
+      admin_roles: Funciones
+      admin_users: Usuario
+      admin_welcome: "Bienvenido de nuevo %{user}"
       choose_country: "Seleccionar país"
-      choose_language: "Choose Language"
-      choose_state: "Escoja Estado"
+      choose_language: "Elegir idioma"
+      choose_state: "Seleccione Estado"
       missing_parent_error: "Por favor, especifique un objeto primario"
-      select_country_prompt: "Por favor seleccione un país"
+      required_text_mark: (Requerido)
+      select_country_prompt: "Por favor, escoge un país"
       select_language_prompt: "Por favor, seleccione un idioma"
       select_state_prompt: "Por favor, seleccione un estado"
     forms: 
-      please_enter_a_value: "Por favor, introduzca un valor para {{label}}"
+      please_enter_a_value: "Por favor, introduzca un valor para %{label}"
     general: 
       activate: Activar
       deactivate: Desactivar
-      delete: Borrar
-      deleting: "Eliminar ..."
-      disable: Posibilitar
+      delete: Eliminar
+      deleting: "Eliminación de ..."
+      disable: Habilitar
       enable: Desactivar
-      enabled: Activado?
-      general_info: "Información General"
+      enabled: Habilitado?
+      general_info: "Información general"
       help: Ayuda
       loading: "Cargando ..."
       next: "Siguiente »"
-      no_text: "No"
+      no_text: "N"
       previous: «Anterior
-      read_more: "Leer más"
-      save: Salvar
-      settings_saved: "Valores se han guardado."
-      time_ago: "{{time_in_words}} Hace"
+      read_more: "leer más"
+      save: Guardar
+      settings_saved: "Configuración se han guardado."
+      time_ago: "Hace %{time_in_words}"
       update: Actualizar
       yes_text: Sí

@@ -2,29 +2,31 @@
 lv: 
   muck: 
     engine: 
+      admin_access_code_requests: "Piekļuves kods Pieprasījumi"
       admin_access_codes: "Piekļuves kodi"
       admin_home: Mājas
-      admin_home_title: "Admin mājas lapa"
+      admin_home_title: "Admin mājas"
       admin_logout: Logout
       admin_roles: Lomas
-      admin_users: Lietotāji
-      admin_welcome: "Welcome back {{user}}"
-      choose_country: "Izvēlies valsti"
-      choose_language: "Choose Language"
-      choose_state: "Izvēlieties valsti"
-      missing_parent_error: "Lūdzu, norādiet vecāku objekts"
-      select_country_prompt: "Lūdzu izvēlieties valsti"
+      admin_users: Lietotājiem
+      admin_welcome: "Laipni lūdzam atpakaļ %{user}"
+      choose_country: "Izvēlēties valsti"
+      choose_language: "Izvēlēties valodu"
+      choose_state: "Izvēlēties valsti"
+      missing_parent_error: "Lūdzu, norādiet vecāku objektu"
+      required_text_mark: (Nepieciešams)
+      select_country_prompt: "Lūdzu, izvēlieties valsti"
       select_language_prompt: "Lūdzu, izvēlieties valodu"
-      select_state_prompt: "Lūdzu izvēlieties valsti"
+      select_state_prompt: "Lūdzu, izvēlieties valsti"
     forms: 
-      please_enter_a_value: "Lūdzu, ievadiet vērtību {{label}}"
+      please_enter_a_value: "Lūdzu, ievadiet vērtību %{label}"
     general: 
       activate: Aktivizēt
       deactivate: Deaktivizēt
       delete: Dzēst
-      deleting: "Notiek dzēšana ..."
-      disable: Sekmēt
-      enable: Sakropļot
+      deleting: "Svītrot ..."
+      disable: Ieslēgt
+      enable: Atspējot
       enabled: Enabled?
       general_info: "Vispārēja informācija"
       help: Palīdzība
@@ -33,8 +35,8 @@ lv:
       no_text: Nē
       previous: «Iepriekšējie
       read_more: "lasīt vairāk"
-      save: Glābt
+      save: Saglabāt
       settings_saved: "Iestatījumi ir saglabāti."
-      time_ago: "{{time_in_words}} Ago"
-      update: Atjaunot
+      time_ago: "%{time_in_words} Atpakaļ"
+      update: Update
       yes_text: Jā

@@ -2,39 +2,41 @@
 ru: 
   muck: 
     engine: 
+      admin_access_code_requests: "Просит код доступа"
       admin_access_codes: "Коды доступа"
-      admin_home: Дом
-      admin_home_title: "Главная страница управления"
+      admin_home: Главная
+      admin_home_title: "Администратор Главная"
       admin_logout: Выйти
       admin_roles: Роли
-      admin_users: Пользователь
-      admin_welcome: "Добро пожаловать {{user}}"
+      admin_users: Пользователи
+      admin_welcome: "Добро пожаловать %{user}"
       choose_country: "Выберите страну"
       choose_language: "Выбор языка"
       choose_state: "Выберите государство"
-      missing_parent_error: "Просьба указать родительский объект"
+      missing_parent_error: "Пожалуйста, укажите родительский объект"
+      required_text_mark: (Обязательно)
       select_country_prompt: "Пожалуйста, выберите страну"
       select_language_prompt: "Пожалуйста, выберите язык"
       select_state_prompt: "Пожалуйста, выберите состояние"
     forms: 
-      please_enter_a_value: "Пожалуйста, введите значения для {{label}}"
+      please_enter_a_value: "Пожалуйста, введите значение для %{label}"
     general: 
-      activate: Включить
-      deactivate: Деактивировать
+      activate: Активировать
+      deactivate: Дезактивировать
       delete: Удалить
       deleting: "Удаление ..."
-      disable: Разрешать
-      enable: Выключать
+      disable: Включить
+      enable: Отключить
       enabled: Включен?
       general_info: "Общая информация"
-      help: Помощь
+      help: Справка
       loading: "Загрузка ..."
       next: "Следующая »"
       no_text: Нет
       previous: «Предыдущая
-      read_more: "читать дальше"
+      read_more: "читать далее"
       save: Сохранить
-      settings_saved: "Настройки были сохранены."
-      time_ago: "{{time_in_words}} Назад"
+      settings_saved: "Настройки сохранены."
+      time_ago: "%{time_in_words} Назад"
       update: Обновление
       yes_text: Да

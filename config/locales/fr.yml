@@ -2,39 +2,41 @@
 fr: 
   muck: 
     engine: 
+      admin_access_code_requests: "Demande d&#39;accès au code"
       admin_access_codes: "Codes d&#39;accès"
       admin_home: Accueil
       admin_home_title: "Accueil Admin"
       admin_logout: Déconnexion
       admin_roles: Rôles
       admin_users: Utilisateurs
-      admin_welcome: "Welcome back {{user}}"
+      admin_welcome: "Bienvenue %{user}"
       choose_country: "Choisir le pays"
-      choose_language: "Choose Language"
-      choose_state: "Choisir Etat"
+      choose_language: "Choisissez la langue"
+      choose_state: "Choisissez État"
       missing_parent_error: "S&#39;il vous plaît spécifier un objet parent"
+      required_text_mark: (Requis)
       select_country_prompt: "S&#39;il vous plaît choisir un pays"
       select_language_prompt: "S&#39;il vous plaît sélectionnez une langue"
       select_state_prompt: "S&#39;il vous plaît sélectionner un état"
     forms: 
-      please_enter_a_value: "S&#39;il vous plaît entrer une valeur pour {{label}}"
+      please_enter_a_value: "S&#39;il vous plaît entrez une valeur pour %{label}"
     general: 
       activate: Activer
       deactivate: Désactiver
       delete: Supprimer
-      deleting: "Suppression ..."
+      deleting: "Suppression de ..."
       disable: Activer
       enable: Désactiver
       enabled: Activé?
-      general_info: "Infos générales"
-      help: Aider
-      loading: "Chargement ..."
+      general_info: "Informations générales"
+      help: Aide
+      loading: "Chargement en cours ..."
       next: "Suivant »"
-      no_text: Non
+      no_text: "N"
       previous: «Précédent
       read_more: "lire la suite"
-      save: Sauver
+      save: Enregistrer
       settings_saved: "Paramètres ont été enregistrés."
-      time_ago: "Il ya {{time_in_words}}"
-      update: "Mettre à jour"
+      time_ago: "Il ya %{time_in_words}"
+      update: "Mise à jour"
       yes_text: Oui

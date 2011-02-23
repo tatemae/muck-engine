@@ -2,39 +2,41 @@
 ja: 
   muck: 
     engine: 
+      admin_access_code_requests: アクセスコードを要求
       admin_access_codes: アクセスコード
-      admin_home: 家
+      admin_home: ホーム
       admin_home_title: 管理ホーム
       admin_logout: ログアウト
       admin_roles: ロール
       admin_users: ユーザー
-      admin_welcome: "戻る{{user}}へようこそ！"
+      admin_welcome: "おかえりなさい%{user}"
       choose_country: 国を選択
-      choose_language: 言語を選択
-      choose_state: 都道府県を選んで
-      missing_parent_error: してください親オブジェクトを指定する
-      select_country_prompt: してください国を選択
-      select_language_prompt: してください言語を選択
-      select_state_prompt: してください。状態を選択
+      choose_language: 言語を選択してください
+      choose_state: 状態を選択します。
+      missing_parent_error: 親オブジェクトを指定してください
+      required_text_mark: （必須）
+      select_country_prompt: 国を選択してください
+      select_language_prompt: 言語を選択してください
+      select_state_prompt: 状態を選択してください
     forms: 
-      please_enter_a_value: "してください。{{label}}の値を入力します。"
+      please_enter_a_value: "%{label}の値を入力してください。"
     general: 
-      activate: アクティブ化
+      activate: アクティブ
       deactivate: 非アクティブ化
-      delete: 削除する
+      delete: 削除
       deleting: 削除...
       disable: 有効にする
-      enable: 無効にする
-      enabled: 有効かどうか
+      enable: 無効
+      enabled: 有効ですか？
       general_info: 一般的な情報
       help: ヘルプ
       loading: 読み込んでいます...
       next: 次のページ»
       no_text: いいえ
-      previous: «前のページ
+      previous: «前
       read_more: 続きを読む
-      save: 保存する
+      save: 名前を付けて保存
       settings_saved: 設定が保存されている。
-      time_ago: "{{time_in_words}}前"
-      update: 更新する
+      time_ago: "%{time_in_words}前"
+      update: 更新
       yes_text: はい

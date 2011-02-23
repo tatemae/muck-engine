@@ -2,39 +2,41 @@
 tr: 
   muck: 
     engine: 
+      admin_access_code_requests: "Erişim kodu İstekler"
       admin_access_codes: "Giriş Kodları"
       admin_home: Ev
-      admin_home_title: "Admin Ana Sayfa"
+      admin_home_title: "Admin Anasayfa"
       admin_logout: Logout
-      admin_roles: Roller
-      admin_users: Kullanıcılar
-      admin_welcome: "Geri {{user}} Hoşgeldiniz"
+      admin_roles: Rolleri
+      admin_users: Kullanıcı
+      admin_welcome: "Tekrar hoş geldiniz %{user}"
       choose_country: "Ülke seçin"
-      choose_language: "Dil Seç"
-      choose_state: State
-      missing_parent_error: "Lütfen bir üst nesne belirtin"
-      select_country_prompt: "Lütfen bir ülke seçin"
-      select_language_prompt: "Lütfen bir dil seçin"
-      select_state_prompt: "Lütfen bir devlet seçin"
+      choose_language: "Dil seçin"
+      choose_state: "Devlet seçin"
+      missing_parent_error: "Bir ebeveyn nesne belirtin"
+      required_text_mark: (Gerekli)
+      select_country_prompt: "Lütfen bir ülke seçiniz"
+      select_language_prompt: "Lütfen bir dil seçiniz"
+      select_state_prompt: "bir devlet seçiniz"
     forms: 
-      please_enter_a_value: "Lütfen {{label}} için bir değer girin"
+      please_enter_a_value: "%{label} Için bir değer giriniz"
     general: 
       activate: Etkinleştirmek
       deactivate: "Devre dışı bırakmak"
       delete: Silmek
-      deleting: "Silme ..."
-      disable: "Imkan vermek"
-      enable: "Devre dışı bırakmak"
+      deleting: "Siliniyor ..."
+      disable: Etkinleştirmek
+      enable: "Devre dışı"
       enabled: "Etkin mi?"
-      general_info: "Genel Bilgi"
+      general_info: "Genel bilgi"
       help: Yardım
       loading: "Yükleniyor ..."
       next: "Sonraki »"
-      no_text: Hayır
+      no_text: Yok
       previous: «Önceki
       read_more: devamı
       save: Kaydetmek
-      settings_saved: "Ayarlar kaydedildi."
-      time_ago: "{{time_in_words}} Önce"
-      update: Güncellemek
+      settings_saved: "Ayarlarınız kaydedildi."
+      time_ago: "%{time_in_words} Önce"
+      update: Güncelleme
       yes_text: Evet

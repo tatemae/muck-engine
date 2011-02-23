@@ -2,39 +2,41 @@
 et: 
   muck: 
     engine: 
+      admin_access_code_requests: "Access Code taotlused"
       admin_access_codes: Pääsukoodid
-      admin_home: Kodu
+      admin_home: Avaleht
       admin_home_title: "Admin Home"
-      admin_logout: Välju
+      admin_logout: Logi
       admin_roles: Rollid
       admin_users: Kasutajad
-      admin_welcome: "Tere tulemast tagasi {{user}}"
+      admin_welcome: "Tere tulemast tagasi %{user}"
       choose_country: "Vali riik"
-      choose_language: "Vali Keel"
+      choose_language: "Vali keel"
       choose_state: "Vali riik"
-      missing_parent_error: "Palun täpsustage vanem objekti"
-      select_country_prompt: "Palun vali riik"
+      missing_parent_error: "Palun täpsustage vanem objekt"
+      required_text_mark: (Required)
+      select_country_prompt: "Palun valige riik"
       select_language_prompt: "Palun valige keel"
       select_state_prompt: "Palun valige riik"
     forms: 
-      please_enter_a_value: "Palun sisestage väärtus {{label}}"
+      please_enter_a_value: "Palun sisestage väärtus %{label}"
     general: 
-      activate: Aktiveeri
-      deactivate: Tühista
-      delete: Kustutama
+      activate: Aktiveerima
+      deactivate: Lülitan
+      delete: Kustuta
       deleting: "Kustutamine ..."
-      disable: Võimaldama
-      enable: Vigastama
-      enabled: Olemas?
-      general_info: "Üldine info"
+      disable: Võimaldada
+      enable: Keela
+      enabled: Enabled?
+      general_info: "General info"
       help: Abi
       loading: "Loading ..."
       next: "Järgmine »"
-      no_text: Ei
+      no_text: Nr
       previous: «Eelmine
-      read_more: "loe lähemalt"
-      save: Salvestama
+      read_more: "Loe edasi"
+      save: Salvesta
       settings_saved: "Seaded on salvestatud."
-      time_ago: "{{time_in_words}} Tagasi"
-      update: Värskendama
+      time_ago: "%{time_in_words} Tagasi"
+      update: Ajakohastama
       yes_text: Jah

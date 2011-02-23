@@ -15,6 +15,7 @@ en:
       admin_logout: Logout
       admin_roles: Roles
       admin_access_codes: Access Codes
+      admin_access_code_requests: Access Code Requests
       admin_home: Home
       admin_welcome: Welcome back %{user}
       admin_home_title: Admin Home

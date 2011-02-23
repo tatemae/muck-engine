@@ -2,39 +2,41 @@
 lt: 
   muck: 
     engine: 
+      admin_access_code_requests: "Prieigos kodas Prašymai"
       admin_access_codes: "Kreipties kodai"
-      admin_home: Namai
+      admin_home: Pradžia
       admin_home_title: "Administratorius Pradžia"
       admin_logout: Atsijungti
       admin_roles: Vaidmenys
       admin_users: Vartotojai
-      admin_welcome: "Sveiki sugrįžę {{user}}"
+      admin_welcome: "Sveiki sugrįžę %{user}"
       choose_country: "Pasirinkite šalį"
       choose_language: "Pasirinkite kalbą"
-      choose_state: "Pasirinkite valstybės"
+      choose_state: "Pasirinkite narė"
       missing_parent_error: "Nurodykite tėvų objektą"
-      select_country_prompt: "Pasirinkite šalį"
+      required_text_mark: (Būtina)
+      select_country_prompt: "Prašome pasirinkti šalį"
       select_language_prompt: "Pasirinkite kalbą"
       select_state_prompt: "Prašome pasirinkti valstybės"
     forms: 
-      please_enter_a_value: "Įveskite {{label}} vertė"
+      please_enter_a_value: "Įveskite %{label} vertė"
     general: 
-      activate: Aktyvuoti
+      activate: Aktyvinti
       deactivate: Išjungti
       delete: Ištrinti
       deleting: "Trynimas ..."
-      disable: Leisti
-      enable: "Daryti nepajėgų"
-      enabled: Įjungtas?
+      disable: Kad
+      enable: Išjungti
+      enabled: Įjungta?
       general_info: "Bendra informacija"
-      help: Padėti
+      help: Pagalba
       loading: "Kraunasi ..."
-      next: "Sekantis »"
-      no_text: Ne
+      next: "Kitas »"
+      no_text: Nr
       previous: «Ankstesnis
-      read_more: Daugiau
-      save: Saugoti
+      read_more: "skaityti daugiau"
+      save: Prisiminti
       settings_saved: "Nustatymai sėkmingai išsaugoti."
-      time_ago: "{{time_in_words}} Atgal"
+      time_ago: "%{time_in_words} Prieš"
       update: Atnaujinti
       yes_text: Taip

@@ -2,39 +2,41 @@
 it: 
   muck: 
     engine: 
+      admin_access_code_requests: "Codice di accesso richieste"
       admin_access_codes: "Codici di accesso"
-      admin_home: Casa
+      admin_home: Home
       admin_home_title: "Admin Home"
       admin_logout: Logout
       admin_roles: Ruoli
       admin_users: Utenti
-      admin_welcome: "Welcome back {{user}}"
-      choose_country: "Scegli Paese"
+      admin_welcome: "Bentornato %{user}"
+      choose_country: "Scegli il Paese"
       choose_language: "Scegli la lingua"
       choose_state: "Scegli Stato"
       missing_parent_error: "Si prega di specificare un oggetto padre"
-      select_country_prompt: "Si prega di selezionare un paese"
-      select_language_prompt: "Si prega di selezionare una lingua"
+      required_text_mark: (Obbligatorio)
+      select_country_prompt: "Seleziona un paese"
+      select_language_prompt: "Scegli una lingua"
       select_state_prompt: "Si prega di selezionare uno stato"
     forms: 
-      please_enter_a_value: "Si prega di inserire un valore per {{label}}"
+      please_enter_a_value: "Si prega di inserire un valore per %{label}"
     general: 
-      activate: Attiva
+      activate: Attivare
       deactivate: Disattivare
-      delete: Eliminare
-      deleting: "Eliminazione ..."
-      disable: Consentire
-      enable: Disattivare
-      enabled: Abilitati?
-      general_info: "Info generali"
+      delete: Elimina
+      deleting: "Eliminazione di ..."
+      disable: Attiva
+      enable: Disabilita
+      enabled: Abilitato?
+      general_info: "Informazioni generali"
       help: Aiuto
-      loading: "Loading ..."
+      loading: "Caricamento in corso ..."
       next: "Avanti »"
       no_text: "No"
-      previous: «Previous
+      previous: «Precedente
       read_more: "Per saperne di più"
-      save: Salvare
+      save: Salva
       settings_saved: "Impostazioni sono state salvate."
-      time_ago: "{{time_in_words}} Fa"
+      time_ago: "%{time_in_words} Fa"
       update: Aggiornamento
       yes_text: Sì

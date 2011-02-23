@@ -2,39 +2,41 @@
 pl: 
   muck: 
     engine: 
+      admin_access_code_requests: "Wnioski Kod dostępu"
       admin_access_codes: "Kody dostępu"
-      admin_home: Dom
-      admin_home_title: "Admin Start"
-      admin_logout: Wyloguj
+      admin_home: "Strona główna"
+      admin_home_title: "Admin Strona główna"
+      admin_logout: "Wyloguj się"
       admin_roles: Role
       admin_users: Użytkownicy
-      admin_welcome: "Welcome back {{user}}"
+      admin_welcome: "Witamy z powrotem %{user}"
       choose_country: "Wybierz kraj"
       choose_language: "Wybierz język"
       choose_state: "Wybierz państwo"
-      missing_parent_error: "Proszę podać obiektu nadrzędnego"
+      missing_parent_error: "Podaj obiektu nadrzędnego"
+      required_text_mark: (Wymagane)
       select_country_prompt: "Wybierz kraj"
       select_language_prompt: "Proszę wybrać język"
       select_state_prompt: "Wybierz państwo"
     forms: 
-      please_enter_a_value: "Proszę podać wartość dla {{label}}"
+      please_enter_a_value: "Proszę podać wartość dla %{label}"
     general: 
-      activate: Uaktywnij
-      deactivate: Wyłącz
-      delete: Usunąć
+      activate: Aktywować
+      deactivate: Dezaktywować
+      delete: Usuń
       deleting: "Usuwanie ..."
-      disable: Włączyć
-      enable: Wyłączyć
-      enabled: Aktywny?
+      disable: Włącz
+      enable: Wyłącz
+      enabled: Enabled?
       general_info: "Informacje ogólne"
       help: Pomoc
-      loading: "Ładowanie ..."
-      next: "Następna »"
-      no_text: Nie
-      previous: «Poprzednia
+      loading: "Loading ..."
+      next: "Następne »"
+      no_text: Nr
+      previous: «Poprzednie
       read_more: "czytaj więcej"
-      save: Zapisać
+      save: Zapisz
       settings_saved: "Ustawienia zostały zapisane."
-      time_ago: "{{time_in_words}} Temu"
-      update: Uaktualnić
+      time_ago: "%{time_in_words} Temu"
+      update: Update
       yes_text: Tak

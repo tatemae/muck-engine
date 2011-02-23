@@ -2,39 +2,41 @@
 zh-TW: 
   muck: 
     engine: 
-      admin_access_codes: 接入碼
-      admin_home: 家
+      admin_access_code_requests: 訪問代碼請求
+      admin_access_codes: 訪問代碼
+      admin_home: 首頁
       admin_home_title: 管理主頁
       admin_logout: 註銷
       admin_roles: 角色
       admin_users: 用戶
-      admin_welcome: "歡迎回來 {{user}}"
+      admin_welcome: "歡迎回來 %{user}"
       choose_country: 選擇國家
       choose_language: 選擇語言
       choose_state: 選擇國家
       missing_parent_error: 請指定一個父對象
+      required_text_mark: （必需）
       select_country_prompt: 請選擇一個國家
       select_language_prompt: 請選擇一種語言
       select_state_prompt: 請選擇一個國家
     forms: 
-      please_enter_a_value: "請輸入一個值為 {{label}}"
+      please_enter_a_value: "請輸入一個值%{label}"
     general: 
       activate: 激活
       deactivate: 停用
       delete: 刪除
       deleting: "刪除 ..."
-      disable: 使能夠
-      enable: 喪失能力
+      disable: 啟用
+      enable: 禁用
       enabled: 啟用？
       general_info: 一般資料
       help: 幫助
       loading: 載入中...
-      next: 下一頁»
-      no_text: 否
+      next: 下一步»
+      no_text: 無
       previous: «上一頁
-      read_more: 更多
+      read_more: 閱讀更多
       save: 保存
       settings_saved: 設置已保存。
-      time_ago: "{{time_in_words}}前"
+      time_ago: "%{time_in_words}前"
       update: 更新
-      yes_text: 是
+      yes_text: 是的

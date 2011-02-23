@@ -2,39 +2,41 @@
 fi: 
   muck: 
     engine: 
+      admin_access_code_requests: "Access Code pyynnöt"
       admin_access_codes: Tunnusluvut
-      admin_home: Koti
-      admin_home_title: "Järjestelmänvalvonnan Etusivu"
-      admin_logout: Uloskirjautumista
+      admin_home: Etusivu
+      admin_home_title: "Admin Home"
+      admin_logout: "Kirjaudu ulos"
       admin_roles: Roolit
       admin_users: Käyttäjät
-      admin_welcome: "Tervetuloa takaisin {{user}}"
+      admin_welcome: "Tervetuloa takaisin %{user}"
       choose_country: "Valitse maa"
       choose_language: "Valitse kieli"
-      choose_state: "Valitse valtion"
-      missing_parent_error: "Tarkennettava vanhemmista vastustaa"
+      choose_state: "Valitse valtio"
+      missing_parent_error: "Ilmoitathan vanhempi esine"
+      required_text_mark: (Vaaditaan)
       select_country_prompt: "Valitse maa"
-      select_language_prompt: "Valitse kieli"
-      select_state_prompt: "Valitse valtion"
+      select_language_prompt: "Ole hyvä ja valitse kieli"
+      select_state_prompt: "Valitse tila"
     forms: 
-      please_enter_a_value: "Anna arvo {{label}}"
+      please_enter_a_value: "Anna arvo %{label}"
     general: 
       activate: Aktivoida
-      deactivate: Deactivate
-      delete: Poistaa
+      deactivate: Poista
+      delete: Poista
       deleting: "Poistaminen ..."
-      disable: "Ota käyttöön"
-      enable: "Poistaa käytöstä"
+      disable: Avulla
+      enable: Poista
       enabled: Käytössä?
-      general_info: Yleistä
-      help: Apu
+      general_info: "Yleistä tietoa"
+      help: Ohjeet
       loading: "Loading ..."
       next: "Seuraava »"
       no_text: Ei
       previous: «Edellinen
-      read_more: Lisää
-      save: Tallentaa
+      read_more: "lue lisää"
+      save: Tallenna
       settings_saved: "Asetukset on tallennettu."
-      time_ago: "{{time_in_words}} Sitten"
-      update: Päivittää
+      time_ago: "%{time_in_words} Sitten"
+      update: Päivitä
       yes_text: Kyllä

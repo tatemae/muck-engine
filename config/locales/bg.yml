@@ -2,30 +2,32 @@
 bg: 
   muck: 
     engine: 
+      admin_access_code_requests: "Код за достъп Исканията"
       admin_access_codes: "Кодове за достъп"
-      admin_home: Дом
-      admin_home_title: "Админ Начало"
+      admin_home: Начало
+      admin_home_title: "Начало Admin"
       admin_logout: Изход
       admin_roles: Роли
-      admin_users: Потребители
-      admin_welcome: "Добре дошли отново {{user}}"
-      choose_country: "Изберете Държава"
+      admin_users: Потребителите
+      admin_welcome: "Добре дошли отново %{user}"
+      choose_country: "Избери страна"
       choose_language: "Изберете език"
       choose_state: "Изберете държава"
-      missing_parent_error: "Моля, посочете обект майка"
-      select_country_prompt: "Моля изберете страна"
+      missing_parent_error: "Моля, въведете родителски обект"
+      required_text_mark: (Задължително)
+      select_country_prompt: "Моля, избери страна"
       select_language_prompt: "Моля изберете език"
       select_state_prompt: "Изберете държава"
     forms: 
-      please_enter_a_value: "Моля, въведете стойност за {{label}}"
+      please_enter_a_value: "Моля, въведете стойност за %{label}"
     general: 
       activate: Активиране
-      deactivate: Деактивиране
-      delete: Изтривам
-      deleting: "Изтриването на ..."
-      disable: Включвам
-      enable: Изключвам
-      enabled: "Е включен?"
+      deactivate: Деактивирайте
+      delete: Изтриване
+      deleting: "Изтриване на ..."
+      disable: "Давам възможност на"
+      enable: "Правя неспособен"
+      enabled: "Давам възможност?"
       general_info: "Обща информация"
       help: Помощ
       loading: "Loading ..."
@@ -33,8 +35,8 @@ bg:
       no_text: Не
       previous: «Назад
       read_more: "прочети повече"
-      save: Спасявам
-      settings_saved: "Настройките са запазени."
-      time_ago: "{{time_in_words}} Назад"
-      update: Актуализирам
+      save: Запази
+      settings_saved: "Настройки са запазени."
+      time_ago: "%{time_in_words} Преди"
+      update: Update
       yes_text: Да

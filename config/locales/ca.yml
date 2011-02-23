@@ -2,39 +2,41 @@
 ca: 
   muck: 
     engine: 
+      admin_access_code_requests: "Les sol.licituds d&#39;accés Codi"
       admin_access_codes: "Codis d&#39;Accés"
       admin_home: Inici
       admin_home_title: "Administrador d&#39;Inici"
-      admin_logout: "Tancar sessió"
-      admin_roles: Rols
-      admin_users: Usuaris
-      admin_welcome: "Benvingut de nou {{user}}"
+      admin_logout: Desconnectar
+      admin_roles: Funcions
+      admin_users: Usuari
+      admin_welcome: "Benvingut de nou %{user}"
       choose_country: "Selecciona país"
-      choose_language: "Choose Language"
-      choose_state: "Esculli Estat"
+      choose_language: "Escollir idioma"
+      choose_state: "Seleccioneu Estat"
       missing_parent_error: "Si us plau, especifiqueu un objecte primari"
-      select_country_prompt: "Si us plau seleccioneu un país"
+      required_text_mark: (Requerit)
+      select_country_prompt: "Si us plau, tria un país"
       select_language_prompt: "Si us plau, seleccioneu un idioma"
       select_state_prompt: "Si us plau, seleccioneu un estat"
     forms: 
-      please_enter_a_value: "Introduïu un valor per {{label}}"
+      please_enter_a_value: "Si us plau, introduïu un valor per %{label}"
     general: 
       activate: Activar
       deactivate: Desactivar
-      delete: Esborrar
-      deleting: "Eliminar ..."
-      disable: Possibilitar
+      delete: Eliminar
+      deleting: "Eliminació de ..."
+      disable: Habilita
       enable: Desactivar
-      enabled: Activat?
-      general_info: "Informació General"
+      enabled: Habilitat?
+      general_info: "Informació general"
       help: Ajuda
       loading: "Carregant ..."
       next: "Següent »"
-      no_text: "No"
+      no_text: "N"
       previous: «Anterior
-      read_more: "Llegir més"
-      save: Salvar
-      settings_saved: "Valors s&#39;han desat."
-      time_ago: "{{time_in_words}} Fa"
+      read_more: "llegir més"
+      save: Guardar
+      settings_saved: "Configuració s&#39;han desat."
+      time_ago: "Fa %{time_in_words}"
       update: Actualitzar
       yes_text: Sí

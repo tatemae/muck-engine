@@ -3,39 +3,41 @@
 : 
   muck: 
     engine: 
-      admin_access_codes: Adgangskoder
+      admin_access_code_requests: "Access Code Forespørsler"
+      admin_access_codes: Tilgangskoder
       admin_home: Hjem
       admin_home_title: "Admin Home"
-      admin_logout: Logout
+      admin_logout: "Logg ut"
       admin_roles: Roller
       admin_users: Brukere
-      admin_welcome: "Velkommen tilbake {{user}}"
+      admin_welcome: "Velkommen tilbake %{user}"
       choose_country: "Velg land"
-      choose_language: "Choose Language"
-      choose_state: "Velg stat"
-      missing_parent_error: "Angi en forelder objekt"
+      choose_language: "Velg språk"
+      choose_state: "Velg Stat"
+      missing_parent_error: "Vennligst oppgi et overordnet objekt"
+      required_text_mark: (Påkrevd)
       select_country_prompt: "Vennligst velg et land"
-      select_language_prompt: "Velg et språk"
-      select_state_prompt: "Velg en stat"
+      select_language_prompt: "Vennligst velg et språk"
+      select_state_prompt: "Vennligst velg en stat"
     forms: 
-      please_enter_a_value: "Angi en verdi for {{label}}"
+      please_enter_a_value: "Vennligst skriv inn en verdi for %{label}"
     general: 
       activate: Aktiver
       deactivate: Deaktiver
-      delete: Slette
-      deleting: "Slette ..."
-      disable: Aktivere
-      enable: Deaktivere
+      delete: Slett
+      deleting: "Sletter ..."
+      disable: Aktiver
+      enable: Deaktiver
       enabled: Aktivert?
       general_info: "Generell info"
       help: Hjelp
       loading: "Loading ..."
       next: "Neste »"
-      no_text: Nei
+      no_text: Ingen
       previous: «Forrige
-      read_more: "les mer"
+      read_more: "Les mer"
       save: Lagre
-      settings_saved: "Innstillinger har blitt lagret."
-      time_ago: "{{time_in_words}} Ago"
-      update: Oppdatering
+      settings_saved: "Innstillingene er lagret."
+      time_ago: "%{time_in_words} Siden"
+      update: Update
       yes_text: Ja
