@@ -87,7 +87,6 @@ jQuery(document).ready(function() {
     });
   });
 
-	jQuery('a.fancy-pop').fancybox({'hideOnContentClick':false, 'overlayShow':true, 'width':600, 'height':500 });
 });
 
 // String list methods. These are handy for dealing with comma delimited lists
