@@ -267,3 +267,13 @@ Factory.define :membership do |f|
   f.banned false
   f.role "member"
 end
+
+Factory.define :authentication do |f|
+  f.authenticatable {|a| a.association(:user)}
+  f.provider 'twitter'
+  f.name { Factory.next(:name) }
+  f.uid { Factory.next(:uri) }
+  f.token { Factory.next(:uri) }
+  f.secret { Factory.next(:uri) }
+  f.raw_auth { Factory.next(:description) }
+end
