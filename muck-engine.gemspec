@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "3.2.1"
+  s.version = "3.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2011-02-01}
+  s.date = %q{2011-02-24}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -76,6 +76,7 @@ Gem::Specification.new do |s|
     "config/locales/gl.yml",
     "config/locales/hi.yml",
     "config/locales/hr.yml",
+    "config/locales/ht.yml",
     "config/locales/hu.yml",
     "config/locales/id.yml",
     "config/locales/it.yml",
@@ -220,11 +221,10 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/tatemae/muck-engine}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.5.2}
   s.summary = %q{The base engine for the muck system.}
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
