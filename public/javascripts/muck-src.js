@@ -44,7 +44,9 @@ jQuery(document).ready(function() {
   jQuery(".submit-form").click(function() {
     jQuery(this).parent('form').submit();
   });
-
+	
+	//jQuery("ul.drop-menu").menu();
+	
   apply_ajax_forms();
 
   jQuery('a.dialog-pop').live('click', function() {
