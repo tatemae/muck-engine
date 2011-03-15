@@ -67,3 +67,7 @@ form fieldset input[type="text"],form fieldset input[type="password"]{width:500p
 .checklist{padding:0px;margin:0px 0 0 10px;}
 .checklist input[type="checkbox"]{float:left;clear:left;}
 .checklist label{display:inline;}
+
+.user-active{}
+.user-inactive{color:#ccc;}
+.drop-menu ul{list-style-type:none;}

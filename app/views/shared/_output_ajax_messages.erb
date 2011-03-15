@@ -9,8 +9,8 @@ else
 end
 -%>
 <% if growl -%>
-  jQuery.jGrowl.info(<%=html%>);
+  jQuery.jGrowl.info(<%=html.html_safe%>);
 <% else -%>
-  jQuery('#<%=dom_id%>').html(<%=html%>);
+  jQuery('#<%=dom_id%>').html(<%=html.html_safe%>);
   jQuery('#<%=dom_id%>').show();
 <% end -%>
