@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{muck-engine}
-  s.version = "3.2.10"
+  s.version = "3.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Ball", "Joel Duffin"]
-  s.date = %q{2011-03-15}
+  s.date = %q{2011-03-19}
   s.description = %q{The base engine for the muck system.  Contains common tables, custom for, css and javascript.}
   s.email = %q{justin@tatemae.com}
   s.extra_rdoc_files = [
@@ -151,10 +151,9 @@ Gem::Specification.new do |s|
     "lib/test/shoulda_macros/plugins.rb",
     "lib/test/shoulda_macros/scopes.rb",
     "muck-engine.gemspec",
-    "public/javascripts/muck-countries.js",
-    "public/javascripts/muck-src.js",
     "public/javascripts/muck.js",
     "public/javascripts/muck_admin.js",
+    "public/javascripts/muck_countries.js",
     "public/javascripts/muck_time/en.js",
     "public/stylesheets/admin.css",
     "public/stylesheets/reset.css",
