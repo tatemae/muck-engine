@@ -1,0 +1,10 @@
+/*sign in*/
+#sign_in{width:400px;}
+#sign_in_form label{display:block;}
+
+/*register*/
+#registration{width:400px;}
+span#email-availibility span.available { color:green; }
+span#email-availibility span.unavailable { color:#B61E12; }
+
+#access-code-not-found-msg a{text-decoration:underline;}

@@ -1,0 +1,34 @@
+allow_debugging: on
+
+javascripts:
+  site:
+    - public/javascripts/jquery/jquery-1.5.1.js
+    - public/javascripts/jquery/jquery-ui-1.8.11.custom.js
+    - public/javascripts/jquery/jquery.form.js
+    - public/javascripts/jquery/jquery.tips.js
+    - public/javascripts/jquery/jquery.cookie.js
+    - public/javascripts/jquery/jquery.easing.js
+    - public/javascripts/jquery/jquery.fancybox.js
+    - public/javascripts/rails.js
+    - public/javascripts/muck.js
+    - public/javascripts/application.js
+  admin:
+    - public/javascripts/jquery/jquery-1.5.1.js
+    - public/javascripts/jquery/jquery-ui-1.8.11.custom.js
+    - public/javascripts/jquery/jquery.form.js
+    - public/javascripts/jquery/jquery.tips.js
+    - public/javascripts/jquery/jquery.cookie.js
+    - public/javascripts/jquery/jquery.easing.js
+    - public/javascripts/jquery/jquery.fancybox.js
+    - public/javascripts/rails.js
+    - public/javascripts/muck.js
+    - public/javascripts/muck_admin.js
+stylesheets:
+  site:
+    - public/stylesheets/jquery/smoothness/jquery-ui-1.8.11.custom.css
+    - public/stylesheets/jquery/jquery.fancybox.css
+    - public/stylesheets/default.css
+  admin:
+    - public/stylesheets/jquery/smoothness/jquery-ui-1.8.11.custom.css
+    - public/stylesheets/jquery/jquery.fancybox.css
+    - public/stylesheets/admin.css

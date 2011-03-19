@@ -40,18 +40,6 @@ ul.admin-list li a{font-size:1.2em;}
 .adminTable tr{background-color:#fff;}
 .adminTable table{border:2px solid #c4ad63;}
 .adminTable tr td{font-size:1.1em;font-weight:bold;padding:5px;border-bottom:1px solid #eee;}
-/* menu styles*/
-.hidden { position:absolute; top:0; left:-9999px; width:1px; height:1px; overflow:hidden; }
-.fg-button { font-size:11px; clear:left; padding: .4em 1em; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; zoom: 1; }
-.fg-button .ui-icon { position: absolute; top: 50%; margin-top: -8px; left: 50%; margin-left: -8px; }
-a.fg-button { float:left;  }
-button.fg-button { width:auto; overflow:visible; } /* removes extra button width in IE */
-.fg-button-icon-left { padding-left: 2.1em; }
-.fg-button-icon-right { padding-right: 2.1em; }
-.fg-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; }
-.fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
-.fg-button-icon-solo { display:block; width:8px; text-indent: -9999px; }	 /* solo icon buttons must have block properties for the text-indent to work */	
-.fg-button.ui-state-loading .ui-icon { background: url(spinner_bar.gif) no-repeat 0 0;}
 /*tabs*/
 .tabs{font-size:1.2em;border-bottom:solid 2px #000;position:relative;}
 .tabs ul{list-style-type:none;}
@@ -60,3 +48,26 @@ button.fg-button { width:auto; overflow:visible; } /* removes extra button width
 .tabs ul li a:hover{color:#333;}
 .tabs ul li a.active{background-position:0 bottom;color:#fff;}
 .tabs ul li a.active span{background-position:right bottom;}
+/* forms */
+input{margin:0 10px 5px 0;padding:4px;font-size:1.3em;}
+input[type="text"],input[type="password"]{border:1px solid #8f8685;}
+input[type="checkbox"]{border:none;margin-bottom:0px;}
+input[type="radio"]{border:none;}
+textarea{font-size:1.4em;margin:0 10px 0 0;padding:4px;border:1px solid #8f8685;}
+label{font-size:1.2em;font-weight:bold;margin:0 10px 5px 0;padding:0px;display:block;}
+form em{color:#b61e12;font-style:normal;font-size:90%;}
+form hr{border:1px solid #e3e0c3;height:1px;margin:15px 0;}
+fieldset span.var{margin:2px 5px 5px 18px;display:block;}
+fieldset{border:none;margin:0;padding:0;}
+form fieldset{margin:0 0 2px;padding:0px;}
+form fieldset input[type="text"],form fieldset input[type="password"]{width:500px;}
+.form-help{font-size:12px;}
+
+.checkbox-label{display:inline-block;}
+.checklist{padding:0px;margin:0px 0 0 10px;}
+.checklist input[type="checkbox"]{float:left;clear:left;}
+.checklist label{display:inline;}
+
+.user-active{}
+.user-inactive{color:#ccc;}
+.drop-menu ul{list-style-type:none;}

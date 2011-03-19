@@ -69,15 +69,6 @@ module MuckEngine
       muck_dashboard_items << OpenStruct.new(:path => path,
                                              :locals => locals)
     end
-
-    def muck_admin_css
-      @@muck_admin_css ||= [] 
-    end
-
-    # Add css for the admin UI
-    def add_muck_admin_css(css_file)
-      muck_admin_css << css_file
-    end
       
     def initialize
       self.application_url = 'localhost:3000' 

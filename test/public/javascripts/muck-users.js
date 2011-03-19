@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 	jQuery("#user_login").blur(function(){
-	  jQuery.post("is_login_available",{ user_login:jQuery(this).val(), format:'js' },function(data){
+	  jQuery.post("/users/is_login_available",{ user_login:jQuery(this).val(), format:'js' },function(data){
 	    jQuery("#username-availibility").html(data);
 	  });
 	});
@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 	  jQuery("#username-availibility").html('');
 	});
 	jQuery("#user_email").blur(function(){
-	  jQuery.post("is_email_available",{ user_email:jQuery(this).val(), format:'js' },function(data){
+	  jQuery.post("/users/is_email_available",{ user_email:jQuery(this).val(), format:'js' },function(data){
 	    jQuery("#email-availibility").html(data);
 	  });
 	});

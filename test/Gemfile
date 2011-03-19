@@ -1,15 +1,15 @@
 source "http://rubygems.org"
 
-gem "rails", "3.0.1" #, :path => "~/projects/other_apps/rails"
+gem "rails", "3.0.5" #, :path => "~/projects/other_apps/rails"
 gem "mysql"
 
 # gem "authlogic"
 # TODO this is temporary until the official authlogic gem is updated for rails 3
-gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
+gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
 
 gem "disguise"
 gem "bcrypt-ruby", :require => "bcrypt"
-gem "overlord"
+gem "jammit"
 
 gem "muck-engine", :path => "../"
 gem "muck-users", :path => "~/projects/muck-users"
@@ -24,7 +24,6 @@ group :test, :development do
 end
 
 group :test do
-  gem "autotest"
   gem "capybara", ">= 0.3.9"
   gem "shoulda"
   gem "factory_girl"

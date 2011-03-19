@@ -24,7 +24,7 @@ describe MuckEngineHelper do
   end
   
   describe "jquery_json_message" do
-    it "should n't render growl" do
+    it "shouldn't render growl" do
       MuckEngine.configuration.growl_enabled = false
       message_dom_id = "user_12"
       helper.jquery_json_message(message_dom_id).should include(message_dom_id)
@@ -37,25 +37,27 @@ describe MuckEngineHelper do
     end
   end
   
-  # describe "country_scripts" do
-  #   it "should render country scripts" do
-  #     helper.country_scripts.should include('muck-countries')
-  #   end
-  #   it "shouldn't render country scripts" do
-  #     @@country_scripts_included = true
-  #     helper.country_scripts.should be_empty
-  #   end
-  # end
-  # 
-  # describe "muck_form_for" do
-  # end
-  # 
-  # describe "show_hide_on_click" do
-  #   it "should render show/hide jquery script" do
-  #     helper.show_hide_on_click('id_to_show', 'id_to_hide').should include("jQuery('id_to_show')")
-  #     helper.show_hide_on_click('id_to_show', 'id_to_hide').should include("jQuery('id_to_hide')")
-  #   end
-  # end
+  describe "country_scripts" do
+    it "should render country scripts" do
+      pending "figure out how to test country_scripts #{__FILE__}"
+      #helper.country_scripts.should include('muck_countries')
+    end
+    it "shouldn't render country scripts" do
+      @@country_scripts_included = true
+      helper.country_scripts.should be_blank
+    end
+  end
+  
+  describe "muck_form_for" do
+    pending "test muck_form_for #{__FILE__}"
+  end
+  
+  describe "show_hide_on_click" do
+    it "should render show/hide jquery script" do
+      helper.show_hide_on_click('id_to_show', 'id_to_hide').should include("jQuery('#id_to_show')")
+      helper.show_hide_on_click('id_to_show', 'id_to_hide').should include("jQuery('#id_to_hide')")
+    end
+  end
   
   describe "truncate_words" do
     it "should build a string 157 chars long" do

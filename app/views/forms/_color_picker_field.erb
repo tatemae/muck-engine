@@ -5,6 +5,7 @@
 	<div id="colorSelector<%=html_id%>" class="color-selector">
 		<div id="colorSelectorDisplay<%=html_id%>" style="background-color:#<%=color%>;"></div>
 	</div>
+	<% content_for :javascript do -%>
 	<script type="text/javascript" language="JavaScript">
 	jQuery(document).ready(function() {
 		jQuery('#colorSelector<%=html_id%>').ColorPicker({
@@ -24,4 +25,5 @@
 		});
 	});
 	</script>
+	<% end -%>
 </div>

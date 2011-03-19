@@ -1,5 +1,6 @@
 <% if MuckEngine.configuration.growl_enabled -%>
-  <script type="text/javascript">
+  <% content_for :javascript do -%>
+  <script type="text/javascript" language="JavaScript">
   jQuery(document).ready(function() {
     jQuery('#errorExplanation').hide();
     var message = jQuery('#errorExplanation').html();
@@ -13,4 +14,5 @@
     }
   });
   </script>
+  <% end -%>
 <% end -%>
