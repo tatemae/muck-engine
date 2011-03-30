@@ -72,4 +72,4 @@ form fieldset input[type="text"],form fieldset input[type="password"]{width:500p
 .user-inactive{color:#ccc;}
 .drop-menu ul{list-style-type:none;}
 
-.ui-autocomplete-loading { background: white url('images/spinner.gif') right center no-repeat; }
+.ui-autocomplete-loading { background: white url('/images/spinner.gif') right center no-repeat; }
