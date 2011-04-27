@@ -8,9 +8,7 @@
   </head>
   <body scroll="no" style="overflow: hidden">
     <%= yield :layout %>    
-    <script type="text/javascript" language="JavaScript">
-      <%= yield :javascript %>
-    </script>
+    <%= yield :javascript %>
     <%= render :partial => 'layouts/global/google_analytics' %>
   </body>
 </html>
