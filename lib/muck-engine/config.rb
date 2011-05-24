@@ -51,10 +51,8 @@ module MuckEngine
     # name:                 Name for the link
     # path:                 Url to link to
     # image:                Image for the link
-    def add_muck_admin_nav_item(name, path, image = '')
-      muck_admin_nav_items << OpenStruct.new(:name => name,
-                                             :path => path,
-                                             :image => image)
+    def add_muck_admin_nav_item(name, path, image = '', insert_at = -1)
+      muck_admin_nav_items.insert(insert_at, OpenStruct.new(:name => name, :path => path, :image => image))
     end
 
 
@@ -65,9 +63,8 @@ module MuckEngine
     # Add an item to the admin dashboard
     # path:   Path to the partial
     # locals: Hash of values to pass as locals to the partial
-    def add_muck_dashboard_item(path, locals = {})
-      muck_dashboard_items << OpenStruct.new(:path => path,
-                                             :locals => locals)
+    def add_muck_dashboard_item(path, locals = {}, insert_at = -1)
+      muck_dashboard_items.insert(insert_at, OpenStruct.new(:path => path, :locals => locals))
     end
       
     def initialize

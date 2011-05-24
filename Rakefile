@@ -1,6 +1,5 @@
-require 'rake'
-require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rubygems'
+require 'bundler'
 require 'rspec/core/rake_task'
 
 desc 'Default: run specs.'
@@ -8,14 +7,6 @@ task :default => :spec
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.rspec_opts = ["--color", "-c", "-f progress", "-r test/spec/spec_helper.rb"]
   t.pattern = 'test/spec/**/*_spec.rb'  
-end
-
-desc 'Test the muck-users gem.'
-Rake::TestTask.new(:spec) do |t|
-  t.libs << 'lib'
-  t.libs << 'test/spec'
-  t.pattern = 'test/spec/**/*_spec.rb'
-  t.verbose = true
 end
 
 begin
@@ -33,10 +24,17 @@ rescue LoadError
   end
 end
 
+require 'rake/rdoctask'
 desc 'Generate documentation for the muck-engine plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
+  if File.exist?('VERSION.yml')
+    config = YAML.load(File.read('VERSION.yml'))
+    version = "#{config[:major]}.#{config[:minor]}.#{config[:patch]}"
+  else
+    version = ""
+  end
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'MuckEngine'
+  rdoc.title = "muck-engine #{version}"
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
@@ -77,9 +75,8 @@ begin
     gem.add_development_dependency "git"
     gem.files.exclude "public/images/service_icons/source/*"
     gem.files.exclude 'test/**'
-    gem.test_files.exclude 'test/**' # exclude test directory
   end
-  Jeweler::GemcutterTasks.new
+  Jeweler::RubygemsDotOrgTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end

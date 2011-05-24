@@ -53,7 +53,7 @@ module MuckEngine
     initializer 'muck-engine.add_admin_ui_links', :after => :add_locales do
       # Add a link to admin home
       #MuckEngine.add_muck_admin_nav_item(I18n.translate('muck.engine.admin_home'), '/admin', '/images/admin/home.gif')
-      MuckEngine.configuration.add_muck_admin_nav_item(I18n.translate('muck.engine.admin_home'), '/admin')
+      MuckEngine.configuration.add_muck_admin_nav_item(I18n.translate('muck.engine.admin_home'), '/admin', '', 0)
     end
         
   end
