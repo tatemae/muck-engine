@@ -2,12 +2,12 @@ module MuckEngine # :nodoc:
   module Models # :nodoc:
     module Matchers
       
-      # 'newer_than' named scope which retrieves items newer than given date
+      # 'is_public' named scope which retrieves items that are marked public
       # requires that the class have a factory
       # Tests:
       #   scope :newer_than, lambda { |time| {:conditions => ["created_at < ?", time || 1.day.ago] } }
       # Examples:
-      #   it { should scope_recent }
+      #   it { should scope_is_public }
       def scope_is_public
         IsPublicMatcher.new(:is_public)
       end
