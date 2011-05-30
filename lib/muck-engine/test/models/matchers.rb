@@ -5,6 +5,7 @@ require 'muck-engine/test/models/matchers/scope_is_public_matchers'
 require 'muck-engine/test/models/matchers/scope_ordinal_matchers'
 require 'muck-engine/test/models/matchers/scope_sorting_matchers'
 require 'muck-engine/test/models/matchers/scope_time_matchers'
+require 'muck-engine/test/models/matchers/scope_active_matchers'
 require 'muck-engine/test/models/matchers/nested_attribute_matcher'
 require 'muck-engine/test/models/matchers/sanitize_matcher'
 
