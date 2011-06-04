@@ -196,6 +196,7 @@ module MuckEngineHelper
   #   length  - The desired number of words
   #   omission  - Text to add when the text is truncated ie 'read more'
   def html_summarize(text, length = 30, omission = '...')
+    return '' if text.blank?
     snippet(strip_tags(text), length, omission)
   end
   
@@ -206,7 +207,8 @@ module MuckEngineHelper
   #   wordcount - The number of words
   #   omission  - Text to add when the text is truncated ie 'read more'
   def snippet(text, wordcount, omission)
-   text.split[0..(wordcount-1)].join(" ") + (text.split.size > wordcount ? " " + omission : "")
+    return '' if text.blank?
+    text.split[0..(wordcount-1)].join(" ") + (text.split.size > wordcount ? " " + omission : "")
   end
 
   def round(flt)
