@@ -59,6 +59,14 @@ describe MuckEngineHelper do
     end
   end
   
+  describe "html_summarize_by_chars" do
+    it "should remove html and summarize to 270 chars" do
+      html = "<div>This <span>text</span> will need to be reduced down to characters without any html.</div>"
+      result = helper.html_summarize_by_chars(html, 30)
+      result.should == "This text will need to be..."
+    end
+  end
+  
   describe "truncate_words" do
     it "should build a string 157 chars long" do
       text = "Kimball was born to Solomon Farnham Kimball and Anna Spaulding in Sheldon, Franklin County, Vermont. Kimball's forefathers arrived in America from England and started"

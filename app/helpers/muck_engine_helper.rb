@@ -200,6 +200,18 @@ module MuckEngineHelper
     snippet(strip_tags(text), length, omission)
   end
   
+  # Summarize html content by removing html
+  # tags and truncating on a word at a given number of characters.
+  # Truncation will occur at word boundries
+  # Parameters:
+  #   text    - The text to truncate
+  #   length  - The desired number of words
+  #   omission  - Text to add when the text is truncated ie 'read more'
+  def html_summarize_by_chars(text, length = 270, omission = '...')
+    return '' if text.blank?
+    truncate_on_word(strip_tags(text), length, omission)
+  end
+  
   # Truncates text at a word boundry and provides a 
   # parameter for a 'more link'
   # Parameters:
