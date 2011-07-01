@@ -9,7 +9,7 @@ GIT
 PATH
   remote: ../
   specs:
-    muck-engine (3.3.9)
+    muck-engine (3.3.10)
       overlord
       validation_reflection
       will_paginate (~> 3.0.pre2)

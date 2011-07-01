@@ -230,7 +230,9 @@ module MuckEngineHelper
   def truncate_on_word(text, length = 270, end_string = ' ...')
     return '' if text.blank?
     if text.length > length + end_string.length
-      stop_index = text.rindex(' ', length - end_string.length)
+      no_html_end_string = strip_tags(end_string)      
+      stop_index = text.rindex(' ', length - no_html_end_string.length)
+      raise "End string (omission text) was longer than the allowed length for the entire string. Please use a shorter omission string - ie '...'" if stop_index.blank?
       text[0,stop_index] + end_string
     else
       text + end_string

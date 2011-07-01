@@ -60,10 +60,15 @@ describe MuckEngineHelper do
   end
   
   describe "html_summarize_by_chars" do
+    before do
+      @html = "<div>This <span>text</span> will need to be reduced down to characters without any html.</div>"
+    end
     it "should remove html and summarize to 270 chars" do
-      html = "<div>This <span>text</span> will need to be reduced down to characters without any html.</div>"
-      result = helper.html_summarize_by_chars(html, 30)
+      result = helper.html_summarize_by_chars(@html, 30)
       result.should == "This text will need to be..."
+    end
+    it "should raise an error if omission text is too long" do
+      helper.html_summarize_by_chars(@html, 30, 'a really long omission text that will be longer than the allowed number of strings').should raise_error
     end
   end
   
