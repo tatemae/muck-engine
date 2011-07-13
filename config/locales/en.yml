@@ -21,6 +21,7 @@ en:
       admin_welcome: Welcome back %{user}
       admin_home_title: Admin Home
       select_language_prompt: Please select a language
+      invalid_photo_url: is invalid or inaccessible
     general: 
       deactivate: Deactivate
       no_text: "No"
