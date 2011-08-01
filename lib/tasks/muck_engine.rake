@@ -1,5 +1,17 @@
 require 'fileutils'
-require 'jcode'
+
+if RUBY_VERSION < '1.9'
+  begin
+    require 'jcode'
+  rescue LoadError
+    begin
+      gem 'jcode'
+    rescue Gem::LoadError
+      puts "Please install the jcode gem"
+    end
+  end  
+end
+
 require 'rubygems'
 
 require 'muck-engine/populate'
