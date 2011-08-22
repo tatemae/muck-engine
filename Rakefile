@@ -56,7 +56,7 @@ begin
     gem.description = "The base engine for the muck system.  Contains common tables, custom for, css and javascript."
     gem.authors = ["Justin Ball", "Joel Duffin"]
     gem.add_dependency "validation_reflection"
-    gem.add_dependency "will_paginate", "~> 3.0.pre2"
+    gem.add_dependency "will_paginate", "~> 3.0.0"
     gem.add_dependency "overlord"
     gem.add_development_dependency "shoulda"
     gem.add_development_dependency "rspec-rails"
