@@ -3,7 +3,7 @@
 module MuckEngine
   module Populate
     def self.all
-      $KCODE = 'UTF8'
+      $KCODE = 'UTF8' if RUBY_VERSION < '1.9'
       countries
       us_states
       uk_states
@@ -12,7 +12,7 @@ module MuckEngine
     end
   
     def self.countries
-      $KCODE = 'UTF8'
+      $KCODE = 'UTF8' if RUBY_VERSION < '1.9'
       [
         ['AD', 'Andorra'],
         ['AE', 'United Arab Emirates'],
@@ -559,7 +559,7 @@ module MuckEngine
     end
 
     def self.languages
-      $KCODE = 'UTF8'
+      $KCODE = 'UTF8' if RUBY_VERSION < '1.9'
       # Languages
       [
         ['Afar', 'Afaraf', false, 'aa', false],
