@@ -1,3 +1,4 @@
+// compress with http://closure-compiler.appspot.com/home
 //jQuery.noConflict();
 jQuery(document).ajaxSend(function(event, request, settings) {
   if (settings.type.toUpperCase() == 'GET' || typeof(AUTH_TOKEN) == "undefined") return; // for details see: http://www.justinball.com/2009/07/08/jquery-ajax-get-in-firefox-post-in-internet-explorer/
@@ -13,6 +14,11 @@ function apply_ajax_forms() {
     beforeSend: add_headers
   });
 	jQuery('form.ajax').append('<input type="hidden" name="format" value="js" />');
+}
+
+function add_headers(xhr){
+	xhr.setRequestHeader("Accept", "text/javascript");
+	xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 }
 
 jQuery(document).ready(function() {
