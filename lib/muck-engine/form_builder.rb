@@ -13,7 +13,7 @@ module MuckEngine
         options = args.detect {|argument| argument.is_a?(Hash)} || {}
 
         render_field_template(name, field, options) do
-          super
+          super(field, *args)
         end
       end
     end

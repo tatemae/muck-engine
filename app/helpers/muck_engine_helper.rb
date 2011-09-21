@@ -1,4 +1,8 @@
-require 'md5'
+if RUBY_VERSION < '1.9'
+  require 'md5'
+else
+  require 'digest/md5'
+end
 
 module MuckEngineHelper
 

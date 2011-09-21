@@ -1,13 +1,4 @@
-// compress with http://closure-compiler.appspot.com/home
 //jQuery.noConflict();
-jQuery(document).ajaxSend(function(event, request, settings) {
-  if (settings.type.toUpperCase() == 'GET' || typeof(AUTH_TOKEN) == "undefined") return; // for details see: http://www.justinball.com/2009/07/08/jquery-ajax-get-in-firefox-post-in-internet-explorer/
-  // settings.data is a serialized string like "foo=bar&baz=boink" (or null)
-  settings.data = settings.data || "";
- 	if (typeof(AUTH_TOKEN) != "undefined")
-  	settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
-});
-
 function apply_ajax_forms() {
   jQuery('form.ajax').ajaxForm({
     dataType: 'script',
