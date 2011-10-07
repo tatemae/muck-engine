@@ -24,7 +24,7 @@ class Admin::Muck::BaseController < ApplicationController
     def permission_denied
       respond_to do |format|
         format.html do
-          redirect_to home_path
+          redirect_to root_path
         end
       end
     end
