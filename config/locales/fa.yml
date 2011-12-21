@@ -1,7 +1,7 @@
---- 
-fa: 
-  muck: 
-    engine: 
+---
+fa:
+  muck:
+    engine:
       admin_access_code_requests: "درخواست دسترسی به کد"
       admin_access_codes: "دسترسی به کد"
       admin_home: "صفحه اصلی"
@@ -18,9 +18,9 @@ fa:
       select_country_prompt: "لطفا انتخاب کشور"
       select_language_prompt: "لطفا انتخاب زبان"
       select_state_prompt: "لطفا انتخاب دولت"
-    forms: 
+    forms:
       please_enter_a_value: "لطفا یک ارزش برای %{label}"
-    general: 
+    general:
       activate: "فعال کردن"
       deactivate: "بی اثر کردن"
       delete: حذف

@@ -1,7 +1,7 @@
---- 
-sq: 
-  muck: 
-    engine: 
+---
+sq:
+  muck:
+    engine:
       admin_access_code_requests: "Kodi Kërkesat Access"
       admin_access_codes: "Qasja Codes"
       admin_home: Home
@@ -18,9 +18,9 @@ sq:
       select_country_prompt: "Ju lutem zgjidhni një vend"
       select_language_prompt: "Ju lutem zgjidhni një gjuhë"
       select_state_prompt: "Ju lutem zgjidhni nje shtet"
-    forms: 
+    forms:
       please_enter_a_value: "Ju lutemi shkruani një vlerë për %{label}"
-    general: 
+    general:
       activate: Aktivizoj
       deactivate: "Transferoj në rezervë"
       delete: Fshij

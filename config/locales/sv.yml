@@ -1,7 +1,7 @@
---- 
-sv: 
-  muck: 
-    engine: 
+---
+sv:
+  muck:
+    engine:
       admin_access_code_requests: "Växelprefix Begäran"
       admin_access_codes: Koder
       admin_home: Hem
@@ -18,9 +18,9 @@ sv:
       select_country_prompt: "Välj ett land"
       select_language_prompt: "Välj språk"
       select_state_prompt: "Välj en stat"
-    forms: 
+    forms:
       please_enter_a_value: "Ange ett värde för %{label}"
-    general: 
+    general:
       activate: Aktivera
       deactivate: Avaktivera
       delete: Radera

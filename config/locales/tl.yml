@@ -1,7 +1,7 @@
---- 
-tl: 
-  muck: 
-    engine: 
+---
+tl:
+  muck:
+    engine:
       admin_access_code_requests: "Access Code Hiling"
       admin_access_codes: "Access Codes"
       admin_home: Tahanan
@@ -18,9 +18,9 @@ tl:
       select_country_prompt: "Mangyaring pumili ng isang bansa"
       select_language_prompt: "Mangyaring pumili ng isang wika"
       select_state_prompt: "Mangyaring pumili ng isang estado"
-    forms: 
+    forms:
       please_enter_a_value: "Mangyaring magpasok ng isang halaga para sa %{label}"
-    general: 
+    general:
       activate: Aktibahin
       deactivate: Magbuwag
       delete: Alisin

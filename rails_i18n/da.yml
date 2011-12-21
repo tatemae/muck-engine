@@ -103,7 +103,7 @@ da:
         # precision:
     human:
       format:
-        # separator: 
+        # separator:
         delimiter: ""
         precision: 1
       # Rails 2.2

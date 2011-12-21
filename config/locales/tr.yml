@@ -1,7 +1,7 @@
---- 
-tr: 
-  muck: 
-    engine: 
+---
+tr:
+  muck:
+    engine:
       admin_access_code_requests: "Erişim kodu İstekler"
       admin_access_codes: "Giriş Kodları"
       admin_home: Ev
@@ -18,9 +18,9 @@ tr:
       select_country_prompt: "Lütfen bir ülke seçiniz"
       select_language_prompt: "Lütfen bir dil seçiniz"
       select_state_prompt: "bir devlet seçiniz"
-    forms: 
+    forms:
       please_enter_a_value: "%{label} Için bir değer giriniz"
-    general: 
+    general:
       activate: Etkinleştirmek
       deactivate: "Devre dışı bırakmak"
       delete: Silmek

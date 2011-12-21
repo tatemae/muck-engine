@@ -43,7 +43,7 @@ function show_tip(object_id,title,tip_text,position) {
 	var tip_header = '';
 	var posX = elemPos.left;
 	var posY = elemPos.top + elemHeight;
-	
+
 	if (position == 'right'){
 		posX = elemPos.left + elemWidth;
 		posY = elemPos.top;
@@ -61,7 +61,7 @@ function show_tip(object_id,title,tip_text,position) {
 	jQuery('#' + tip_id).remove(); // remove the old one
 	jQuery("body").append('<div id="' + tip_id + '" class="tip ' + position_class + '">' + combined + '</div>');
 	var tool_tip = jQuery('#' + tip_id);
-	
+
 	if (position == 'left') {
 		posX = elemPos.left - (tool_tip.outerWidth() + parseInt(tool_tip.css('margin-right')));
 		posY = elemPos.top;
@@ -69,7 +69,7 @@ function show_tip(object_id,title,tip_text,position) {
 		posX = elemPos.left;
 		posY = elemPos.top - (tool_tip.outerHeight() + parseInt(tool_tip.css('margin-bottom')));
 	}
-			
+
 	tool_tip.css({left: posX + "px", top: posY + "px"});
 	tool_tip.show();
 }

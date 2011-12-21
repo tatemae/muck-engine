@@ -24,7 +24,7 @@ module MuckFormMacros
     else
       return "post", http_method
     end
-  end  
+  end
 end
 
 ActiveSupport::TestCase.extend(MuckFormMacros)

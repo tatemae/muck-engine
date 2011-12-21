@@ -1,7 +1,7 @@
---- 
-hi: 
-  muck: 
-    engine: 
+---
+hi:
+  muck:
+    engine:
       admin_access_code_requests: "एक्सेस कोड अनुरोध"
       admin_access_codes: "एक्सेस कोड"
       admin_home: घर
@@ -18,9 +18,9 @@ hi:
       select_country_prompt: "कोई देश चुनें"
       select_language_prompt: "एक भाषा का चयन करें"
       select_state_prompt: "एक राज्य चुनें"
-    forms: 
+    forms:
       please_enter_a_value: "%{label} के लिए कोई मान दर्ज करें"
-    general: 
+    general:
       activate: "सक्रिय करें"
       deactivate: निष्क्रिय
       delete: हटाएँ

@@ -14,5 +14,5 @@ class CreateLanguages < ActiveRecord::Migration
   def self.down
     drop_table :languages
   end
-  
+
 end

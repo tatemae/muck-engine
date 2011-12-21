@@ -1,7 +1,7 @@
---- 
-iw: 
-  muck: 
-    engine: 
+---
+iw:
+  muck:
+    engine:
       admin_access_code_requests: "הגישה בקשות קוד"
       admin_access_codes: "קודי גישה"
       admin_home: "דף הבית"
@@ -18,9 +18,9 @@ iw:
       select_country_prompt: "בחר ארץ"
       select_language_prompt: "נא לבחור שפה"
       select_state_prompt: "אנא בחר המדינה"
-    forms: 
+    forms:
       please_enter_a_value: "נא להזין ערך עבור %{label}"
-    general: 
+    general:
       activate: להפעיל
       deactivate: "לבטל פעילות"
       delete: מחק

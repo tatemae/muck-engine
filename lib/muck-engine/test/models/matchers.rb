@@ -33,14 +33,14 @@ module MuckEngine # :nodoc:
     #     it { should scope_by_latest }
     #     it { should scope_by_newest }
     #     it { should scope_by_oldest }
-    
+
     #     it { should scope_newer_than }
     #     it { should scope_older_than }
-    
+
     #     it { should scope_is_public }
-    
+
     #     it { should scope_created_by }
-    
+
     #     it { should sanitize :title }
     #     it { should scope_sorted }
     #     it { should scope_sorted_id }

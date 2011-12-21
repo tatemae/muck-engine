@@ -1,7 +1,7 @@
 module MuckEngine # :nodoc:
   module Models # :nodoc:
     module Matchers
-      
+
       # Ensures that the model can sort by_title
       # requires that the class have a factory
       # Tests:
@@ -21,7 +21,7 @@ module MuckEngine # :nodoc:
       def scope_by_name
         SortingMatcher.new(:by_name, :name)
       end
-      
+
       # For 'by_latest named scope which orders by updated at:
       # Tests:
       #   scope :by_latest, order("updated_at DESC")
@@ -40,7 +40,7 @@ module MuckEngine # :nodoc:
       def scope_by_newest
         SortingMatcher.new(:by_newest, :created_at)
       end
-     
+
       # Test for 'by_oldest' named scope which orders by 'created_at ASC'
       # requires that the class have a shoulda factory
       # Tests:
@@ -57,7 +57,7 @@ module MuckEngine # :nodoc:
           @scope = scope
           @field = field
         end
-        
+
         def matches?(subject)
           @subject = subject
           @subject.class.delete_all
@@ -68,7 +68,7 @@ module MuckEngine # :nodoc:
           elsif @scope == :by_oldest
             first = Factory(factory_name, :created_at => 1.day.ago)
             second = Factory(factory_name, :created_at => 1.hour.ago)
-            first == @subject.class.send(@scope)[0] && second == @subject.class.send(@scope)[1]            
+            first == @subject.class.send(@scope)[0] && second == @subject.class.send(@scope)[1]
           elsif @scope == :by_latest
             first = Factory(factory_name, :updated_at => 1.hour.ago)
             second = Factory(factory_name, :updated_at => 1.day.ago)
@@ -79,15 +79,15 @@ module MuckEngine # :nodoc:
             first == @subject.class.send(@scope)[0] && second == @subject.class.send(@scope)[1]
           end
         end
-        
+
         def failure_message
           "Expected #{factory_name} to scope #{@scope} on #{@field}"
         end
-        
+
         def description
           "sorting"
         end
-          
+
       end
 
     end

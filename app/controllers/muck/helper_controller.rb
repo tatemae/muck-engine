@@ -7,9 +7,9 @@ class Muck::HelperController < ApplicationController
     @states.insert(0, State.new(:name => prompt)) if @states.length > 0
     # set cookies so we can remember the last value the user selected
     cookies[:prefered_country_id] = country_id
-    respond_to do |format| 
+    respond_to do |format|
       format.json { render :json => {:states => @states, :label => label, :prompt => prompt}.as_json }
     end
   end
-  
+
 end

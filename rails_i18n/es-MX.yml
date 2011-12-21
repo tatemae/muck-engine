@@ -80,7 +80,7 @@ es-MX:
     prompts:
       hour: 'Hora'
       minute: 'Minuto'
-      second: 'Segundo'        
+      second: 'Segundo'
 
   activerecord:
     errors:

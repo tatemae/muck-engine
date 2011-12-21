@@ -1,7 +1,7 @@
---- 
-ko: 
-  muck: 
-    engine: 
+---
+ko:
+  muck:
+    engine:
       admin_access_code_requests: "접근 코드 요청"
       admin_access_codes: "액세스 코드"
       admin_home: 홈
@@ -18,9 +18,9 @@ ko:
       select_country_prompt: "국가를 선택하십시오"
       select_language_prompt: "언어를 선택하십시오"
       select_state_prompt: "국가를 선택하십시오"
-    forms: 
+    forms:
       please_enter_a_value: "%{label}에 대한 값을 입력하세요"
-    general: 
+    general:
       activate: 활성화
       deactivate: 비활성화
       delete: 삭제

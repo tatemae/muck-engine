@@ -8,7 +8,7 @@ module MuckEngine
         belongs_to :country
         scope :by_name, order("name ASC")
       end
-      
+
     end
   end
 end

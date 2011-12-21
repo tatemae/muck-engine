@@ -1,4 +1,4 @@
-# Italian translations for Ruby on Rails 
+# Italian translations for Ruby on Rails
 # by Claudio Poli (masterkain@gmail.com)
 # maintained by Simone Carletti (weppos@weppos.net)
 #
@@ -12,7 +12,7 @@ it:
       separator: ","
       delimiter: "."
       precision: 3
-      
+
     currency:
       format:
         format: "%n %u"
@@ -20,21 +20,21 @@ it:
         separator: "."
         delimiter: ","
         precision: 2
-        
+
     percentage:
       format:
         delimiter: ""
-        # precision: 
-        
+        # precision:
+
     precision:
       format:
         # separator:
         delimiter: ""
         # precision:
-        
+
     human:
       format:
-        # separator: 
+        # separator:
         delimiter: ""
         precision: 1
       storage_units:
@@ -60,16 +60,16 @@ it:
     month_names: [~, Gennaio, Febbraio, Marzo, Aprile, Maggio, Giugno, Luglio, Agosto, Settembre, Ottobre, Novembre, Dicembre]
     abbr_month_names: [~, Gen, Feb, Mar, Apr, Mag, Giu, Lug, Ago, Set, Ott, Nov, Dic]
     order: [ :day, :month, :year ]
-  
+
   time:
     formats:
       default: "%a %d %b %Y, %H:%M:%S %z"
       short: "%d %b %H:%M"
       long: "%d %B %Y %H:%M"
-          
+
     am: 'am'
     pm: 'pm'
-      
+
   datetime:
     distance_in_words:
       half_a_minute: "mezzo minuto"
@@ -116,11 +116,11 @@ it:
       words_connector: ", "
       two_words_connector: " e "
       last_word_connector: ", e "
-        
+
   activerecord:
     errors:
       template:
-        header: 
+        header:
           one: "Non posso salvare questo {{model}}: 1 errore"
           other: "Non posso salvare questo {{model}}: {{count}} errori."
         body: "Per favore ricontrolla i seguenti campi:"

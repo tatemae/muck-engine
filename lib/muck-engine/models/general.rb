@@ -1,10 +1,10 @@
 module MuckEngine
   module General
-    
+
     extend ActiveSupport::Concern
-    
+
     def dom_id(prefix='')
-      display_id = new_record? ? "new" : id.to_s 
+      display_id = new_record? ? "new" : id.to_s
       prefix.to_s <<( '_') unless prefix.blank?
       prefix.to_s << "#{self.class.name.underscore}"
       prefix != :bare ? "#{prefix.to_s.underscore}_#{display_id}" : display_id

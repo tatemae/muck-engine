@@ -33,7 +33,7 @@ et:
       separator: ","
       delimiter: " "
       precision: 2
-      
+
     currency:
       format:
         format: "%n %u"
@@ -41,15 +41,15 @@ et:
         separator: ","
         delimiter: " "
         precision: 2
-        
+
     percentage:
       format:
         delimiter: ""
-        
+
     precision:
       format:
         delimiter: ""
-        
+
     human:
       format:
         delimiter: ""
@@ -102,7 +102,7 @@ et:
       # Rails 2.2
       sentence_connector: "ja"
       skip_last_comma: true
-      
+
       # Rails 2.3
       words_connector: ", "
       two_words_connector: " ja "

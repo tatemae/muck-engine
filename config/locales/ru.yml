@@ -1,7 +1,7 @@
---- 
-ru: 
-  muck: 
-    engine: 
+---
+ru:
+  muck:
+    engine:
       admin_access_code_requests: "Просит код доступа"
       admin_access_codes: "Коды доступа"
       admin_home: Главная
@@ -18,9 +18,9 @@ ru:
       select_country_prompt: "Пожалуйста, выберите страну"
       select_language_prompt: "Пожалуйста, выберите язык"
       select_state_prompt: "Пожалуйста, выберите состояние"
-    forms: 
+    forms:
       please_enter_a_value: "Пожалуйста, введите значение для %{label}"
-    general: 
+    general:
       activate: Активировать
       deactivate: Дезактивировать
       delete: Удалить

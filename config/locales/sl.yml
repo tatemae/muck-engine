@@ -1,7 +1,7 @@
---- 
-sl: 
-  muck: 
-    engine: 
+---
+sl:
+  muck:
+    engine:
       admin_access_code_requests: "Dostopna koda Prošnje"
       admin_access_codes: "Kode za dostop"
       admin_home: Domov
@@ -18,9 +18,9 @@ sl:
       select_country_prompt: "Izberite državo"
       select_language_prompt: "Izberite jezik"
       select_state_prompt: "Prosimo, izberite stanje"
-    forms: 
+    forms:
       please_enter_a_value: "Vnesite vrednost za %{label}"
-    general: 
+    general:
       activate: Vključi
       deactivate: Izključi
       delete: Izbriši

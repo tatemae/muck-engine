@@ -27,13 +27,13 @@ end
 # Add more helper methods to be used for testing xml
 def assert_xml_tag(xml, conditions)
   doc = HTML::Document.new(xml)
-  assert doc.find(conditions), 
+  assert doc.find(conditions),
     "expected tag, but no tag found matching #{conditions.inspect} in:\n#{xml.inspect}"
 end
 
 def assert_no_xml_tag(xml, conditions)
   doc = HTML::Document.new(xml)
-  assert !doc.find(conditions), 
+  assert !doc.find(conditions),
     "expected no tag, but found tag matching #{conditions.inspect} in:\n#{xml.inspect}"
 end
 

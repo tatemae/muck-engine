@@ -14,6 +14,6 @@ require 'muck_test_helper'
 Before do
   # Create admin user:
   Rake::Task[ 'muck:users:create_admin' ].execute
-  
+
   visit "/logout"
 end

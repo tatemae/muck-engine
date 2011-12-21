@@ -1,7 +1,7 @@
---- 
-bg: 
-  muck: 
-    engine: 
+---
+bg:
+  muck:
+    engine:
       admin_access_code_requests: "Код за достъп Исканията"
       admin_access_codes: "Кодове за достъп"
       admin_home: Начало
@@ -18,9 +18,9 @@ bg:
       select_country_prompt: "Моля, избери страна"
       select_language_prompt: "Моля изберете език"
       select_state_prompt: "Изберете държава"
-    forms: 
+    forms:
       please_enter_a_value: "Моля, въведете стойност за %{label}"
-    general: 
+    general:
       activate: Активиране
       deactivate: Деактивирайте
       delete: Изтриване

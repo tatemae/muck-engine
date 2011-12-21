@@ -34,9 +34,9 @@ jQuery(document).ready(function() {
   jQuery(".submit-form").click(function() {
     jQuery(this).parent('form').submit();
   });
-	
+
 	//jQuery("ul.drop-menu").menu();
-	
+
   apply_ajax_forms();
 
   jQuery('a.dialog-pop').live('click', function() {
@@ -61,7 +61,7 @@ jQuery(document).ready(function() {
       });
     return false;
   });
-  
+
   jQuery(".submit-delete-js").live('click', function() {
     jQuery(this).parents('.delete-container').fadeOut();
     var form = jQuery(this).parents('form');
@@ -90,7 +90,7 @@ function add_to_list(items_string, new_item){
   for(i=0;i<items.length;i++){
     if(items[i] == new_item){ add = false; }
   }
-  if(add){ 
+  if(add){
     items.push(new_item);
   }
   return items.join(', ');
@@ -118,22 +118,22 @@ function split_list(items_string){
   var cleaned = [];
   for(i=0;i<items.length;i++){
     var cleaned_item = jQuery.trim(items[i]);
-    if(cleaned_item.length > 0){ 
-      cleaned.push(cleaned_item); 
+    if(cleaned_item.length > 0){
+      cleaned.push(cleaned_item);
     }
   }
   return cleaned;
 }
 
-function isEncodedHtml(str) { 
-  if(str.search(/&amp;/g) != -1 || str.search(/&lt;/g) != -1 || str.search(/&gt;/g) != -1) 
-    return true; 
-  else 
-    return false; 
-}; 
- 
-function decodeHtml(str){ 
-    if(isEncodedHtml(str)) 
-      return str.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>'); 
-    return str; 
+function isEncodedHtml(str) {
+  if(str.search(/&amp;/g) != -1 || str.search(/&lt;/g) != -1 || str.search(/&gt;/g) != -1)
+    return true;
+  else
+    return false;
+};
+
+function decodeHtml(str){
+    if(isEncodedHtml(str))
+      return str.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    return str;
 }

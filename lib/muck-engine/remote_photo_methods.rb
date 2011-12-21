@@ -1,14 +1,14 @@
 # Adapted from http://trevorturk.com/2008/12/11/easy-upload-via-url-with-paperclip/
 module MuckEngine
   module RemotePhotoMethods
-  
+
     extend ActiveSupport::Concern
-  
+
     included do
       before_validation :download_remote_photo, :if => :photo_url_provided?
-      validates_presence_of :photo_remote_url, :if => :photo_url_provided?, :message => I18n.translate('muck.engine.invalid_photo_url')     
+      validates_presence_of :photo_remote_url, :if => :photo_url_provided?, :message => I18n.translate('muck.engine.invalid_photo_url')
     end
-    
+
     attr_accessor :photo_url
 
     private
@@ -28,6 +28,6 @@ module MuckEngine
         io.original_filename.blank? ? nil : io
       #rescue # catch url errors with validations instead of exceptions (Errno::ENOENT, OpenURI::HTTPError, etc...)
       end
-  
+
   end
 end

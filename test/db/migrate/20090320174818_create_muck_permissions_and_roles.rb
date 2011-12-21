@@ -1,5 +1,5 @@
 class CreateMuckPermissionsAndRoles < ActiveRecord::Migration
-  
+
   create_table "permissions", :force => true do |t|
     t.integer  "role_id",    :null => false
     t.integer  "user_id",    :null => false
@@ -12,5 +12,5 @@ class CreateMuckPermissionsAndRoles < ActiveRecord::Migration
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-  
+
 end

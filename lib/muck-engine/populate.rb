@@ -11,7 +11,7 @@ module MuckEngine
       canada_states
       languages
     end
-  
+
     def self.countries
       $KCODE = 'UTF8' if RUBY_VERSION < '1.9'
       [
@@ -263,7 +263,7 @@ module MuckEngine
         ['ZW', 'Zimbabwe']
       ].each {|c| Country.create(:abbreviation => c[0], :name => c[1], :sort => (c.length >= 3 ? c[2] : 1000 ))  unless Country.find_by_name(c[1]) }
     end
-  
+
     def self.us_states
       us_id = Country.find_by_abbreviation('US').id
 
@@ -330,7 +330,7 @@ module MuckEngine
         ['Wyoming', 'WY', us_id]
       ].each {|s| State.create(:name => s[0], :abbreviation => s[1], :country_id => s[2]) unless State.find_by_name(s[0]) }
     end
-  
+
     def self.uk_states
       # The UK
       # ireland_id = Country.find_by_abbreviation('IE').id
@@ -343,7 +343,7 @@ module MuckEngine
       scotland_id = Country.find_by_abbreviation('UK').id
       england_id = Country.find_by_abbreviation('UK').id
       wales_id = Country.find_by_abbreviation('UK').id
-      
+
       [
         # Scotland
         #['Aberdeen', 'ABD', scotland_id],
@@ -454,7 +454,7 @@ module MuckEngine
         #['Cumberland', 'CUL', england_id],
         ['Derbyshire', 'DBY', england_id],
         ['Devon', 'DEV', england_id],
-        ['Dorset', 'DOR', england_id],   
+        ['Dorset', 'DOR', england_id],
         ['Durham', 'DUR', england_id],
         ['East Riding of Yorkshire', 'ERY', england_id],
         ['East Sussex', 'SXE', england_id],
@@ -491,7 +491,7 @@ module MuckEngine
         #['Sussex', 'SSX', england_id],
         ['Staffordshire', 'STS', england_id],
         ['Tyne and Wear', 'TWR', england_id],
-        ['Warwickshire', 'WAR', england_id],   
+        ['Warwickshire', 'WAR', england_id],
         #['Westmorland', 'WES', england_id],
         ['West Sussex', 'SXW', england_id],
         ['West Midlands', 'WMD', england_id],
@@ -538,7 +538,7 @@ module MuckEngine
         ['Wicklow', 'WIC', ireland_id]
       ].each {|s| State.create(:name => s[0], :abbreviation => s[1], :country_id => s[2]) unless State.find_by_name(s[0]) }
     end
-  
+
     def self.canada_states
       # Canadian Provinces
       ca_id = Country.find_by_abbreviation('CA').id
@@ -749,6 +749,6 @@ module MuckEngine
         ['isiZulu', 'Zulu', false, 'zu', false]
       ].each {|l| Language.create(:name => l[0], :english_name => l[1], :is_default => l[2], :locale => l[3], :supported => l[4]) unless Language.find_by_locale(l[3])  }
     end
-  
+
   end
 end

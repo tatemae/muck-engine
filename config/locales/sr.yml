@@ -1,7 +1,7 @@
---- 
-sr: 
-  muck: 
-    engine: 
+---
+sr:
+  muck:
+    engine:
       admin_access_code_requests: "Приступ Код Захтеви"
       admin_access_codes: "Приступних кодова који су"
       admin_home: Почетак
@@ -18,9 +18,9 @@ sr:
       select_country_prompt: "Молимо изаберите државу"
       select_language_prompt: "Молимо изаберите језик"
       select_state_prompt: "Изаберите државу"
-    forms: 
+    forms:
       please_enter_a_value: "Молимо Вас да унесете вредност за %{label}"
-    general: 
+    general:
       activate: Активирати
       deactivate: Деактивирај
       delete: Избриши

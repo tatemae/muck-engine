@@ -8,7 +8,7 @@ require 'factory_girl'
 
 require 'authlogic/test_case'
 
-#require 'rails/test_help' # removed because rspec loads the dev environment 
+#require 'rails/test_help' # removed because rspec loads the dev environment
 include ActionDispatch::TestProcess
 
 require File.join(File.dirname(__FILE__), 'test', 'muck_factories')

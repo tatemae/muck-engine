@@ -6,26 +6,26 @@ module MuckEngine # :nodoc:
       def accept_nested_attributes_for(nested_model)
         NestedAttributeMatcher.new(nested_model)
       end
-      
+
       class NestedAttributeMatcher < MuckMatcherBase # :nodoc:
-        
+
         def initialize(nested_model)
           @nested_model = nested_model
         end
-        
+
         def matches?(subject)
           @subject = subject
           @subject.methods.include?("#{@nested_model}_attributes=")
         end
-        
+
         def failure_message
           "#{factory_name} does not accept nested attributes for #{@nested_model}"
         end
-        
+
         def description
           "accepts nested attributes for"
         end
-          
+
       end
 
     end

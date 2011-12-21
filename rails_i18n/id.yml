@@ -1,4 +1,4 @@
-# Bahasa Indonesia translations for Ruby on Rails 
+# Bahasa Indonesia translations for Ruby on Rails
 # by wynst (wynst.uei@gmail.com)
 
 id:
@@ -7,7 +7,7 @@ id:
       default: "%d %B %Y"
       long: "%A, %d %B %Y"
       short: "%d.%m.%Y"
- 
+
     day_names: [Minggu,Senin, Selasa, Rabu, Kamis, Jum'at, Sabtu]
     abbr_day_names: [Minggu,Senin, Selasa, Rabu, Kamis, Jum'at, Sabtu]
     month_names: [~, Januari, Februari, Maret, April, Mei, Juni, Juli, Agustus, September, Oktober, November, Desember]
@@ -32,7 +32,7 @@ id:
       separator: ","
       delimiter: "."
       precision: 3
-    
+
     currency:
       format:
         format: "%n. %u"
@@ -40,25 +40,25 @@ id:
         separator: ","
         delimiter: "."
         precision: 2
-        
+
     percentage:
       format:
         # separator:
         delimiter: ""
-        # precision: 
+        # precision:
 
     precision:
       format:
         # separator:
         delimiter: ""
         # precision:
-        
+
     human:
       format:
         delimiter: ""
         precision: 1
       storage_units: [Byte, KB, MB, GB, TB]
- 
+
   datetime:
     distance_in_words:
       half_a_minute: "setengah menit"
@@ -92,7 +92,7 @@ id:
       over_x_years:
         one:   "lebih dari setahun"
         other: "lebih dari {{count}} tahun"
- 
+
   activerecord:
     errors:
       template:

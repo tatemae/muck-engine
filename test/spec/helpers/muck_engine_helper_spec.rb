@@ -22,7 +22,7 @@ describe MuckEngineHelper do
       end
     end
   end
-  
+
   describe "jquery_json_message" do
     it "shouldn't render growl" do
       MuckEngine.configuration.growl_enabled = false
@@ -36,7 +36,7 @@ describe MuckEngineHelper do
       helper.jquery_json_message.should include("jGrowl")
     end
   end
-  
+
   describe "country_scripts" do
     it "should render country scripts" do
       pending "figure out how to test country_scripts #{__FILE__}"
@@ -47,18 +47,18 @@ describe MuckEngineHelper do
       helper.country_scripts.should be_blank
     end
   end
-  
+
   describe "muck_form_for" do
     pending "test muck_form_for #{__FILE__}"
   end
-  
+
   describe "show_hide_on_click" do
     it "should render show/hide jquery script" do
       helper.show_hide_on_click('id_to_show', 'id_to_hide').should include("jQuery('#id_to_show')")
       helper.show_hide_on_click('id_to_show', 'id_to_hide').should include("jQuery('#id_to_hide')")
     end
   end
-  
+
   describe "html_summarize_by_chars" do
     before do
       @html = "<div>This <span>text</span> will need to be reduced down to characters without any html.</div>"
@@ -71,7 +71,7 @@ describe MuckEngineHelper do
       helper.html_summarize_by_chars(@html, 30, 'a really long omission text that will be longer than the allowed number of strings').should raise_error
     end
   end
-  
+
   describe "truncate_words" do
     it "should build a string 157 chars long" do
       text = "Kimball was born to Solomon Farnham Kimball and Anna Spaulding in Sheldon, Franklin County, Vermont. Kimball's forefathers arrived in America from England and started"
@@ -93,7 +93,7 @@ describe MuckEngineHelper do
       helper.truncate_on_word(text, 160, ' ...').length.should == 0
     end
   end
-  
+
   describe "locale_link" do
     it "should prepend the locale to a domain without a subdomain" do
       helper.request.stub(:host).and_return('folksemantic.com')
@@ -178,5 +178,5 @@ describe MuckEngineHelper do
       end
     end
   end
-end 
+end
 

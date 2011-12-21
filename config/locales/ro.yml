@@ -1,7 +1,7 @@
---- 
-ro: 
-  muck: 
-    engine: 
+---
+ro:
+  muck:
+    engine:
       admin_access_code_requests: "Codul de acces Cereri"
       admin_access_codes: "Coduri de acces"
       admin_home: Home
@@ -18,9 +18,9 @@ ro:
       select_country_prompt: "Vă rugăm să selectaţi o ţară"
       select_language_prompt: "Vă rugăm să selectaţi o limbă"
       select_state_prompt: "Vă rugăm să selectaţi o stare"
-    forms: 
+    forms:
       please_enter_a_value: "Vă rugăm să introduceţi o valoare pentru %{label}"
-    general: 
+    general:
       activate: Activa
       deactivate: Dezactivare
       delete: Şterge

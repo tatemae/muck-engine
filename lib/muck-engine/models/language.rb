@@ -3,8 +3,8 @@ module MuckEngine
   module Models
     module MuckLanguage
       extend ActiveSupport::Concern
-    
-      module ClassMethods        
+
+      module ClassMethods
         def locale_id(refresh_ids = false)
           cache_locale_ids(refresh_ids)
           @@locale_ids[I18n.locale]
@@ -23,9 +23,9 @@ module MuckEngine
               @@locale_ids = Hash[*languages.collect {|v|[v.locale[0..1].to_sym, v.id]}.flatten]
             end
           end
-          
+
       end
-      
+
     end
   end
 end

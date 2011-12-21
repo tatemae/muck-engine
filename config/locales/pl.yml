@@ -1,7 +1,7 @@
---- 
-pl: 
-  muck: 
-    engine: 
+---
+pl:
+  muck:
+    engine:
       admin_access_code_requests: "Wnioski Kod dostępu"
       admin_access_codes: "Kody dostępu"
       admin_home: "Strona główna"
@@ -18,9 +18,9 @@ pl:
       select_country_prompt: "Wybierz kraj"
       select_language_prompt: "Proszę wybrać język"
       select_state_prompt: "Wybierz państwo"
-    forms: 
+    forms:
       please_enter_a_value: "Proszę podać wartość dla %{label}"
-    general: 
+    general:
       activate: Aktywować
       deactivate: Dezaktywować
       delete: Usuń

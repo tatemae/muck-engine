@@ -12,7 +12,7 @@ el:
       delimiter: "."
       # Number of decimals, behind the separator (the number 1 with a precision of 2 gives: 1,00)
       precision: 3
-        
+
     # Used in number_to_currency()
     currency:
       format:
@@ -24,15 +24,15 @@ el:
         separator: ","
         delimiter: "."
         precision: 2
-        
+
     # Used in number_to_percentage()
     percentage:
       format:
         # These three are to override number.format and are optional
-        # separator: 
+        # separator:
         delimiter: ""
-        # precision: 
-        
+        # precision:
+
     # Used in number_to_precision()
     precision:
       format:
@@ -40,12 +40,12 @@ el:
         # separator:
         delimiter: ""
         # precision:
-        
+
     # Used in number_to_human_size()
     human:
       format:
         # These three are to override number.format and are optional
-        # separator: 
+        # separator:
         delimiter: ""
         precision: 1
         storage_units: [Bytes, KB, MB, GB, TB]
@@ -131,16 +131,16 @@ el:
       #       attributes:
       #         login:
       #           blank: "This is a custom blank message for User login"
-      # Will define custom blank validation message for User model and 
+      # Will define custom blank validation message for User model and
       # custom blank validation message for login attribute of User model.
       # models:
-        
+
     # Translate model names. Used in Model.human_name().
     #models:
       # For example,
       #   user: "Dude"
       # will translate User model name to "Dude"
-    
+
     # Translate model attribute names. Used in Model.human_attribute_name(attribute).
     #attributes:
       # For example,
@@ -158,15 +158,15 @@ el:
       short: "%d %b"
       long: "%d %B %Y"
       only_day: "%e"
-      
+
     day_names: [Κυριακή, Δευτέρα, Τρίτη, Τετάρτη, Πέμπτη, Παρασκευή, Σάββατο]
     abbr_day_names: [Κυρ, Δευ, Τρι, Τετ, Πεμ, Παρ, Σαβ]
-      
+
     # Don't forget the nil at the beginning; there's no such thing as a 0th month
     month_names: [~, Ιανοάριος, Φεβρουάριος, Μάρτιος, Απρίλιος, Μάιος, Ιούνιος, Ιούλιος, Άυγουστος, Σεπτέμβριος, Οκτώβριος, Νοέμβριος, Δεκέμβριος]
     abbr_month_names: [~, Ιαν, Φεβ, Μάρ, Απρ, Μαι, Ιουν, Ιούλ, Αυγ, Σεπ, Οκτ, Νοε, Δεκ]
     # Used in date_select and datime_select.
-    # original was: order: [ :year, :month, :day ] 
+    # original was: order: [ :year, :month, :day ]
     order: [ :day, :month, :year ]
 
   time:
@@ -182,7 +182,7 @@ el:
   datetime:
     formats:
       default: "%d-%m-%YT%H:%M:%S%Z"
-    
+
 
 # Used in array.to_sentence.
   support:

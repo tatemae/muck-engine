@@ -1,7 +1,7 @@
---- 
-sk: 
-  muck: 
-    engine: 
+---
+sk:
+  muck:
+    engine:
       admin_access_code_requests: "Prístupový kód Žiadosti"
       admin_access_codes: "Prístupové kódy"
       admin_home: Domov
@@ -18,9 +18,9 @@ sk:
       select_country_prompt: "Prosím, vyberte krajinu"
       select_language_prompt: "Zvoľte jazyk"
       select_state_prompt: "Prosím, vyberte štát"
-    forms: 
+    forms:
       please_enter_a_value: "Prosím, zadajte hodnotu pre %{label}"
-    general: 
+    general:
       activate: Aktivovať
       deactivate: Deaktivovať
       delete: Odstrániť

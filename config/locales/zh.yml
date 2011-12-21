@@ -1,7 +1,7 @@
---- 
-zh: 
-  muck: 
-    engine: 
+---
+zh:
+  muck:
+    engine:
       admin_access_code_requests: 访问代码请求
       admin_access_codes: 访问代码
       admin_home: 首页
@@ -18,9 +18,9 @@ zh:
       select_country_prompt: 请选择一个国家
       select_language_prompt: 请选择一种语言
       select_state_prompt: 请选择一个国家
-    forms: 
+    forms:
       please_enter_a_value: "请输入%{label}价值"
-    general: 
+    general:
       activate: 激活
       deactivate: 停用
       delete: 删除

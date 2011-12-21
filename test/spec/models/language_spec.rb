@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Language do
-  
+
   describe "locale_id" do
     before(:all) do
       @language = Factory(:unmodified_language, :locale => 'zz', :supported => true)
@@ -11,7 +11,7 @@ describe Language do
       Language.locale_id(true).should == @language.id
     end
   end
-  
+
   describe "supported_locale?" do
     before(:all) do
       @supported_locale = 'zz'
@@ -25,5 +25,5 @@ describe Language do
       Language.supported_locale?(@not_supported_locale, true).should_not be_true
     end
   end
-  
+
 end

@@ -1,9 +1,9 @@
---- 
-en: 
-  muck: 
-    forms: 
+---
+en:
+  muck:
+    forms:
       please_enter_a_value: Please enter a value for %{label}
-    engine: 
+    engine:
       required_text_mark: (required)
       choose_state: Choose State
       select_state_prompt: Please select a state
@@ -22,7 +22,7 @@ en:
       admin_home_title: Admin Home
       select_language_prompt: Please select a language
       invalid_photo_url: is invalid or inaccessible
-    general: 
+    general:
       deactivate: Deactivate
       no_text: "No"
       previous: "&laquo; Previous"

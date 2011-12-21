@@ -1,7 +1,7 @@
---- 
-ca: 
-  muck: 
-    engine: 
+---
+ca:
+  muck:
+    engine:
       admin_access_code_requests: "Les sol.licituds d&#39;accés Codi"
       admin_access_codes: "Codis d&#39;Accés"
       admin_home: Inici
@@ -18,9 +18,9 @@ ca:
       select_country_prompt: "Si us plau, tria un país"
       select_language_prompt: "Si us plau, seleccioneu un idioma"
       select_state_prompt: "Si us plau, seleccioneu un estat"
-    forms: 
+    forms:
       please_enter_a_value: "Si us plau, introduïu un valor per %{label}"
-    general: 
+    general:
       activate: Activar
       deactivate: Desactivar
       delete: Eliminar

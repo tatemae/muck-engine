@@ -1,7 +1,7 @@
---- 
-hr: 
-  muck: 
-    engine: 
+---
+hr:
+  muck:
+    engine:
       admin_access_code_requests: "Pristupni kod Zahtjevi"
       admin_access_codes: "Pristupni kodovi"
       admin_home: "Početna stranica"
@@ -18,9 +18,9 @@ hr:
       select_country_prompt: "Molimo odaberite državu"
       select_language_prompt: "Molimo odaberite jezik"
       select_state_prompt: "Molimo odaberite državu"
-    forms: 
+    forms:
       please_enter_a_value: "Unesite vrijednost za %{label}"
-    general: 
+    general:
       activate: Aktivirati
       deactivate: Isključiti
       delete: Izbrisati

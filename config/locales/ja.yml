@@ -1,7 +1,7 @@
---- 
-ja: 
-  muck: 
-    engine: 
+---
+ja:
+  muck:
+    engine:
       admin_access_code_requests: アクセスコードを要求
       admin_access_codes: アクセスコード
       admin_home: ホーム
@@ -18,9 +18,9 @@ ja:
       select_country_prompt: 国を選択してください
       select_language_prompt: 言語を選択してください
       select_state_prompt: 状態を選択してください
-    forms: 
+    forms:
       please_enter_a_value: "%{label}の値を入力してください。"
-    general: 
+    general:
       activate: アクティブ
       deactivate: 非アクティブ化
       delete: 削除

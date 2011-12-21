@@ -50,7 +50,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-    
+
   # Test for 'by_alpha' named scope which orders by title:
   # scope :by_alpha, :order => "title ASC"
   # requires that the class have a shoulda factory
@@ -69,7 +69,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-    
+
   # Test for 'by_name' named scope which orders by name:
   # scope :by_name, :order => "name ASC"
   # requires that the class have a shoulda factory
@@ -88,7 +88,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   # For 'latest named scope which orders by updated at:
   #  scope :latest, :order => "{klass}.updated_at DESC"
   def should_scope_latest
@@ -106,7 +106,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   # Test for 'newest' named scope which orders by 'created_at DESC'
   # scope :newest, :order => "created_at DESC"
   # requires that the class have a shoulda factory
@@ -125,7 +125,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   def should_scope_by_newest
     klass = get_klass
     factory_name = name_for_factory(klass)
@@ -141,7 +141,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   # Test for 'oldest' named scope which orders by 'created_at ASC'
   # scope :oldest, :order => "items.created_at ASC"
   # requires that the class have a shoulda factory
@@ -160,7 +160,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   def should_scope_by_oldest
     klass = get_klass
     factory_name = name_for_factory(klass)
@@ -176,7 +176,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   # Test for 'recent' named scope which orders by items created recently
   # scope :recent, lambda { { :conditions => ['items.created_at > ?', 1.week.ago] } }
   # requires that the class have a shoulda factory
@@ -197,7 +197,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   # Tests 'before' named scope
   # scope :before, lambda { |time| {:conditions => ["items.created_at < ?", time || DateTime.now] } }
   def should_scope_before
@@ -274,7 +274,7 @@ module MuckNamedScopeMacros
   end
 
   # Tests 'created_by' named scope.
-  # scope :created_by, lambda { |item_object| {:conditions => ["items.source_id = ? AND items.source_type = ?", item_object.id, item_object.class.to_s] } }  
+  # scope :created_by, lambda { |item_object| {:conditions => ["items.source_id = ? AND items.source_type = ?", item_object.id, item_object.class.to_s] } }
   def should_scope_created_by
     klass = get_klass
     factory_name = name_for_factory(klass)
@@ -293,7 +293,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   # Tests 'by_creator' named scope.
   # scope :by_creator, lambda { |creator_id| { :conditions => ['creator_id = ?', creator_id || 0] } }
   def should_scope_by_creator
@@ -314,7 +314,7 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   # Tests 'sorted' named scope
   # scope :sorted, :order => "sort ASC"
   def should_scope_sorted
@@ -332,15 +332,15 @@ module MuckNamedScopeMacros
       end
     end
   end
-  
+
   def name_for_factory(klass)
     klass.name.underscore.to_sym
   end
-  
+
   def get_klass
     self.name.gsub(/Test$/, '').constantize
   end
-  
+
 end
 
 
