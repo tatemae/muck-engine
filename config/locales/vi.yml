@@ -1,7 +1,7 @@
---- 
-vi: 
-  muck: 
-    engine: 
+---
+vi:
+  muck:
+    engine:
       admin_access_code_requests: "Yêu cầu truy cập Mã số"
       admin_access_codes: "Mã truy cập"
       admin_home: "Trang chủ"
@@ -18,9 +18,9 @@ vi:
       select_country_prompt: "Xin vui lòng chọn quốc gia"
       select_language_prompt: "Hãy chọn một ngôn ngữ"
       select_state_prompt: "Hãy chọn một nhà nước"
-    forms: 
+    forms:
       please_enter_a_value: "Xin vui lòng nhập một giá trị cho %{label}"
-    general: 
+    general:
       activate: "Kích hoạt"
       deactivate: Tắt
       delete: Xóa

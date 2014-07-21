@@ -1,7 +1,7 @@
---- 
-el: 
-  muck: 
-    engine: 
+---
+el:
+  muck:
+    engine:
       admin_access_code_requests: "Πρόσβαση Αιτήσεις κώδικα"
       admin_access_codes: "Κωδικοί πρόσβασης"
       admin_home: "Αρχική Σελίδα"
@@ -18,9 +18,9 @@ el:
       select_country_prompt: "Επιλέξτε μια χώρα"
       select_language_prompt: "Επιλέξτε μια γλώσσα"
       select_state_prompt: "Παρακαλώ επιλέξτε μια κατάσταση"
-    forms: 
+    forms:
       please_enter_a_value: "Παρακαλώ εισάγετε μια τιμή για %{label}"
-    general: 
+    general:
       activate: Ενεργοποίηση
       deactivate: Απενεργοποίηση
       delete: Διαγραφή

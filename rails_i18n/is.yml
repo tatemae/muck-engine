@@ -26,7 +26,7 @@ is:
     human:
       format:
         # These three are to override number.format and are optional
-        # separator: 
+        # separator:
         delimiter: ""
         precision: 1
       storage_units:
@@ -116,7 +116,7 @@ is:
   activerecord:
     errors:
       template:
-        header: 
+        header:
           one:    "Ekki var hægt að vista {{model}} vegna einnar villu."
           other:  "Ekki var hægt að vista {{model}} vegna {{count}} villna."
         body: "Upp kom vandamál í eftirfarandi dálkum:"

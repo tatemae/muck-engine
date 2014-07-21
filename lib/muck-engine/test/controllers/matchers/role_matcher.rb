@@ -1,7 +1,7 @@
 module MuckEngine # :nodoc:
   module Controllers # :nodoc:
     module Matchers
-   
+
       # Ensure a role is required for the given action
       # Parameters:
       #     role          - Role require to access the url.
@@ -15,9 +15,9 @@ module MuckEngine # :nodoc:
       def require_role(role, action, verb, flash_message = /permission/i, role_url = '/login')
         RequireRoleMatcher.new(role, action, verb, role_url, flash_message, self)
       end
-      
+
       class RequireRoleMatcher
-        
+
         def initialize(role, action, verb, role_url, flash_message, context)
           @role = role
           @action = action
@@ -26,12 +26,12 @@ module MuckEngine # :nodoc:
           @context = context
           @flash_message = flash_message
         end
-        
+
         def matches?(controller)
           @controller = controller
           requires_role?
         end
-        
+
         def failure_message
           "Expected a '#{@action}' to '#{@action}' to require role '#{@role}'"
         end
@@ -39,9 +39,9 @@ module MuckEngine # :nodoc:
         def description
           "require role #{@action}"
         end
-        
+
         private
-        
+
           def requires_role?
             response = @context.send(@verb, @action, :id => 1)
             @context.send(:assert_redirected_to, @role_url)
@@ -51,7 +51,7 @@ module MuckEngine # :nodoc:
               false
             end
           end
-          
+
           def flash
             return @flash if @flash
             flash_and_now = @controller.request.session["flash"].dup if @controller.request.session["flash"]
@@ -64,9 +64,9 @@ module MuckEngine # :nodoc:
               flash
             end
           end
-          
+
       end
-      
+
     end
   end
 end

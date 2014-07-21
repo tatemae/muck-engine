@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Muck::HelperController do
 
   render_views
-  
+
   describe "load_states_for_country" do
     before(:all) do
       @country = Factory(:country)
@@ -21,9 +21,9 @@ describe Muck::HelperController do
       @response.body.should include(@state.name)
     end
   end
-  
+
   def get_load_states_for_country
     get :load_states_for_country, :id => @country.to_param, :format => 'json'
   end
-  
+
 end

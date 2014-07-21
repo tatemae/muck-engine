@@ -3,8 +3,8 @@ function setup_country(force_load){
 	var country_id = jQuery("#countries").val();
 	var state_id = jQuery("#states").val();
 
-	if (country_id == undefined){ 
-		return; 
+	if (country_id == undefined){
+		return;
 	}
 
 	if (country_id == '-1'){

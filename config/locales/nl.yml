@@ -1,7 +1,7 @@
---- 
-nl: 
-  muck: 
-    engine: 
+---
+nl:
+  muck:
+    engine:
       admin_access_code_requests: "Toegangscode aanvragen"
       admin_access_codes: Toegangscodes
       admin_home: Home
@@ -18,9 +18,9 @@ nl:
       select_country_prompt: "Selecteer een land"
       select_language_prompt: "Selecteer een taal"
       select_state_prompt: "Selecteer een staat"
-    forms: 
+    forms:
       please_enter_a_value: "Voer een waarde voor %{label}"
-    general: 
+    general:
       activate: Activeren
       deactivate: Deactiveren
       delete: Verwijderen

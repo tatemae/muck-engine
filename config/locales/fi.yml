@@ -1,7 +1,7 @@
---- 
-fi: 
-  muck: 
-    engine: 
+---
+fi:
+  muck:
+    engine:
       admin_access_code_requests: "Access Code pyynnöt"
       admin_access_codes: Tunnusluvut
       admin_home: Etusivu
@@ -18,9 +18,9 @@ fi:
       select_country_prompt: "Valitse maa"
       select_language_prompt: "Ole hyvä ja valitse kieli"
       select_state_prompt: "Valitse tila"
-    forms: 
+    forms:
       please_enter_a_value: "Anna arvo %{label}"
-    general: 
+    general:
       activate: Aktivoida
       deactivate: Poista
       delete: Poista

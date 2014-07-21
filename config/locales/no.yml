@@ -1,8 +1,8 @@
---- 
+---
 ? "no"
-: 
-  muck: 
-    engine: 
+:
+  muck:
+    engine:
       admin_access_code_requests: "Access Code Forespørsler"
       admin_access_codes: Tilgangskoder
       admin_home: Hjem
@@ -19,9 +19,9 @@
       select_country_prompt: "Vennligst velg et land"
       select_language_prompt: "Vennligst velg et språk"
       select_state_prompt: "Vennligst velg en stat"
-    forms: 
+    forms:
       please_enter_a_value: "Vennligst skriv inn en verdi for %{label}"
-    general: 
+    general:
       activate: Aktiver
       deactivate: Deaktiver
       delete: Slett

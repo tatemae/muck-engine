@@ -19,9 +19,9 @@
  * @param i Images to be selected.
  * @param preload Preload the image, default = true.
  * @param repeat Repeat the effect, default = true.
- * @param swapInEvent Event for swap In. 
- * @param swapOutEvent Event for swap Out. 
- *  
+ * @param swapInEvent Event for swap In.
+ * @param swapOutEvent Event for swap Out.
+ *
  * @name $.swapImage
  * @cat Plugins/SwapImage
  * @author tszming (tszming@gmail.com)
@@ -42,23 +42,23 @@ jQuery.swapImage = function(i, preload, repeat, swapInEvent, swapOutEvent) {
 	};
 
 	jQuery(document).ready(function() {
-		
+
 		if (typeof preload == "undefined")	preload = true;
 		if (typeof repeat == "undefined")	repeat = true;
 		if (typeof swapInEvent == "undefined" && typeof swapInEvent == "undefined") {
 			swapInEvent = "mouseenter";		swapOutEvent = "mouseleave";
 		}
-		
+
 		if (repeat) {
 			if (typeof swapOutEvent != "undefined") {
-				jQuery(i).bind(swapInEvent, jQuery.swapImage.swap).bind(swapOutEvent, jQuery.swapImage.swap);	
+				jQuery(i).bind(swapInEvent, jQuery.swapImage.swap).bind(swapOutEvent, jQuery.swapImage.swap);
 			} else {
-				jQuery(i).bind(swapInEvent, jQuery.swapImage.swap);	
-			}						
+				jQuery(i).bind(swapInEvent, jQuery.swapImage.swap);
+			}
 		} else {
 			jQuery(i).one(swapInEvent, jQuery.swapImage.swap);
 		}
-				
+
 		if (preload) {
 			jQuery(i).each(jQuery.swapImage.preload)
 		};

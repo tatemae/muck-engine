@@ -101,7 +101,7 @@
       hour:   "Hora"
       minute: "Minuto"
       second: "Segundos"
-        
+
   number:
     percentage:
       format:

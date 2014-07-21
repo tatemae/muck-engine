@@ -1,7 +1,7 @@
---- 
-cs: 
-  muck: 
-    engine: 
+---
+cs:
+  muck:
+    engine:
       admin_access_code_requests: "Přístupový kód Žádosti"
       admin_access_codes: "Přístupové kódy"
       admin_home: Domů
@@ -18,9 +18,9 @@ cs:
       select_country_prompt: "Prosím, vyberte zemi"
       select_language_prompt: "Zvolte jazyk"
       select_state_prompt: "Prosím, vyberte stát"
-    forms: 
+    forms:
       please_enter_a_value: "Prosím, zadejte hodnotu pro %{label}"
-    general: 
+    general:
       activate: Aktivovat
       deactivate: Deaktivovat
       delete: Odstranit

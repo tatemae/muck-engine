@@ -1,7 +1,7 @@
---- 
-zh-TW: 
-  muck: 
-    engine: 
+---
+zh-TW:
+  muck:
+    engine:
       admin_access_code_requests: 訪問代碼請求
       admin_access_codes: 訪問代碼
       admin_home: 首頁
@@ -18,9 +18,9 @@ zh-TW:
       select_country_prompt: 請選擇一個國家
       select_language_prompt: 請選擇一種語言
       select_state_prompt: 請選擇一個國家
-    forms: 
+    forms:
       please_enter_a_value: "請輸入一個值%{label}"
-    general: 
+    general:
       activate: 激活
       deactivate: 停用
       delete: 刪除

@@ -1,7 +1,7 @@
 module MuckEngine # :nodoc:
   module Models # :nodoc:
     module Matchers
-      
+
       # 'active' named scope which indicates whether an item is active or not
       # requires that the class have a factory
       # Tests:
@@ -11,14 +11,14 @@ module MuckEngine # :nodoc:
       def scope_active
         ActiveMatcher.new(:active)
       end
-            
+
       class ActiveMatcher < MuckMatcherBase # :nodoc:
 
         def initialize(scope, field = :active)
           @scope = scope
           @field = field
         end
-        
+
         def matches?(subject)
           @subject = subject
           @subject.class.delete_all
@@ -27,15 +27,15 @@ module MuckEngine # :nodoc:
           @subject.class.send(@scope).include?(active_item) &&
             !@subject.class.send(@scope).include?(not_active_item)
         end
-        
+
         def failure_message
           "Expected #{factory_name} to scope by #{@scope} on #{@field} and only find active items. But the call failed"
         end
-        
+
         def description
           "active items"
         end
-          
+
       end
 
     end

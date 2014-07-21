@@ -1,7 +1,7 @@
---- 
-ht: 
-  muck: 
-    engine: 
+---
+ht:
+  muck:
+    engine:
       admin_access_code_requests: "Kòd aksè Demann"
       admin_access_codes: "Aksè Kòd"
       admin_home: Lakay
@@ -18,9 +18,9 @@ ht:
       select_country_prompt: "Tanpri chwazi yon peyi"
       select_language_prompt: "Tanpri chwazi yon lang"
       select_state_prompt: "Tanpri chwazi yon eta"
-    forms: 
+    forms:
       please_enter_a_value: "Tanpri antre yon valè pou %{label}"
-    general: 
+    general:
       activate: Aktive
       deactivate: Disoud
       delete: Delete

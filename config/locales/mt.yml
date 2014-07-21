@@ -1,7 +1,7 @@
---- 
-mt: 
-  muck: 
-    engine: 
+---
+mt:
+  muck:
+    engine:
       admin_access_code_requests: "Kodiċi Talbiet Aċċess"
       admin_access_codes: "Aċċess Kodiċijiet"
       admin_home: Home
@@ -18,9 +18,9 @@ mt:
       select_country_prompt: "Jekk jogħġbok agħżel pajjiż"
       select_language_prompt: "Jekk jogħġbok agħżel lingwa"
       select_state_prompt: "Jekk jogħġbok agħżel stat"
-    forms: 
+    forms:
       please_enter_a_value: "Jekk jogħġbok daħħal valur għal %{label}"
-    general: 
+    general:
       activate: Activate
       deactivate: Diżattivazzjoni
       delete: Ħassar

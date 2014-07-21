@@ -1,7 +1,7 @@
---- 
-lt: 
-  muck: 
-    engine: 
+---
+lt:
+  muck:
+    engine:
       admin_access_code_requests: "Prieigos kodas Prašymai"
       admin_access_codes: "Kreipties kodai"
       admin_home: Pradžia
@@ -18,9 +18,9 @@ lt:
       select_country_prompt: "Prašome pasirinkti šalį"
       select_language_prompt: "Pasirinkite kalbą"
       select_state_prompt: "Prašome pasirinkti valstybės"
-    forms: 
+    forms:
       please_enter_a_value: "Įveskite %{label} vertė"
-    general: 
+    general:
       activate: Aktyvinti
       deactivate: Išjungti
       delete: Ištrinti

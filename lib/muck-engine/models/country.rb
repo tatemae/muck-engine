@@ -3,12 +3,12 @@ module MuckEngine
   module Models
     module MuckCountry
       extend ActiveSupport::Concern
-    
+
       included do
         has_many :states
         scope :by_name, order("name ASC")
       end
-      
+
       module ClassMethods
         def us
           self.find_by_abbreviation('US')
@@ -27,7 +27,7 @@ module MuckEngine
           @@canada_id ||= self.find_by_abbreviation('CA').id
           @@canada_id == get_country_id(country)
         end
-        
+
         # Note that the strings from here are also hard coded into application.js
         def build_state_prompts(country_id, any = false, refresh_ids = false)
           if uk_country?(country_id, refresh_ids)
@@ -54,9 +54,9 @@ module MuckEngine
           end
           [label, prompt]
         end
-        
+
         private
-        
+
           def get_country_id(country)
             if country.is_a?(self)
               country.id
@@ -64,9 +64,9 @@ module MuckEngine
               country.to_i
             end
           end
-          
+
       end
-      
+
     end
   end
 end

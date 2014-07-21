@@ -1,4 +1,4 @@
-# Hebrew translations for Ruby on Rails 
+# Hebrew translations for Ruby on Rails
 # by Dotan Nahum (dipidi@gmail.com)
 
 "he-IL":
@@ -14,7 +14,7 @@
     month_names: [~, ינואר, פברואר, מרץ, אפריל, מאי, יוני, יולי, אוגוסט, ספטמבר, אוקטובר, נובמבר, דצמבר]
     abbr_month_names: [~, יאנ, פב, מרץ, אפר, מאי, יונ, יול, אוג, ספט, אוק, נוב, דצ]
     order: [ :day, :month, :year ]
-  
+
   time:
     formats:
       default: "%a %b %d %H:%M:%S %Z %Y"
@@ -22,14 +22,14 @@
       short: "%d %b %H:%M"
       long: "%B %d, %Y %H:%M"
       only_second: "%S"
-      
+
       datetime:
         formats:
           default: "%d-%m-%YT%H:%M:%S%Z"
-          
+
       am: 'am'
       pm: 'pm'
-      
+
   datetime:
     distance_in_words:
       half_a_minute: 'חצי דקה'
@@ -65,7 +65,7 @@
       over_x_years:
         one: 'מעל שנה אחת'
         other: 'מעל {{count}} שנים'
-      
+
   number:
     format:
       precision: 3
@@ -76,7 +76,7 @@
         unit: 'שח'
         precision: 2
         format: '%u %n'
-        
+
   active_record:
     error:
       header_message: ["לא ניתן לשמור {{model}}: שגיאה אחת", "לא ניתן לשמור {{model}}: {{count}} שגיאות."]

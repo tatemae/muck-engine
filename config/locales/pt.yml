@@ -1,9 +1,9 @@
---- 
-pt: 
-  muck: 
-    forms: 
+---
+pt:
+  muck:
+    forms:
       please_enter_a_value: "Por favor, introduza um valor para {{label}}"
-    general: 
+    general:
       activate: Activar
       deactivate: Desactivar
       delete: Excluir

@@ -1,19 +1,19 @@
 require 'ostruct'
 
 module MuckEngine
-  
+
   def self.configuration
     # In case the user doesn't setup a configure block we can always return default settings:
     @configuration ||= Configuration.new
   end
-  
+
   def self.configure
     self.configuration ||= Configuration.new
     yield(configuration)
   end
 
   class Configuration
-    
+
     # Global application values.  These are used to display the app name, send emails, and configure where system emails go.
     attr_accessor :application_url          # Url of your application
     attr_accessor :application_name         # Common name for your application.  i.e. My App, Billy Bob, etc
@@ -24,11 +24,11 @@ module MuckEngine
     attr_accessor :customer_service_number  # Phone number if you have one (optional)
     attr_accessor :mail_charset             # Email charset.  No need to change this unless you have a good reason to change the encoding.
     attr_accessor :enable_ssl               # Enable ssl if you have an ssl certificate installed.  This will provide security between the client and server.
-    
+
     # Application configuration
     attr_accessor :local_jquery             # If true jquery will be loaded from the local directory. If false then it will be loaded from Google's CDN
     attr_accessor :growl_enabled            # If true then notifications and errors will popup in an overlay div similar to 'growl' on the mac. This uses jGrowl which must be included in your layout
-    
+
     # Email server configuration
     attr_accessor :email_server_address     # Email server address.  'smtp.sendgrid.net' works for sendgrid - https://sendgrid.com/user/signup
     attr_accessor :email_user_name          # Email server username
@@ -38,7 +38,7 @@ module MuckEngine
     # Google Analtyics Configuration.  This will enable Google Analytics on your site and will be used if your template includes:
     #                                  <%= render :partial => 'layouts/global/google_analytics' %>
     attr_accessor :google_tracking_code       # Get a tracking code here: http://www.google.com/analytics/. The codes look like this: 'UA-9685000-0'
-    attr_accessor :google_tracking_set_domain # Base domain provided to Google Analytics. Useful if you are using subdomains but want all traffic 
+    attr_accessor :google_tracking_set_domain # Base domain provided to Google Analytics. Useful if you are using subdomains but want all traffic
                                               # recorded into one account.
 
     attr_accessor :required_text_mark       # Value to show to indicate a field is required. Default is '*'
@@ -66,9 +66,9 @@ module MuckEngine
     def add_muck_dashboard_item(path, locals = {}, insert_at = -1)
       muck_dashboard_items.insert(insert_at, OpenStruct.new(:path => path, :locals => locals))
     end
-      
+
     def initialize
-      self.application_url = 'localhost:3000' 
+      self.application_url = 'localhost:3000'
       self.application_name = 'My App'
       self.from_email = 'support@example.com'
       self.from_email_name = 'Example App'
@@ -84,11 +84,11 @@ module MuckEngine
       self.growl_enabled = false
       self.local_jquery = false
       self.required_text_mark = '*'
-      
+
       self.google_tracking_code = ""
       self.google_tracking_set_domain = "example.com"
-      
+
     end
-    
+
   end
 end

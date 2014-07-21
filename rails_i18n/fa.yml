@@ -1,4 +1,4 @@
-# Persian translations for Ruby on Rails 
+# Persian translations for Ruby on Rails
 # by Reza (reza@balatarin.com)
 
 fa:
@@ -91,16 +91,16 @@ fa:
   activerecord:
     errors:
       template:
-        header: 
+        header:
           one: "1 خطا جلوی ذخیره این {{model}} را گرفت"
           other: "{{count}} خطا جلوی ذخیره این {{model}} را گرفت"
         body: "موارد زیر مشکل داشت:"
       messages:
-        inclusion: "در لیست موجود نیست" 
-        exclusion: "رزرو است" 
-        invalid: "نامعتبر است" 
+        inclusion: "در لیست موجود نیست"
+        exclusion: "رزرو است"
+        invalid: "نامعتبر است"
         confirmation: "با تایید نمی‌خواند"
-        accepted: "باید پذیرفته شود" 
+        accepted: "باید پذیرفته شود"
         empty: "نمی‌تواند خالی باشد"
         blank: "نباید خالی باشد"
         too_long: "بلند است (حداکثر {{count}} کاراکتر)"

@@ -9,10 +9,10 @@ module MuckAdminHelper
       style="background-image:url('#{header_nav_item.image}');"
     end
   end
-  
+
   # Generates a string that will hide admin messages.
   def hide_admin_messages
     "jQuery('#admin-messages').hide();"
   end
-  
+
 end

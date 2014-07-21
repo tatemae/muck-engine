@@ -1,7 +1,7 @@
---- 
-uk: 
-  muck: 
-    engine: 
+---
+uk:
+  muck:
+    engine:
       admin_access_code_requests: "Просить код доступу"
       admin_access_codes: "Коди доступу"
       admin_home: Головна
@@ -18,9 +18,9 @@ uk:
       select_country_prompt: "Будь ласка, виберіть країну"
       select_language_prompt: "Будь ласка, виберіть мову"
       select_state_prompt: "Будь ласка, виберіть стан"
-    forms: 
+    forms:
       please_enter_a_value: "Будь ласка, введіть значення для %{label}"
-    general: 
+    general:
       activate: Активувати
       deactivate: Дезактивувати
       delete: Видалити

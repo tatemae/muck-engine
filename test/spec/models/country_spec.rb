@@ -1,14 +1,14 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Country do
-  
+
   before(:all) do
     @country = Factory(:country)
   end
-  
+
   it { should have_many :states }
   it { should scope_by_name }
-  
+
   describe "us" do
     before(:all) do
       Country.destroy_all
@@ -22,7 +22,7 @@ describe Country do
       Country.us.should_not == @other_country
     end
   end
-  
+
   describe "uk_country?" do
     before(:all) do
       Country.destroy_all
@@ -44,7 +44,7 @@ describe Country do
       Country.uk_country?(@eng_country.id, true).should be_true
     end
   end
-  
+
   describe "canada?" do
     before(:all) do
       Country.destroy_all
@@ -56,7 +56,7 @@ describe Country do
       !Country.canada?(@other_country.id, true).should_not be_true
     end
   end
-  
+
   describe "build_state_prompts" do
     before(:all) do
       Country.destroy_all
@@ -80,5 +80,5 @@ describe Country do
       label.should include('State')
     end
   end
-  
+
 end

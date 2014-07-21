@@ -1,7 +1,7 @@
-# This file defines factories for all muck related models.  You must have the 
+# This file defines factories for all muck related models.  You must have the
 # muck gem installed and the related migrations run for all of these to work.
 FactoryGirl.define do
-  
+
   sequence :email do |n|
     "somebody#{n}@example.com"
   end
@@ -279,5 +279,5 @@ FactoryGirl.define do
     secret { Factory.next(:uri) }
     raw_auth { Factory.next(:description) }
   end
-  
+
 end

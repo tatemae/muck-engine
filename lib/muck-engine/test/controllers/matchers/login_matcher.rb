@@ -1,7 +1,7 @@
 module MuckEngine # :nodoc:
   module Controllers # :nodoc:
     module Matchers
-   
+
       # Ensure a login is required for the given action
       # Parameters:
       #     action      - Name of the action in the control that should require a login ie "index"
@@ -13,21 +13,21 @@ module MuckEngine # :nodoc:
       def require_login(action, verb, login_url = '/login')
         RequireLoginMatcher.new(action, verb, login_url, self)
       end
-      
+
       class RequireLoginMatcher
-        
+
         def initialize(action, verb, login_url, context)
           @action = action
           @verb = verb
           @login_url = login_url
           @context = context
         end
-        
+
         def matches?(controller)
           @controller = controller
           requires_login?
         end
-        
+
         def failure_message
           "Expected a #{@action} to #{@action} to require login"
         end
@@ -35,16 +35,16 @@ module MuckEngine # :nodoc:
         def description
           "require login #{@action}"
         end
-        
+
         private
-        
+
           def requires_login?
             response = @context.send(@verb, @action, :id => 1)
             @context.send(:assert_redirected_to, @login_url)
             true
           end
       end
-      
+
     end
   end
 end

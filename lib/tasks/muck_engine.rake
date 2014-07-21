@@ -9,7 +9,7 @@ if RUBY_VERSION < '1.9'
     rescue Gem::LoadError
       puts "Please install the jcode gem"
     end
-  end  
+  end
 end
 
 require 'rubygems'
@@ -19,8 +19,8 @@ require 'muck-engine/populate'
 GREEN = "\033[0;32m"
 RED = "\033[0;31m"
 BLUE = "\033[0;34m"
-INVERT = "\033[00m"    
-      
+INVERT = "\033[00m"
+
 namespace :muck do
 
   # just returns the names of the gems as specified by muck_gems
@@ -28,10 +28,10 @@ namespace :muck do
     muck_gems = []
     Rails.application.railties.all.each do |railtie|
       muck_gems << railtie.muck_name if railtie.respond_to?(:muck_name)
-    end    
+    end
     muck_gems
   end
-  
+
   desc "Sync resources from all muck related gems."
   task :sync do
     puts 'syncronizing engines and gems'
@@ -68,7 +68,7 @@ namespace :muck do
       MuckEngine::Populate.all
       puts 'Finished adding languages, countries and states'
     end
-    
+
     desc "Drop, creates, migrations and populates the database"
     task :reset => :environment do
 

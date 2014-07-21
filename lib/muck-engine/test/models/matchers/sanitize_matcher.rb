@@ -6,28 +6,28 @@ module MuckEngine # :nodoc:
       def sanitize(attribute)
         SanitizeMatcher.new(attribute)
       end
-      
+
       class SanitizeMatcher < MuckMatcherBase # :nodoc:
-        
+
         def initialize(attribute)
           @attribute = attribute
         end
-        
+
         def matches?(subject)
           @subject = subject
           sanitizes?
         end
-        
+
         def failure_message
           "#{factory_name} does not correctly sanitize the attribute #{@attribute}"
         end
-        
+
         def description
           "sanitizes attribute"
         end
-        
+
         private
-        
+
           def sanitizes?
             bad_scripts = [
               %|';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>|,
@@ -49,9 +49,9 @@ module MuckEngine # :nodoc:
               clean_value = @subject.send(@attribute)
               return false if clean_value.include?(bad_value)
             end
-            true            
+            true
           end
-          
+
       end
 
     end

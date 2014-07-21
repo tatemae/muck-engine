@@ -1,7 +1,7 @@
---- 
-hu: 
-  muck: 
-    engine: 
+---
+hu:
+  muck:
+    engine:
       admin_access_code_requests: "Hozzáférési kód kéri"
       admin_access_codes: "Hozzáférési kódok"
       admin_home: Főoldal
@@ -18,9 +18,9 @@ hu:
       select_country_prompt: "Kérjük válasszon országot"
       select_language_prompt: "Kérjük, válasszon egy nyelvet"
       select_state_prompt: "Kérjük, válasszon egy állam"
-    forms: 
+    forms:
       please_enter_a_value: "Kérem adjon meg egy értéket a %{label}"
-    general: 
+    general:
       activate: Aktiválása
       deactivate: Deaktiválása
       delete: Törlés

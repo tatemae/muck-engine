@@ -1,4 +1,4 @@
-# Romanian translations for Ruby on Rails 
+# Romanian translations for Ruby on Rails
 # by Catalin Ilinca (me@talin.ro)
 # updated by kfl62 (bogus keys are now commented)
 
@@ -15,7 +15,7 @@ ro:
     month_names: [~, Ianuarie, Februarie, Martie, Aprilie, Mai, Iunie, Iulie, August, Septembrie, Octombrie, Noiembrie, Decembrie]
     abbr_month_names: [~, Ian, Feb, Mar, Apr, Mai, Iun, Iul, Aug, Sep, Oct, Noi, Dec]
     order: [ :day, :month, :year ]
-  
+
   time:
     formats:
       default: "%a %d %b %Y, %H:%M:%S %z"
@@ -23,14 +23,14 @@ ro:
       short: "%d %b %H:%M"
       long: "%d %B %Y %H:%M"
 #      only_second: "%S"
-      
+
 #      datetime:
 #        formats:
 #          default: "%d-%m-%YT%H:%M:%S%Z"
-          
+
     am: ''
     pm: ''
-      
+
   datetime:
     distance_in_words:
       half_a_minute: "jumătate de minut"
@@ -74,7 +74,7 @@ ro:
       hour:   "Ora"
       minute: "Minutul"
       second: "Secunda"
-      
+
   number:
     format:
       precision: 3
@@ -112,11 +112,11 @@ ro:
           mb: "MB"
           gb: "GB"
           tb: "TB"
-       
+
   activerecord:
     errors:
       template:
-        header: 
+        header:
           one: "Nu am putut salva acest model {{model}}: 1 eroare"
           other: "Nu am putut salva acest {{model}}: {{count}} erori."
         body: "Încearcă să corectezi urmatoarele câmpuri:"

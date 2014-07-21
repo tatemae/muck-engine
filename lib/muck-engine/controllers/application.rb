@@ -1,32 +1,32 @@
 module MuckEngine
   module Application
-    
+
     extend ActiveSupport::Concern
-    
+
     protected
-      
+
       # called by Admin::Muck::BaseController to check whether or not the
       # user should have access to the admin UI
       def admin_access?
         access_denied unless admin?
       end
-      
+
       # Detect the iphone.  Just call this method in a before filter:
       #    before_filter :adjust_format_for_iphone
       def adjust_format_for_iphone
         request.format = :iphone if iphone_user_agent?
       end
-      
+
       # Request from an iPhone or iPod touch? (Mobile Safari user agent)
       def iphone_user_agent?
         request.env["HTTP_USER_AGENT"] && request.env["HTTP_USER_AGENT"][/(Mobile\/.+Safari)/]
       end
-      
+
       # Output a simple javascript message
       def page_alert(message)
         render :template => 'shared/page_alert'
       end
-      
+
       # **********************************************
       # Locale methods
       # I18n methods from:
@@ -35,7 +35,7 @@ module MuckEngine
       def discover_locale
         I18n.locale = extract_locale_from_user_selection || extract_locale_from_tld || extract_locale_from_subdomain || extract_locale_from_headers || I18n.default_locale
       end
-      
+
       def extract_locale_from_browser
         if http_lang = request.env["HTTP_ACCEPT_LANGUAGE"] and ! http_lang.blank?
           browser_locale = http_lang[/^[a-z]{2}/i].downcase + '-' + http_lang[3,2].upcase
@@ -47,20 +47,20 @@ module MuckEngine
       def extract_locale_from_user_selection
         extract_locale_from_url || extract_locale_from_cookie
       end
-      
+
       def extract_locale_from_url
         if !params[:locale].blank? && I18n.available_locales.include?(params[:locale].to_sym)
           cookies['locale'] = { :value => params[:locale], :expires => 1.year.from_now }
           params[:locale].to_sym
         end
       end
-      
+
       def extract_locale_from_cookie
         if cookies['locale'] && I18n.available_locales.include?(cookies['locale'].to_sym)
           cookies['locale'].to_sym
         end
       end
-      
+
       def extract_locale_from_headers
         if http_lang = request.headers["HTTP_ACCEPT_LANGUAGE"] and ! http_lang.blank?
           preferred_locales = http_lang.split(',').map { |l| l.split(';').first }
@@ -68,29 +68,29 @@ module MuckEngine
           accepted_locales.empty? ? nil : accepted_locales.first.to_sym
         end
       end
-      
-      # Get locale from top-level domain or return nil if such locale is not available 
-      # You have to put something like: # 127.0.0.1 application.com 
-      # 127.0.0.1 application.it # 127.0.0.1 application.pl 
-      # in your /etc/hosts file to try this out locally 
-      def extract_locale_from_tld 
-        parsed_locale = request.host.split('.').last 
-        (I18n.available_locales.include? parsed_locale) ? parsed_locale.to_sym : nil 
-      end 
 
-      # Get locale code from request subdomain (like http://it.application.local:3000) 
-      # You have to put something like: 
-      # 127.0.0.1 gr.application.local 
-      # in your /etc/hosts file to try this out locally 
-      def extract_locale_from_subdomain 
+      # Get locale from top-level domain or return nil if such locale is not available
+      # You have to put something like: # 127.0.0.1 application.com
+      # 127.0.0.1 application.it # 127.0.0.1 application.pl
+      # in your /etc/hosts file to try this out locally
+      def extract_locale_from_tld
+        parsed_locale = request.host.split('.').last
+        (I18n.available_locales.include? parsed_locale) ? parsed_locale.to_sym : nil
+      end
+
+      # Get locale code from request subdomain (like http://it.application.local:3000)
+      # You have to put something like:
+      # 127.0.0.1 gr.application.local
+      # in your /etc/hosts file to try this out locally
+      def extract_locale_from_subdomain
         parsed_locale = request.subdomains.first
         if !parsed_locale.blank?
-          I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale.to_sym : nil 
+          I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale.to_sym : nil
         else
           nil
         end
       end
-            
+
       # **********************************************
       # Paging methods
       def setup_paging
@@ -100,7 +100,7 @@ module MuckEngine
       end
 
       def set_will_paginate_string
-        # Because I18n.locale are dynamically determined in ApplicationController, 
+        # Because I18n.locale are dynamically determined in ApplicationController,
         # it should not put in config/initializers/will_paginate.rb
         WillPaginate::ViewHelpers.pagination_options[:previous_label] = t('muck.general.previous')
         WillPaginate::ViewHelpers.pagination_options[:next_label] = t('muck.general.next')
@@ -108,17 +108,17 @@ module MuckEngine
 
       # **********************************************
       # Email methods
-      
+
       # Use send_form_email to send the contents of any form to the support email address
       def send_form_email(params, subject)
         body = []
         params.each_pair { |k,v| body << "#{k}: #{v}"  }
         BasicMailer.mail(:subject => subject, :body => body.join("\n")).deliver
       end
-            
+
       # **********************************************
       # Parent methods
-      
+
       # Builds parameters that can be appended to a url to indicate the object's parent.
       # Note that this method should only be used when absolutely needed.  The preferred method is
       # to use polymorhpic_url.  For example:
@@ -131,7 +131,7 @@ module MuckEngine
           { :parent_id => parent.id, :parent_type => parent.class.to_s }
         end
       end
-      
+
       # Attempts to create an @parent object using params
       # or the url.
       # scope:  Friendly id can require a scope to find the object.  Pass the scope as needed.

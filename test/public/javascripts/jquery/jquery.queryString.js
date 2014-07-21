@@ -16,7 +16,7 @@
 				var name = unescape(pair[0]);
 
 			if (pair.length == 2)
-			{	
+			{
 				value = unescape(pair[1]);
 			}
 			else

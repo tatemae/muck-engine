@@ -1,7 +1,7 @@
---- 
-da: 
-  muck: 
-    engine: 
+---
+da:
+  muck:
+    engine:
       admin_access_code_requests: "Adgang Kode Anmodninger"
       admin_access_codes: Adgangskoder
       admin_home: Home
@@ -18,9 +18,9 @@ da:
       select_country_prompt: "Vælg et land"
       select_language_prompt: "Vælg sprog"
       select_state_prompt: "Vælg en tilstand"
-    forms: 
+    forms:
       please_enter_a_value: "Angiv en værdi for %{label}"
-    general: 
+    general:
       activate: Aktiver
       deactivate: Deaktivere
       delete: Slet

@@ -18,7 +18,7 @@ pt-PT:
       words_connector: ","
       two_words_connector: "e"
       last_word_connector: ", e"
-    
+
   date:
     formats:
       # Use the strftime parameters for formats.
@@ -36,15 +36,15 @@ pt-PT:
     abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
     # Used in date_select and datime_select.
     order: [:day, :month, :year]
-    
+
   time:
-    formats:        
+    formats:
       default: "%A, %d de %B de %Y, %H:%Mh"
       short: "%d/%m, %H:%M hs"
       long: "%A, %d de %B de %Y, %H:%Mh"
     am: ''
     pm: ''
- 
+
   # Used in distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
   datetime:
     distance_in_words:
@@ -55,7 +55,7 @@ pt-PT:
       x_seconds:
         one: "1 segundo"
         other: "{{count}} segundos"
-      less_than_x_minutes: 
+      less_than_x_minutes:
         one: "menos de um minuto"
         other: "menos de {{count}} minutos"
       x_minutes:
@@ -89,7 +89,7 @@ pt-PT:
       hour: "Hora"
       minute: "Minuto"
       second: "Segundo"
-        
+
   number:
     # Used in number_with_delimiter()
     # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
@@ -116,7 +116,7 @@ pt-PT:
     percentage:
       format:
         # These three are to override number.format and are optional
-        # separator: 
+        # separator:
         delimiter: ''
         # precision:
 
@@ -124,7 +124,7 @@ pt-PT:
     precision:
       format:
         # These three are to override number.format and are optional
-        # separator: 
+        # separator:
         delimiter: ''
         # precision:
 
@@ -192,7 +192,7 @@ pt-PT:
       #       attributes:
       #         login:
       #           blank: "This is a custom blank message for User login"
-      # Will define custom blank validation message for User model and 
+      # Will define custom blank validation message for User model and
       # custom blank validation message for login attribute of User model.
       #models:
 
@@ -209,7 +209,7 @@ pt-PT:
       #     login: "Handle"
       # will translate User attribute "login" as "Handle"
 
-        
+
   activemodel:
     errors:
       template:

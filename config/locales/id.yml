@@ -1,7 +1,7 @@
---- 
-id: 
-  muck: 
-    engine: 
+---
+id:
+  muck:
+    engine:
       admin_access_code_requests: "Permintaan Kode Akses"
       admin_access_codes: "Kode Akses"
       admin_home: Home
@@ -18,9 +18,9 @@ id:
       select_country_prompt: "Silakan pilih negara"
       select_language_prompt: "Silakan pilih bahasa"
       select_state_prompt: "Silakan pilih negara"
-    forms: 
+    forms:
       please_enter_a_value: "Masukkan nilai untuk %{label}"
-    general: 
+    general:
       activate: Mengaktifkan
       deactivate: Menonaktifkan
       delete: Hapus

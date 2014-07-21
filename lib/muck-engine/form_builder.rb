@@ -40,7 +40,7 @@ module MuckEngine
 
       # used by country, state and other selects to specify a different id
       field_id = options[:field_id]
-    
+
       local_options = {
         :pre_html         => options.delete(:pre_html),
         :after_label_html => options.delete(:after_label_html),
@@ -56,12 +56,12 @@ module MuckEngine
         :css_class        => options.delete(:css_class)
       }
       # TODO css_class does not appear to be used. Can just use the standard :class in html options to set the class
-    
+
       is_checkbox = false
       is_checkbox = true if %w(check_box).include?(name)
-    
+
       required_text_mark = options.delete(:required_text_mark)
-    
+
       type = options.delete(:type)
       type ||= :tippable if tippable
 
@@ -73,7 +73,7 @@ module MuckEngine
       else
         label_options = { :class => label_class }
       end
-  
+
       if local_options[:hide_required]
         required = false
         label_text = options[:label]
@@ -97,7 +97,7 @@ module MuckEngine
       else
         label_element = label(field, label_text.html_safe, label_options)
       end
-    
+
       locals = {
         :field_element  => yield,
         :field_name     => field_id || field_name(field),
@@ -121,13 +121,13 @@ module MuckEngine
 
       @template.capture do
 
-        if type == :tippable              
+        if type == :tippable
           @template.render :partial => 'forms/field_with_tips', :locals => locals
         elsif type == :choose_menu
           @template.render :partial => 'forms/menu_field', :locals => locals
         elsif type == :color_picker
           @template.render :partial => 'forms/color_picker_field', :locals => locals
-        elsif type == :default  
+        elsif type == :default
           @template.render :partial => 'forms/default', :locals => locals
         else
           @template.render :partial => 'forms/field', :locals => locals
@@ -135,7 +135,7 @@ module MuckEngine
       end
     end
 
-    # Call '<%= country_scripts %>' to render javascript that will change the state control based on the current country 
+    # Call '<%= country_scripts %>' to render javascript that will change the state control based on the current country
     # creates a select control with us states.  Default id is 'us_states'.  If 'retain' is passed for the class value the value of this
     # control will be written into a cookie with the key 'us_states'.
     def us_state_select(method, options = {}, html_options = {}, additional_state = nil)
@@ -143,7 +143,7 @@ module MuckEngine
       @states = (additional_state ? [additional_state] : []) + State.find(:all, :conditions => ["country_id = ?", @@country_id], :order => "name asc")
       self.menu_select(method, I18n.t('muck.engine.choose_state'), @states, options.merge(:prompt => I18n.t('muck.engine.select_state_prompt'), :wrapper_id => 'us-states-container'), html_options.merge(:id => 'us-states'))
     end
-  
+
     # creates a select control with states.  Default id is 'states'.  If 'retain' is passed for the class value the value of this
     # control will be written into a cookie with the key 'states'.
     def state_select(method, options = {}, html_options = {}, additional_state = nil)
@@ -166,7 +166,7 @@ module MuckEngine
       @languages ||= (additional_language ? [additional_language] : []) + Language.find(:all, :order => 'name asc')
       self.menu_select(method, I18n.t('muck.engine.choose_language'), @languages, options.merge(:prompt => I18n.t('muck.engine.select_language_prompt'), :wrapper_id => 'languages-container'), html_options.merge(:id => 'languages'))
     end
-  
+
     def get_instance_object_value(field_name)
       obj = object || @template.instance_variable_get("@#{@object_name}")
       obj.send(field_name) rescue nil
@@ -187,7 +187,7 @@ module MuckEngine
       # end
       if !options[:tip].nil?
         html_options[:class] ||= ''
-        html_options[:class] << add_space_to_css(html_options) + 'tip-field'    
+        html_options[:class] << add_space_to_css(html_options) + 'tip-field'
       end
       self.collection_select(method, collection, value_method, name_method, options.merge(:object => @object, :label => label, :type => :choose_menu, :label_class => 'desc', :field_id => html_options[:id]), html_options)
     end

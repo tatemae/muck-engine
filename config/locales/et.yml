@@ -1,7 +1,7 @@
---- 
-et: 
-  muck: 
-    engine: 
+---
+et:
+  muck:
+    engine:
       admin_access_code_requests: "Access Code taotlused"
       admin_access_codes: Pääsukoodid
       admin_home: Avaleht
@@ -18,9 +18,9 @@ et:
       select_country_prompt: "Palun valige riik"
       select_language_prompt: "Palun valige keel"
       select_state_prompt: "Palun valige riik"
-    forms: 
+    forms:
       please_enter_a_value: "Palun sisestage väärtus %{label}"
-    general: 
+    general:
       activate: Aktiveerima
       deactivate: Lülitan
       delete: Kustuta

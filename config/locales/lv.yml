@@ -1,7 +1,7 @@
---- 
-lv: 
-  muck: 
-    engine: 
+---
+lv:
+  muck:
+    engine:
       admin_access_code_requests: "Piekļuves kods Pieprasījumi"
       admin_access_codes: "Piekļuves kodi"
       admin_home: Mājas
@@ -18,9 +18,9 @@ lv:
       select_country_prompt: "Lūdzu, izvēlieties valsti"
       select_language_prompt: "Lūdzu, izvēlieties valodu"
       select_state_prompt: "Lūdzu, izvēlieties valsti"
-    forms: 
+    forms:
       please_enter_a_value: "Lūdzu, ievadiet vērtību %{label}"
-    general: 
+    general:
       activate: Aktivizēt
       deactivate: Deaktivizēt
       delete: Dzēst

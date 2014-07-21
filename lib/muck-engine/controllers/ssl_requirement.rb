@@ -1,13 +1,13 @@
-# Code adapted from http://github.com/rails/ssl_requirement 
+# Code adapted from http://github.com/rails/ssl_requirement
 module MuckEngine
   module SslRequirement
-    
+
     extend ActiveSupport::Concern
-    
+
     included do
       before_filter :ensure_proper_protocol
     end
-    
+
     module ClassMethods
       # Specifies that the named actions requires an SSL connection to be performed (which is enforced by ensure_proper_protocol).
       def ssl_required(*actions)
@@ -18,7 +18,7 @@ module MuckEngine
         write_inheritable_array(:ssl_allowed_actions, actions)
       end
     end
-    
+
     protected
       # Only require ssl if we are in production
       def ssl_required?
@@ -27,7 +27,7 @@ module MuckEngine
         return false if RAILS_ENV == 'test'
         ((self.class.read_inheritable_attribute(:ssl_required_actions) || []).include?(action_name.to_sym)) && (::Rails.env == 'production' || ::Rails.env == 'staging')
       end
-      
+
 
       def ssl_allowed?
         (self.class.read_inheritable_attribute(:ssl_allowed_actions) || []).include?(action_name.to_sym)
@@ -47,6 +47,6 @@ module MuckEngine
           return false
         end
       end
-    
+
   end
 end

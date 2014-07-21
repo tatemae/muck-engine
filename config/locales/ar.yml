@@ -1,7 +1,7 @@
---- 
-ar: 
-  muck: 
-    engine: 
+---
+ar:
+  muck:
+    engine:
       admin_access_code_requests: "تطلب الوصول إلى التعليمات البرمجية"
       admin_access_codes: "رموز الوصول"
       admin_home: "الصفحة الرئيسية"
@@ -18,9 +18,9 @@ ar:
       select_country_prompt: "الرجاء اختيار بلد"
       select_language_prompt: "الرجاء اختيار لغة"
       select_state_prompt: "الرجاء تحديد الدولة"
-    forms: 
+    forms:
       please_enter_a_value: "الرجاء إدخال قيمة ل%{label}"
-    general: 
+    general:
       activate: تفعيل
       deactivate: عطل
       delete: حذف

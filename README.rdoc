@@ -34,10 +34,10 @@ The set_locale method can use discover_locale to try various methods of finding 
   def discover_locale
     I18n.locale = extract_locale_from_tld || extract_locale_from_subdomain || extract_locale_from_headers || extract_locale_from_user_selection || extract_locale_from_browser || I18n.default_locale
   end
-  
+
 == Usage
   If your application includes a locale switching menu, you would then have something like this in it:
-  link_to("Deutsch", "#{APP_CONFIG[:deutsch_website_url]}#{request.env['REQUEST_URI']}") 
+  link_to("Deutsch", "#{APP_CONFIG[:deutsch_website_url]}#{request.env['REQUEST_URI']}")
 
 == Localization
 Muck Engine comes with translations from the rails-i18n repository (http://github.com/svenfuchs/rails-i18n)
@@ -56,7 +56,7 @@ views/layouts.  This will build templates for html and plain text emails.  For a
 
 == iPhone
 To add detection for the iPhone just add this to the top of your controller:
-  
+
   before_filter :adjust_format_for_iphone
 
 == CSS
@@ -100,13 +100,13 @@ If you wish to enable jgrowl then add the following lines to application.js and 
   	jQuery.jGrowl(msg, {sticky:true});
   }
 
-  
+
 == Development Notes
 es-CO.yml is missing a space on line 91:
-  
+
   record_invalid:"Falla de validación: {{errors}}"
 
-should be:  
+should be:
   record_invalid: "Falla de validación: {{errors}}"
 
 

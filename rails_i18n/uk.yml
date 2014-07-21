@@ -14,7 +14,7 @@ uk:
       delimiter: " "
       # Number of decimals, behind the separator (the number 1 with a precision of 2 gives: 1.00)
       precision: 3
-      
+
     # Used in number_to_currency()
     currency:
       format:
@@ -25,15 +25,15 @@ uk:
         separator: ","
         delimiter: " "
         precision: 2
-        
+
     # Used in number_to_percentage()
     percentage:
       format:
         # These three are to override number.format and are optional
-        # separator: 
+        # separator:
         delimiter: ""
-        # precision: 
-        
+        # precision:
+
     # Used in number_to_precision()
     precision:
       format:
@@ -41,12 +41,12 @@ uk:
         # separator:
         delimiter: ""
         # precision:
-        
+
     # Used in number_to_human_size()
     human:
       format:
         # These three are to override number.format and are optional
-        # separator: 
+        # separator:
         delimiter: ""
         precision: 1
       storage_units:
@@ -75,7 +75,7 @@ uk:
         other: "менше {{count}} секунди"
       x_seconds:
         one:   "{{count}} секунда"
-        few:   "{{count}} секунди" 
+        few:   "{{count}} секунди"
         many:  "{{count}} секунд"
         other: "{{count}} секунди"
       less_than_x_minutes:
@@ -147,7 +147,7 @@ uk:
         accepted: "має бути прийнятий"
         empty: "не може бути порожнім"
         blank: "не може бути пустим"
-        too_long: 
+        too_long:
           one:    "занадто довгий (максимум {{count}} знак)"
           few:    "занадто довгий (максимум {{count}} знаки)"
           many:   "занадто довгий (максимум {{count}} знаків)"
@@ -183,23 +183,23 @@ uk:
       #       attributes:
       #         login:
       #           blank: "This is a custom blank message for User login"
-      # Will define custom blank validation message for User model and 
+      # Will define custom blank validation message for User model and
       # custom blank validation message for login attribute of User model.
       #models:
-        
+
     # Translate model names. Used in Model.human_name().
     #models:
       # For example,
       #   user: "Dude"
       # will translate User model name to "Dude"
-    
+
     # Translate model attribute names. Used in Model.human_attribute_name(attribute).
     #attributes:
       # For example,
       #   user:
       #     login: "Handle"
       # will translate User attribute "login" as "Handle"
-      
+
   date:
     formats:
       # Use the strftime parameters for formats.
@@ -208,10 +208,10 @@ uk:
       default: "%d.%m.%Y"
       short: "%d %b"
       long: "%d %B %Y"
-      
+
     day_names: [неділя, понеділок, вівторок, середа, четвер, "п'ятниця", субота]
     abbr_day_names: [нд., пн., вт., ср., чт., пт., сб.]
-      
+
     # Don't forget the nil at the beginning; there's no such thing as a 0th month
     month_names: [~, Січень, Лютий, Березень, Квітень, Травень, Червень, Липень, Серпень, Вересень, Жовтень, Листопад, Грудень]
     abbr_month_names: [~, січ., лют., бер., квіт., трав., черв., лип., серп., вер., жовт., лист., груд.]
@@ -225,7 +225,7 @@ uk:
       long: "%d %B %Y, %H:%M"
     am: "до полудня"
     pm: "по полудні"
-      
+
   # Used in array.to_sentence.
   support:
     array:
@@ -234,4 +234,4 @@ uk:
       words_connector: ", "
       two_words_connector: " і "
       last_word_connector: " та "
-      
+

@@ -1,4 +1,4 @@
-# Chinese (Taiwan) translations for Ruby on Rails 
+# Chinese (Taiwan) translations for Ruby on Rails
 # by tsechingho (http://github.com/tsechingho)
 
 "zh-TW":
@@ -12,7 +12,7 @@
     month_names: [~, 一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
     abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     order: [ :year, :month, :day ]
-  
+
   time:
     formats:
       default: "%Y年%b%d日 %A %H:%M:%S %Z"
@@ -20,7 +20,7 @@
       long: "%Y年%b%d日 %H:%M"
     am: "上午"
     pm: "下午"
-  
+
   datetime:
     distance_in_words:
       half_a_minute: "半分鐘"
@@ -61,7 +61,7 @@
       hour:   "時"
       minute: "分"
       second: "秒"
-  
+
   number:
     format:
       separator: "."
@@ -94,17 +94,17 @@
           mb: "MB"
           gb: "GB"
           tb: "TB"
-  
+
   support:
     array:
       words_connector: ", "
       two_words_connector: " 和 "
       last_word_connector: ", 和 "
-  
+
   activerecord:
     errors:
       template:
-        header: 
+        header:
           one: "有 1 個錯誤發生使得「{{model}}」無法被儲存。"
           other: "有 {{count}} 個錯誤發生使得「{{model}}」無法被儲存。"
         body: "下面欄位有問題："
@@ -128,5 +128,5 @@
         less_than_or_equal_to: "必須小於或等於 {{count}}"
         odd: "必須是奇數"
         even: "必須是偶數"
-  
+
 
